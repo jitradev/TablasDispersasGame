@@ -8,6 +8,8 @@ import { BotonSonido } from '../juego/BotonSonido';
 import { Mision } from './misiones';
 import { COMPANIA, JEFES, MERLA } from './personajes';
 import { Archivera } from './Visor';
+import { EnClaroMision } from './EnClaro';
+import { ejercicioDe } from './encargos';
 
 export function Entrada({
   mision,
@@ -63,7 +65,10 @@ export function Entrada({
         )}
       </div>
 
+      <EnClaroMision ej={ejercicioDe(mision.target)} jefe={!!mision.jefe} acto={mision.acto} />
+
       <ol className="pasos-mision">
+        <li>Programa lo de arriba en el bloque del acto {mision.acto} de los dos ficheros .c.</li>
         <li>
           En CLion, elige el target <code>{mision.target}</code> en el desplegable de arriba a la derecha y ejecútalo.
         </li>

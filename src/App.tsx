@@ -8,6 +8,7 @@ import { ACTOS, MISIONES } from './practica/misiones';
 import { COMPANIA, JEFES, MERLA, PROLOGO } from './practica/personajes';
 import { Visor } from './practica/Visor';
 import { Entrada } from './practica/Entrada';
+import { EnClaroActo } from './practica/EnClaro';
 
 // ------------------------------------------------------------------ registros guardados
 
@@ -321,7 +322,7 @@ function PantallaActo({
         <BotonSonido />
       </header>
 
-      <section className="relato">
+      <section className="relato-acto">
         <div className="relato-lugar">{a.lugar.toUpperCase()}</div>
         <p>{a.resumen}</p>
       </section>
@@ -370,6 +371,8 @@ function PantallaActo({
           </a>
         </div>
       </section>
+
+      <EnClaroActo acto={n} />
 
       {!abierto ? (
         <div className="aviso neutro">
