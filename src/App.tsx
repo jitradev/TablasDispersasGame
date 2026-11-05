@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { Ico } from './juego/Icono';
 import { urlSprite } from './juego/sprites';
 import { sonar } from './juego/sonido';
 import { BotonSonido } from './juego/BotonSonido';
@@ -130,7 +131,7 @@ function Intro({ alAcabar }: { alAcabar: () => void }) {
           acabar();
         }}
       >
-        SALTAR ⏭
+        SALTAR <Ico n="evento" detras />
       </button>
     </div>
   );
@@ -342,7 +343,8 @@ function PantallaActo({
             volver();
           }}
         >
-          ← VOLVER
+          <Ico n="volver" />
+          VOLVER
         </button>
         <div className="titulo-ev">
           ACTO {n} · {a.titulo}
@@ -410,7 +412,8 @@ function PantallaActo({
                     ver(m.id);
                   }}
                 >
-                  {c ? '▶ VOLVER A LA MISIÓN' : pendientes[m.id] ? '▶ VER CÓMO SALE' : '▶ ENTRAR EN LA MISIÓN'}
+                  <Ico n="play" />
+                  {c ? 'VOLVER A LA MISIÓN' : pendientes[m.id] ? 'VER CÓMO SALE' : 'ENTRAR EN LA MISIÓN'}
                 </button>
               </div>
             );

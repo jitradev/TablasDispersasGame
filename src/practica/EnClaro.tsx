@@ -1,6 +1,7 @@
 // La traducción del pergamino: lo que se pide de verdad, sin historia. Se abre
 // en una ventana desde el botón «El pergamino, en claro».
 import { ReactNode, useEffect, useState } from 'react';
+import { Ico } from '../juego/Icono';
 import { sonar } from '../juego/sonido';
 import { ENCARGOS, EJERCICIOS_DE, EN_CLARO, Encargo } from './encargos';
 import { MISIONES } from './misiones';
@@ -50,14 +51,15 @@ function Pergamino({ children, ancho = false }: { children: ReactNode; ancho?: b
             setAbierto(true);
           }}
         >
-          📜 EL PERGAMINO, EN CLARO
+          <Ico n="pergamino" />
+          EL PERGAMINO, EN CLARO
         </button>
       </div>
       {abierto && (
         <div className="ventana-fondo" onClick={() => setAbierto(false)}>
           <div className={`ventana en-claro ${ancho ? 'ancho' : ''}`} role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
             <button className="mini cerrar" onClick={() => setAbierto(false)} aria-label="Cerrar">
-              ✕
+              <Ico n="cerrar" />
             </button>
             {children}
           </div>

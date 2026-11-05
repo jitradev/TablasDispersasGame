@@ -3,6 +3,7 @@
 // evento, con la corrección al lado.
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Ico } from '../juego/Icono';
 import { PAL, pintar, sprite, urlSprite } from '../juego/sprites';
 import { iconoDe } from '../juego/mision1';
 import { Correccion, describirBloque, dondeTabla, Fallo } from './corregir';
@@ -473,7 +474,8 @@ export function Visor({
     <div className="pantalla visor">
       <header className="barra-sup">
         <button className="mini" onClick={volver}>
-          ← VOLVER
+          <Ico n="volver" />
+          VOLVER
         </button>
         <div className={`titulo-ev ${mision.jefe ? 'jefe' : ''}`}>{mision.titulo}</div>
         <div className="pts">
@@ -493,7 +495,8 @@ export function Visor({
               }}
             />
             <button className="mini" onClick={() => subirInput.current?.click()} title="Subir otra versión del registro de esta misión">
-              ⬆ OTRO REGISTRO
+              <Ico n="subir" />
+              OTRO REGISTRO
             </button>
           </>
         )}
@@ -508,22 +511,22 @@ export function Visor({
         <div className="col-izq">
           <Banda tam={tamL} largos={tablaL?.cubos.map((x) => x.length) ?? []} destino={cubo} rotulo={(q === 'B' ? 'BOTÍN · ' : '') + rotulo} titulo={`LISTAS: ${tamL} CUBOS`} quien={mision.quien} jefe={jefe} efecto={efecto} />
           <div className="controles">
-            <button className="mini" onClick={() => irEvento(Math.max(0, foto.ev - 1))} aria-label="Evento anterior">
-              ⏮
+            <button className="mini icono" onClick={() => irEvento(Math.max(0, foto.ev - 1))} aria-label="Evento anterior" title="Evento anterior">
+              <img src={urlSprite('ic-evento-atras', 2)} alt="" />
             </button>
-            <button className="mini" onClick={() => setI(Math.max(0, i - 1))} aria-label="Paso anterior">
-              ◀
+            <button className="mini icono" onClick={() => setI(Math.max(0, i - 1))} aria-label="Paso anterior" title="Paso anterior">
+              <img src={urlSprite('ic-paso-atras', 2)} alt="" />
             </button>
-            <button className="mini" onClick={() => (i >= fotos.length - 1 ? (setI(0), setPlay(true)) : setPlay(!play))} aria-label={play ? 'Pausa' : 'Reproducir'}>
-              {play ? '❚❚' : '▶'}
+            <button className="mini icono principal" onClick={() => (i >= fotos.length - 1 ? (setI(0), setPlay(true)) : setPlay(!play))} aria-label={play ? 'Pausa' : 'Reproducir'} title={play ? 'Pausa' : 'Reproducir'}>
+              <img src={urlSprite(play ? 'ic-pausa' : 'ic-play', 2)} alt="" />
             </button>
-            <button className="mini" onClick={() => setI(Math.min(fotos.length - 1, i + 1))} aria-label="Paso siguiente">
-              ▶|
+            <button className="mini icono" onClick={() => setI(Math.min(fotos.length - 1, i + 1))} aria-label="Paso siguiente" title="Paso siguiente">
+              <img src={urlSprite('ic-paso', 2)} alt="" />
             </button>
-            <button className="mini" onClick={() => irEvento(Math.min(evs.length - 1, foto.ev + 1))} aria-label="Evento siguiente">
-              ⏭
+            <button className="mini icono" onClick={() => irEvento(Math.min(evs.length - 1, foto.ev + 1))} aria-label="Evento siguiente" title="Evento siguiente">
+              <img src={urlSprite('ic-evento', 2)} alt="" />
             </button>
-            <button className="mini" onClick={() => setVel([1, 2, 4][([1, 2, 4].indexOf(vel) + 1) % 3])} aria-label="Velocidad">
+            <button className="mini icono vel" onClick={() => setVel([1, 2, 4][([1, 2, 4].indexOf(vel) + 1) % 3])} aria-label="Velocidad" title="Velocidad">
               ×{vel}
             </button>
             <label className="check">

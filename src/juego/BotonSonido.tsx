@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { alCambiar, silenciado, silenciar, sonar } from './sonido';
+import { urlSprite } from './sprites';
 
 /** El botón para quitar o poner el sonido (se recuerda en el navegador). */
 export function BotonSonido() {
@@ -20,7 +21,7 @@ export function BotonSonido() {
         if (mudo) sonar('click');
       }}
     >
-      {mudo ? '🔇' : '🔊'}
+      <img src={urlSprite(mudo ? 'ic-mudo' : 'ic-altavoz', 2)} alt="" />
     </button>
   );
 }

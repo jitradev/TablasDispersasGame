@@ -2209,3 +2209,99 @@ details.ordenes > summary:focus-visible {
 .ventana-fondo {
   padding: 48px max(24px, 6vw);
 }
+.ventana.en-claro.ancho {
+  padding: 22px 32px 24px;
+}
+
+/* ------------------------------------------------------------------ iconos de los botones */
+button.icono,
+button.boton-sonido {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 32px;
+  padding: 0;
+  line-height: 1;
+}
+button.icono img,
+button.boton-sonido img {
+  image-rendering: pixelated;
+  display: block;
+}
+button.icono.principal {
+  width: 46px;
+  background: var(--c3);
+}
+button.icono.principal:hover {
+  background: #db8442;
+}
+button.icono.vel {
+  width: 44px;
+  font-size: 10px;
+  color: var(--c4);
+}
+.controles {
+  gap: 6px;
+}
+.controles .check {
+  margin-left: 8px;
+}
+
+/* ------------------------------------------------------------------ paneles de las tablas: misma altura y nada cortado */
+.tablas {
+  align-items: stretch;
+}
+.tablas > .panel {
+  display: flex;
+  flex-direction: column;
+}
+.panel-tit {
+  min-height: 34px;
+}
+.casillas,
+.cubos {
+  height: 206px;
+  max-height: none;
+  overflow-y: auto;
+  /* sitio para que la casilla que se explora pueda subir y brillar sin cortarse */
+  padding: 8px 6px 6px;
+  margin: -2px -4px 0;
+  scrollbar-gutter: stable;
+}
+.tablas > .panel > .aviso {
+  height: 206px;
+  margin: 0;
+  box-sizing: border-box;
+}
+.tablas > .panel {
+  height: 284px;
+  box-sizing: border-box;
+}
+.tablas > .panel > .casillas,
+.tablas > .panel > .cubos,
+.tablas > .panel > .aviso {
+  flex: 1 1 0;
+  height: auto;
+  min-height: 0;
+}
+.tablas > .panel > .panel-tit {
+  flex: none;
+}
+
+.ico {
+  image-rendering: pixelated;
+  display: inline-block;
+  vertical-align: middle;
+  margin: -3px 8px 0 0;
+}
+.ico.detras {
+  margin: -3px 0 0 8px;
+}
+button.cerrar .ico {
+  margin: 0;
+}
+.tablas > .panel > .casillas {
+  align-content: start;
+  grid-auto-rows: 52px;
+}

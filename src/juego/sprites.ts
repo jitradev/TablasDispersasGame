@@ -507,6 +507,29 @@ for (const [quien, mapa] of Object.entries(COLORES))
   for (const f of ['heroe1', 'heroe2']) S[`${quien}-${f}`] = S[f].map((fila) => [...fila].map((ch) => mapa[ch] ?? ch).join(''));
 
 export type NombreSprite = keyof typeof S;
+
+// ------------------------------------------------------------------ iconos de los botones
+// El altavoz y los controles de la animación, en píxeles (los emojis no casan
+// con la fuente pixelada y cada sistema los pinta a su manera).
+{
+  const T = ['c...', 'cc..', 'ccc.', 'cccc', 'ccc.', 'cc..', 'c...'];
+  const R = (s: string) => s.split('').reverse().join('');
+  Object.assign(S, {
+    'ic-altavoz': ['.....cc.....', '....ccc...c.', 'ccccccc.c..c', 'ccccccc..c.c', 'ccccccc..c.c', 'ccccccc..c.c', 'ccccccc.c..c', '....ccc...c.', '.....cc.....'],
+    'ic-mudo': ['.....cc.....', '....ccc.....', 'ccccccc.....', 'ccccccc.2..2', 'ccccccc..22.', 'ccccccc..22.', 'ccccccc.2..2', '....ccc.....', '.....cc.....'],
+    'ic-play': T,
+    'ic-pausa': Array(7).fill('cc.cc'),
+    'ic-paso': T.map((r) => r + '.c'),
+    'ic-paso-atras': T.map((r) => 'c.' + R(r)),
+    'ic-evento': T.map((r) => r + r + '.c'),
+    'ic-evento-atras': T.map((r) => 'c.' + R(r) + R(r)),
+    'ic-volver': ['..c....', '.cc....', 'ccccccc', '.cc....', '..c....'],
+    'ic-subir': ['...c...', '..ccc..', '.ccccc.', 'ccccccc', '..ccc..', '..ccc..', '..ccc..'],
+    'ic-cerrar': ['cc...cc', 'ccc.ccc', '.ccccc.', '..ccc..', '.ccccc.', 'ccc.ccc', 'cc...cc'],
+    'ic-pergamino': ['.cccccccc.', 'c4cccccc4c', '.c000000c.', '.cccccccc.', '.c00000cc.', '.cccccccc.', 'c4cccccc4c', '.cccccccc.'],
+  });
+}
+
 export const SPRITES = S;
 
 const cache = new Map<string, HTMLCanvasElement>();

@@ -2,6 +2,7 @@
 // jefe te enfrentas, qué target ejecutar y dónde soltar el registro. Al subirlo,
 // la animación empieza sola y la nota no se ve hasta el final.
 import { useMemo, useRef, useState } from 'react';
+import { Ico } from '../juego/Icono';
 import { urlSprite } from '../juego/sprites';
 import { sonar } from '../juego/sonido';
 import { BotonSonido } from '../juego/BotonSonido';
@@ -34,7 +35,8 @@ export function Entrada({
     <div className="pantalla entrada">
       <header className="barra-sup">
         <button className="mini" onClick={volver}>
-          ← VOLVER
+          <Ico n="volver" />
+          VOLVER
         </button>
         <div className={`titulo-ev ${mision.jefe ? 'jefe' : ''}`}>
           MISIÓN {num} · {mision.titulo}
@@ -100,7 +102,8 @@ export function Entrada({
             input.current?.click();
           }}
         >
-          ⬆ SUBIR {mision.id}.txt
+          <Ico n="subir" />
+          SUBIR {mision.id}.txt
         </button>
       </div>
       {errores.map((e, k) => (
