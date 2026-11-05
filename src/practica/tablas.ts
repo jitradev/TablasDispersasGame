@@ -1,9 +1,5 @@
 // Modelo de referencia de las dos tablas de clase (TablaDispersaLista.c y
-<<<<<<< HEAD
 // TablaDispersaArray.c) con las funciones de los cuatro actos. Sirve para saber
-=======
-// TablaDispersaArray.c) con las funciones de la práctica. Sirve para saber
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 // qué tenía que salir de cada evento.
 
 export const TAM_LISTA = 101; // los #define de los .h
@@ -17,7 +13,6 @@ export const hash = (clave: number, tam: number) => {
   return i < 0 ? i + tam : i;
 };
 
-<<<<<<< HEAD
 export type Clave = number;
 
 /** Las funciones hash del acto 3 (claves positivas), ya con el mod del tamaño. */
@@ -47,14 +42,11 @@ export function hashDe(hf: HashL, c: number, tam: number) {
   if (hf === 'POLINOMICO') return polinomico(c, tam);
   return hash(c, tam);
 }
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 
 // ------------------------------------------------------------------ encadenamiento
 
 export interface ML {
   tam: number;
-<<<<<<< HEAD
   hf: HashL;
   /** cubos[i] = claves de la lista del cubo i, de la cabeza al final */
   cubos: Clave[][];
@@ -69,36 +61,15 @@ export const cuboDe = (t: { tam: number; hf: HashL }, c: Clave) => hashDe(t.hf, 
 
 export function actualizarL(t: ML, c: Clave, e: number): number {
   const cubo = t.cubos[cuboDe(t, c)];
-=======
-  /** cubos[i] = claves de la lista del cubo i, de la cabeza al final */
-  cubos: number[][];
-  valores: Map<number, number>;
-}
-
-export const nLista = (t: ML) => t.cubos.reduce((s, c) => s + c.length, 0);
-export const copiaL = (t: ML): ML => ({ tam: t.tam, cubos: t.cubos.map((c) => [...c]), valores: new Map(t.valores) });
-export const nuevaLista = (tam: number): ML => ({ tam, cubos: Array.from({ length: tam }, () => []), valores: new Map() });
-
-export function actualizarL(t: ML, c: number, e: number): number {
-  const cubo = t.cubos[hash(c, t.tam)];
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   if (!cubo.includes(c)) cubo.unshift(c);
   t.valores.set(c, e);
   return 1;
 }
-<<<<<<< HEAD
 export function buscarL(t: ML, c: Clave): [number, number] {
   return t.cubos[cuboDe(t, c)].includes(c) ? [1, t.valores.get(c)!] : [0, 0];
 }
 export function eliminarL(t: ML, c: Clave): [number, number] {
   const cubo = t.cubos[cuboDe(t, c)];
-=======
-export function buscarL(t: ML, c: number): [number, number] {
-  return t.cubos[hash(c, t.tam)].includes(c) ? [1, t.valores.get(c)!] : [0, 0];
-}
-export function eliminarL(t: ML, c: number): [number, number] {
-  const cubo = t.cubos[hash(c, t.tam)];
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   const k = cubo.indexOf(c);
   if (k < 0) return [0, 0];
   cubo.splice(k, 1);
@@ -116,16 +87,12 @@ export interface CasillaM {
 }
 export interface MA {
   tam: number;
-<<<<<<< HEAD
   hf: HashL;
   sonda: Sonda;
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   casillas: CasillaM[];
 }
 
 export const nArray = (t: MA) => t.casillas.filter((c) => c.marca === OCUPADA).length;
-<<<<<<< HEAD
 export const copiaA = (t: MA): MA => ({ tam: t.tam, hf: t.hf, sonda: t.sonda, casillas: t.casillas.map((c) => ({ ...c })) });
 export const nuevoArray = (tam: number, sonda: Sonda = 'LIN', hf: HashL = 'CLASE'): MA => ({ tam, hf, sonda, casillas: Array.from({ length: tam }, () => ({ marca: VACIA, clave: 0, valor: 0 })) });
 
@@ -154,37 +121,12 @@ export function recorridoA(t: MA, c: number): number[] {
     r.push(i);
     const s = t.casillas[i];
     if (s.marca === VACIA || (s.marca === OCUPADA && s.clave === c)) break;
-=======
-export const copiaA = (t: MA): MA => ({ tam: t.tam, casillas: t.casillas.map((c) => ({ ...c })) });
-export const nuevoArray = (tam: number): MA => ({ tam, casillas: Array.from({ length: tam }, () => ({ marca: VACIA, clave: 0, valor: 0 })) });
-
-export function posicionA(t: MA, c: number): number {
-  let i = hash(c, t.tam);
-  for (let p = 0; p < t.tam; p++) {
-    const s = t.casillas[i];
-    if (s.marca === VACIA) return -1;
-    if (s.marca === OCUPADA && s.clave === c) return i;
-    i = (i + 1) % t.tam;
-  }
-  return -1;
-}
-/** Casillas que mira la exploración lineal para la clave c, hasta donde para. */
-export function recorridoA(t: MA, c: number): number[] {
-  const r: number[] = [];
-  let i = hash(c, t.tam);
-  for (let p = 0; p < t.tam; p++) {
-    r.push(i);
-    const s = t.casillas[i];
-    if (s.marca !== OCUPADA || s.clave === c) break;
-    i = (i + 1) % t.tam;
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   }
   return r;
 }
 export function insertarA(t: MA, c: number, e: number): number {
   if (nArray(t) >= t.tam) return 0;
   if (posicionA(t, c) >= 0) return 0;
-<<<<<<< HEAD
   for (let p = 0; p < t.tam; p++) {
     const i = casillaDe(t, c, p);
     if (t.casillas[i].marca !== OCUPADA) {
@@ -193,12 +135,6 @@ export function insertarA(t: MA, c: number, e: number): number {
     }
   }
   return 0;
-=======
-  let i = hash(c, t.tam);
-  while (t.casillas[i].marca === OCUPADA) i = (i + 1) % t.tam;
-  t.casillas[i] = { marca: OCUPADA, clave: c, valor: e };
-  return 1;
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 }
 export function actualizarA(t: MA, c: number, e: number): number {
   const i = posicionA(t, c);
@@ -227,11 +163,7 @@ export function masAbundante(pares: [number, number][]): number[] {
   const [k, v] = pares.reduce((m, x) => (x[1] > m[1] || (x[1] === m[1] && x[0] < m[0]) ? x : m));
   return [1, k, v];
 }
-<<<<<<< HEAD
 export const paresL = (t: ML) => [...t.valores.entries()] as [number, number][];
-=======
-export const paresL = (t: ML) => [...t.valores.entries()];
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 export const paresA = (t: MA) => t.casillas.filter((c) => c.marca === OCUPADA).map((c) => [c.clave, c.valor] as [number, number]);
 
 /** Ejercicio 2. */
@@ -248,15 +180,9 @@ export function grupoMasLargo(t: MA): number[] {
   return [max, t.casillas.filter((c) => c.marca === BORRADA).length];
 }
 
-<<<<<<< HEAD
 /** Ejercicio 3 (y el 15, con texto). */
 export function cambiarL(t: ML, vieja: Clave, nueva: Clave): number {
   const cv = t.cubos[cuboDe(t, vieja)];
-=======
-/** Ejercicio 3. */
-export function cambiarL(t: ML, vieja: number, nueva: number): number {
-  const cv = t.cubos[hash(vieja, t.tam)];
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   if (!cv.includes(vieja)) return 0;
   if (vieja === nueva) return 1;
   cv.splice(cv.indexOf(vieja), 1);
@@ -264,11 +190,7 @@ export function cambiarL(t: ML, vieja: number, nueva: number): number {
   t.valores.delete(vieja);
   if (t.valores.has(nueva)) t.valores.set(nueva, t.valores.get(nueva)! + v);
   else {
-<<<<<<< HEAD
     t.cubos[cuboDe(t, nueva)].unshift(nueva);
-=======
-    t.cubos[hash(nueva, t.tam)].unshift(nueva);
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     t.valores.set(nueva, v);
   }
   return 1;
@@ -319,11 +241,7 @@ export function fusionarL(d: ML, o: ML): number {
       const v = o.valores.get(k)!;
       if (d.valores.has(k)) d.valores.set(k, d.valores.get(k)! + v);
       else {
-<<<<<<< HEAD
         d.cubos[cuboDe(d, k)].unshift(k);
-=======
-        d.cubos[hash(k, d.tam)].unshift(k);
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
         d.valores.set(k, v);
       }
     }
@@ -343,7 +261,6 @@ export function fusionarA(d: MA, o: MA): number {
   return bien;
 }
 
-<<<<<<< HEAD
 // ------------------------------------------------------------------ acto 2
 
 /** Ejercicio 6: destino igual que origen. */
@@ -452,14 +369,6 @@ export type InvT = string;
 export interface Par {
   l?: ML;
   a?: MA;
-=======
-// ------------------------------------------------------------------ una orden, como main_mision.c
-
-export type InvT = 'H' | 'B';
-export interface Par {
-  l: ML;
-  a: MA;
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 }
 export type Mundo = Partial<Record<InvT, Par>>;
 export interface Paso {
@@ -468,7 +377,6 @@ export interface Paso {
   auto: { tabla: 'L' | 'A'; inv: InvT; viejo: number; nuevo: number }[];
 }
 
-<<<<<<< HEAD
 export const TABLAS = ['H', 'B'];
 const copiaPar = (p: Par): Par => ({ l: p.l && copiaL(p.l), a: p.a && copiaA(p.a) });
 const copiaMundo = (m: Mundo): Mundo => Object.fromEntries(Object.entries(m).map(([k, p]) => [k, copiaPar(p!)]));
@@ -575,52 +483,6 @@ export function aplicar(ev: OrdenM, base: Mundo): { mundo: Mundo; paso: Paso } {
       break;
     case 'FRENTE':
       paso.rl = [frenteL(l, ev.a)];
-=======
-const copiaMundo = (m: Mundo): Mundo => Object.fromEntries(Object.entries(m).map(([k, p]) => [k, { l: copiaL(p!.l), a: copiaA(p!.a) }]));
-export const parNuevo = (): Par => ({ l: nuevaLista(TAM_LISTA), a: nuevoArray(TAM_ARRAY) });
-
-/** Aplica una orden sobre copias y dice qué tenía que devolver. */
-export function aplicar(ev: { orden: string; quien: InvT; a: number; b: number }, base: Mundo): { mundo: Mundo; paso: Paso } {
-  const paso: Paso = { rl: [], ra: [], auto: [] };
-  if (ev.orden === 'CREAR') return { mundo: { H: parNuevo() }, paso };
-  if (ev.orden === 'LIBERAR') return { mundo: {}, paso };
-  const m = copiaMundo(base);
-  if (!m.H) return { mundo: m, paso };
-  if ((ev.quien === 'B' || ev.orden === 'FUSIONAR') && !m.B) m.B = parNuevo();
-  const p = m[ev.quien]!;
-  switch (ev.orden) {
-    case 'ACTUALIZAR':
-      paso.rl = [actualizarL(p.l, ev.a, ev.b)];
-      paso.ra = [actualizarA(p.a, ev.a, ev.b)];
-      break;
-    case 'BUSCAR':
-      paso.rl = buscarL(p.l, ev.a);
-      paso.ra = buscarA(p.a, ev.a);
-      break;
-    case 'ELIMINAR':
-      paso.rl = eliminarL(p.l, ev.a);
-      paso.ra = eliminarA(p.a, ev.a);
-      break;
-    case 'ABUNDANTE':
-      paso.rl = masAbundante(paresL(p.l));
-      paso.ra = masAbundante(paresA(p.a));
-      break;
-    case 'COLISIONES':
-      paso.rl = cuboMasLargo(p.l);
-      paso.ra = grupoMasLargo(p.a);
-      break;
-    case 'CAMBIAR':
-      paso.rl = [cambiarL(p.l, ev.a, ev.b)];
-      paso.ra = [cambiarA(p.a, ev.a, ev.b)];
-      break;
-    case 'AGOTAR':
-      paso.rl = [eliminarSiMenorL(p.l, ev.a)];
-      paso.ra = [eliminarSiMenorA(p.a, ev.a)];
-      break;
-    case 'FUSIONAR':
-      paso.rl = [fusionarL(m.H!.l, m.B!.l)];
-      paso.ra = [fusionarA(m.H!.a, m.B!.a)];
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
       break;
   }
   return { mundo: m, paso };

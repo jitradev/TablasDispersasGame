@@ -1,13 +1,5 @@
-<<<<<<< HEAD
 Aqui escriben los targets mision1 a mision16 sus registros.
 Despues de cada mision, sube su registro (por ejemplo mision1-camino.txt)
 en la tarjeta de esa mision de la web de la practica.
 Al terminar cada sesion, comprime la carpeta del proyecto entera (con esta
 carpeta dentro) y sube el zip a la entrega de ese acto en la PDU.
-=======
-Aqui escriben los targets mision1 a mision5 sus registros.
-Despues de cada mision, sube su registro (por ejemplo mision1-camino.txt)
-en la tarjeta de esa mision de la web de la practica.
-Al terminar, comprime la carpeta del proyecto entera (con esta carpeta dentro)
-y sube el zip a la entrega de la PDU.
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd

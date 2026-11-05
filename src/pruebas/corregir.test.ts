@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 // Registros de verdad: salen de compilar el proyecto base con la solución, con la
 // plantilla sin tocar y con versiones de la solución que tienen un fallo cada una
 // (el número delante del nombre es el ejercicio).
-=======
-// Registros de verdad: salen de compilar el proyecto base con la solución y con
-// las versiones de solucion-profesor/fallos, que tienen un fallo típico cada una.
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { leerRegistro, ErrorRegistro } from '../practica/registro';
@@ -14,10 +9,6 @@ import { MISIONES } from '../practica/misiones';
 import * as T from '../practica/tablas';
 
 const leer = (v: string, m: string) => corregir(leerRegistro(readFileSync(`${__dirname}/registros/${v}/${m}.txt`, 'utf8'), `${m}.txt`));
-<<<<<<< HEAD
-=======
-const [M1, M2, M3, M4, M5] = MISIONES.map((m) => m.id);
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 /** [evento, ejercicio, tabla, título] del primer fallo */
 const primero = (v: string, m: string) => leer(v, m).juicios.flatMap((j, i) => j.fallos.map((f) => [i, f.ej ?? 0, f.donde, f.f.titulo] as const))[0];
 
@@ -30,7 +21,6 @@ describe('el modelo de referencia', () => {
     expect(T.masAbundante([[207, 5], [43, 5], [5, 3]])).toEqual([1, 43, 5]);
     expect(T.masAbundante([])).toEqual([0, 0, 0]);
   });
-<<<<<<< HEAD
   it('las funciones hash del acto 3, como en C', () => {
     expect(T.plegamiento(12345, 101)).toBe(69);
     expect(T.plegamiento(1234, 101)).toBe(T.plegamiento(3412, 101));
@@ -53,16 +43,6 @@ describe('la solución', () => {
       const c = leer('sol', m.id);
       expect(c.conocida).toBe(true);
       expect(c.total).toBe(m.ordenes.length);
-=======
-});
-
-describe('la solución', () => {
-  for (const m of [M1, M2, M3, M4, M5])
-    it(m, () => {
-      const c = leer('sol', m);
-      expect(c.conocida).toBe(true);
-      expect(c.total).toBe(MISIONES.find((x) => x.id === m)!.ordenes.length);
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
       expect(c.bien).toBe(c.total);
       expect(c.estrellas).toBe(3);
     });
@@ -70,7 +50,6 @@ describe('la solución', () => {
 
 describe('cada fallo, en su ejercicio y en su evento', () => {
   const casos: [string, string, ReturnType<typeof primero>][] = [
-<<<<<<< HEAD
     ['1-empate', 'mision1-camino', [9, 1, 'Array', 'No devuelve lo que toca']],
     ['2-vacios', 'mision2-mapa', [1, 2, 'Listas', 'No devuelve lo que toca']],
     ['2-borradacorta', 'mision2-mapa', [12, 2, 'Array', 'No devuelve lo que toca']],
@@ -105,25 +84,6 @@ describe('cada fallo, en su ejercicio y en su evento', () => {
   it('la plantilla sin tocar falla en los quince ejercicios', () => {
     const ejs = new Set(MISIONES.flatMap((m) => leer('plantilla', m.id).juicios.flatMap((j) => j.fallos.map((f) => f.ej))));
     expect([...ejs].sort((a, b) => (a ?? 0) - (b ?? 0))).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
-=======
-    ['1-empate', M1, [9, 1, 'Array', 'No devuelve lo que toca']],
-    ['2-vacios', M2, [1, 2, 'Listas', 'No devuelve lo que toca']],
-    ['2-borradacorta', M2, [12, 2, 'Array', 'No devuelve lo que toca']],
-    ['3-copia', M3, [6, 3, 'Listas', 'Nodo nuevo al cambiar la clave']],
-    ['3-primero', M3, [10, 3, '', 'El programa se cortó aquí']],
-    ['3-vacia', M3, [6, 3, 'Array', 'Una clave que no se encontraría']],
-    ['4-sinfree', M4, [11, 4, '', '¡6 fantasmas!']],
-    ['4-saltaseguidos', M4, [11, 4, 'Listas', 'Las listas no cuadran']],
-    ['4-vacia', M4, [11, 4, 'Array', 'Una clave que no se encontraría']],
-    ['5-copia', M5, [7, 5, 'Listas', 'Nodos nuevos en la fusión']],
-    ['5-nosuma', M5, [23, 5, 'Listas', 'Clave repetida']],
-    ['5-origen', M5, [7, 5, 'Botín · Listas', 'El origen no queda vacío']],
-  ];
-  for (const [v, m, quiero] of casos) it(v, () => expect(primero(v, m)).toEqual(quiero));
-  it('la plantilla sin tocar falla en las cinco misiones', () => {
-    const ejs = new Set([M1, M2, M3, M4, M5].flatMap((m) => leer('plantilla', m).juicios.flatMap((j) => j.fallos.map((f) => f.ej))));
-    expect([...ejs].sort()).toEqual([1, 2, 3, 4, 5]);
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   });
 });
 
@@ -131,17 +91,13 @@ describe('ficheros raros', () => {
   it('un fichero que no es un registro', () => {
     expect(() => leerRegistro('hola', 'notas.txt')).toThrow(ErrorRegistro);
   });
-<<<<<<< HEAD
   it('un registro de la práctica de 2 horas', () => {
     expect(() => leerRegistro('COFRES 4\nMISION x', 'viejo.txt')).toThrow(/2 horas/);
   });
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   it('un registro de otra versión', () => {
     expect(() => leerRegistro('COFRES 3\nMISION x', 'viejo.txt')).toThrow(/otra versión/);
   });
   it('eventos cambiados no cuentan', () => {
-<<<<<<< HEAD
     const t = readFileSync(`${__dirname}/registros/sol/mision1-camino.txt`, 'utf8').replace('EV 2 ACTUALIZAR 5 3', 'EV 2 ACTUALIZAR 5 4');
     expect(corregir(leerRegistro(t)).conocida).toBe(false);
   });
@@ -150,14 +106,5 @@ describe('ficheros raros', () => {
       const c = corregir(leerRegistro(readFileSync(`${__dirname}/registros/sol/${m}.txt`, 'utf8').replace(/\n/g, '\r\n')));
       expect(c.bien).toBe(c.total);
     }
-=======
-    const t = readFileSync(`${__dirname}/registros/sol/${M1}.txt`, 'utf8').replace('EV 2 ACTUALIZAR 5 3', 'EV 2 ACTUALIZAR 5 4');
-    expect(corregir(leerRegistro(t)).conocida).toBe(false);
-  });
-  it('finales de línea de Windows', () => {
-    const t = readFileSync(`${__dirname}/registros/sol/${M3}.txt`, 'utf8').replace(/\n/g, '\r\n');
-    const c = corregir(leerRegistro(t));
-    expect(c.bien).toBe(c.total);
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   });
 });

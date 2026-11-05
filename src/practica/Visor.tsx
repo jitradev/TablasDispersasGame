@@ -5,13 +5,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { PAL, pintar, sprite, urlSprite } from '../juego/sprites';
 import { iconoDe } from '../juego/mision1';
-<<<<<<< HEAD
 import { Correccion, describirBloque, dondeTabla, Fallo } from './corregir';
 import { BORRADA, Clave, cuboDe, hash2, HashL, MA, ML, mundoInicial, OCUPADA, recorridoA, Sonda, TAM_ARRAY, TAM_LISTA } from './tablas';
-=======
-import { Correccion, describirBloque, Fallo } from './corregir';
-import { BORRADA, hash, MA, ML, OCUPADA, recorridoA, TAM_ARRAY, TAM_LISTA, nuevaLista, nuevoArray } from './tablas';
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 import { Mision } from './misiones';
 import { COMPANIA, MERLA } from './personajes';
 import { EventoReg, Inv } from './registro';
@@ -23,11 +18,7 @@ const H = 150;
 // ------------------------------------------------------------------ iconos
 
 const iconos = new Map<string, string>();
-<<<<<<< HEAD
 const icono = (clave: Clave) => {
-=======
-const icono = (clave: number) => {
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   const n = iconoDe(Math.abs(clave));
   if (!iconos.has(n)) iconos.set(n, urlSprite(n, 2));
   return iconos.get(n)!;
@@ -59,10 +50,7 @@ interface PropsBanda {
   largos: number[];
   destino: number | null;
   rotulo: string;
-<<<<<<< HEAD
   titulo: string;
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   quien: string;
   jefe?: { total: number; quedan: number; golpe: number };
 }
@@ -129,11 +117,7 @@ function Banda(props: PropsBanda) {
       if (anda) x$.current += Math.sign(dx) * Math.min(Math.abs(dx), 3);
       const fr = `${p.quien}-${anda && Math.floor(t / 140) % 2 ? 'heroe2' : 'heroe1'}`;
       pintar(g, fr, x$.current - 12, p.jefe ? 68 : 68, 2);
-<<<<<<< HEAD
       if (!p.jefe) texto(g, p.titulo, 8, 8, PAL.d);
-=======
-      if (!p.jefe) texto(g, `LISTAS: ${p.tam} CUBOS`, 8, 8, PAL.d);
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
       texto(g, p.rotulo, W - 8, 130, PAL['4'], 'right');
       requestAnimationFrame(tick);
     };
@@ -147,22 +131,13 @@ function Banda(props: PropsBanda) {
 
 // ------------------------------------------------------------------ paneles
 
-<<<<<<< HEAD
 function PanelArray({ m, antes, recorrido, error, titulo = '', nombre = 'ARRAY · DIRECCIONAMIENTO ABIERTO' }: { m?: MA; antes?: MA; recorrido: number[]; error?: Fallo; titulo?: string; nombre?: string }) {
   if (!m) return <div className="panel"><div className="panel-tit">{titulo}{nombre}</div><div className="aviso mal">{error?.detalle ?? 'No se puede leer.'}</div></div>;
-=======
-function PanelArray({ m, antes, recorrido, error, titulo = '' }: { m?: MA; antes?: MA; recorrido: number[]; error?: Fallo; titulo?: string }) {
-  if (!m) return <div className="panel"><div className="panel-tit">{titulo}ARRAY</div><div className="aviso mal">{error?.detalle ?? 'No se puede leer.'}</div></div>;
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   const ocup = m.casillas.filter((c) => c.marca === OCUPADA).length;
   return (
     <div className="panel">
       <div className="panel-tit">
-<<<<<<< HEAD
         {titulo}{nombre} <span>tam {m.tam} · n {ocup} · factor {(ocup / m.tam).toFixed(2).replace('.', ',')}</span>
-=======
-        {titulo}ARRAY · DIRECCIONAMIENTO ABIERTO <span>tam {m.tam} · n {ocup} · factor {(ocup / m.tam).toFixed(2).replace('.', ',')}</span>
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
       </div>
       <div className="casillas">
         {m.casillas.map((c, i) => {
@@ -191,30 +166,18 @@ function PanelArray({ m, antes, recorrido, error, titulo = '' }: { m?: MA; antes
   );
 }
 
-<<<<<<< HEAD
 function PanelLista({ m, antes, cubo, nuevos, error, titulo = '', nombre = 'LISTAS · ENCADENAMIENTO' }: { m?: ML; antes?: ML; cubo: number | null; nuevos: Set<Clave>; error?: Fallo; titulo?: string; nombre?: string }) {
-=======
-function PanelLista({ m, antes, cubo, nuevos, error, titulo = '' }: { m?: ML; antes?: ML; cubo: number | null; nuevos: Set<number>; error?: Fallo; titulo?: string }) {
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   const fila = useRef<HTMLDivElement>(null);
   useEffect(() => {
     fila.current?.scrollIntoView({ block: 'nearest' });
   }, [cubo, m]);
-<<<<<<< HEAD
   if (!m) return <div className="panel"><div className="panel-tit">{titulo}{nombre}</div><div className="aviso mal">{error?.detalle ?? 'No se puede leer.'}</div></div>;
-=======
-  if (!m) return <div className="panel"><div className="panel-tit">{titulo}LISTAS</div><div className="aviso mal">{error?.detalle ?? 'No se puede leer.'}</div></div>;
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   const n = m.cubos.reduce((s, c) => s + c.length, 0);
   const llenos = m.cubos.map((c, i) => [i, c] as const).filter(([i, c]) => c.length || i === cubo);
   return (
     <div className="panel">
       <div className="panel-tit">
-<<<<<<< HEAD
         {titulo}{nombre} <span>tam {m.tam} · n {n} · factor {(n / m.tam).toFixed(2).replace('.', ',')}</span>
-=======
-        {titulo}LISTAS · ENCADENAMIENTO <span>tam {m.tam} · n {n} · factor {(n / m.tam).toFixed(2).replace('.', ',')}</span>
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
       </div>
       <div className="cubos">
         {llenos.length === 0 && <div className="vacio">Todos los cubos están a NULL.</div>}
@@ -222,11 +185,7 @@ function PanelLista({ m, antes, cubo, nuevos, error, titulo = '' }: { m?: ML; an
           <div key={i} ref={i === cubo ? fila : undefined} className={`cubo ${i === cubo ? 'destino' : ''}`}>
             <span className="idx">[{i}]</span>
             {claves.map((k, p) => {
-<<<<<<< HEAD
               const cambia = antes && (antes.valores.get(k) !== m.valores.get(k) || antes.tam !== m.tam || cuboDe(antes, k) !== i || !antes.cubos[i]?.includes(k));
-=======
-              const cambia = antes && (antes.valores.get(k) !== m.valores.get(k) || antes.tam !== m.tam || hash(k, antes.tam) !== i);
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
               return (
                 <span key={p} className="cadena">
                   <span className={`nodo ${cambia ? 'cambia' : ''} ${nuevos.has(k) ? 'nuevo' : ''}`}>
@@ -269,7 +228,6 @@ interface Foto {
 }
 
 
-<<<<<<< HEAD
 const NOMBRE_HASH: Record<HashL, string> = { CLASE: '', PLEGAMIENTO: 'PLEGAMIENTO', MITAD: 'MITAD DEL CUADRADO', POLINOMICO: 'POLINÓMICO' };
 const NOMBRE_SONDA: Record<Sonda, string> = { LIN: 'EXPLORACIÓN LINEAL', CUA: 'EXPLORACIÓN CUADRÁTICA', DOB: 'DOBLE HASHING' };
 const nombreLista = (m?: ML) => `LISTAS · ${m && m.hf !== 'CLASE' ? `HASH DE ${NOMBRE_HASH[m.hf]}` : 'ENCADENAMIENTO'}`;
@@ -287,19 +245,6 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
       }
     });
     return r;
-=======
-export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; volver: () => void }) {
-  const evs = c.reg.eventos;
-  const fotos = useMemo(() => {
-    const f: Foto[] = [];
-    evs.forEach((e, i) => {
-      if (i < c.juicios.length) {
-        if (e.orden !== 'CREAR') f.push({ ev: i, fase: 'antes' });
-        f.push({ ev: i, fase: 'despues' });
-      }
-    });
-    return f;
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   }, [c]);
   const [i, setI] = useState(0);
   const [play, setPlay] = useState(true);
@@ -314,14 +259,9 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
 
   // el estado de las tablas tal y como las dejó el alumno al final de cada evento
   type Est = { l?: ML; a?: MA; existe: boolean };
-<<<<<<< HEAD
   const inicial = useMemo(() => mundoInicial(), []);
   const estado = (k: number, inv: Inv): Est => {
     if (k < 0) return inicial[inv] ? { ...inicial[inv], existe: true } : { existe: false };
-=======
-  const estado = (k: number, inv: Inv): Est => {
-    if (k < 0) return inv === 'H' ? { l: nuevaLista(TAM_LISTA), a: nuevoArray(TAM_ARRAY), existe: true } : { existe: false };
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     const x = c.juicios[k]?.lec[inv];
     return { l: x?.l?.modelo, a: x?.a?.modelo, existe: !!x };
   };
@@ -332,7 +272,6 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
   const q: Inv = ev.quien;
   const antes = q === 'B' ? antesB : antesH;
   const ahora = q === 'B' ? ahoraB : ahoraH;
-<<<<<<< HEAD
   const conClave = ['ACTUALIZAR', 'BUSCAR', 'ELIMINAR', 'COSTE', 'FRENTE'].includes(ev.orden);
   const clave: Clave | null = conClave ? ev.a : ev.orden === 'CAMBIAR' ? (visto ? ev.b : ev.a) : null;
   const tablaL = ahora.l ?? antes.l;
@@ -343,23 +282,11 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
   const recorrido = clave !== null && arrRec ? recorridoA(arrRec, clave) : [];
   const nuevosNodos = useMemo(() => {
     const s = new Set<Clave>();
-=======
-  const clave = ev.orden === 'ACTUALIZAR' || ev.orden === 'BUSCAR' || ev.orden === 'ELIMINAR' ? ev.a : ev.orden === 'CAMBIAR' ? (visto ? ev.b : ev.a) : null;
-  const tamL = ahora.l?.tam ?? antes.l?.tam ?? TAM_LISTA;
-  const cubo = clave === null ? null : hash(clave, tamL);
-  const arrRec = visto ? ahora.a : antes.a ?? ahora.a;
-  const recorrido = clave !== null && arrRec ? recorridoA(arrRec, clave) : [];
-  const nuevosNodos = useMemo(() => {
-    const s = new Set<number>();
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     if (!visto) return s;
     const ids = new Set(ev.mallocs.map((m) => m.id));
     j?.lec[q]?.l?.ids.forEach((id, k) => ids.has(id) && s.add(k));
     return s;
-<<<<<<< HEAD
     // eslint-disable-next-line react-hooks/exhaustive-deps
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   }, [foto, c]);
   const hayBotin = ahoraB.existe || antesB.existe;
 
@@ -403,7 +330,6 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
   const bienHasta = c.juicios.slice(0, foto.ev + (visto ? 1 : 0)).filter((x) => x.ok && !x.inicial).length;
   const jefe = mision.jefe ? { total: 10, quedan: 10 - Math.floor((10 * bienHasta) / c.total), golpe } : undefined;
   const faltan = c.total - c.juicios.filter((x) => !x.inicial).length;
-<<<<<<< HEAD
   const sonda = arrRec?.sonda ?? 'LIN';
   const rotulo =
     clave === null
@@ -415,10 +341,6 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
     clave === null
       ? `Antes de ${ev.textoOrden}.`
       : `Antes de ${ev.orden.toLowerCase()} la clave ${clave}: en las listas va al cubo ${cubo}; en el array se mira desde la casilla ${recorrido[0] ?? '-'}.`;
-=======
-  const rotulo = clave === null ? ev.orden : `hash(${clave}) = ${clave} mod ${tamL} = ${cubo}`;
-  const autos = visto ? ev.auto : [];
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 
   return (
     <div className="pantalla visor">
@@ -433,11 +355,7 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
       </header>
       <div className="visor-arriba">
         <div className="col-izq">
-<<<<<<< HEAD
           <Banda tam={tamL} largos={tablaL?.cubos.map((x) => x.length) ?? []} destino={cubo} rotulo={(q === 'B' ? 'BOTÍN · ' : '') + rotulo} titulo={`LISTAS: ${tamL} CUBOS`} quien={mision.quien} jefe={jefe} />
-=======
-          <Banda tam={tamL} largos={(ahora.l ?? antes.l)?.cubos.map((x) => x.length) ?? []} destino={cubo} rotulo={(q === 'B' ? 'BOTÍN · ' : '') + rotulo} quien={mision.quien} jefe={jefe} />
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
           <div className="controles">
             <button className="mini" onClick={() => irEvento(Math.max(0, foto.ev - 1))} aria-label="Evento anterior">
               ⏮
@@ -466,16 +384,7 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
             <p>{ev.texto}</p>
             <p className="orden">
               ▸ <code>{ev.textoOrden}</code>
-<<<<<<< HEAD
               {visto && devuelven && <span className="dev"> devuelven: {devuelven}</span>}
-=======
-              {visto && ev.rl.length > 0 && (
-                <span className="dev">
-                  {' '}
-                  devuelven: listas {fmt(ev.rl, ev.orden)} · array {fmt(ev.ra, ev.orden)}
-                </span>
-              )}
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
             </p>
           </Archivera>
         </div>
@@ -487,11 +396,7 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
               <div className="aviso bien">
                 <b>✓ Bien</b>
                 <br />
-<<<<<<< HEAD
                 Las tablas quedan como tenían que quedar{devuelven ? ' y devuelven lo que toca' : ''}.
-=======
-                Las dos tablas quedan como tenían que quedar{ev.rl.length ? ' y devuelven lo que toca' : ''}.
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
               </div>
             ) : (
               j.fallos.map((x, k) => (
@@ -507,32 +412,15 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
               ))
             )
           ) : (
-<<<<<<< HEAD
             <div className="aviso neutro">{antesTexto}</div>
           )}
-=======
-            <div className="aviso neutro">
-              {clave !== null ? `Antes de ${ev.orden.toLowerCase()} la clave ${clave}: en las listas va al cubo ${cubo}; en el array se mira desde la casilla ${recorrido[0] ?? '-'}.` : `Antes de ${ev.textoOrden}.`}
-            </div>
-          )}
-          {autos.map((x, k) => (
-            <div key={k} className="aviso rehash">
-              REHASH · {x.tabla === 'L' ? 'las listas' : 'el array'} {x.inv === 'B' ? 'del botín ' : ''}{x.tabla === 'L' ? 'pasan' : 'pasa'} de {x.viejo} a {x.nuevo} {x.tabla === 'L' ? 'cubos' : 'casillas'}
-              {ev.orden === 'FUSIONAR' ? ': lo que va a entrar del botín pasaría de 0,8.' : ': el factor de carga ha superado 0,8.'}
-            </div>
-          ))}
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
           {visto && j && j.fantasmas.length > 0 && (
             <div className="fantasmas">
               <img src={urlSprite('fantasma', 3)} alt="" />
               <div>
-<<<<<<< HEAD
                 <b>
                   {j.fantasmas.length} bloque{j.fantasmas.length > 1 ? 's' : ''} perdido{j.fantasmas.length > 1 ? 's' : ''}
                 </b>
-=======
-                <b>{j.fantasmas.length} bloque{j.fantasmas.length > 1 ? 's' : ''} perdido{j.fantasmas.length > 1 ? 's' : ''}</b>
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
                 {j.fantasmas.slice(0, 3).map((id) => (
                   <div key={id}>{describirBloque(c.reg.bloques.get(id)).replace(/,$/, '')}</div>
                 ))}
@@ -544,11 +432,7 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
             {evs.slice(0, c.juicios.length).map((e, k) => {
               const jj = c.juicios[k];
               return (
-<<<<<<< HEAD
                 <li key={k} className={`${k === foto.ev ? 'actual' : ''} ${jj.inicial ? '' : jj.ok ? 'ok' : 'ko'}`} title={jj.fallos.map((x) => (x.ej ? `Ej. ${x.ej}: ` : '') + x.f.titulo).join('\n')}>
-=======
-                <li key={k} className={`${k === foto.ev ? 'actual' : ''} ${jj.inicial ? '' : jj.ok ? 'ok' : 'ko'}`} title={jj.fallos.map((f) => (f.ej ? `Ej. ${f.ej}: ` : '') + f.f.titulo).join('\n')}>
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
                   <button onClick={() => irEvento(k)}>
                     <span className="marca">{jj.inicial ? '·' : jj.ok ? '✓' : '✗'}</span>
                     <span className="n">{e.n}</span>
@@ -563,7 +447,6 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
         </div>
       </div>
       <div className="tablas">
-<<<<<<< HEAD
         <PanelArray m={ahoraH.a} antes={visto ? antesH.a : undefined} recorrido={q === 'H' ? recorrido : []} error={errorDe('H', 'A')} titulo={hayBotin ? 'INVENTARIO · ' : ''} nombre={nombreArray(ahoraH.a ?? antesH.a)} />
         <PanelLista m={ahoraH.l} antes={visto ? antesH.l : undefined} cubo={q === 'H' ? cubo : null} nuevos={q === 'H' ? nuevosNodos : new Set()} error={errorDe('H', 'L')} titulo={hayBotin ? 'INVENTARIO · ' : ''} nombre={nombreLista(ahoraH.l ?? antesH.l)} />
       </div>
@@ -571,15 +454,6 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
         <div className="tablas botin">
           <PanelArray m={ahoraB.a} antes={visto ? antesB.a : undefined} recorrido={q === 'B' ? recorrido : []} error={errorDe('B', 'A')} titulo="BOTÍN · " nombre={nombreArray(ahoraB.a ?? antesB.a)} />
           <PanelLista m={ahoraB.l} antes={visto ? antesB.l : undefined} cubo={q === 'B' ? cubo : null} nuevos={q === 'B' ? nuevosNodos : new Set()} error={errorDe('B', 'L')} titulo="BOTÍN · " nombre={nombreLista(ahoraB.l ?? antesB.l)} />
-=======
-        <PanelArray m={ahoraH.a} antes={visto ? antesH.a : undefined} recorrido={q === 'H' ? recorrido : []} error={j?.fallos.find((f) => f.donde === 'Array')?.f} titulo={hayBotin ? 'INVENTARIO · ' : ''} />
-        <PanelLista m={ahoraH.l} antes={visto ? antesH.l : undefined} cubo={q === 'H' ? cubo : null} nuevos={q === 'H' ? nuevosNodos : new Set()} error={j?.fallos.find((f) => f.donde === 'Listas')?.f} titulo={hayBotin ? 'INVENTARIO · ' : ''} />
-      </div>
-      {hayBotin && (
-        <div className="tablas botin">
-          <PanelArray m={ahoraB.a} antes={visto ? antesB.a : undefined} recorrido={q === 'B' ? recorrido : []} error={j?.fallos.find((f) => f.donde === 'Botín · Array')?.f} titulo="BOTÍN · " />
-          <PanelLista m={ahoraB.l} antes={visto ? antesB.l : undefined} cubo={q === 'B' ? cubo : null} nuevos={q === 'B' ? nuevosNodos : new Set()} error={j?.fallos.find((f) => f.donde === 'Botín · Listas')?.f} titulo="BOTÍN · " />
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
         </div>
       )}
     </div>
@@ -587,10 +461,7 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
 }
 
 function fmt(x: number[], orden: string) {
-<<<<<<< HEAD
   if (!x.length) return '-';
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   if (orden === 'BUSCAR' || orden === 'ELIMINAR') return x[0] ? `1 (${x[1]})` : '0';
   if (orden === 'ABUNDANTE') return x[0] ? `1 (${x[1]}:${x[2]})` : '0';
   if (orden === 'COLISIONES') return `${x[0]} y ${x[1]}`;

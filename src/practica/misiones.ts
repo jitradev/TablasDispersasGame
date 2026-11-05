@@ -4,7 +4,6 @@ import m2 from '../../proyecto-base/eventos/mision2-mapa.txt?raw';
 import m3 from '../../proyecto-base/eventos/mision3-mercado.txt?raw';
 import m4 from '../../proyecto-base/eventos/mision4-cripta-encantada.txt?raw';
 import m5 from '../../proyecto-base/eventos/mision5-cofre-gloton.txt?raw';
-<<<<<<< HEAD
 import m6 from '../../proyecto-base/eventos/mision6-escriba.txt?raw';
 import m7 from '../../proyecto-base/eventos/mision7-balanza.txt?raw';
 import m8 from '../../proyecto-base/eventos/mision8-pacto.txt?raw';
@@ -16,8 +15,6 @@ import m13 from '../../proyecto-base/eventos/mision13-escalera.txt?raw';
 import m14 from '../../proyecto-base/eventos/mision14-espejos.txt?raw';
 import m15 from '../../proyecto-base/eventos/mision15-golem.txt?raw';
 import m16 from '../../proyecto-base/eventos/mision16-dragon.txt?raw';
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 
 export interface Mision {
   id: string;
@@ -28,7 +25,6 @@ export interface Mision {
   jefe?: boolean;
   /** El acompañante de la misión (ver personajes.ts). */
   quien: string;
-<<<<<<< HEAD
   acto: number;
 }
 
@@ -48,10 +44,6 @@ export const ACTOS: Acto[] = [
   { n: 4, titulo: 'Juego con colisiones', lugar: 'La guarida del dragón', ficheros: ['TablaDispersaLista.c', 'TablaDispersaArray.c'], resumen: 'Las mismas dos tablas jugando con las colisiones: exploración cuadrática y doble hashing, lo que cuesta buscar, barrer las BORRADA y poner delante lo que más se busca.' },
 ];
 
-=======
-}
-
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 /** Las órdenes de un fichero de eventos, normalizadas como las escribe el registro. */
 export function ordenesDe(texto: string): string[] {
   return texto
@@ -61,7 +53,6 @@ export function ordenesDe(texto: string): string[] {
     .map((l) => l.split(/\s+/).join(' '));
 }
 
-<<<<<<< HEAD
 const n = (t: string) => ordenesDe(t).length;
 
 export const MISIONES: Mision[] = [
@@ -88,14 +79,3 @@ export const MISIONES: Mision[] = [
 
 export const misionDe = (id: string) => MISIONES.find((m) => m.id === id);
 export const actoDe = (m: Mision) => ACTOS[m.acto - 1];
-=======
-export const MISIONES: Mision[] = [
-  { id: 'mision1-camino', target: 'mision1', titulo: 'El camino del Gremio', resumen: 'Ejercicio 1, el objeto con más unidades: la mochila vacía, empates, claves negativas y un objeto que se adelanta.', ordenes: ordenesDe(m1), quien: 'hilda' },
-  { id: 'mision2-mapa', target: 'mision2', titulo: 'El mapa de las colisiones', resumen: 'Ejercicio 2, medir las colisiones: un cubo con cuatro nodos, un grupo que crece, una BORRADA en medio y la vuelta del array.', ordenes: ordenesDe(m2), quien: 'bastian' },
-  { id: 'mision3-mercado', target: 'mision3', titulo: 'El mercado de los trueques', resumen: 'Ejercicio 3, cambiar la clave: el nodo del medio, el primero, a una clave que ya está, a una que no existe y a sí misma.', ordenes: ordenesDe(m3), quien: 'rina' },
-  { id: 'mision4-cripta-encantada', target: 'mision4', titulo: 'La cripta encantada', resumen: 'Ejercicio 4, quitar los agotados: ninguno, el primero, varios seguidos y todos, y después buscar e insertar con las BORRADA.', ordenes: ordenesDe(m4), quien: 'ulf' },
-  { id: 'mision5-cofre-gloton', target: 'mision5', titulo: 'El Cofre Glotón', resumen: `Ejercicio 5, el jefe: ${ordenesDe(m5).length} eventos con dos inventarios, el de Lis y el botín, que se fusionan una y otra vez.`, ordenes: ordenesDe(m5), jefe: true, quien: 'lis' },
-];
-
-export const misionDe = (id: string) => MISIONES.find((m) => m.id === id);
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd

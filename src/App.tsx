@@ -2,11 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { urlSprite } from './juego/sprites';
 import { leerRegistro, ErrorRegistro } from './practica/registro';
 import { corregir, Correccion } from './practica/corregir';
-<<<<<<< HEAD
 import { ACTOS, MISIONES } from './practica/misiones';
-=======
-import { MISIONES } from './practica/misiones';
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 import { COMPANIA, MERLA } from './practica/personajes';
 import { Visor } from './practica/Visor';
 
@@ -16,12 +12,8 @@ interface Subido {
   fichero: string;
   texto: string;
 }
-<<<<<<< HEAD
 const CLAVE = 'cofres-dispersos-campana-v2';
 const CLAVE_ACTO = 'cofres-dispersos-campana-acto';
-=======
-const CLAVE = 'cofres-dispersos-registros-v2';
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 function cargar(): Record<string, Subido> {
   try {
     return JSON.parse(localStorage.getItem(CLAVE) ?? '{}') ?? {};
@@ -77,40 +69,30 @@ function SubirRegistro({ fichero, subir, otra }: { fichero: string; subir: (fs: 
 
 // ------------------------------------------------------------------ inicio
 
-<<<<<<< HEAD
 /** Para abrir un acto hay que sacar al menos estas estrellas en el jefe del anterior. Con 0 están todos abiertos. */
 const ESTRELLAS_PARA_ABRIR: number = 2;
 
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 function Inicio({
   correcciones,
   errores,
   subir,
   ver,
   borrar,
-<<<<<<< HEAD
   acto,
   setActo,
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 }: {
   correcciones: Record<string, Correccion>;
   errores: Record<string, string[]>;
   subir: (fs: FileList | File[], mision: string) => void;
   ver: (id: string) => void;
   borrar: () => void;
-<<<<<<< HEAD
   acto: number;
   setActo: (n: number) => void;
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 }) {
   const cofre = useMemo(() => urlSprite('cofre', 6), []);
   const buho = useMemo(() => urlSprite('buho', 6), []);
   const fantasma = useMemo(() => urlSprite('fantasma', 5), []);
   const gloton = useMemo(() => urlSprite('gloton', 3), []);
-<<<<<<< HEAD
   const candado = useMemo(() => urlSprite('llave', 4), []);
   const [encima, setEncima] = useState<string | null>(null);
   const hechas = MISIONES.map((m) => correcciones[m.id]);
@@ -127,12 +109,6 @@ function Inicio({
   };
   const actual = ACTOS[acto - 1];
   const misiones = MISIONES.filter((m) => m.acto === acto);
-=======
-  const [encima, setEncima] = useState<string | null>(null);
-  const hechas = MISIONES.map((m) => correcciones[m.id]);
-  const nota = hechas.reduce((s, c) => s + (c && c.conocida ? c.bien / c.total : 0), 0) / MISIONES.length;
-  const alumnos = [...new Set(hechas.filter(Boolean).map((c) => c!.reg.alumno))];
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   return (
     <div className="pantalla inicio">
       <div className="sprites-portada">
@@ -141,11 +117,7 @@ function Inicio({
         <img src={fantasma} alt="" className="flota lento" />
       </div>
       <h1>Cofres Dispersos</h1>
-<<<<<<< HEAD
       <div className="sub">LA CAMPAÑA · PRÁCTICA DE LISTAS DISPERSAS · ESTRUCTURA DE DATOS</div>
-=======
-      <div className="sub">PRÁCTICA DE LISTAS DISPERSAS · ESTRUCTURA DE DATOS</div>
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 
       <div className="compania">
         {[MERLA, ...Object.values(COMPANIA)].map((p) => (
@@ -158,17 +130,10 @@ function Inicio({
 
       <section className="intro">
         <p>
-<<<<<<< HEAD
           El Gremio guarda su inventario en <b>tablas de dispersión</b>. Cada objeto tiene su número, que es la clave, y se guarda cuántos hay. La campaña tiene <b>cuatro actos</b>, uno por sesión de 2 horas, y se juega entera sobre <b>un solo proyecto base</b>: el <code>Listas_Dispersas</code> de clase, con sus dos tablas, la de listas y la del array.
         </p>
         <p>
           Cada ejercicio tiene su misión. Tu programa juega la misión y deja un registro de lo que ha hecho con la memoria; lo subes aquí y ves la animación de las tablas, evento a evento: a qué cubo va cada clave, qué casillas mira cada búsqueda... y cada fantasma que se te escapa. El jefe de cada acto abre el siguiente.
-=======
-          El Gremio guarda su inventario en las dos <b>tablas de dispersión</b> de clase a la vez: la de <b>listas</b> (encadenamiento, cada cubo es una lista enlazada) y la del <b>array</b> (direccionamiento abierto con exploración lineal). Cada objeto tiene su número, que es la clave, y se guarda cuántos hay.
-        </p>
-        <p>
-          Partes del proyecto <code>Listas_Dispersas</code> de clase, tal cual, y haces cinco ejercicios en las dos tablas: <b>el objeto con más unidades</b>, <b>medir las colisiones</b>, <b>cambiar la clave</b> de un objeto, <b>quitar los agotados</b> y <b>juntar dos inventarios</b>. Tu programa juega cinco misiones, una por ejercicio, y deja un registro de lo que ha hecho con la memoria. Después de cada misión subes aquí su registro y ves la animación de las dos tablas, evento a evento: a qué cubo va cada clave, qué casillas mira la exploración... y cada fantasma que se te escapa.
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
         </p>
       </section>
 
@@ -176,13 +141,8 @@ function Inicio({
         <li>
           <span className="num">1</span>
           <div>
-<<<<<<< HEAD
             <b>Descarga el proyecto base</b> el primer día y ábrelo en CLion (File &gt; Open, la carpeta entera). Es el mismo para los cuatro actos: guárdalo y sigue con él.
             <a className="boton grande" href="/proyecto-base.zip" download="listas-dispersas-campana.zip">
-=======
-            <b>Descarga el proyecto base</b> y ábrelo en CLion (File &gt; Open, la carpeta entera).
-            <a className="boton grande" href="/proyecto-base.zip" download="listas-dispersas-practica.zip">
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
               DESCARGAR PROYECTO BASE
             </a>
           </div>
@@ -190,36 +150,23 @@ function Inicio({
         <li>
           <span className="num">2</span>
           <div>
-<<<<<<< HEAD
             <b>Escribe tu nombre</b> en <code>alumno.h</code> y haz los ejercicios del acto, en orden, donde pone TODO.
-=======
-            <b>Escribe tu nombre</b> en <code>alumno.h</code> y haz los cinco ejercicios al final de <code>TablaDispersaLista.c</code> y de <code>TablaDispersaArray.c</code>.
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
           </div>
         </li>
         <li>
           <span className="num">3</span>
           <div>
-<<<<<<< HEAD
             <b>Ejecuta la misión</b> de cada ejercicio: el target <code>mision1</code>, <code>mision2</code>... (desplegable de arriba a la derecha). Cada una escribe su registro en <code>registros/</code>.
-=======
-            <b>Ejecuta la misión</b> de ese ejercicio: el target <code>mision1</code>, <code>mision2</code>... (desplegable de arriba a la derecha). Cada una escribe su registro en <code>registros/</code>.
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
           </div>
         </li>
         <li>
           <span className="num">4</span>
           <div>
-<<<<<<< HEAD
             <b>Sube el registro</b> en la tarjeta de su misión, mira la animación y corrige lo que falle. Al acabar la sesión, comprime el proyecto y entrégalo en la PDU.
-=======
-            <b>Sube el registro de esa misión</b> en su tarjeta, mira la animación y corrige lo que falle. Ve de misión en misión hasta tener todas las estrellas.
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
           </div>
         </li>
       </ol>
 
-<<<<<<< HEAD
       <div className="mapa-actos">
         {ACTOS.map((a) => {
           const ms = MISIONES.filter((m) => m.acto === a.n);
@@ -242,71 +189,10 @@ function Inicio({
                 )}
               </span>
             </button>
-=======
-
-      <div className="misiones">
-        {MISIONES.map((m, i) => {
-          const c = correcciones[m.id];
-          return (
-            <div
-              key={m.id}
-              className={`tarjeta ${c ? (c.bien === c.total && c.conocida ? 'hecha' : 'subida-ok') : ''} ${m.jefe ? 'jefe' : ''} ${encima === m.id ? 'encima' : ''}`}
-              onDragOver={(e) => {
-                e.preventDefault();
-                setEncima(m.id);
-              }}
-              onDragLeave={() => setEncima(null)}
-              onDrop={(e) => {
-                e.preventDefault();
-                setEncima(null);
-                subir(e.dataTransfer.files, m.id);
-              }}
-            >
-              <div className="iconos">
-                <img src={urlSprite(m.quien, 4)} alt="" />
-                {m.jefe && <img src={gloton} alt="" />}
-              </div>
-              <div className="t-num">
-                MISIÓN {i + 1} · target <code>{m.target}</code>
-              </div>
-              <div className="t-tit">{m.titulo}</div>
-              <div className="t-res">{m.resumen}</div>
-              <div className="t-quien">Te acompaña {COMPANIA[m.quien].nombre.split(',')[0].toLowerCase().replace(/^./, (x) => x.toUpperCase())}</div>
-              {c ? (
-                <>
-                  <div className="t-estado">
-                    <Estrellas n={c.conocida ? c.estrellas : 0} />
-                    <span>
-                      {c.bien}/{c.total} eventos bien
-                    </span>
-                  </div>
-                  {!c.reg.fin && <div className="t-aviso">El programa se cortó en el evento {c.reg.eventos.length}.</div>}
-                  {c.aviso && <div className="t-aviso">{c.aviso}</div>}
-                  <button className="grande" onClick={() => ver(m.id)}>
-                    ▶ VER ANIMACIÓN
-                  </button>
-                  <SubirRegistro fichero={`${m.id}.txt`} subir={(fs) => subir(fs, m.id)} otra />
-                </>
-              ) : (
-                <>
-                  <div className="t-falta">
-                    Ejecuta <code>{m.target}</code> y sube <code>registros/{m.id}.txt</code> (o arrástralo a esta tarjeta).
-                  </div>
-                  <SubirRegistro fichero={`${m.id}.txt`} subir={(fs) => subir(fs, m.id)} otra={false} />
-                </>
-              )}
-              {(errores[m.id] ?? []).map((e, k) => (
-                <div key={k} className="t-aviso">
-                  {e}
-                </div>
-              ))}
-            </div>
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
           );
         })}
       </div>
 
-<<<<<<< HEAD
       <section className="acto-cab">
         <h2>
           ACTO {actual.n} · {actual.titulo.toUpperCase()}
@@ -395,17 +281,11 @@ function Inicio({
       {hechas.some(Boolean) && (
         <section className="resumen">
           <div className="ram-tit">RESUMEN DE LA CAMPAÑA</div>
-=======
-      {hechas.some(Boolean) && (
-        <section className="resumen">
-          <div className="ram-tit">RESUMEN</div>
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
           <div className="res-fila">
             <span>Alumno</span>
             <b>{alumnos.join(' / ')}</b>
           </div>
           {alumnos.some((a) => a.startsWith(NOMBRE_PLANTILLA)) && <div className="aviso mal">Todavía no has puesto tu nombre en alumno.h.</div>}
-<<<<<<< HEAD
           {alumnos.length > 1 && <div className="aviso mal">Los registros llevan nombres distintos: vuelve a ejecutar las misiones con tu código.</div>}
           {ACTOS.map((a) => (
             <div key={a.n} className="res-fila">
@@ -427,24 +307,6 @@ function Inicio({
           </div>
           <p className="pie">
             Para entregar cada acto: al acabar la sesión, comprime la carpeta del proyecto entera (código y registros) y sube el zip a la PDU. La nota final la pone el profesor leyendo el código; esta es solo la de los registros.{' '}
-=======
-          {alumnos.length > 1 && <div className="aviso mal">Los registros llevan nombres distintos: vuelve a ejecutar las cinco misiones con tu código.</div>}
-          {MISIONES.map((m) => {
-            const c = correcciones[m.id];
-            return (
-              <div key={m.id} className="res-fila">
-                <span>{m.titulo}</span>
-                <b>{c ? `${c.bien}/${c.total}${c.conocida ? '' : ' (no cuenta)'}` : 'sin subir'}</b>
-              </div>
-            );
-          })}
-          <div className="res-fila gorda">
-            <span>Nota orientativa</span>
-            <b>{(nota * 10).toFixed(1)} / 10</b>
-          </div>
-          <p className="pie">
-            Para entregar: comprime la carpeta del proyecto entera (código y registros de las cinco misiones) y sube el zip a la PDU. La nota final la pone el profesor leyendo el código; esta es solo la de los registros.{' '}
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
             <button className="enlace" onClick={borrar}>
               borrar los registros subidos
             </button>
@@ -452,16 +314,11 @@ function Inicio({
         </section>
       )}
 
-<<<<<<< HEAD
       <Enunciado acto={acto} />
-=======
-      <Enunciado />
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     </div>
   );
 }
 
-<<<<<<< HEAD
 function Enunciado({ acto }: { acto: number }) {
   const ej = (n: number, titulo: string, mision: number, cuerpo: React.ReactNode) => (
     <>
@@ -531,52 +388,6 @@ function Enunciado({ acto }: { acto: number }) {
       <p>
         En cada evento y en cada tabla: claves y valores, sin repetidas; que cada nodo esté en el cubo que le da la función hash de su tabla y que cada búsqueda encuentre su clave siguiendo su secuencia; que las operaciones que mueven nodos muevan los mismos y que las copias no compartan ninguno; lo que devuelve cada función; y que no haya fugas ni dobles free. Cada fallo dice de qué ejercicio es. Si tu programa se corta, la web te dice en qué evento y en qué función mirar.
       </p>
-=======
-function Enunciado() {
-  return (
-    <section className="enunciado">
-      <h2>EL ENUNCIADO</h2>
-      <p>
-        El proyecto base es el <code>Listas_Dispersas</code> de clase tal cual, con sus tablas de 101 cubos y 20 casillas. Además viene hecha <code>actualizar</code>: si la clave ya está, cambia su elemento; si no, la inserta. Los cinco ejercicios van al final de cada <code>.c</code>, en las dos tablas.
-      </p>
-      <h3>Ejercicio 1 · El objeto con más unidades (misión 1)</h3>
-      <p>
-        <code>masAbundante(h, &amp;clave, &amp;elemento)</code>: recorrer toda la tabla y quedarse con el elemento más grande; si hay empate, la clave más pequeña. Devuelve 0 si la tabla está vacía.
-      </p>
-      <h3>Ejercicio 2 · Medir las colisiones (misión 2)</h3>
-      <p>
-        En la de listas, <code>cuboMasLargo(h, &amp;vacios)</code>: la lista más larga y cuántos cubos están a NULL. En la del array, <code>grupoMasLargo(h, &amp;borradas)</code>: el grupo más largo de casillas seguidas que no están VACIA (las BORRADA cuentan), de la 0 a la última, y cuántas BORRADA hay.
-      </p>
-      <h3>Ejercicio 3 · Cambiar la clave (misión 3)</h3>
-      <p>
-        <code>cambiarClave(h, vieja, nueva)</code>. En la de listas se desengancha el MISMO nodo, cambia su clave y se engancha en el cubo de la nueva (si la nueva ya está, se suma y el nodo viejo se libera). En la del array, la casilla vieja pasa a BORRADA y la nueva se suma o se inserta. Devuelve 0 si la vieja no está.
-      </p>
-      <h3>Ejercicio 4 · Quitar los agotados (misión 4)</h3>
-      <p>
-        <code>eliminarSiMenor(h, minimo)</code> quita todo lo que tenga menos de <code>minimo</code> y devuelve cuántos ha quitado. En la de listas, cada nodo se desengancha y se libera, aunque sea el primero o vayan varios seguidos; en la del array, BORRADA (no VACIA, que cortaría la exploración).
-      </p>
-      <h3>Ejercicio 5 · Juntar dos inventarios (misión 5)</h3>
-      <p>
-        <code>fusionar(destino, origen)</code>: si la clave ya está en el destino, se suma; si no, se mete. En la de listas se mueven los nodos, sin malloc; en la del array se reinserta. El origen queda vacío.
-      </p>
-      <h3>Cómo repartir las 2 horas</h3>
-      <ul>
-        <li>
-          <b>10 min.</b> Abre el proyecto, pon tu nombre, ejecuta <code>mision1</code> tal cual y sube su registro: casi todo saldrá mal, y es lo esperado.
-        </li>
-        <li>
-          <b>15 min.</b> Ejercicio 1, con la misión 1. <b>20 min.</b> Ejercicio 2, con la misión 2.
-        </li>
-        <li>
-          <b>25 min.</b> Ejercicio 3, con la misión 3. <b>25 min.</b> Ejercicio 4, con la misión 4.
-        </li>
-        <li>
-          <b>25 min.</b> Ejercicio 5, con la misión 5, la del jefe, que lo junta todo.
-        </li>
-      </ul>
-      <h3>Qué mira la corrección</h3>
-      <p>En cada evento y en cada tabla: claves y valores, sin repetidas; que cada nodo esté en su cubo y que la exploración encuentre cada clave; que cambiar la clave y fusionar muevan los mismos nodos; que el origen quede vacío; lo que devuelve cada función; y que no haya fugas ni dobles free. Cada fallo dice de qué ejercicio es. Si tu programa se corta, la web te dice en qué evento y en qué función mirar.</p>
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     </section>
   );
 }
@@ -587,7 +398,6 @@ export default function App() {
   const [subidos, setSubidosR] = useState<Record<string, Subido>>(cargar);
   const [errores, setErrores] = useState<Record<string, string[]>>({});
   const [viendo, setViendo] = useState<string | null>(null);
-<<<<<<< HEAD
   const [acto, setActoR] = useState<number>(() => {
     try {
       return Math.min(4, Math.max(1, Number(localStorage.getItem(CLAVE_ACTO)) || 1));
@@ -603,8 +413,6 @@ export default function App() {
       /* sin almacenamiento */
     }
   };
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   const setSubidos = (s: Record<string, Subido>) => {
     setSubidosR(s);
     guardar(s);
@@ -654,9 +462,5 @@ export default function App() {
 
   const mision = MISIONES.find((m) => m.id === viendo);
   if (viendo && correcciones[viendo] && mision) return <Visor key={viendo + correcciones[viendo].reg.eventos.length} c={correcciones[viendo]} mision={mision} volver={() => setViendo(null)} />;
-<<<<<<< HEAD
   return <Inicio correcciones={correcciones} errores={errores} subir={subir} ver={setViendo} borrar={() => setSubidos({})} acto={acto} setActo={setActo} />;
-=======
-  return <Inicio correcciones={correcciones} errores={errores} subir={subir} ver={setViendo} borrar={() => setSubidos({})} />;
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 }

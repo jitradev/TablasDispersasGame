@@ -35,17 +35,10 @@ export interface EstadoArray {
   casillas: Map<number, Casilla>;
 }
 
-<<<<<<< HEAD
 export type Orden = string;
 
 /** El inventario principal (H) o el botín (B). */
 export type Inv = string;
-=======
-export type Orden = 'CREAR' | 'ACTUALIZAR' | 'BUSCAR' | 'ELIMINAR' | 'ABUNDANTE' | 'COLISIONES' | 'CAMBIAR' | 'AGOTAR' | 'FUSIONAR' | 'LIBERAR';
-
-/** El inventario principal (H) o el botín (B). */
-export type Inv = 'H' | 'B';
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 
 export interface Bloque {
   id: number;
@@ -63,11 +56,8 @@ export interface EventoReg {
   creaB: boolean;
   a: number;
   b: number;
-<<<<<<< HEAD
   /** Los argumentos tal cual (FUNCION y SONDEO llevan un nombre). */
   args: string[];
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   textoOrden: string;
   texto: string;
   mallocs: Bloque[];
@@ -75,11 +65,8 @@ export interface EventoReg {
   errores: string[];
   rl: number[];
   ra: number[];
-<<<<<<< HEAD
   /** Lo que devuelve cada tabla en los actos 3 y 4. */
   rs: Record<string, number[]>;
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   auto: { tabla: 'L' | 'A'; inv: Inv; viejo: number; nuevo: number }[];
   listas: Partial<Record<Inv, EstadoLista>>;
   arrays: Partial<Record<Inv, EstadoArray>>;
@@ -113,16 +100,12 @@ export function ref(t: string | undefined): Ref {
 export function leerRegistro(texto: string, fichero = 'registro.txt'): Registro {
   const lineas = texto.replace(/^﻿/, '').split(/\r?\n/);
   if (!lineas[0]?.startsWith('COFRES ')) throw new ErrorRegistro(`«${fichero}» no es un registro de la práctica: tiene que empezar por «COFRES». Sube los ficheros de la carpeta registros/.`);
-<<<<<<< HEAD
   if (lineas[0].trim() !== 'COFRES 5')
     throw new ErrorRegistro(
       lineas[0].trim() === 'COFRES 4'
         ? `«${fichero}» sale del proyecto de la práctica de 2 horas. Esta es la campaña de 8 horas: descarga su proyecto base desde esta web y vuelve a ejecutar la misión.`
         : `«${fichero}» es de otra versión del proyecto base. Descarga el proyecto de esta web y vuelve a ejecutar las misiones.`,
     );
-=======
-  if (lineas[0].trim() !== 'COFRES 4') throw new ErrorRegistro(`«${fichero}» es de otra versión del proyecto base. Descarga el proyecto de esta web y vuelve a ejecutar las misiones.`);
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   const reg: Registro = { fichero, alumno: '', mision: '', eventos: [], bloques: new Map(), fin: false };
   let ev: EventoReg | undefined;
   let pendientes: Bloque[] = [];
@@ -155,10 +138,7 @@ export function leerRegistro(texto: string, fichero = 'registro.txt'): Registro 
           creaB: false,
           a: Number(args[0] ?? 0),
           b: Number(args[1] ?? 0),
-<<<<<<< HEAD
           args,
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
           textoOrden: izq.slice(1).join(' '),
           texto: barra < 0 ? '' : resto.slice(barra + 3),
           mallocs: pendientes,
@@ -166,10 +146,7 @@ export function leerRegistro(texto: string, fichero = 'registro.txt'): Registro 
           errores: [],
           rl: [],
           ra: [],
-<<<<<<< HEAD
           rs: {},
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
           auto: [],
           listas: {},
           arrays: {},
@@ -199,12 +176,9 @@ export function leerRegistro(texto: string, fichero = 'registro.txt'): Registro 
       case 'RA':
         ev?.ra.push(...p.map(Number));
         break;
-<<<<<<< HEAD
       case 'RS':
         if (ev) ev.rs[p[0]] = p.slice(1).map(Number);
         break;
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
       case 'CREAR':
         if (ev) ev.creaB = true;
         break;

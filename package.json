@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "eda-cofres-dispersos-campana",
-=======
-  "name": "eda-cofres-dispersos-practica",
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
   "private": true,
   "version": "0.1.0",
   "type": "module",

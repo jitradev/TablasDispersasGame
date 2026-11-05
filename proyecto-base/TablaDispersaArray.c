@@ -11,18 +11,12 @@ struct HashArray {
     int valores[TAM];
     int marca[TAM];
     int n;
-<<<<<<< HEAD
     int funcion;    /* la funcion hash: HASH_CLASE salvo que se cambie */
     int sondeo;     /* como se busca sitio: SONDEO_LINEAL salvo que se cambie */
 };
 
 // La funcion hash de clase: clave mod el tamano, sin negativos.
 static int hashClase(int clave) {
-=======
-};
-
-static int hash(int clave) {
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     int index = clave % TAM;
     if (index < 0) { // C keeps the sign of negative keys
         index += TAM;
@@ -30,7 +24,6 @@ static int hash(int clave) {
     return index;
 }
 
-<<<<<<< HEAD
 // La casilla de la clave, con la funcion hash de la tabla.
 static int indice(HashArray * hashArray, int clave) {
     switch (hashArray->funcion) {
@@ -48,15 +41,6 @@ static int posicion(HashArray * hashArray, int clave) {
         int index = casillaHashArray(hashArray, clave, intento);
         if (hashArray->marca[index] == VACIA) { return -1;}
         if (hashArray->marca[index] == OCUPADA && hashArray->claves[index] == clave) { return index;}
-=======
-// Returns the slot holding the key, or -1. A BORRADA slot does not stop the probe.
-static int posicion(HashArray * hashArray, int clave) {
-    int index = hash(clave);
-    for (int pasos = 0; pasos < TAM; pasos++) {
-        if (hashArray->marca[index] == VACIA) { return -1;}
-        if (hashArray->marca[index] == OCUPADA && hashArray->claves[index] == clave) { return index;}
-        index = (index + 1) % TAM;
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     }
     return -1;
 }
@@ -68,18 +52,14 @@ HashArray*  crearHashArray() {
         hashArray->marca[i] = VACIA;
     }
     hashArray->n = 0;
-<<<<<<< HEAD
     hashArray->funcion = HASH_CLASE;
     hashArray->sondeo = SONDEO_LINEAL;
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     return hashArray;
 }
 
 int insertarHashArray(HashArray * hashArray, int clave, int elemento) {
     if (hashArray->n >= TAM) { return 0;}
     if (posicion(hashArray, clave) >= 0) { return 0;}
-<<<<<<< HEAD
     for (int intento = 0; intento < TAM; intento++) {   /* la primera que no este OCUPADA */
         int index = casillaHashArray(hashArray, clave, intento);
         if (hashArray->marca[index] != OCUPADA) {
@@ -91,17 +71,6 @@ int insertarHashArray(HashArray * hashArray, int clave, int elemento) {
         }
     }
     return 0;   /* con la cuadratica o el doble, puede no encontrar sitio */
-=======
-    int index = hash(clave);
-    while (hashArray->marca[index] == OCUPADA) {
-        index = (index + 1) % TAM;
-    }
-    hashArray->valores[index] = elemento;
-    hashArray->claves[index] = clave;
-    hashArray->marca[index] = OCUPADA;
-    hashArray->n++;
-    return 1;
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 
 }
 
@@ -148,7 +117,6 @@ int actualizarHashArray(HashArray * hashArray, int clave, int elemento) {
     return insertarHashArray(hashArray, clave, elemento);
 }
 
-<<<<<<< HEAD
 int usarHashArray(HashArray * hashArray, int funcion) {
     if (hashArray->n > 0) { return 0;}
     hashArray->funcion = funcion;
@@ -162,9 +130,6 @@ int usarSondeoArray(HashArray * hashArray, int sondeo) {
 }
 
 /* ===================== ACTO 1: EL GREMIO ===================== */
-=======
-/* ===================== LO QUE TIENES QUE PROGRAMAR ===================== */
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 
 /* ---- EJERCICIO 1: el objeto con mas unidades ---- */
 
@@ -217,7 +182,6 @@ int fusionarHashArray(HashArray * destino, HashArray * origen) {
     return 0;
 }
 
-<<<<<<< HEAD
 /* ===================== ACTO 2: LAS CARAVANAS ===================== */
 
 /* ---- EJERCICIO 6: copiar un inventario ---- */
@@ -332,8 +296,6 @@ int limpiarBorradasHashArray(HashArray * hashArray) {
     return 0;
 }
 
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 /* ============ NO TOQUES NADA A PARTIR DE AQUI: lo usa el registro ============ */
 
 void volcarHashArray(HashArray * h, const char * nombre) {
@@ -346,11 +308,7 @@ void volcarHashArray(HashArray * h, const char * nombre) {
     reg_ref(h);
     reg_printf(" ");
     reg_ref(h);
-<<<<<<< HEAD
     reg_printf(" %d %d\n", h->funcion, h->sondeo);
-=======
-    reg_printf("\n");
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     for (int i = 0; i < TAM; i++) {
         if (h->marca[i] == VACIA) { continue; }
         reg_printf("CA %s %d %d %d %d\n", nombre, i, h->marca[i], h->claves[i], h->valores[i]);

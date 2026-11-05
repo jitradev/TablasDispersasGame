@@ -1241,7 +1241,6 @@ button.t-resubir {
   align-self: center;
   padding: 0;
 }
-<<<<<<< HEAD
 
 /* ---------- acto 3: tres arrays; acto 4: dos tablas de texto ---------- */
 .tablas.tres {
@@ -1340,5 +1339,3 @@ button.acto.elegido:focus {
 button.acto:focus-visible {
   outline-color: var(--c4);
 }
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd

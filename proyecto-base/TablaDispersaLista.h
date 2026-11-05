@@ -3,7 +3,6 @@
 
 #define TAM_LISTA 101
 
-<<<<<<< HEAD
 /* Las funciones hash que puede usar la tabla (acto 3). Por defecto, HASH_CLASE:
  * clave mod TAM, la de clase. */
 #define HASH_CLASE 0
@@ -11,8 +10,6 @@
 #define HASH_MITAD_CUADRADO 2
 #define HASH_POLINOMICO 3
 
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 typedef struct HashLista HashLista;
 
 
@@ -27,15 +24,11 @@ void mostrarHashLista(HashLista * hashLista);
  * otro); si no, la inserta como insertarHashLista. Devuelve 1, o 0 si malloc falla. */
 int actualizarHashLista(HashLista * hashLista, int clave, int elemento);
 
-<<<<<<< HEAD
 /* Ya hecha: elige la funcion hash de la tabla (HASH_CLASE, HASH_PLEGAMIENTO...).
  * Solo con la tabla vacia: devuelve 0 si ya tiene algo y no cambia nada. */
 int usarHashLista(HashLista * hashLista, int funcion);
 
 /* ===================== ACTO 1: EL GREMIO ===================== */
-=======
-/* ===================== LO QUE TIENES QUE PROGRAMAR ===================== */
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 
 /* ---- EJERCICIO 1: el objeto con mas unidades ---- */
 
@@ -74,7 +67,6 @@ int eliminarSiMenorHashLista(HashLista * hashLista, int minimo);
  * en destino. Origen queda vacio: todos sus cubos a NULL y n = 0. Devuelve 1. */
 int fusionarHashLista(HashLista * destino, HashLista * origen);
 
-<<<<<<< HEAD
 /* ===================== ACTO 2: LAS CARAVANAS ===================== */
 
 /* ---- EJERCICIO 6: copiar un inventario ---- */
@@ -146,8 +138,6 @@ int costeTotalHashLista(HashLista * hashLista);
  * free), para que la proxima vez se encuentre antes. Devuelve 1, o 0 si no esta. */
 int alFrenteHashLista(HashLista * hashLista, int clave);
 
-=======
->>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 /* Lo usa el registro. NO LA TOQUES. */
 void volcarHashLista(HashLista * hashLista, const char * nombre);
 
