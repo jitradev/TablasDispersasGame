@@ -28,7 +28,7 @@ function Funciones({ e }: { e: Encargo }) {
 }
 
 /** El botón y su ventana. */
-function Pergamino({ children }: { children: ReactNode }) {
+function Pergamino({ children, ancho = false }: { children: ReactNode; ancho?: boolean }) {
   const [abierto, setAbierto] = useState(false);
   useEffect(() => {
     if (!abierto) return;
@@ -42,7 +42,7 @@ function Pergamino({ children }: { children: ReactNode }) {
   }, [abierto]);
   return (
     <>
-      <div className="ec-boton">
+      <div className={`ec-boton ${ancho ? 'ancho' : ''}`}>
         <button
           className="grande pergamino"
           onClick={() => {
@@ -55,7 +55,7 @@ function Pergamino({ children }: { children: ReactNode }) {
       </div>
       {abierto && (
         <div className="ventana-fondo" onClick={() => setAbierto(false)}>
-          <div className="ventana en-claro" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
+          <div className={`ventana en-claro ${ancho ? 'ancho' : ''}`} role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
             <button className="mini cerrar" onClick={() => setAbierto(false)} aria-label="Cerrar">
               ✕
             </button>
@@ -111,7 +111,7 @@ export function EnClaroActo({ acto }: { acto: number }) {
 export function EnClaroMision({ ej, jefe, acto, target, fichero }: { ej?: number; jefe: boolean; acto: number; target: string; fichero: string }) {
   const e = ej === undefined ? undefined : ENCARGOS[ej];
   return (
-    <Pergamino>
+    <Pergamino ancho>
       <div className="ec-tit">EL PERGAMINO, EN CLARO · {e ? `EJERCICIO ${ej}` : 'JEFE FINAL'}</div>
       {e ? (
         <>

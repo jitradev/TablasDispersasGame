@@ -8,7 +8,6 @@ import { ACTOS, MISIONES } from './practica/misiones';
 import { COMPANIA, JEFES, MERLA, PROLOGO } from './practica/personajes';
 import { Visor } from './practica/Visor';
 import { Entrada } from './practica/Entrada';
-import { EnClaroActo } from './practica/EnClaro';
 
 // ------------------------------------------------------------------ registros guardados
 
@@ -220,14 +219,15 @@ function Inicio({
           })}
         </div>
 
-        <section className="ordenes">
-          <div className="ordenes-cab">
+        <details className="ordenes" onToggle={() => sonar('click')}>
+          <summary className="ordenes-cab">
             <img src={urlSprite(MERLA.id, 4)} alt="" />
             <div>
               <div className="ordenes-tit">LAS ÓRDENES DE MERLA</div>
               <div className="ordenes-sub">«Escucha bien, que no lo repetiré»</div>
             </div>
-          </div>
+            <span className="ordenes-flecha" aria-hidden="true">▼</span>
+          </summary>
           <ol>
             <li>
               El primer día en el Gremio, recoge el Libro de los Cofres, que es el <b>proyecto base</b>. Ábrelo en CLion (<i>File &gt; Open</i>, la carpeta entera) y guárdalo bien: te servirá para los cuatro actos.
@@ -249,7 +249,7 @@ function Inicio({
               LEER EL PERGAMINO (ENUNCIADO)
             </a>
           </div>
-        </section>
+        </details>
 
         <div className="compania">
           {[MERLA, ...Object.values(COMPANIA)].map((p) => (
@@ -366,8 +366,6 @@ function PantallaActo({
         </div>
       </div>
 
-
-      <EnClaroActo acto={n} />
 
       {!abierto ? (
         <div className="aviso neutro">

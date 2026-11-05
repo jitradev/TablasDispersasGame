@@ -2167,3 +2167,42 @@ button.grande.pergamino:hover {
 html {
   overflow-x: clip;
 }
+
+/* las órdenes de Merla, plegadas */
+details.ordenes > summary {
+  list-style: none;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+details.ordenes > summary::-webkit-details-marker {
+  display: none;
+}
+details.ordenes[open] > summary {
+  margin-bottom: 8px;
+}
+.ordenes-flecha {
+  margin-left: auto;
+  font-size: 18px;
+  color: #8c2f1f;
+  transition: transform 0.25s;
+}
+details.ordenes[open] .ordenes-flecha {
+  transform: rotate(180deg);
+}
+details.ordenes[open] > ol {
+  animation: aparece-suave 0.3s ease-out;
+}
+details.ordenes > summary:focus-visible {
+  outline: 3px solid var(--cb);
+  outline-offset: 4px;
+}
+/* el pergamino de la misión, a todo el ancho */
+.ec-boton.ancho button.grande.pergamino {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+.ventana-fondo .ventana.en-claro.ancho {
+  width: 100%;
+  max-width: none;
+}
