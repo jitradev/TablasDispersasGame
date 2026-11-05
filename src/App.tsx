@@ -71,6 +71,14 @@ function SubirRegistro({ fichero, subir, otra }: { fichero: string; subir: (fs: 
 
 /** Para abrir un acto hay que sacar al menos estas estrellas en el jefe del anterior. Con 0 están todos abiertos. */
 const ESTRELLAS_PARA_ABRIR: number = 2;
+/** Con ?profesor en la dirección (por ejemplo https://.../?profesor) se ven todos los actos abiertos. */
+const PROFESOR = (() => {
+  try {
+    return new URLSearchParams(window.location.search).has('profesor');
+  } catch {
+    return false;
+  }
+})();
 
 function Inicio({
   correcciones,
@@ -102,7 +110,7 @@ function Inicio({
     return ms.reduce((s, m) => s + (correcciones[m.id]?.conocida ? correcciones[m.id].bien / correcciones[m.id].total : 0), 0) / ms.length;
   };
   const abierto = (n: number): boolean => {
-    if (n === 1 || ESTRELLAS_PARA_ABRIR === 0) return true;
+    if (n === 1 || ESTRELLAS_PARA_ABRIR === 0 || PROFESOR) return true;
     const jefe = MISIONES.find((m) => m.acto === n - 1 && m.jefe)!;
     const c = correcciones[jefe.id];
     return !!c && c.conocida && c.estrellas >= ESTRELLAS_PARA_ABRIR && abierto(n - 1);
