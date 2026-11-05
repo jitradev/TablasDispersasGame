@@ -1,8 +1,8 @@
-# Mision 14: la sala de los espejos (ejercicio 14: lo que cuesta buscar). Te acompaña Hilda, la herrera.
+# Mision 14: la sala de los espejos (ejercicio 14: lo que cuesta buscar). Te acompaña Hilda, la herrera enana.
 # Cada linea: ORDEN argumentos | lo que pasa en la historia
 # COSTE cuenta los nodos o casillas que se miran para buscar una clave; COSTETOTAL, los de todas.
 # El array de Hilda es el de clase (lineal); el del botin usa el doble hashing.
-SONDEO B DOBLE | El botín busca sitio con el doble hashing
+SONDEO B DOBLE | Dentro de la montaña, una sala cubierta de espejos. Su reflejo, el botín, busca sitio con el doble hashing
 COSTETOTAL | Con todo vacío no cuesta nada
 ACTUALIZAR 5 1 | Hilda deja un escudo (objeto 5)
 ACTUALIZAR 25 2 | 2 dagas (objeto 25): en el array chocan con el escudo
@@ -11,21 +11,21 @@ ACTUALIZAR 65 1 | Un arco (objeto 65): y otra
 ACTUALIZAR 6 2 | 2 yelmos (objeto 6): su casilla, la 6, ya está ocupada
 ACTUALIZAR 106 4 | 4 monedas (objeto 106): en las listas, al cubo 5 con el escudo
 ACTUALIZAR 207 1 | Un clavo (objeto 207): también al cubo 5
-ACTUALIZAR B 5 1 | El botín guarda lo mismo
-ACTUALIZAR B 25 2 | ...
-ACTUALIZAR B 45 3 | ...
-ACTUALIZAR B 65 1 | ...
-ACTUALIZAR B 6 2 | ...
-ACTUALIZAR B 106 4 | ...
-ACTUALIZAR B 207 1 | ... y lo mismo
-COSTE 5 | El escudo: en las listas está al final de su cubo
+ACTUALIZAR B 5 1 | Los espejos lo repiten todo en el reflejo: el escudo
+ACTUALIZAR B 25 2 | Las dagas
+ACTUALIZAR B 45 3 | Las hachas
+ACTUALIZAR B 65 1 | El arco
+ACTUALIZAR B 6 2 | Los yelmos
+ACTUALIZAR B 106 4 | Las monedas
+ACTUALIZAR B 207 1 | Y el clavo
+COSTE 5 | Hilda busca el escudo: en las listas está al final de su cubo
 COSTE 65 | El arco: en el array lineal hay que mirar cuatro casillas
-COSTE B 65 | En el botín, con el doble, menos
+COSTE B 65 | En el reflejo, con el doble, menos
 COSTE 85 | Algo que no está: se mira hasta la primera VACIA
 COSTE 308 | Una llave que Hilda no tiene: en las listas se miran todos los nodos de su cubo
 COSTETOTAL | Lo que cuesta encontrarlo todo en la de Hilda
-COSTETOTAL B | Y en el botín
-ELIMINAR 25 | Hilda funde las dagas: su casilla queda BORRADA
+COSTETOTAL B | Y en el reflejo
+ELIMINAR 25 | Hilda funde las dagas para forjar una punta de lanza: su casilla queda BORRADA
 COSTE 65 | El arco cuesta lo mismo: la BORRADA no acorta el camino
 COSTETOTAL | Hay una clave menos que buscar
-LIBERAR | Hilda sale de la sala y se vacían las tablas
+LIBERAR | Hilda rompe el último espejo con el martillo y se vacían las tablas

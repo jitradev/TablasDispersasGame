@@ -1,7 +1,7 @@
-# Mision 11: el espejo del cuadrado (ejercicio 11: el hash de la mitad del cuadrado). Te acompaña Hilda, la herrera.
+# Mision 11: el espejo del cuadrado (ejercicio 11: el hash de la mitad del cuadrado). Te acompaña Hilda, la herrera enana.
 # Cada linea: ORDEN argumentos | lo que pasa en la historia
 # El inventario de Hilda usa la mitad del cuadrado; el botin sigue con la de clase.
-FUNCION MITAD | Hilda mira su inventario en el espejo del cuadrado
+FUNCION MITAD | En las ruinas al pie de la torre, Hilda encuentra un espejo de bronce que devuelve cada número al cuadrado: su inventario usará la mitad del cuadrado
 ACTUALIZAR 5 3 | 3 antorchas (objeto 5): 5 al cuadrado es 25, y sus cifras del centro dan 0
 ACTUALIZAR B 5 3 | En el botín, con el hash de clase, al cubo 5
 ACTUALIZAR 106 2 | 2 monedas (objeto 106): 11236, y las cifras del centro son 12
@@ -18,12 +18,12 @@ ACTUALIZAR 100 5 | 5 flechas (objeto 100): 10000, cifras del centro 0
 ACTUALIZAR B 100 5 | En el botín, al 100
 ACTUALIZAR 200 2 | 2 hachas (objeto 200): 40000, otra vez 0
 ACTUALIZAR B 200 2 | En el botín, al 99
-ACTUALIZAR 300 1 | Un yelmo (objeto 300): 90000, y otra vez 0: los números redondos se amontonan
+ACTUALIZAR 300 1 | Un yelmo enano (objeto 300): 90000, y otra vez 0. Hilda frunce el ceño: los números redondos se amontonan
 ACTUALIZAR B 300 1 | En el botín, al 98
 COLISIONES | ¿Cómo reparte la mitad del cuadrado?
 COLISIONES B | ¿Y el hash de clase?
 BUSCAR 200 | Hilda busca las hachas en el cubo de los redondos
-ELIMINAR 100 | Se disparan las flechas
+ELIMINAR 100 | Se disparan las flechas contra los cuervos de la torre
 BUSCAR 300 | El yelmo sigue ahí
 COLISIONES | El cubo de los redondos ha encogido
-LIBERAR | Hilda se aparta del espejo y se vacían las tablas
+LIBERAR | Hilda tapa el espejo con su capa y se vacían las tablas

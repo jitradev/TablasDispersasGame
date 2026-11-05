@@ -8,7 +8,7 @@ TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 V 1 816
 V 2 252
-EV 1 FUNCION PLEGAMIENTO | Bastián pliega su mapa: su inventario usará el hash de plegamiento
+EV 1 FUNCION PLEGAMIENTO | Desde que Vorhal ocupó la torre, los números del Gremio caen siempre en los mismos cubos. Merla os da un pergamino antiguo y Bastián lo pliega: su inventario usará el plegamiento
 RL 1
 RA 1
 TL H 1 101 0 1 1
@@ -335,7 +335,7 @@ V 11 16
 V 12 16
 V 13 16
 V 14 16
-EV 12 ACTUALIZAR 12345 6 | 6 tintas (objeto 12345): tres trozos, 1 + 23 + 45 = 69
+EV 12 ACTUALIZAR 12345 6 | 6 tinteros (objeto 12345): tres trozos, 1 + 23 + 45 = 69
 M 15 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -441,7 +441,7 @@ V 13 16
 V 14 16
 V 15 16
 V 16 16
-EV 14 COLISIONES | ¿Cómo reparte el plegamiento?
+EV 14 COLISIONES | Bastián compara: ¿cómo reparte el plegamiento?
 RL 2 97
 RA 2 0
 TL H 1 101 6 1 1
@@ -657,7 +657,7 @@ V 13 16
 V 14 16
 V 15 16
 V 16 16
-EV 18 ELIMINAR 1234 | Se pierden las brújulas
+EV 18 ELIMINAR 1234 | Las brújulas se caen por la ventana de la posada
 F 3 TablaDispersaLista.c 90
 RL 1 3
 RA 1 3
@@ -762,7 +762,7 @@ V 13 16
 V 14 16
 V 15 16
 V 16 16
-EV 20 FUNCION MITAD | Bastián intenta cambiar de función con el inventario lleno: no se puede
+EV 20 FUNCION MITAD | Bastián intenta cambiar de función con el inventario lleno. Merla le sujeta la mano: no se puede
 RL 0
 RA 0
 TL H 1 101 5 1 1
@@ -866,7 +866,7 @@ V 13 16
 V 14 16
 V 15 16
 V 16 16
-EV 22 LIBERAR | Bastián guarda el mapa y se vacían las tablas
+EV 22 LIBERAR | Bastián guarda el pergamino y se vacían las tablas
 F 7 TablaDispersaLista.c 100
 F 9 TablaDispersaLista.c 100
 F 15 TablaDispersaLista.c 100

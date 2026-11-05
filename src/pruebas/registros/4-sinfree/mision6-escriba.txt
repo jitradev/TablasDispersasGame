@@ -8,7 +8,7 @@ TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 V 1 816
 V 2 252
-EV 1 ACTUALIZAR 5 3 | Rina carga en la caravana 3 antorchas (objeto 5)
+EV 1 ACTUALIZAR 5 3 | La caravana del Gremio sale hacia el este por el camino de comercio. Rina carga 3 antorchas (objeto 5)
 M 3 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -53,7 +53,7 @@ V 2 252
 V 3 16
 V 4 16
 V 5 16
-EV 4 ACTUALIZAR 23 1 | Una poción (objeto 23)
+EV 4 ACTUALIZAR 23 1 | Un frasco de bálsamo (objeto 23)
 M 6 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -75,7 +75,7 @@ V 3 16
 V 4 16
 V 5 16
 V 6 16
-EV 5 ACTUALIZAR 43 6 | 6 flechas (objeto 43): en el array chocan con la poción
+EV 5 ACTUALIZAR 43 6 | 6 flechas (objeto 43): en el array chocan con el bálsamo
 M 7 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -101,7 +101,7 @@ V 4 16
 V 5 16
 V 6 16
 V 7 16
-EV 6 COPIAR | El escriba copia el inventario en su libro: en las listas, nodos nuevos y en el mismo orden
+EV 6 COPIAR | El escriba de la caravana, un anciano con los dedos manchados de tinta, copia el inventario en su libro: en las listas, nodos nuevos y en el mismo orden
 CREAR B
 M 8 816 TablaDispersaLista.c 41
 M 9 252 TablaDispersaArray.c 51
@@ -203,7 +203,7 @@ V 11 16
 V 12 16
 V 13 16
 V 14 16
-EV 8 ACTUALIZAR B 106 9 | El escriba se equivoca y apunta 9 monedas en el libro
+EV 8 ACTUALIZAR B 106 9 | El escriba da una cabezada y apunta 9 monedas en el libro
 RL 1
 RA 1
 TL H 1 101 5 1 0
@@ -297,7 +297,7 @@ V 11 16
 V 12 16
 V 13 16
 V 14 16
-EV 10 ELIMINAR 23 | Rina gasta la poción: en el array queda una BORRADA
+EV 10 ELIMINAR 23 | Rina usa el bálsamo con un mulero herido: en el array queda una BORRADA
 F 6 TablaDispersaLista.c 91
 RL 1 1
 RA 1 1
@@ -342,7 +342,7 @@ V 11 16
 V 12 16
 V 13 16
 V 14 16
-EV 11 ACTUALIZAR 63 2 | 2 mapas (objeto 63): en el array aprovechan la BORRADA de la poción
+EV 11 ACTUALIZAR 63 2 | 2 mapas (objeto 63): en el array aprovechan la BORRADA del bálsamo
 M 15 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -390,7 +390,7 @@ V 12 16
 V 13 16
 V 14 16
 V 15 16
-EV 12 ELIMINAR 43 | Se disparan las flechas: otra BORRADA
+EV 12 ELIMINAR 43 | Bandidos entre las rocas: se disparan todas las flechas y queda otra BORRADA
 F 7 TablaDispersaLista.c 91
 RL 1 6
 RA 1 6
@@ -435,7 +435,7 @@ V 12 16
 V 13 16
 V 14 16
 V 15 16
-EV 13 COPIAR | El escriba copia otra vez, encima de la copia vieja: los nodos viejos del libro sobran
+EV 13 COPIAR | El escriba copia otra vez, encima de la copia vieja: los nodos viejos del libro sobran y hay que liberarlos
 F 10 TablaDispersaLista.c 262
 F 11 TablaDispersaLista.c 262
 F 12 TablaDispersaLista.c 262
@@ -567,7 +567,7 @@ V 16 16
 V 17 16
 V 18 16
 V 19 16
-EV 16 ELIMINAR 5 | Se gastan las antorchas
+EV 16 ELIMINAR 5 | Se gastan las antorchas en el desfiladero
 F 3 TablaDispersaLista.c 91
 RL 1 3
 RA 1 3
@@ -607,7 +607,7 @@ V 16 16
 V 17 16
 V 18 16
 V 19 16
-EV 17 ELIMINAR 106 | Se pagan las monedas
+EV 17 ELIMINAR 106 | Se pagan las monedas en el vado
 F 4 TablaDispersaLista.c 91
 RL 1 2
 RA 1 2
@@ -645,7 +645,7 @@ V 16 16
 V 17 16
 V 18 16
 V 19 16
-EV 18 ELIMINAR 207 | Se venden los clavos
+EV 18 ELIMINAR 207 | Se venden los clavos a un herrero ambulante
 F 5 TablaDispersaLista.c 91
 RL 1 4
 RA 1 4
@@ -680,7 +680,7 @@ V 16 16
 V 17 16
 V 18 16
 V 19 16
-EV 19 ELIMINAR 63 | Se pierden los mapas
+EV 19 ELIMINAR 63 | El viento se lleva los mapas
 F 15 TablaDispersaLista.c 91
 RL 1 2
 RA 1 2
@@ -758,7 +758,7 @@ V 1 816
 V 2 252
 V 8 816
 V 9 252
-EV 22 LIBERAR | Fin de la jornada: se vacían las tablas
+EV 22 LIBERAR | Fin de la jornada: el escriba cierra el libro y se vacían las tablas
 F 1 TablaDispersaLista.c 105
 F 2 TablaDispersaArray.c 96
 F 8 TablaDispersaLista.c 105

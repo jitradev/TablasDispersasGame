@@ -8,7 +8,7 @@ TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 V 1 816
 V 2 252
-EV 1 ACTUALIZAR B 573 5 | El Cofre Glotón suelta el objeto 573 en el botín
+EV 1 ACTUALIZAR B 573 5 | Un cofre del fondo de la cripta abre la tapa y enseña los dientes. El Cofre Glotón despierta y escupe el objeto 573 (5) en el botín
 CREAR B
 M 3 816 TablaDispersaLista.c 41
 M 4 252 TablaDispersaArray.c 51
@@ -27,7 +27,7 @@ V 2 252
 V 3 816
 V 4 252
 V 5 16
-EV 2 ACTUALIZAR B 875 5 | El Cofre Glotón suelta el objeto 875 en el botín
+EV 2 ACTUALIZAR B 875 5 | El Cofre escupe 5 del objeto 875, que cae en el botín
 M 6 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -47,7 +47,7 @@ V 3 816
 V 4 252
 V 5 16
 V 6 16
-EV 3 ACTUALIZAR B 487 4 | El Cofre Glotón suelta el objeto 487 en el botín
+EV 3 ACTUALIZAR B 487 4 | El Cofre Glotón eructa y suelta el objeto 487 (4) en el botín
 M 7 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -71,7 +71,7 @@ V 4 252
 V 5 16
 V 6 16
 V 7 16
-EV 4 ACTUALIZAR B -47 6 | El Cofre Glotón suelta el objeto -47 en el botín
+EV 4 ACTUALIZAR B -47 6 | De la tapa sale rodando el objeto -47: 6 al botín
 M 8 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -99,7 +99,7 @@ V 5 16
 V 6 16
 V 7 16
 V 8 16
-EV 5 ACTUALIZAR B 42 6 | El Cofre Glotón suelta el objeto 42 en el botín
+EV 5 ACTUALIZAR B 42 6 | El Cofre tose y caen 6 del objeto 42 en el botín
 M 9 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -131,7 +131,7 @@ V 6 16
 V 7 16
 V 8 16
 V 9 16
-EV 6 ACTUALIZAR B -81 1 | El Cofre Glotón suelta el objeto -81 en el botín
+EV 6 ACTUALIZAR B -81 1 | Algo sale volando del Cofre: el objeto -81 (1), al botín
 M 10 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -167,7 +167,7 @@ V 7 16
 V 8 16
 V 9 16
 V 10 16
-EV 7 FUSIONAR | Lis mete el botín en el inventario
+EV 7 FUSIONAR | Lis recoge el botín y lo mete en su inventario, cada objeto en su cubo
 RL 1
 RA 1
 TL H 1 101 6 1 0
@@ -214,7 +214,7 @@ V 7 16
 V 8 16
 V 9 16
 V 10 16
-EV 8 BUSCAR 875 | Lis busca el objeto 875
+EV 8 BUSCAR 875 | Lis comprueba si sigue teniendo el objeto 875
 RL 1 5
 RA 1 5
 TL H 1 101 6 1 0
@@ -261,7 +261,7 @@ V 7 16
 V 8 16
 V 9 16
 V 10 16
-EV 9 ACTUALIZAR B 475 5 | El Cofre Glotón suelta el objeto 475 en el botín
+EV 9 ACTUALIZAR B 475 5 | El Cofre escupe 5 del objeto 475, que cae en el botín
 M 11 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -313,7 +313,7 @@ V 8 16
 V 9 16
 V 10 16
 V 11 16
-EV 10 ACTUALIZAR B 239 1 | El Cofre Glotón suelta el objeto 239 en el botín
+EV 10 ACTUALIZAR B 239 1 | El Cofre Glotón eructa y suelta el objeto 239 (1) en el botín
 M 12 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -369,7 +369,7 @@ V 9 16
 V 10 16
 V 11 16
 V 12 16
-EV 11 ACTUALIZAR B 670 5 | El Cofre Glotón suelta el objeto 670 en el botín
+EV 11 ACTUALIZAR B 670 5 | De la tapa sale rodando el objeto 670: 5 al botín
 M 13 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -429,7 +429,7 @@ V 10 16
 V 11 16
 V 12 16
 V 13 16
-EV 12 ACTUALIZAR B 85 2 | El Cofre Glotón suelta el objeto 85 en el botín
+EV 12 ACTUALIZAR B 85 2 | El Cofre tose y caen 2 del objeto 85 en el botín
 M 14 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -493,7 +493,7 @@ V 11 16
 V 12 16
 V 13 16
 V 14 16
-EV 13 BUSCAR B 0 | Lis busca en el botín un objeto que no está
+EV 13 BUSCAR B 0 | Lis rebusca en el botín algo que no está
 RL 0 0
 RA 0 0
 TL H 1 101 6 1 0
@@ -556,7 +556,7 @@ V 11 16
 V 12 16
 V 13 16
 V 14 16
-EV 14 FUSIONAR | Lis mete el botín en el inventario
+EV 14 FUSIONAR | Lis barre el botín hasta su inventario antes de que el Cofre se lo vuelva a tragar
 F 10 TablaDispersaLista.c 240
 F 9 TablaDispersaLista.c 240
 F 8 TablaDispersaLista.c 240
@@ -615,5 +615,5 @@ V 11 16
 V 12 16
 V 13 16
 V 14 16
-EV 15 AGOTAR 5 | El Cofre Glotón muerde todo lo que tenga menos de 5
+EV 15 AGOTAR 5 | El Cofre Glotón muerde: se traga todo lo que tenga menos de 5
 E doble free: el bloque 10 ya estaba liberado (TablaDispersaLista.c, linea 215)

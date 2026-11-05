@@ -8,7 +8,7 @@ import { iconoDe } from '../juego/mision1';
 import { Correccion, describirBloque, dondeTabla, Fallo } from './corregir';
 import { BORRADA, Clave, cuboDe, hash2, HashL, MA, ML, mundoInicial, OCUPADA, recorridoA, Sonda, TAM_ARRAY, TAM_LISTA } from './tablas';
 import { Mision } from './misiones';
-import { COMPANIA, MERLA } from './personajes';
+import { COMPANIA, JEFES, MERLA } from './personajes';
 import { sonar } from '../juego/sonido';
 import { BotonSonido } from '../juego/BotonSonido';
 import { EventoReg, Inv } from './registro';
@@ -54,7 +54,7 @@ interface PropsBanda {
   rotulo: string;
   titulo: string;
   quien: string;
-  jefe?: { total: number; quedan: number; golpe: number };
+  jefe?: { total: number; quedan: number; golpe: number; sprite: string };
   /** Cuándo acabó el último evento y si salió bien: chispas doradas o rojas. */
   efecto?: { t: number; ok: boolean };
 }
@@ -101,7 +101,10 @@ function Banda(props: PropsBanda) {
         g.fillStyle = 'rgba(28,23,18,0.6)';
         g.fillRect(0, 0, W, 100);
         const sac = p.jefe.golpe > t - 400 ? Math.round(Math.sin(t / 20) * 3) : 0;
-        pintar(g, 'gloton', W / 2 - 36 + sac, 16 + Math.round(Math.sin(t / 400) * 2), 3, p.jefe.quedan === 0 ? 0.35 : 1);
+        const sj = sprite(p.jefe.sprite);
+        const ej = 3;
+        const yj = Math.max(14, 86 - sj.height * ej);
+        pintar(g, p.jefe.sprite, W / 2 - (sj.width * ej) / 2 + sac, yj + Math.round(Math.sin(t / 400) * 2), ej, p.jefe.quedan === 0 ? 0.35 : 1);
         for (let i = 0; i < p.jefe.total; i++) pintar(g, i < p.jefe.quedan ? 'corazon' : 'corazonVacio', W / 2 - (p.jefe.total * 18) / 2 + i * 18, 2, 2);
       } else {
         g.fillStyle = PAL['8'];
@@ -269,14 +272,23 @@ function PanelLista({ m, antes, cubo, nuevos, error, titulo = '', nombre = 'LIST
 
 // ------------------------------------------------------------------ visor
 
+/** Quién cuenta el evento: Merla, el jefe del acto (si el texto empieza por su nombre) o el acompañante. */
+const NOMBRE_CORTO: Record<number, string[]> = { 1: ['El Cofre', 'El cofre'], 2: ['Grumak'], 3: ['Vorhal'], 4: ['Ascuaferro'] };
+function hablante(texto: string, quien: string, acto: number): string {
+  if (texto.startsWith('Merla')) return MERLA.id;
+  if ((NOMBRE_CORTO[acto] ?? []).some((n) => texto.startsWith(n))) return JEFES[acto].id;
+  return quien;
+}
+
 function Archivera({ quien, titulo, children }: { quien: string; titulo?: string; children: React.ReactNode }) {
-  const r = useMemo(() => urlSprite(quien, 4), [quien]);
+  const r = useMemo(() => urlSprite(quien, quien in COMPANIA || quien === MERLA.id ? 4 : 2), [quien]);
+  const jefe = Object.values(JEFES).find((x) => x.id === quien);
   return (
     <div className="dialogo">
       <img className="retrato" src={r} alt="" />
       <div>
         <div className="quien">
-          {COMPANIA[quien]?.nombre ?? MERLA.nombre}
+          {COMPANIA[quien]?.nombre ?? jefe?.nombre ?? MERLA.nombre}
           {titulo ? ` · ${titulo}` : ''}
         </div>
         <div className="relato">{children}</div>
@@ -407,7 +419,8 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
   }, [fotos]);
 
   const bienHasta = c.juicios.slice(0, foto.ev + (visto ? 1 : 0)).filter((x) => x.ok && !x.inicial).length;
-  const jefe = mision.jefe ? { total: 10, quedan: 10 - Math.floor((10 * bienHasta) / c.total), golpe } : undefined;
+  const jefe = mision.jefe ? { total: 10, quedan: 10 - Math.floor((10 * bienHasta) / c.total), golpe, sprite: JEFES[mision.acto].id } : undefined;
+  const habla = hablante(ev.texto, mision.quien, mision.acto);
   const faltan = c.total - c.juicios.filter((x) => !x.inicial).length;
   const sonda = arrRec?.sonda ?? 'LIN';
   const rotulo =
@@ -461,8 +474,9 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
               <input type="checkbox" checked={parar} onChange={(e) => setParar(e.target.checked)} /> parar en los fallos
             </label>
           </div>
-          <Archivera quien={ev.texto.startsWith('Merla') ? 'buho' : mision.quien} titulo={`EVENTO ${ev.n}`}>
+          <Archivera quien={habla} titulo={`EVENTO ${ev.n}`}>
             {foto.ev === 0 && <p className="presenta">«{COMPANIA[mision.quien].presentacion}»</p>}
+            {foto.ev === 0 && mision.jefe && <p className="presenta amenaza">{JEFES[mision.acto].nombre}. {JEFES[mision.acto].amenaza}</p>}
             <p>{ev.texto}</p>
             <p className="orden">
               ▸ <code>{ev.textoOrden}</code>
@@ -473,7 +487,8 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
         <div className="col-der">
           {visto && i === fotos.length - 1 && c.bien === c.total && c.conocida && (
             <div className="victoria">
-              <span>★</span> ¡MISIÓN SUPERADA! <span>★</span>
+              <span>★</span> {mision.jefe ? '¡JEFE VENCIDO!' : '¡MISIÓN SUPERADA!'} <span>★</span>
+              {mision.jefe && <small className="derrota">{JEFES[mision.acto].derrota}</small>}
             </div>
           )}
           {j && visto ? (

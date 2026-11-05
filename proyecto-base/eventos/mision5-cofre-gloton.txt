@@ -1,75 +1,75 @@
-# Mision 5: el Cofre Gloton (el jefe, ejercicio 5: juntar dos inventarios). Te acompaña Lis, la arquera del bosque.
+# Mision 5: el Cofre Gloton (el jefe del acto 1, ejercicio 5: juntar dos inventarios). Te acompaña Lis, la escudera.
 # Cada linea: ORDEN argumentos | lo que pasa en la historia
-# Las ordenes con B van al botín; FUSIONAR mete el botín en el inventario.
-ACTUALIZAR B 573 5 | El Cofre Glotón suelta el objeto 573 en el botín
-ACTUALIZAR B 875 5 | El Cofre Glotón suelta el objeto 875 en el botín
-ACTUALIZAR B 487 4 | El Cofre Glotón suelta el objeto 487 en el botín
-ACTUALIZAR B -47 6 | El Cofre Glotón suelta el objeto -47 en el botín
-ACTUALIZAR B 42 6 | El Cofre Glotón suelta el objeto 42 en el botín
-ACTUALIZAR B -81 1 | El Cofre Glotón suelta el objeto -81 en el botín
-FUSIONAR | Lis mete el botín en el inventario
-BUSCAR 875 | Lis busca el objeto 875
-ACTUALIZAR B 475 5 | El Cofre Glotón suelta el objeto 475 en el botín
-ACTUALIZAR B 239 1 | El Cofre Glotón suelta el objeto 239 en el botín
-ACTUALIZAR B 670 5 | El Cofre Glotón suelta el objeto 670 en el botín
-ACTUALIZAR B 85 2 | El Cofre Glotón suelta el objeto 85 en el botín
-BUSCAR B 0 | Lis busca en el botín un objeto que no está
-FUSIONAR | Lis mete el botín en el inventario
-AGOTAR 5 | El Cofre Glotón muerde todo lo que tenga menos de 5
-BUSCAR 573 | Lis busca el objeto 573
-ACTUALIZAR B -47 4 | El Cofre Glotón suelta el objeto -47 en el botín
-ACTUALIZAR B 573 6 | El Cofre Glotón suelta el objeto 573 en el botín
-ACTUALIZAR B 875 1 | El Cofre Glotón suelta el objeto 875 en el botín
-ACTUALIZAR B 725 5 | El Cofre Glotón suelta el objeto 725 en el botín
-ACTUALIZAR B 691 1 | El Cofre Glotón suelta el objeto 691 en el botín
-ACTUALIZAR B 573 4 | El Cofre Glotón suelta el objeto 573 en el botín
-FUSIONAR | Lis mete el botín en el inventario
-BUSCAR 875 | Lis busca el objeto 875
-ACTUALIZAR B 691 2 | El Cofre Glotón suelta el objeto 691 en el botín
-ACTUALIZAR B 192 6 | El Cofre Glotón suelta el objeto 192 en el botín
-ACTUALIZAR B 429 4 | El Cofre Glotón suelta el objeto 429 en el botín
-FUSIONAR | Lis mete el botín en el inventario
-AGOTAR 6 | El Cofre Glotón muerde todo lo que tenga menos de 6
-BUSCAR 192 | Lis busca el objeto 192
-ACTUALIZAR B 215 5 | El Cofre Glotón suelta el objeto 215 en el botín
-ACTUALIZAR B 102 4 | El Cofre Glotón suelta el objeto 102 en el botín
-ACTUALIZAR B 192 3 | El Cofre Glotón suelta el objeto 192 en el botín
-ACTUALIZAR B 395 2 | El Cofre Glotón suelta el objeto 395 en el botín
-ACTUALIZAR B 15 5 | El Cofre Glotón suelta el objeto 15 en el botín
-BUSCAR B 0 | Lis busca en el botín un objeto que no está
-ACTUALIZAR 495 4 | Lis recoge el objeto 495
-ACTUALIZAR 642 2 | Lis recoge el objeto 642
-FUSIONAR | Lis mete el botín en el inventario
-AGOTAR 5 | El Cofre Glotón muerde todo lo que tenga menos de 5
-ACTUALIZAR B 162 6 | El Cofre Glotón suelta el objeto 162 en el botín
-ACTUALIZAR B 494 1 | El Cofre Glotón suelta el objeto 494 en el botín
-ACTUALIZAR B 573 5 | El Cofre Glotón suelta el objeto 573 en el botín
-ACTUALIZAR B 757 4 | El Cofre Glotón suelta el objeto 757 en el botín
-ACTUALIZAR 502 6 | Lis recoge el objeto 502
-ACTUALIZAR 129 5 | Lis recoge el objeto 129
-FUSIONAR | Lis mete el botín en el inventario
-AGOTAR 6 | El Cofre Glotón muerde todo lo que tenga menos de 6
-ACTUALIZAR B 875 6 | El Cofre Glotón suelta el objeto 875 en el botín
-ACTUALIZAR B -47 4 | El Cofre Glotón suelta el objeto -47 en el botín
-ACTUALIZAR B 47 3 | El Cofre Glotón suelta el objeto 47 en el botín
-FUSIONAR | Lis mete el botín en el inventario
-BUSCAR -47 | Lis busca el objeto -47
-ACTUALIZAR B -268 2 | El Cofre Glotón suelta el objeto -268 en el botín
-ACTUALIZAR B 18 6 | El Cofre Glotón suelta el objeto 18 en el botín
-ACTUALIZAR B 573 1 | El Cofre Glotón suelta el objeto 573 en el botín
-ACTUALIZAR B -35 3 | El Cofre Glotón suelta el objeto -35 en el botín
-ACTUALIZAR B 875 1 | El Cofre Glotón suelta el objeto 875 en el botín
-ACTUALIZAR B -23 6 | El Cofre Glotón suelta el objeto -23 en el botín
-ACTUALIZAR 360 4 | Lis recoge el objeto 360
-FUSIONAR | Lis mete el botín en el inventario
-AGOTAR 6 | El Cofre Glotón muerde todo lo que tenga menos de 6
-ACTUALIZAR B 14 5 | El Cofre Glotón suelta el objeto 14 en el botín
-ACTUALIZAR B 875 1 | El Cofre Glotón suelta el objeto 875 en el botín
-ACTUALIZAR B 875 3 | El Cofre Glotón suelta el objeto 875 en el botín
-ACTUALIZAR 397 4 | Lis recoge el objeto 397
-ACTUALIZAR 473 5 | Lis recoge el objeto 473
-FUSIONAR | Lis mete el botín en el inventario
-AGOTAR 6 | El Cofre Glotón muerde todo lo que tenga menos de 6
+# Las ordenes con B van al botin, lo que escupe el Cofre; FUSIONAR mete el botin en el inventario.
+ACTUALIZAR B 573 5 | Un cofre del fondo de la cripta abre la tapa y enseña los dientes. El Cofre Glotón despierta y escupe el objeto 573 (5) en el botín
+ACTUALIZAR B 875 5 | El Cofre escupe 5 del objeto 875, que cae en el botín
+ACTUALIZAR B 487 4 | El Cofre Glotón eructa y suelta el objeto 487 (4) en el botín
+ACTUALIZAR B -47 6 | De la tapa sale rodando el objeto -47: 6 al botín
+ACTUALIZAR B 42 6 | El Cofre tose y caen 6 del objeto 42 en el botín
+ACTUALIZAR B -81 1 | Algo sale volando del Cofre: el objeto -81 (1), al botín
+FUSIONAR | Lis recoge el botín y lo mete en su inventario, cada objeto en su cubo
+BUSCAR 875 | Lis comprueba si sigue teniendo el objeto 875
+ACTUALIZAR B 475 5 | El Cofre escupe 5 del objeto 475, que cae en el botín
+ACTUALIZAR B 239 1 | El Cofre Glotón eructa y suelta el objeto 239 (1) en el botín
+ACTUALIZAR B 670 5 | De la tapa sale rodando el objeto 670: 5 al botín
+ACTUALIZAR B 85 2 | El Cofre tose y caen 2 del objeto 85 en el botín
+BUSCAR B 0 | Lis rebusca en el botín algo que no está
+FUSIONAR | Lis barre el botín hasta su inventario antes de que el Cofre se lo vuelva a tragar
+AGOTAR 5 | El Cofre Glotón muerde: se traga todo lo que tenga menos de 5
+BUSCAR 573 | Lis comprueba si sigue teniendo el objeto 573
+ACTUALIZAR B -47 4 | Algo sale volando del Cofre: el objeto -47 (4), al botín
+ACTUALIZAR B 573 6 | El Cofre escupe 6 del objeto 573, que cae en el botín
+ACTUALIZAR B 875 1 | El Cofre Glotón eructa y suelta el objeto 875 (1) en el botín
+ACTUALIZAR B 725 5 | De la tapa sale rodando el objeto 725: 5 al botín
+ACTUALIZAR B 691 1 | El Cofre tose y caen 1 del objeto 691 en el botín
+ACTUALIZAR B 573 4 | Algo sale volando del Cofre: el objeto 573 (4), al botín
+FUSIONAR | Lis junta el botín con su inventario: lo repetido se suma
+BUSCAR 875 | Lis comprueba si sigue teniendo el objeto 875
+ACTUALIZAR B 691 2 | El Cofre escupe 2 del objeto 691, que cae en el botín
+ACTUALIZAR B 192 6 | El Cofre Glotón eructa y suelta el objeto 192 (6) en el botín
+ACTUALIZAR B 429 4 | De la tapa sale rodando el objeto 429: 4 al botín
+FUSIONAR | Lis guarda todo el botín en su inventario
+AGOTAR 6 | El Cofre Glotón muerde: se traga todo lo que tenga menos de 6
+BUSCAR 192 | Lis comprueba si sigue teniendo el objeto 192
+ACTUALIZAR B 215 5 | El Cofre tose y caen 5 del objeto 215 en el botín
+ACTUALIZAR B 102 4 | Algo sale volando del Cofre: el objeto 102 (4), al botín
+ACTUALIZAR B 192 3 | El Cofre escupe 3 del objeto 192, que cae en el botín
+ACTUALIZAR B 395 2 | El Cofre Glotón eructa y suelta el objeto 395 (2) en el botín
+ACTUALIZAR B 15 5 | De la tapa sale rodando el objeto 15: 5 al botín
+BUSCAR B 0 | Lis rebusca en el botín algo que no está
+ACTUALIZAR 495 4 | Lis recoge del suelo el objeto 495 (4)
+ACTUALIZAR 642 2 | Lis arranca de la pared el objeto 642 (2)
+FUSIONAR | Lis recoge el botín y lo mete en su inventario, cada objeto en su cubo
+AGOTAR 5 | El Cofre Glotón muerde: se traga todo lo que tenga menos de 5
+ACTUALIZAR B 162 6 | El Cofre tose y caen 6 del objeto 162 en el botín
+ACTUALIZAR B 494 1 | Algo sale volando del Cofre: el objeto 494 (1), al botín
+ACTUALIZAR B 573 5 | El Cofre escupe 5 del objeto 573, que cae en el botín
+ACTUALIZAR B 757 4 | El Cofre Glotón eructa y suelta el objeto 757 (4) en el botín
+ACTUALIZAR 502 6 | Entre los huesos, Lis encuentra el objeto 502 (6)
+ACTUALIZAR 129 5 | Lis recoge del suelo el objeto 129 (5)
+FUSIONAR | Lis barre el botín hasta su inventario antes de que el Cofre se lo vuelva a tragar
+AGOTAR 6 | El Cofre Glotón muerde: se traga todo lo que tenga menos de 6
+ACTUALIZAR B 875 6 | De la tapa sale rodando el objeto 875: 6 al botín
+ACTUALIZAR B -47 4 | El Cofre tose y caen 4 del objeto -47 en el botín
+ACTUALIZAR B 47 3 | Algo sale volando del Cofre: el objeto 47 (3), al botín
+FUSIONAR | Lis junta el botín con su inventario: lo repetido se suma
+BUSCAR -47 | Lis comprueba si sigue teniendo el objeto -47
+ACTUALIZAR B -268 2 | El Cofre escupe 2 del objeto -268, que cae en el botín
+ACTUALIZAR B 18 6 | El Cofre Glotón eructa y suelta el objeto 18 (6) en el botín
+ACTUALIZAR B 573 1 | De la tapa sale rodando el objeto 573: 1 al botín
+ACTUALIZAR B -35 3 | El Cofre tose y caen 3 del objeto -35 en el botín
+ACTUALIZAR B 875 1 | Algo sale volando del Cofre: el objeto 875 (1), al botín
+ACTUALIZAR B -23 6 | El Cofre escupe 6 del objeto -23, que cae en el botín
+ACTUALIZAR 360 4 | Lis arranca de la pared el objeto 360 (4)
+FUSIONAR | Lis guarda todo el botín en su inventario
+AGOTAR 6 | El Cofre Glotón muerde: se traga todo lo que tenga menos de 6
+ACTUALIZAR B 14 5 | El Cofre Glotón eructa y suelta el objeto 14 (5) en el botín
+ACTUALIZAR B 875 1 | De la tapa sale rodando el objeto 875: 1 al botín
+ACTUALIZAR B 875 3 | El Cofre tose y caen 3 del objeto 875 en el botín
+ACTUALIZAR 397 4 | Entre los huesos, Lis encuentra el objeto 397 (4)
+ACTUALIZAR 473 5 | Lis recoge del suelo el objeto 473 (5)
+FUSIONAR | Lis recoge el botín y lo mete en su inventario, cada objeto en su cubo
+AGOTAR 6 | El Cofre Glotón muerde: se traga todo lo que tenga menos de 6
 FUSIONAR | Lis vuelve a fusionar con el botín vacío: no tiene que cambiar nada
 BUSCAR 0 | Merla hace recuento: ¿quedó algo con el número 0?
-LIBERAR | Lis y tú vaciáis todas las tablas
+LIBERAR | El Cofre Glotón se cierra de golpe y vuelve a ser madera vieja. Lis y tú vaciáis todas las tablas

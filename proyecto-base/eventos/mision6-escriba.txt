@@ -1,25 +1,25 @@
-# Mision 6: el escriba de la caravana (ejercicio 6: copiar un inventario). Te acompaña Rina, la boticaria.
+# Mision 6: el escriba de la caravana (ejercicio 6: copiar un inventario). Te acompaña Rina, la sanadora elfa.
 # Cada linea: ORDEN argumentos | lo que pasa en la historia
 # COPIAR copia el inventario en el botin (el libro del escriba).
-ACTUALIZAR 5 3 | Rina carga en la caravana 3 antorchas (objeto 5)
+ACTUALIZAR 5 3 | La caravana del Gremio sale hacia el este por el camino de comercio. Rina carga 3 antorchas (objeto 5)
 ACTUALIZAR 106 2 | 2 monedas (objeto 106): en las listas, al cubo 5
 ACTUALIZAR 207 4 | 4 clavos (objeto 207): también al cubo 5, el primero de la lista
-ACTUALIZAR 23 1 | Una poción (objeto 23)
-ACTUALIZAR 43 6 | 6 flechas (objeto 43): en el array chocan con la poción
-COPIAR | El escriba copia el inventario en su libro: en las listas, nodos nuevos y en el mismo orden
+ACTUALIZAR 23 1 | Un frasco de bálsamo (objeto 23)
+ACTUALIZAR 43 6 | 6 flechas (objeto 43): en el array chocan con el bálsamo
+COPIAR | El escriba de la caravana, un anciano con los dedos manchados de tinta, copia el inventario en su libro: en las listas, nodos nuevos y en el mismo orden
 BUSCAR B 106 | En el libro también constan las 2 monedas
-ACTUALIZAR B 106 9 | El escriba se equivoca y apunta 9 monedas en el libro
+ACTUALIZAR B 106 9 | El escriba da una cabezada y apunta 9 monedas en el libro
 BUSCAR 106 | En la caravana siguen siendo 2: la copia no comparte nodos con el original
-ELIMINAR 23 | Rina gasta la poción: en el array queda una BORRADA
-ACTUALIZAR 63 2 | 2 mapas (objeto 63): en el array aprovechan la BORRADA de la poción
-ELIMINAR 43 | Se disparan las flechas: otra BORRADA
-COPIAR | El escriba copia otra vez, encima de la copia vieja: los nodos viejos del libro sobran
+ELIMINAR 23 | Rina usa el bálsamo con un mulero herido: en el array queda una BORRADA
+ACTUALIZAR 63 2 | 2 mapas (objeto 63): en el array aprovechan la BORRADA del bálsamo
+ELIMINAR 43 | Bandidos entre las rocas: se disparan todas las flechas y queda otra BORRADA
+COPIAR | El escriba copia otra vez, encima de la copia vieja: los nodos viejos del libro sobran y hay que liberarlos
 BUSCAR B 106 | Ahora el libro dice 2 monedas, como la caravana
 BUSCAR B 43 | Y ya no apunta las flechas
-ELIMINAR 5 | Se gastan las antorchas
-ELIMINAR 106 | Se pagan las monedas
-ELIMINAR 207 | Se venden los clavos
-ELIMINAR 63 | Se pierden los mapas
+ELIMINAR 5 | Se gastan las antorchas en el desfiladero
+ELIMINAR 106 | Se pagan las monedas en el vado
+ELIMINAR 207 | Se venden los clavos a un herrero ambulante
+ELIMINAR 63 | El viento se lleva los mapas
 COPIAR | Copiar una caravana vacía deja el libro vacío
 BUSCAR B 207 | En el libro ya no queda nada
-LIBERAR | Fin de la jornada: se vacían las tablas
+LIBERAR | Fin de la jornada: el escriba cierra el libro y se vacían las tablas

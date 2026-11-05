@@ -8,7 +8,7 @@ TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 V 1 816
 V 2 252
-EV 1 ACTUALIZAR 3 2 | Ulf rescata 2 flechas (objeto 3)
+EV 1 ACTUALIZAR 3 2 | En las galerías del dragón, Ulf rescata 2 flechas (objeto 3)
 M 3 16 TablaDispersaLista.c 52
 RL 1
 RA 1
@@ -294,7 +294,7 @@ V 8 16
 V 9 16
 V 10 16
 V 11 16
-EV 11 ELIMINAR 3 | El gólem se traga las flechas y deja polvo
+EV 11 ELIMINAR 3 | El gólem de polvo, guardián de Ascuaferro, se traga las flechas y deja polvo
 F 3 TablaDispersaLista.c 89
 RL 1 2
 RA 1 2
@@ -553,7 +553,7 @@ V 8 16
 V 9 16
 V 10 16
 V 11 16
-EV 19 FRENTE 5 | Ulf las usa mucho y las pone delante
+EV 19 FRENTE 5 | En la oscuridad Ulf las usa sin parar, así que las pone delante
 RL 0
 TL H 1 101 6 1 0
 CL H 5 11
@@ -645,7 +645,7 @@ V 8 16
 V 9 16
 V 10 16
 V 11 16
-EV 22 FRENTE 308 | Ulf vuelve a poner delante las llaves
+EV 22 FRENTE 308 | Ulf ve una puerta cerrada: vuelve a poner delante las llaves
 RL 0
 TL H 1 101 6 1 0
 CL H 5 11
@@ -766,7 +766,7 @@ V 8 16
 V 9 16
 V 10 16
 V 11 16
-EV 26 LIBERAR | El gólem se deshace y se vacían las tablas
+EV 26 LIBERAR | El gólem se deshace en un montón de arena y se vacían las tablas
 F 11 TablaDispersaLista.c 99
 F 10 TablaDispersaLista.c 99
 F 9 TablaDispersaLista.c 99

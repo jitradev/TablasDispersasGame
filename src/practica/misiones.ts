@@ -38,10 +38,10 @@ export interface Acto {
 }
 
 export const ACTOS: Acto[] = [
-  { n: 1, titulo: 'El Gremio', lugar: 'La aldea', ficheros: ['TablaDispersaLista.c', 'TablaDispersaArray.c'], resumen: 'Las dos tablas de clase: el objeto con más unidades, medir las colisiones, cambiar la clave, quitar los agotados y juntar dos inventarios.' },
+  { n: 1, titulo: 'El Gremio', lugar: 'La aldea y su cripta', ficheros: ['TablaDispersaLista.c', 'TablaDispersaArray.c'], resumen: 'Las dos tablas de clase: el objeto con más unidades, medir las colisiones, cambiar la clave, quitar los agotados y juntar dos inventarios.' },
   { n: 2, titulo: 'Las caravanas', lugar: 'El camino de comercio', ficheros: ['TablaDispersaLista.c', 'TablaDispersaArray.c'], resumen: 'Dos inventarios a la vez: copiarlos, compararlos, quedarse con lo común y pagar con lo del otro.' },
-  { n: 3, titulo: 'Crear distintos hash', lugar: 'La torre del hechicero', ficheros: ['TablaDispersaLista.c', 'TablaDispersaArray.c'], resumen: 'Las mismas dos tablas con otras funciones hash: plegamiento, mitad del cuadrado y polinómico sobre las cifras, comparadas con la de clase.' },
-  { n: 4, titulo: 'Juego con colisiones', lugar: 'La guarida del dragón', ficheros: ['TablaDispersaLista.c', 'TablaDispersaArray.c'], resumen: 'Las mismas dos tablas jugando con las colisiones: exploración cuadrática y doble hashing, lo que cuesta buscar, barrer las BORRADA y poner delante lo que más se busca.' },
+  { n: 3, titulo: 'Crear distintos hash', lugar: 'La torre del nigromante', ficheros: ['TablaDispersaLista.c', 'TablaDispersaArray.c'], resumen: 'Las mismas dos tablas con otras funciones hash: plegamiento, mitad del cuadrado y polinómico sobre las cifras, comparadas con la de clase.' },
+  { n: 4, titulo: 'Juego con colisiones', lugar: 'La montaña del dragón', ficheros: ['TablaDispersaLista.c', 'TablaDispersaArray.c'], resumen: 'Las mismas dos tablas jugando con las colisiones: exploración cuadrática y doble hashing, lo que cuesta buscar, barrer las BORRADA y poner delante lo que más se busca.' },
 ];
 
 /** Las órdenes de un fichero de eventos, normalizadas como las escribe el registro. */
@@ -60,21 +60,21 @@ export const MISIONES: Mision[] = [
   { acto: 1, id: 'mision2-mapa', target: 'mision2', titulo: 'El mapa de las colisiones', resumen: 'Ejercicio 2, medir las colisiones: un cubo con cuatro nodos, un grupo que crece, una BORRADA en medio y la vuelta del array.', ordenes: ordenesDe(m2), quien: 'bastian' },
   { acto: 1, id: 'mision3-mercado', target: 'mision3', titulo: 'El mercado de los trueques', resumen: 'Ejercicio 3, cambiar la clave: el nodo del medio, el primero, a una clave que ya está, a una que no existe y a sí misma.', ordenes: ordenesDe(m3), quien: 'rina' },
   { acto: 1, id: 'mision4-cripta-encantada', target: 'mision4', titulo: 'La cripta encantada', resumen: 'Ejercicio 4, quitar los agotados: ninguno, el primero, varios seguidos y todos, y después buscar e insertar con las BORRADA.', ordenes: ordenesDe(m4), quien: 'ulf' },
-  { acto: 1, id: 'mision5-cofre-gloton', target: 'mision5', titulo: 'El Cofre Glotón', resumen: `Ejercicio 5, el jefe del acto 1: ${n(m5)} eventos con dos inventarios, el de Lis y el botín, que se fusionan una y otra vez.`, ordenes: ordenesDe(m5), jefe: true, quien: 'lis' },
+  { acto: 1, id: 'mision5-cofre-gloton', target: 'mision5', titulo: 'El Cofre Glotón', resumen: `Ejercicio 5, el jefe del acto 1: ${n(m5)} eventos con dos inventarios, el de Lis y lo que escupe el Cofre, que se fusionan una y otra vez.`, ordenes: ordenesDe(m5), jefe: true, quien: 'lis' },
 
   { acto: 2, id: 'mision6-escriba', target: 'mision6', titulo: 'El escriba de la caravana', resumen: 'Ejercicio 6, copiar: nodos nuevos en el mismo orden, una copia que no comparte nada, copiar encima de otra copia y copiar lo vacío.', ordenes: ordenesDe(m6), quien: 'rina' },
   { acto: 2, id: 'mision7-balanza', target: 'mision7', titulo: 'La balanza del mercader', resumen: 'Ejercicio 7, comparar: lo mismo en otro orden, un valor distinto, un objeto de más y el mismo número de objetos pero distintos.', ordenes: ordenesDe(m7), quien: 'ulf' },
   { acto: 2, id: 'mision8-pacto', target: 'mision8', titulo: 'El pacto de las caravanas', resumen: 'Ejercicio 8, lo que tienen los dos: quedarse con el menor, quitar los dos primeros de un cubo y hacer un pacto con una caravana vacía.', ordenes: ordenesDe(m8), quien: 'bastian' },
-  { acto: 2, id: 'mision9-recaudador', target: 'mision9', titulo: 'El recaudador del puente', resumen: `Ejercicio 9 y todo el acto 2, el jefe: ${n(m9)} eventos de peajes, copias, comparaciones y pactos.`, ordenes: ordenesDe(m9), jefe: true, quien: 'lis' },
+  { acto: 2, id: 'mision9-recaudador', target: 'mision9', titulo: 'Grumak, el troll del puente', resumen: `Ejercicio 9 y todo el acto 2, el jefe: ${n(m9)} eventos de peajes del troll, copias, comparaciones y pactos.`, ordenes: ordenesDe(m9), jefe: true, quien: 'lis' },
 
   { acto: 3, id: 'mision10-pergamino', target: 'mision10', titulo: 'El pergamino plegado', resumen: 'Ejercicio 10, el plegamiento: claves con las mismas cifras cambiadas de sitio, trozos de dos y tres cifras, y la de clase al lado para comparar.', ordenes: ordenesDe(m10), quien: 'bastian' },
   { acto: 3, id: 'mision11-cuadrado', target: 'mision11', titulo: 'El espejo del cuadrado', resumen: 'Ejercicio 11, la mitad del cuadrado: separa lo que la de clase amontona, pero los números redondos caen todos en el mismo cubo.', ordenes: ordenesDe(m11), quien: 'hilda' },
-  { acto: 3, id: 'mision12-hechicero', target: 'mision12', titulo: 'El hechicero de los números', resumen: `Ejercicio 12 y todo el acto 3, el jefe: ${n(m12)} eventos con dos inventarios con funciones hash distintas, que al final se fusionan.`, ordenes: ordenesDe(m12), jefe: true, quien: 'lis' },
+  { acto: 3, id: 'mision12-hechicero', target: 'mision12', titulo: 'Vorhal, el nigromante de las cifras', resumen: `Ejercicio 12 y todo el acto 3, el jefe: ${n(m12)} eventos con dos inventarios con funciones hash distintas, que al final se fusionan.`, ordenes: ordenesDe(m12), jefe: true, quien: 'lis' },
 
-  { acto: 4, id: 'mision13-escalera', target: 'mision13', titulo: 'La escalera de la torre', resumen: 'Ejercicio 13, la cuadrática y el doble hashing: siete claves con la misma casilla, una que no cabe aunque sobra sitio, y las BORRADA.', ordenes: ordenesDe(m13), quien: 'bastian' },
+  { acto: 4, id: 'mision13-escalera', target: 'mision13', titulo: 'La escalera de la atalaya', resumen: 'Ejercicio 13, la cuadrática y el doble hashing: siete claves con la misma casilla, una que no cabe aunque sobra sitio, y las BORRADA.', ordenes: ordenesDe(m13), quien: 'bastian' },
   { acto: 4, id: 'mision14-espejos', target: 'mision14', titulo: 'La sala de los espejos', resumen: 'Ejercicio 14, lo que cuesta buscar: en las listas y en el array, lineal contra doble, claves que están, que no y después de borrar.', ordenes: ordenesDe(m14), quien: 'hilda' },
-  { acto: 4, id: 'mision15-golem', target: 'mision15', titulo: 'El gólem de polvo', resumen: 'Ejercicio 15, reorganizar: el gólem llena el array de BORRADA y hay que barrerlas; en las listas, lo que más se busca pasa delante.', ordenes: ordenesDe(m15), quien: 'ulf' },
-  { acto: 4, id: 'mision16-dragon', target: 'mision16', titulo: 'El dragón de las colisiones', resumen: `El jefe final: ${n(m16)} eventos con plegamiento, cuadrática y doble hashing, costes, barridos y el tesoro del dragón.`, ordenes: ordenesDe(m16), jefe: true, quien: 'lis' },
+  { acto: 4, id: 'mision15-golem', target: 'mision15', titulo: 'El gólem de polvo', resumen: 'Ejercicio 15, reorganizar: el gólem del dragón llena el array de BORRADA y hay que barrerlas; en las listas, lo que más se busca pasa delante.', ordenes: ordenesDe(m15), quien: 'ulf' },
+  { acto: 4, id: 'mision16-dragon', target: 'mision16', titulo: 'Ascuaferro, el dragón de las colisiones', resumen: `El jefe final: ${n(m16)} eventos con plegamiento, cuadrática y doble hashing, costes, barridos y el tesoro del dragón.`, ordenes: ordenesDe(m16), jefe: true, quien: 'lis' },
 ];
 
 export const misionDe = (id: string) => MISIONES.find((m) => m.id === id);

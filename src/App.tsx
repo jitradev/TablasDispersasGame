@@ -5,7 +5,7 @@ import { BotonSonido } from './juego/BotonSonido';
 import { leerRegistro, ErrorRegistro } from './practica/registro';
 import { corregir, Correccion } from './practica/corregir';
 import { ACTOS, MISIONES } from './practica/misiones';
-import { COMPANIA, MERLA } from './practica/personajes';
+import { COMPANIA, JEFES, MERLA } from './practica/personajes';
 import { Visor } from './practica/Visor';
 
 // ------------------------------------------------------------------ registros guardados
@@ -100,9 +100,8 @@ function Inicio({
   setActo: (n: number) => void;
 }) {
   const cofre = useMemo(() => urlSprite('cofre', 6), []);
-  const buho = useMemo(() => urlSprite('buho', 6), []);
+  const maga = useMemo(() => urlSprite('maga', 6), []);
   const fantasma = useMemo(() => urlSprite('fantasma', 5), []);
-  const gloton = useMemo(() => urlSprite('gloton', 3), []);
   const candado = useMemo(() => urlSprite('llave', 4), []);
   const [encima, setEncima] = useState<string | null>(null);
   const hechas = MISIONES.map((m) => correcciones[m.id]);
@@ -125,7 +124,7 @@ function Inicio({
     <div className="pantalla inicio">
       <div className="sprites-portada">
         <img src={cofre} alt="" />
-        <img src={buho} alt="" className="flota" />
+        <img src={maga} alt="" className="flota" />
         <img src={fantasma} alt="" className="flota lento" />
       </div>
       <div className="boton-sonido-portada">
@@ -138,14 +137,17 @@ function Inicio({
         {[MERLA, ...Object.values(COMPANIA)].map((p) => (
           <figure key={p.id}>
             <img src={urlSprite(p.id, 5)} alt="" />
-            <figcaption>{p.nombre}</figcaption>
+            <figcaption>
+              {p.nombre}
+              <small>{p.raza}</small>
+            </figcaption>
           </figure>
         ))}
       </div>
 
       <section className="intro">
         <p>
-          El Gremio guarda su inventario en <b>tablas de dispersión</b>. Cada objeto tiene su número, que es la clave, y se guarda cuántos hay. La campaña tiene <b>cuatro actos</b>, uno por sesión de 2 horas, todos abiertos desde el principio, y se juega entera sobre <b>un solo proyecto base</b>: el <code>Listas_Dispersas</code> de clase, con sus dos tablas, la de listas y la del array.
+          El Gremio guarda el inventario de todo el reino en el Libro de los Cofres, que son dos <b>tablas de dispersión</b>: cada objeto tiene su número, que es la clave, y se guarda cuántos hay. Pero un cofre de la cripta ha empezado a tragárselo todo, un troll cobra peajes imposibles en el camino, un nigromante retuerce los números desde su torre y un dragón guarda un tesoro que nadie ha sabido contar. Merla, la maga del Libro, reúne una compañía para arreglarlo. La campaña tiene <b>cuatro actos</b>, uno por sesión de 2 horas, todos abiertos desde el principio, y se juega entera sobre <b>un solo proyecto base</b>: el <code>Listas_Dispersas</code> de clase, con sus dos tablas, la de listas y la del array.
         </p>
         <p>
           Cada ejercicio tiene su misión. Tu programa juega la misión y deja un registro de lo que ha hecho con la memoria; lo subes aquí y ves la animación de las tablas, evento a evento: a qué cubo va cada clave, qué casillas mira cada búsqueda... y cada fantasma que se te escapa. Cada acto termina con su jefe.
@@ -219,6 +221,13 @@ function Inicio({
           ))}
           .
         </p>
+        <div className="jefe-acto">
+          <img src={urlSprite(JEFES[acto].id, 3)} alt="" />
+          <div>
+            <div className="jefe-nombre">EL JEFE DEL ACTO: {JEFES[acto].nombre}</div>
+            <p>{JEFES[acto].amenaza}</p>
+          </div>
+        </div>
         {!abierto(acto) && (
           <div className="aviso neutro">
             Este acto se abre al sacar al menos {ESTRELLAS_PARA_ABRIR} estrellas en el jefe del acto {acto - 1} ({MISIONES.find((m) => m.acto === acto - 1 && m.jefe)!.titulo}). Si ya lo hiciste en otro ordenador, vuelve a subir aquí su registro.
@@ -248,7 +257,7 @@ function Inicio({
               >
                 <div className="iconos">
                   <img src={urlSprite(m.quien, 4)} alt="" />
-                  {m.jefe && <img src={gloton} alt="" />}
+                  {m.jefe && <img src={urlSprite(JEFES[m.acto].id, 3)} alt="" />}
                 </div>
                 <div className="t-num">
                   MISIÓN {num} · target <code>{m.target}</code>
@@ -390,7 +399,7 @@ function Enunciado({ acto }: { acto: number }) {
           </p>
           {ej(13, 'Otras formas de buscar sitio', 13, <><code>casillaHashArray(h, clave, intento)</code>: la casilla del intento i. Lineal (hecha): <code>(h + i) mod 20</code>. Cuadrática: <code>(h + i²) mod 20</code>. Doble: <code>(h + i·h2) mod 20</code>, con <code>hash2HashArray(x) = 7 - x mod 7</code>. Con 20 casillas, que no es primo, la cuadrática solo pasa por 6: a veces no encuentra sitio aunque sobre.</>)}
           {ej(14, 'Lo que cuesta buscar', 14, <><code>costeBuscar(h, clave)</code>: en las listas, los nodos de su cubo hasta el de la clave (todos si no está); en el array, las casillas que se miran hasta la de la clave o la primera VACIA. <code>costeTotal(h)</code>: la suma del coste de cada clave que hay.</>)}
-          {ej(15, 'Reorganizar', 15, <><code>limpiarBorradasHashArray(h)</code>: guarda las OCUPADA, deja todo VACIA y n = 0 y las vuelve a insertar, sin cambiar el tamaño. <code>alFrenteHashLista(h, clave)</code>: mueve el MISMO nodo de la clave al principio de su cubo. La misión 16, el dragón, es el jefe final.</>)}
+          {ej(15, 'Reorganizar', 15, <><code>limpiarBorradasHashArray(h)</code>: guarda las OCUPADA, deja todo VACIA y n = 0 y las vuelve a insertar, sin cambiar el tamaño. <code>alFrenteHashLista(h, clave)</code>: mueve el MISMO nodo de la clave al principio de su cubo. La misión 16, Ascuaferro el dragón, es el jefe final.</>)}
         </>
       )}
       <h3>Cómo repartir las 2 horas</h3>
@@ -398,10 +407,10 @@ function Enunciado({ acto }: { acto: number }) {
         {acto === 1
           ? '10 minutos para abrir el proyecto y subir la misión 1 sin tocar nada (saldrá casi todo mal, y es lo esperado); después, unos 20 minutos por ejercicio, cada uno con su misión.'
           : acto === 2
-            ? 'Unos 25 minutos por ejercicio, cada uno con su misión, y el resto para el recaudador.'
+            ? 'Unos 25 minutos por ejercicio, cada uno con su misión, y el resto para Grumak, el troll del puente.'
             : acto === 3
-              ? 'Unos 30 minutos por función hash, cada una con su misión (calcula a mano un par de claves antes de programarla), y el resto para el hechicero.'
-              : 'El ejercicio 13 primero, con la misión 13. Después, unos 25 minutos para el 14 y otros 25 para el 15, y el resto para el dragón.'}
+              ? 'Unos 30 minutos por función hash, cada una con su misión (calcula a mano un par de claves antes de programarla), y el resto para Vorhal, el nigromante.'
+              : 'El ejercicio 13 primero, con la misión 13. Después, unos 25 minutos para el 14 y otros 25 para el 15, y el resto para Ascuaferro, el dragón.'}
       </p>
       <h3>Qué mira la corrección</h3>
       <p>

@@ -8,14 +8,14 @@ TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 V 1 816
 V 2 252
-EV 1 FUNCION POLINOMICO | Lis lanza su conjuro: su inventario usará el hash polinómico de las cifras
+EV 1 FUNCION POLINOMICO | En lo alto de la torre, Lis lee en voz alta el conjuro de las cifras: su inventario usará el hash polinómico
 RL 1
 RA 1
 TL H 1 101 0 1 3
 TA H 2 20 0 2 2 2 3 0
 V 1 816
 V 2 252
-EV 2 FUNCION B PLEGAMIENTO | El hechicero pliega su botín
+EV 2 FUNCION B PLEGAMIENTO | Vorhal responde plegando su botín: «El plegamiento me basta para ti»
 CREAR B
 M 3 816 TablaDispersaLista.c 39
 M 4 252 TablaDispersaArray.c 49
@@ -241,7 +241,7 @@ V 9 16
 V 10 16
 V 11 16
 V 12 16
-EV 11 ACTUALIZAR B 1234 2 | El hechicero guarda 2 brújulas
+EV 11 ACTUALIZAR B 1234 2 | Vorhal guarda 2 brújulas
 M 13 16 TablaDispersaLista.c 52
 RL 1
 RA 1
@@ -282,7 +282,7 @@ V 10 16
 V 11 16
 V 12 16
 V 13 16
-EV 12 ACTUALIZAR B 3412 3 | 3 sextantes: en su botín, con las brújulas
+EV 12 ACTUALIZAR B 3412 3 | Vorhal: «Tres sextantes». En su botín caen con las brújulas
 M 14 16 TablaDispersaLista.c 52
 RL 1
 RA 1
@@ -326,7 +326,7 @@ V 11 16
 V 12 16
 V 13 16
 V 14 16
-EV 13 ACTUALIZAR B 5612 1 | Un mapa (objeto 5612)
+EV 13 ACTUALIZAR B 5612 1 | Un mapa robado al Gremio (objeto 5612)
 M 15 16 TablaDispersaLista.c 52
 RL 1
 RA 1
@@ -373,7 +373,7 @@ V 12 16
 V 13 16
 V 14 16
 V 15 16
-EV 14 ACTUALIZAR B 1256 4 | 4 pergaminos (objeto 1256): con el mapa
+EV 14 ACTUALIZAR B 1256 4 | 4 pergaminos prohibidos (objeto 1256): con el mapa
 M 16 16 TablaDispersaLista.c 52
 RL 1
 RA 1
@@ -423,7 +423,7 @@ V 13 16
 V 14 16
 V 15 16
 V 16 16
-EV 15 ACTUALIZAR B 12 2 | 2 flechas
+EV 15 ACTUALIZAR B 12 2 | Vorhal: «Y dos flechas, por si acaso»
 M 17 16 TablaDispersaLista.c 52
 RL 1
 RA 1
@@ -528,7 +528,7 @@ V 14 16
 V 15 16
 V 16 16
 V 17 16
-EV 17 COLISIONES B | ¿Y el plegamiento del hechicero?
+EV 17 COLISIONES B | ¿Y el plegamiento de Vorhal?
 RL 0 0
 RA 0 0
 TL H 1 101 8 1 3
@@ -632,7 +632,7 @@ V 14 16
 V 15 16
 V 16 16
 V 17 16
-EV 19 ABUNDANTE B | Lo que más tiene el hechicero
+EV 19 ABUNDANTE B | Lo que más tiene Vorhal
 RL 0 0 0
 RA 0 0 0
 TL H 1 101 8 1 3
@@ -684,7 +684,7 @@ V 14 16
 V 15 16
 V 16 16
 V 17 16
-EV 20 CAMBIAR 1200 120000 | La lanza crece y pasa a ser el objeto 120000: el mismo nodo, otro cubo
+EV 20 CAMBIAR 1200 120000 | Vorhal hechiza la lanza y la convierte en el objeto 120000: el mismo nodo, otro cubo
 RL 0
 RA 0
 TL H 1 101 8 1 3
@@ -788,7 +788,7 @@ V 14 16
 V 15 16
 V 16 16
 V 17 16
-EV 22 CAMBIAR 4321 1234 | Los catalejos resultan ser brújulas: se suman
+EV 22 CAMBIAR 4321 1234 | Los catalejos eran brújulas con un hechizo de Vorhal: se suman
 RL 0
 RA 0
 TL H 1 101 8 1 3
@@ -892,7 +892,7 @@ V 14 16
 V 15 16
 V 16 16
 V 17 16
-EV 24 ELIMINAR 2143 | Los relojes se rompen
+EV 24 ELIMINAR 2143 | Vorhal rompe los relojes de arena con una sola palabra
 F 8 TablaDispersaLista.c 89
 RL 1 2
 RA 1 2
@@ -943,7 +943,7 @@ V 14 16
 V 15 16
 V 16 16
 V 17 16
-EV 25 AGOTAR 2 | Lis se deshace de todo lo que tenga menos de 2
+EV 25 AGOTAR 2 | Lis suelta todo lo que tenga menos de 2 para esquivar el siguiente hechizo
 RL 0
 RA 0
 TL H 1 101 7 1 3
@@ -993,7 +993,7 @@ V 14 16
 V 15 16
 V 16 16
 V 17 16
-EV 26 FUSIONAR | Lis vence al hechicero y se queda su botín: cada objeto pasa al cubo que le da el polinómico
+EV 26 FUSIONAR | Lis atraviesa la capucha vacía de Vorhal y se queda su botín: cada objeto pasa al cubo que le da el polinómico
 RL 0
 RA 0
 TL H 1 101 7 1 3
@@ -1043,7 +1043,7 @@ V 14 16
 V 15 16
 V 16 16
 V 17 16
-EV 27 BUSCAR 1256 | Los pergaminos del hechicero ya son de Lis
+EV 27 BUSCAR 1256 | Los pergaminos de Vorhal ya son de Lis
 RL 0 0
 RA 0 0
 TL H 1 101 7 1 3
@@ -1093,7 +1093,7 @@ V 14 16
 V 15 16
 V 16 16
 V 17 16
-EV 28 BUSCAR 3412 | Lis soltó su sextante con el conjuro, pero ahora tiene los 3 del hechicero
+EV 28 BUSCAR 3412 | Lis soltó su sextante, pero ahora tiene los 3 de Vorhal
 RL 1 1
 RA 1 1
 TL H 1 101 7 1 3
@@ -1243,7 +1243,7 @@ V 14 16
 V 15 16
 V 16 16
 V 17 16
-EV 31 LIBERAR | El hechicero desaparece y se vacían las tablas
+EV 31 LIBERAR | La torre se derrumba a vuestra espalda y se vacían las tablas
 F 12 TablaDispersaLista.c 99
 F 11 TablaDispersaLista.c 99
 F 10 TablaDispersaLista.c 99

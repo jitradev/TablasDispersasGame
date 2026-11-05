@@ -1,23 +1,23 @@
-# Mision 3: el mercado de los trueques (ejercicio 3: cambiar la clave). Te acompaña Rina, la boticaria.
+# Mision 3: el mercado de los trueques (ejercicio 3: cambiar la clave). Te acompaña Rina, la sanadora elfa.
 # Cada linea: ORDEN argumentos | lo que pasa en la historia
-ACTUALIZAR 5 3 | Rina llega al mercado con 3 antorchas (objeto 5)
+ACTUALIZAR 5 3 | Rina monta su puesto de hierbas en la plaza de la aldea con 3 antorchas (objeto 5)
 ACTUALIZAR 106 2 | 2 monedas (objeto 106): en las listas, al cubo 5
 ACTUALIZAR 207 4 | 4 clavos (objeto 207): también al cubo 5, el primero de la lista
-ACTUALIZAR 23 1 | Una poción (objeto 23)
+ACTUALIZAR 23 1 | Un frasco de bálsamo élfico (objeto 23)
 ACTUALIZAR 25 6 | 6 cuerdas (objeto 25): en el array su casilla es la 5, pero está llena y salta hasta la 8
-CAMBIAR 106 300 | Las monedas se funden en lingotes (objeto 300): el nodo del medio del cubo 5 se va al 98
-BUSCAR 300 | ¿Están los lingotes donde deben?
+CAMBIAR 106 300 | Un orfebre funde las monedas en lingotes (objeto 300): el nodo del medio del cubo 5 se va al 98, y es el mismo nodo
+BUSCAR 300 | Rina comprueba que los lingotes estén donde deben
 BUSCAR 106 | ¿Y las monedas? Ya no existen
 BUSCAR 25 | ¿Y las cuerdas? En el array hay que pasar por donde estaban las monedas
-CAMBIAR 207 23 | Los clavos resultan ser pociones disfrazadas: se suman a las pociones
-BUSCAR 23 | Ahora hay 5 pociones
-CAMBIAR 5 409 | Las antorchas pasan a ser el objeto 409: mismo cubo en las listas, otra casilla en el array
+CAMBIAR 207 23 | Rina descubre que los clavos eran frascos de bálsamo con un hechizo de disfraz: se suman al bálsamo
+BUSCAR 23 | Ahora hay 5 frascos
+CAMBIAR 5 409 | Rina cambia las antorchas por el objeto 409: mismo cubo en las listas, otra casilla en el array
 BUSCAR 409 | ¿Siguen ahí?
-CAMBIAR 999 1 | Rina intenta cambiar un objeto que no tiene
-CAMBIAR 23 23 | Y cambiar las pociones por pociones: no pasa nada
-CAMBIAR 300 -7 | Los lingotes se convierten en un objeto maldito con número negativo
+CAMBIAR 999 1 | Un pícaro le pide a Rina que cambie algo que no tiene. Ella no cae en la trampa
+CAMBIAR 23 23 | «Bálsamo por bálsamo», propone un niño. Rina sonríe: no pasa nada
+CAMBIAR 300 -7 | Los lingotes estaban malditos y su número se vuelve negativo
 BUSCAR -7 | El objeto maldito
-ACTUALIZAR 43 1 | Una flecha (objeto 43): en el array, junto a la casilla que dejaron las pociones
-CAMBIAR 409 43 | Las antorchas se cambian por flechas: se suman a la flecha
+ACTUALIZAR 43 1 | Una flecha (objeto 43): en el array, junto a la casilla que dejó el bálsamo
+CAMBIAR 409 43 | Rina cambia las antorchas por flechas: se suman a la flecha
 BUSCAR 43 | Ahora hay 4 flechas
-LIBERAR | Rina cierra el puesto y se vacían las tablas
+LIBERAR | Cae la noche, Rina recoge el puesto y se vacían las tablas

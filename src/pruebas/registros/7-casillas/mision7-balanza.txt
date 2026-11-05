@@ -8,7 +8,7 @@ TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 V 1 816
 V 2 252
-EV 1 IGUALES | Ulf y el mercader no llevan nada: dos inventarios vacíos son iguales
+EV 1 IGUALES | En el mercado del cruce, Ulf y un mercader de sedas aún no han descargado: dos inventarios vacíos son iguales
 CREAR B
 M 3 816 TablaDispersaLista.c 40
 M 4 252 TablaDispersaArray.c 50
@@ -22,7 +22,7 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
-EV 2 ACTUALIZAR 5 3 | Ulf sube 3 antorchas (objeto 5)
+EV 2 ACTUALIZAR 5 3 | Ulf pone en la balanza 3 antorchas (objeto 5)
 M 5 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -80,7 +80,7 @@ V 4 252
 V 5 16
 V 6 16
 V 7 16
-EV 5 ACTUALIZAR B 106 2 | El mercader sube lo mismo, pero en otro orden: primero las monedas
+EV 5 ACTUALIZAR B 106 2 | El mercader pone lo mismo, pero en otro orden: primero las monedas
 M 8 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -172,7 +172,7 @@ V 7 16
 V 8 16
 V 9 16
 V 10 16
-EV 8 IGUALES | Lo mismo en otro orden y en otras casillas: son iguales
+EV 8 IGUALES | La balanza no se mueve: lo mismo en otro orden y en otras casillas es igual
 RL 1
 RA 0
 TL H 1 101 3 1 0
@@ -205,7 +205,7 @@ V 7 16
 V 8 16
 V 9 16
 V 10 16
-EV 9 ACTUALIZAR B 5 4 | El mercader encuentra otra antorcha
+EV 9 ACTUALIZAR B 5 4 | El mercader esconde otra antorcha bajo la capa
 RL 1
 RA 1
 TL H 1 101 3 1 0
@@ -238,7 +238,7 @@ V 7 16
 V 8 16
 V 9 16
 V 10 16
-EV 10 IGUALES | Ahora no: las antorchas no cuadran
+EV 10 IGUALES | Ulf lo nota enseguida: las antorchas no cuadran
 RL 0
 RA 0
 TL H 1 101 3 1 0
@@ -271,7 +271,7 @@ V 7 16
 V 8 16
 V 9 16
 V 10 16
-EV 11 ACTUALIZAR B 5 3 | Se la regala a un niño y vuelve a tener 3
+EV 11 ACTUALIZAR B 5 3 | El mercader, pillado, devuelve la antorcha y se queda con 3
 RL 1
 RA 1
 TL H 1 101 3 1 0
@@ -337,7 +337,7 @@ V 7 16
 V 8 16
 V 9 16
 V 10 16
-EV 13 ACTUALIZAR B 44 1 | El mercader compra una gema (objeto 44)
+EV 13 ACTUALIZAR B 44 1 | El mercader saca una gema (objeto 44)
 M 11 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -412,7 +412,7 @@ V 8 16
 V 9 16
 V 10 16
 V 11 16
-EV 15 ACTUALIZAR 45 1 | Ulf compra un escudo (objeto 45): los dos tienen cuatro objetos, pero no los mismos
+EV 15 ACTUALIZAR 45 1 | Ulf saca un escudo (objeto 45): los dos tienen cuatro objetos, pero no los mismos
 M 12 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -605,7 +605,7 @@ V 7 16
 V 8 16
 V 9 16
 V 10 16
-EV 20 LIBERAR | Cierra el mercado y se vacían las tablas
+EV 20 LIBERAR | Se cierra el trato con un apretón de manos y se vacían las tablas
 F 6 TablaDispersaLista.c 100
 F 5 TablaDispersaLista.c 100
 F 7 TablaDispersaLista.c 100

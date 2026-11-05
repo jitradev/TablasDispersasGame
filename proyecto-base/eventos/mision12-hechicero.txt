@@ -1,8 +1,8 @@
-# Mision 12: el hechicero de los numeros (ejercicio 12 y todo el acto 3, el jefe). Te acompaña Lis, la arquera del bosque.
+# Mision 12: Vorhal, el nigromante de las cifras (ejercicio 12 y todo el acto 3, el jefe). Te acompaña Lis, la escudera.
 # Cada linea: ORDEN argumentos | lo que pasa en la historia
-# El inventario de Lis usa el hash polinomico de las cifras; el botin del hechicero, el de plegamiento.
-FUNCION POLINOMICO | Lis lanza su conjuro: su inventario usará el hash polinómico de las cifras
-FUNCION B PLEGAMIENTO | El hechicero pliega su botín
+# El inventario de Lis usa el hash polinomico de las cifras; el botin de Vorhal, el de plegamiento.
+FUNCION POLINOMICO | En lo alto de la torre, Lis lee en voz alta el conjuro de las cifras: su inventario usará el hash polinómico
+FUNCION B PLEGAMIENTO | Vorhal responde plegando su botín: «El plegamiento me basta para ti»
 ACTUALIZAR 1234 3 | 3 brújulas (objeto 1234)
 ACTUALIZAR 3412 1 | Un sextante (objeto 3412): con el polinómico ya no cae con las brújulas
 ACTUALIZAR 4321 2 | 2 catalejos (objeto 4321)
@@ -11,24 +11,24 @@ ACTUALIZAR 7799 4 | 4 rollos de cuerda (objeto 7799)
 ACTUALIZAR 9977 5 | 5 velas (objeto 9977)
 ACTUALIZAR 12 6 | 6 flechas (objeto 12)
 ACTUALIZAR 1200 1 | Una lanza (objeto 1200): los ceros no suman en el polinómico, cae con las flechas
-ACTUALIZAR B 1234 2 | El hechicero guarda 2 brújulas
-ACTUALIZAR B 3412 3 | 3 sextantes: en su botín, con las brújulas
-ACTUALIZAR B 5612 1 | Un mapa (objeto 5612)
-ACTUALIZAR B 1256 4 | 4 pergaminos (objeto 1256): con el mapa
-ACTUALIZAR B 12 2 | 2 flechas
+ACTUALIZAR B 1234 2 | Vorhal guarda 2 brújulas
+ACTUALIZAR B 3412 3 | Vorhal: «Tres sextantes». En su botín caen con las brújulas
+ACTUALIZAR B 5612 1 | Un mapa robado al Gremio (objeto 5612)
+ACTUALIZAR B 1256 4 | 4 pergaminos prohibidos (objeto 1256): con el mapa
+ACTUALIZAR B 12 2 | Vorhal: «Y dos flechas, por si acaso»
 COLISIONES | ¿Cómo reparte el polinómico?
-COLISIONES B | ¿Y el plegamiento del hechicero?
+COLISIONES B | ¿Y el plegamiento de Vorhal?
 ABUNDANTE | Lo que más tiene Lis
-ABUNDANTE B | Lo que más tiene el hechicero
-CAMBIAR 1200 120000 | La lanza crece y pasa a ser el objeto 120000: el mismo nodo, otro cubo
+ABUNDANTE B | Lo que más tiene Vorhal
+CAMBIAR 1200 120000 | Vorhal hechiza la lanza y la convierte en el objeto 120000: el mismo nodo, otro cubo
 BUSCAR 120000 | ¿Dónde ha ido a parar?
-CAMBIAR 4321 1234 | Los catalejos resultan ser brújulas: se suman
+CAMBIAR 4321 1234 | Los catalejos eran brújulas con un hechizo de Vorhal: se suman
 BUSCAR 1234 | Ahora hay 5 brújulas
-ELIMINAR 2143 | Los relojes se rompen
-AGOTAR 2 | Lis se deshace de todo lo que tenga menos de 2
-FUSIONAR | Lis vence al hechicero y se queda su botín: cada objeto pasa al cubo que le da el polinómico
-BUSCAR 1256 | Los pergaminos del hechicero ya son de Lis
-BUSCAR 3412 | Lis soltó su sextante con el conjuro, pero ahora tiene los 3 del hechicero
+ELIMINAR 2143 | Vorhal rompe los relojes de arena con una sola palabra
+AGOTAR 2 | Lis suelta todo lo que tenga menos de 2 para esquivar el siguiente hechizo
+FUSIONAR | Lis atraviesa la capucha vacía de Vorhal y se queda su botín: cada objeto pasa al cubo que le da el polinómico
+BUSCAR 1256 | Los pergaminos de Vorhal ya son de Lis
+BUSCAR 3412 | Lis soltó su sextante, pero ahora tiene los 3 de Vorhal
 COLISIONES | El inventario de Lis después del botín
 BUSCAR B 1234 | El botín ha quedado vacío
-LIBERAR | El hechicero desaparece y se vacían las tablas
+LIBERAR | La torre se derrumba a vuestra espalda y se vacían las tablas

@@ -1,8 +1,8 @@
-# Mision 13: la escalera de la torre (ejercicio 13: otras formas de buscar sitio). Te acompaña Bastián, el cartógrafo.
+# Mision 13: la escalera de la atalaya (ejercicio 13: otras formas de buscar sitio). Te acompaña Bastián, el cartógrafo mediano.
 # Cada linea: ORDEN argumentos | lo que pasa en la historia
 # SONDEO elige como busca sitio el array de un inventario (solo con el inventario vacio).
 # El array de Bastian usa la exploracion cuadratica; el del botin, el doble hashing.
-SONDEO CUADRATICO | Bastián sube la escalera de la torre de cuadrado en cuadrado
+SONDEO CUADRATICO | Desde la vieja atalaya se ve el humo de la montaña de Ascuaferro. Bastián sube la escalera de caracol de cuadrado en cuadrado
 SONDEO B DOBLE | El botín sube a saltos: cada objeto con el suyo
 ACTUALIZAR 3 5 | 5 velas (objeto 3): casilla 3
 ACTUALIZAR B 3 5 | En el botín, también la 3
@@ -16,7 +16,7 @@ ACTUALIZAR 83 4 | 83: la cuadrática va a 3 + 16 = 19
 ACTUALIZAR B 83 4 | El doble salta 1: a la 4
 ACTUALIZAR 103 2 | 103: 3 + 25 = 28, que con 20 casillas es la 8
 ACTUALIZAR B 103 2 | El doble salta 2: a la 5
-ACTUALIZAR 123 6 | 123: la cuadrática solo pasa por seis casillas y ya están todas: no cabe, aunque sobran 14
+ACTUALIZAR 123 6 | 123: la cuadrática solo pasa por seis casillas y ya están todas. No cabe, aunque sobran 14. Bastián resopla
 ACTUALIZAR B 123 6 | El doble salta 3: a la 6
 BUSCAR 123 | En el array de Bastián no está
 BUSCAR B 123 | En el botín, sí
@@ -25,4 +25,4 @@ ACTUALIZAR 123 6 | Ahora el 123 aprovecha la BORRADA
 BUSCAR 103 | Para llegar al 103 hay que pasar por la BORRADA
 ELIMINAR B 63 | En el botín se gasta el 63
 BUSCAR B 123 | El 123 del botín sigue a su salto
-LIBERAR | Bastián baja de la torre y se vacían las tablas
+LIBERAR | Desde lo alto, Bastián dibuja el camino hasta la montaña. Bajáis y se vacían las tablas

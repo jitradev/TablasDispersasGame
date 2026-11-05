@@ -8,7 +8,7 @@ TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 V 1 816
 V 2 252
-EV 1 FUNCION MITAD | Hilda mira su inventario en el espejo del cuadrado
+EV 1 FUNCION MITAD | En las ruinas al pie de la torre, Hilda encuentra un espejo de bronce que devuelve cada número al cuadrado: su inventario usará la mitad del cuadrado
 RL 1
 RA 1
 TL H 1 101 0 1 2
@@ -705,7 +705,7 @@ V 17 16
 V 18 16
 V 19 16
 V 20 16
-EV 18 ACTUALIZAR 300 1 | Un yelmo (objeto 300): 90000, y otra vez 0: los números redondos se amontonan
+EV 18 ACTUALIZAR 300 1 | Un yelmo enano (objeto 300): 90000, y otra vez 0. Hilda frunce el ceño: los números redondos se amontonan
 M 21 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -1083,7 +1083,7 @@ V 19 16
 V 20 16
 V 21 16
 V 22 16
-EV 23 ELIMINAR 100 | Se disparan las flechas
+EV 23 ELIMINAR 100 | Se disparan las flechas contra los cuervos de la torre
 F 17 TablaDispersaLista.c 91
 RL 1 5
 RA 1 5
@@ -1306,7 +1306,7 @@ V 19 16
 V 20 16
 V 21 16
 V 22 16
-EV 26 LIBERAR | Hilda se aparta del espejo y se vacían las tablas
+EV 26 LIBERAR | Hilda tapa el espejo con su capa y se vacían las tablas
 F 21 TablaDispersaLista.c 101
 F 19 TablaDispersaLista.c 101
 F 3 TablaDispersaLista.c 101

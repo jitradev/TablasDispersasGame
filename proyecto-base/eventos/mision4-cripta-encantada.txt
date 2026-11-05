@@ -1,6 +1,6 @@
-# Mision 4: la cripta encantada (ejercicio 4: quitar los agotados). Te acompaña Ulf, el barquero.
+# Mision 4: la cripta encantada (ejercicio 4: quitar los agotados). Te acompaña Ulf, el montaraz.
 # Cada linea: ORDEN argumentos | lo que pasa en la historia
-ACTUALIZAR 5 1 | Ulf guarda 1 antorcha (objeto 5)
+ACTUALIZAR 5 1 | Ulf os guía hasta lo más hondo de la cripta con 1 antorcha (objeto 5)
 ACTUALIZAR 106 4 | 4 monedas (objeto 106): en las listas, al cubo 5
 ACTUALIZAR 207 2 | 2 hachas (objeto 207): también al cubo 5
 ACTUALIZAR 308 1 | 1 llave (objeto 308): también al cubo 5
@@ -9,15 +9,15 @@ ACTUALIZAR 23 2 | 2 pociones (objeto 23)
 ACTUALIZAR 124 2 | 2 mapas (objeto 124): en las listas, al cubo de las pociones
 ACTUALIZAR 225 9 | 9 flechas (objeto 225)
 ACTUALIZAR 7 1 | 1 vela (objeto 7), sola en su cubo
-AGOTAR 1 | El conjuro del 1: no hay nada con menos de 1, no se va nada
-AGOTAR 3 | El conjuro del 3: se va todo lo que tenga menos de 3
-BUSCAR 225 | ¿Siguen las flechas? En el array hay que saltar casillas borradas
-BUSCAR 308 | ¿Y la llave? Se la llevó el conjuro
-ACTUALIZAR 326 3 | 3 escudos (objeto 326): en el array aprovecha una casilla borrada
-ACTUALIZAR 106 2 | Se gastan monedas: quedan 2
-AGOTAR 3 | Otra vez el conjuro del 3
-AGOTAR 10 | El conjuro del 10: no queda nada
+AGOTAR 1 | Una niebla verde sale de las tumbas y se lleva lo que tenga menos de 1. No hay nada así
+AGOTAR 3 | La niebla vuelve, más espesa: se lleva todo lo que tenga menos de 3
+BUSCAR 225 | Ulf busca las flechas: en el array hay que pisar las casillas BORRADA, como quien sigue huellas en el barro
+BUSCAR 308 | ¿Y la llave? Se la llevó la niebla
+ACTUALIZAR 326 3 | 3 escudos de un caballero enterrado (objeto 326): en el array aprovecha una casilla borrada
+ACTUALIZAR 106 2 | Ulf paga al barquero de la laguna subterránea: quedan 2 monedas
+AGOTAR 3 | La niebla otra vez, con el mismo umbral
+AGOTAR 10 | La niebla más negra de todas, la del 10: no queda nada
 BUSCAR 409 | Ulf busca las gemas en la cripta vacía
-ACTUALIZAR 409 1 | Encuentra una gema
+ACTUALIZAR 409 1 | Entre los huesos brilla una gema
 BUSCAR 409 | Ahí está
-LIBERAR | Ulf vuelve a su barca y se vacían las tablas
+LIBERAR | Ulf sella la cripta y se vacían las tablas. Al fondo, algo se mueve dentro de un cofre

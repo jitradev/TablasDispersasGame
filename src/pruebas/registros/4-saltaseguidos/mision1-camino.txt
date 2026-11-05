@@ -8,14 +8,14 @@ TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 V 1 816
 V 2 252
-EV 1 ABUNDANTE | Hilda mira qué es lo que más lleva... con la mochila vacía
+EV 1 ABUNDANTE | Merla te entrega la mochila del Gremio: «¿Qué es lo que más llevas?». Está vacía, y la respuesta también tiene que serlo
 RL 0 0 0
 RA 0 0 0
 TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 V 1 816
 V 2 252
-EV 2 ACTUALIZAR 5 3 | Salís de la aldea con 3 antorchas (objeto 5)
+EV 2 ACTUALIZAR 5 3 | Al amanecer, Hilda y tú salís de la aldea con 3 antorchas (objeto 5)
 M 3 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -27,7 +27,7 @@ CA H 5 1 5 3
 V 1 816
 V 2 252
 V 3 16
-EV 3 ABUNDANTE | Con un solo objeto, ese es el que más hay
+EV 3 ABUNDANTE | Hilda gruñe: «Con una sola cosa, lo que más hay es esa»
 RL 1 5 3
 RA 1 5 3
 TL H 1 101 1 1 0
@@ -38,7 +38,7 @@ CA H 5 1 5 3
 V 1 816
 V 2 252
 V 3 16
-EV 4 ACTUALIZAR 23 1 | La curandera del molino os regala una poción (objeto 23)
+EV 4 ACTUALIZAR 23 1 | La curandera del molino os da una poción para el camino (objeto 23)
 M 4 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -54,7 +54,7 @@ V 1 816
 V 2 252
 V 3 16
 V 4 16
-EV 5 ACTUALIZAR 106 2 | Hilda pesca 2 monedas del pozo (objeto 106): en las listas, al cubo de las antorchas
+EV 5 ACTUALIZAR 106 2 | Hilda saca 2 monedas del fondo del pozo (objeto 106): en las listas van al cubo de las antorchas
 M 5 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -73,7 +73,7 @@ V 2 252
 V 3 16
 V 4 16
 V 5 16
-EV 6 ACTUALIZAR 43 5 | Recogéis 5 flechas (objeto 43): en el array chocan con las pociones
+EV 6 ACTUALIZAR 43 5 | Un cazador os vende 5 flechas (objeto 43): en el array chocan con la poción
 M 6 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -96,7 +96,7 @@ V 3 16
 V 4 16
 V 5 16
 V 6 16
-EV 7 ABUNDANTE | Ahora lo que más hay son flechas
+EV 7 ABUNDANTE | «¿Y ahora?». Mandan las flechas
 RL 1 43 5
 RA 1 43 5
 TL H 1 101 4 1 0
@@ -118,7 +118,7 @@ V 3 16
 V 4 16
 V 5 16
 V 6 16
-EV 8 ACTUALIZAR 207 5 | Hilda forja 5 clavos (objeto 207): empatan con las flechas
+EV 8 ACTUALIZAR 207 5 | En la fragua del cruce, Hilda forja 5 clavos (objeto 207): empatan con las flechas
 M 7 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -144,7 +144,7 @@ V 4 16
 V 5 16
 V 6 16
 V 7 16
-EV 9 ABUNDANTE | Empate a 5: gana la clave más pequeña
+EV 9 ABUNDANTE | Empate a 5. Las cuentas de los enanos son claras: gana la clave más pequeña
 RL 1 43 5
 RA 1 43 5
 TL H 1 101 5 1 0
@@ -169,7 +169,7 @@ V 4 16
 V 5 16
 V 6 16
 V 7 16
-EV 10 ACTUALIZAR -40 5 | Un amuleto maldito con número negativo, también 5 (objeto -40)
+EV 10 ACTUALIZAR -40 5 | Bajo una piedra aparece un amuleto maldito, marcado con un número negativo (objeto -40, 5 cargas)
 M 8 16 TablaDispersaLista.c 54
 RL 1
 RA 1
@@ -199,7 +199,7 @@ V 5 16
 V 6 16
 V 7 16
 V 8 16
-EV 11 ABUNDANTE | Otro empate a 5, y la clave más pequeña ahora es negativa
+EV 11 ABUNDANTE | Otro empate a 5, y ahora la clave más pequeña es negativa
 RL 1 -40 5
 RA 1 -40 5
 TL H 1 101 6 1 0
@@ -228,7 +228,7 @@ V 5 16
 V 6 16
 V 7 16
 V 8 16
-EV 12 ACTUALIZAR 106 9 | Encontráis más monedas: ahora 9
+EV 12 ACTUALIZAR 106 9 | Un carretero os paga por arreglarle el eje: ya tenéis 9 monedas
 RL 1
 RA 1
 TL H 1 101 6 1 0
@@ -257,7 +257,7 @@ V 5 16
 V 6 16
 V 7 16
 V 8 16
-EV 13 ABUNDANTE | Las monedas pasan delante
+EV 13 ABUNDANTE | Las monedas pasan delante de todo
 RL 1 106 9
 RA 1 106 9
 TL H 1 101 6 1 0
@@ -286,7 +286,7 @@ V 5 16
 V 6 16
 V 7 16
 V 8 16
-EV 14 ELIMINAR 106 | Pagáis la posada con todas las monedas
+EV 14 ELIMINAR 106 | La posada del cruce cuesta cara: se van todas las monedas
 F 5 TablaDispersaLista.c 91
 RL 1 9
 RA 1 9
@@ -341,7 +341,7 @@ V 4 16
 V 6 16
 V 7 16
 V 8 16
-EV 16 ELIMINAR -40 | Os libráis del amuleto
+EV 16 ELIMINAR -40 | Hilda tira el amuleto al río antes de que os maldiga
 F 8 TablaDispersaLista.c 91
 RL 1 5
 RA 1 5
@@ -366,7 +366,7 @@ V 3 16
 V 4 16
 V 6 16
 V 7 16
-EV 17 ELIMINAR 43 | Disparáis las flechas
+EV 17 ELIMINAR 43 | Lobos al anochecer: gastáis todas las flechas
 F 6 TablaDispersaLista.c 91
 RL 1 5
 RA 1 5
@@ -388,7 +388,7 @@ V 2 252
 V 3 16
 V 4 16
 V 7 16
-EV 18 ELIMINAR 207 | Gastáis los clavos
+EV 18 ELIMINAR 207 | Los clavos se quedan en la empalizada del campamento
 F 7 TablaDispersaLista.c 91
 RL 1 5
 RA 1 5
@@ -408,7 +408,7 @@ V 1 816
 V 2 252
 V 3 16
 V 4 16
-EV 19 ABUNDANTE | Ya solo quedan antorchas y una poción
+EV 19 ABUNDANTE | Al llegar a las puertas del Gremio solo quedan las antorchas y la poción
 RL 1 5 3
 RA 1 5 3
 TL H 1 101 2 1 0
@@ -427,7 +427,7 @@ V 1 816
 V 2 252
 V 3 16
 V 4 16
-EV 20 LIBERAR | Fin del viaje: Hilda vacía las tablas
+EV 20 LIBERAR | Merla cierra el diario del viaje: se vacían las tablas, y no debe quedar ni un byte perdido
 F 3 TablaDispersaLista.c 101
 F 4 TablaDispersaLista.c 101
 F 1 TablaDispersaLista.c 105

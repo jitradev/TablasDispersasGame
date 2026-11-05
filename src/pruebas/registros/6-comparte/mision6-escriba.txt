@@ -8,7 +8,7 @@ TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 V 1 816
 V 2 252
-EV 1 ACTUALIZAR 5 3 | Rina carga en la caravana 3 antorchas (objeto 5)
+EV 1 ACTUALIZAR 5 3 | La caravana del Gremio sale hacia el este por el camino de comercio. Rina carga 3 antorchas (objeto 5)
 M 3 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -53,7 +53,7 @@ V 2 252
 V 3 16
 V 4 16
 V 5 16
-EV 4 ACTUALIZAR 23 1 | Una poción (objeto 23)
+EV 4 ACTUALIZAR 23 1 | Un frasco de bálsamo (objeto 23)
 M 6 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -75,7 +75,7 @@ V 3 16
 V 4 16
 V 5 16
 V 6 16
-EV 5 ACTUALIZAR 43 6 | 6 flechas (objeto 43): en el array chocan con la poción
+EV 5 ACTUALIZAR 43 6 | 6 flechas (objeto 43): en el array chocan con el bálsamo
 M 7 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -101,7 +101,7 @@ V 4 16
 V 5 16
 V 6 16
 V 7 16
-EV 6 COPIAR | El escriba copia el inventario en su libro: en las listas, nodos nuevos y en el mismo orden
+EV 6 COPIAR | El escriba de la caravana, un anciano con los dedos manchados de tinta, copia el inventario en su libro: en las listas, nodos nuevos y en el mismo orden
 CREAR B
 M 8 816 TablaDispersaLista.c 40
 M 9 252 TablaDispersaArray.c 50
@@ -188,7 +188,7 @@ V 6 16
 V 7 16
 V 8 816
 V 9 252
-EV 8 ACTUALIZAR B 106 9 | El escriba se equivoca y apunta 9 monedas en el libro
+EV 8 ACTUALIZAR B 106 9 | El escriba da una cabezada y apunta 9 monedas en el libro
 RL 1
 RA 1
 TL H 1 101 5 1 0
@@ -272,7 +272,7 @@ V 6 16
 V 7 16
 V 8 816
 V 9 252
-EV 10 ELIMINAR 23 | Rina gasta la poción: en el array queda una BORRADA
+EV 10 ELIMINAR 23 | Rina usa el bálsamo con un mulero herido: en el array queda una BORRADA
 F 6 TablaDispersaLista.c 90
 RL 1 1
 RA 1 1
@@ -311,7 +311,7 @@ V 5 16
 V 7 16
 V 8 816
 V 9 252
-EV 11 ACTUALIZAR 63 2 | 2 mapas (objeto 63): en el array aprovechan la BORRADA de la poción
+EV 11 ACTUALIZAR 63 2 | 2 mapas (objeto 63): en el array aprovechan la BORRADA del bálsamo
 M 10 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -353,7 +353,7 @@ V 7 16
 V 8 816
 V 9 252
 V 10 16
-EV 12 ELIMINAR 43 | Se disparan las flechas: otra BORRADA
+EV 12 ELIMINAR 43 | Bandidos entre las rocas: se disparan todas las flechas y queda otra BORRADA
 F 7 TablaDispersaLista.c 90
 RL 1 6
 RA 1 6
@@ -391,7 +391,7 @@ V 5 16
 V 8 816
 V 9 252
 V 10 16
-EV 13 COPIAR | El escriba copia otra vez, encima de la copia vieja: los nodos viejos del libro sobran
+EV 13 COPIAR | El escriba copia otra vez, encima de la copia vieja: los nodos viejos del libro sobran y hay que liberarlos
 F 5 TablaDispersaLista.c 262
 F 4 TablaDispersaLista.c 262
 F 3 TablaDispersaLista.c 262

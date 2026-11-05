@@ -8,7 +8,7 @@ TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 V 1 816
 V 2 252
-EV 1 SONDEO CUADRATICO | Bastián sube la escalera de la torre de cuadrado en cuadrado
+EV 1 SONDEO CUADRATICO | Desde la vieja atalaya se ve el humo de la montaña de Ascuaferro. Bastián sube la escalera de caracol de cuadrado en cuadrado
 RA 1
 TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 1
@@ -483,7 +483,7 @@ V 13 16
 V 14 16
 V 15 16
 V 16 16
-EV 15 ACTUALIZAR 123 6 | 123: la cuadrática solo pasa por seis casillas y ya están todas: no cabe, aunque sobran 14
+EV 15 ACTUALIZAR 123 6 | 123: la cuadrática solo pasa por seis casillas y ya están todas. No cabe, aunque sobran 14. Bastián resopla
 M 17 16 TablaDispersaLista.c 53
 RL 1
 RA 0
@@ -1056,7 +1056,7 @@ V 15 16
 V 16 16
 V 17 16
 V 18 16
-EV 24 LIBERAR | Bastián baja de la torre y se vacían las tablas
+EV 24 LIBERAR | Desde lo alto, Bastián dibuja el camino hasta la montaña. Bajáis y se vacían las tablas
 F 15 TablaDispersaLista.c 100
 F 5 TablaDispersaLista.c 100
 F 17 TablaDispersaLista.c 100

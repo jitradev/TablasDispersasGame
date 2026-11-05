@@ -8,7 +8,7 @@ TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 V 1 816
 V 2 252
-EV 1 SONDEO B DOBLE | El botín busca sitio con el doble hashing
+EV 1 SONDEO B DOBLE | Dentro de la montaña, una sala cubierta de espejos. Su reflejo, el botín, busca sitio con el doble hashing
 CREAR B
 M 3 816 TablaDispersaLista.c 40
 M 4 252 TablaDispersaArray.c 50
@@ -225,7 +225,7 @@ V 8 16
 V 9 16
 V 10 16
 V 11 16
-EV 10 ACTUALIZAR B 5 1 | El botín guarda lo mismo
+EV 10 ACTUALIZAR B 5 1 | Los espejos lo repiten todo en el reflejo: el escudo
 M 12 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -267,7 +267,7 @@ V 9 16
 V 10 16
 V 11 16
 V 12 16
-EV 11 ACTUALIZAR B 25 2 | ...
+EV 11 ACTUALIZAR B 25 2 | Las dagas
 M 13 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -313,7 +313,7 @@ V 10 16
 V 11 16
 V 12 16
 V 13 16
-EV 12 ACTUALIZAR B 45 3 | ...
+EV 12 ACTUALIZAR B 45 3 | Las hachas
 M 14 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -363,7 +363,7 @@ V 11 16
 V 12 16
 V 13 16
 V 14 16
-EV 13 ACTUALIZAR B 65 1 | ...
+EV 13 ACTUALIZAR B 65 1 | El arco
 M 15 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -417,7 +417,7 @@ V 12 16
 V 13 16
 V 14 16
 V 15 16
-EV 14 ACTUALIZAR B 6 2 | ...
+EV 14 ACTUALIZAR B 6 2 | Los yelmos
 M 16 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -475,7 +475,7 @@ V 13 16
 V 14 16
 V 15 16
 V 16 16
-EV 15 ACTUALIZAR B 106 4 | ...
+EV 15 ACTUALIZAR B 106 4 | Las monedas
 M 17 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -536,7 +536,7 @@ V 14 16
 V 15 16
 V 16 16
 V 17 16
-EV 16 ACTUALIZAR B 207 1 | ... y lo mismo
+EV 16 ACTUALIZAR B 207 1 | Y el clavo
 M 18 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -600,7 +600,7 @@ V 15 16
 V 16 16
 V 17 16
 V 18 16
-EV 17 COSTE 5 | El escudo: en las listas está al final de su cubo
+EV 17 COSTE 5 | Hilda busca el escudo: en las listas está al final de su cubo
 RL 3
 RA 1
 TL H 1 101 7 1 0
@@ -726,7 +726,7 @@ V 15 16
 V 16 16
 V 17 16
 V 18 16
-EV 19 COSTE B 65 | En el botín, con el doble, menos
+EV 19 COSTE B 65 | En el reflejo, con el doble, menos
 RL 1
 RA 2
 TL H 1 101 7 1 0
@@ -978,7 +978,7 @@ V 15 16
 V 16 16
 V 17 16
 V 18 16
-EV 23 COSTETOTAL B | Y en el botín
+EV 23 COSTETOTAL B | Y en el reflejo
 RL 10
 RA 13
 TL H 1 101 7 1 0
@@ -1041,7 +1041,7 @@ V 15 16
 V 16 16
 V 17 16
 V 18 16
-EV 24 ELIMINAR 25 | Hilda funde las dagas: su casilla queda BORRADA
+EV 24 ELIMINAR 25 | Hilda funde las dagas para forjar una punta de lanza: su casilla queda BORRADA
 F 6 TablaDispersaLista.c 90
 RL 1 2
 RA 1 2
@@ -1222,7 +1222,7 @@ V 15 16
 V 16 16
 V 17 16
 V 18 16
-EV 27 LIBERAR | Hilda sale de la sala y se vacían las tablas
+EV 27 LIBERAR | Hilda rompe el último espejo con el martillo y se vacían las tablas
 F 11 TablaDispersaLista.c 100
 F 10 TablaDispersaLista.c 100
 F 5 TablaDispersaLista.c 100

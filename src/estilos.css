@@ -1523,3 +1523,60 @@ button.boton-sonido {
   border-color: var(--c6);
   color: var(--cc);
 }
+
+/* la raza de cada personaje, bajo su nombre */
+.compania figcaption small {
+  display: block;
+  font-family: var(--texto);
+  font-size: 15px;
+  line-height: 1.15;
+  color: var(--cd);
+  margin-top: 2px;
+  letter-spacing: 0;
+}
+/* el jefe que cierra el acto */
+.jefe-acto {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 14px 0 4px;
+  padding: 10px 14px;
+  border: 3px solid #8c2f1f;
+  background: #2a1714;
+}
+.jefe-acto img {
+  image-rendering: pixelated;
+  flex: none;
+  animation: respira 2.4s ease-in-out infinite;
+}
+.jefe-acto .jefe-nombre {
+  font-family: var(--pixel);
+  font-size: 9px;
+  color: #e3b74f;
+  line-height: 1.7;
+}
+.jefe-acto p {
+  margin: 4px 0 0;
+  font-size: 17px;
+  font-style: italic;
+}
+@keyframes respira {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-3px) scale(1.03); }
+}
+@media (max-width: 560px) {
+  .jefe-acto { flex-direction: column; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .jefe-acto img { animation: none; }
+}
+.victoria .derrota {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--texto);
+  font-size: 16px;
+  line-height: 1.3;
+}
+.dialogo .presenta.amenaza {
+  color: #8c2f1f;
+}
