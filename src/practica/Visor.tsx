@@ -549,9 +549,42 @@ export function Visor({
         </div>
       ))}
       <div className="visor-arriba">
-        <div className="va-banda">
+        <div className="col-izq">
           <Banda tam={tamL} largos={tablaL?.cubos.map((x) => x.length) ?? []} destino={cubo} rotulo={(q === 'B' ? 'BOTÍN · ' : '') + rotulo} titulo={`LISTAS: ${tamL} CUBOS`} quien={mision.quien} jefe={jefe} efecto={efecto} />
+          <div className="controles">
+            <button className="mini icono" onClick={() => irEvento(Math.max(0, foto.ev - 1))} aria-label="Evento anterior" title="Evento anterior">
+              <img src={urlSprite('ic-evento-atras', 2)} alt="" />
+            </button>
+            <button className="mini icono" onClick={() => setI(Math.max(0, i - 1))} aria-label="Paso anterior" title="Paso anterior">
+              <img src={urlSprite('ic-paso-atras', 2)} alt="" />
+            </button>
+            <button className="mini icono principal" onClick={() => (i >= fotos.length - 1 ? (setI(0), setPlay(true)) : setPlay(!play))} aria-label={play ? 'Pausa' : 'Reproducir'} title={play ? 'Pausa' : 'Reproducir'}>
+              <img src={urlSprite(play ? 'ic-pausa' : 'ic-play', 2)} alt="" />
+            </button>
+            <button className="mini icono" onClick={() => setI(Math.min(fotos.length - 1, i + 1))} aria-label="Paso siguiente" title="Paso siguiente">
+              <img src={urlSprite('ic-paso', 2)} alt="" />
+            </button>
+            <button className="mini icono" onClick={() => irEvento(Math.min(evs.length - 1, foto.ev + 1))} aria-label="Evento siguiente" title="Evento siguiente">
+              <img src={urlSprite('ic-evento', 2)} alt="" />
+            </button>
+            <button className="mini icono vel" onClick={() => setVel([1, 2, 4][([1, 2, 4].indexOf(vel) + 1) % 3])} aria-label="Velocidad" title="Velocidad">
+              ×{vel}
+            </button>
+            <label className="check">
+              <input type="checkbox" checked={parar} onChange={(e) => setParar(e.target.checked)} /> parar en los fallos
+            </label>
+          </div>
+          <Archivera quien={habla} titulo={`EVENTO ${ev.n}`}>
+            {foto.ev === 0 && <p className="presenta">«{COMPANIA[mision.quien].presentacion}»</p>}
+            {foto.ev === 0 && mision.jefe && <p className="presenta amenaza">{JEFES[mision.acto].nombre}. {JEFES[mision.acto].amenaza}</p>}
+            <p>{ev.texto}</p>
+            <p className="orden">
+              ▸ <code>{ev.textoOrden}</code>
+              {visto && devuelven && <span className="dev"> devuelven: {devuelven}</span>}
+            </p>
+          </Archivera>
         </div>
+        <div className="col-der">
           <div className="estado">
           {terminado && visto && i === fotos.length - 1 ? (
             <div className={`estado-corto ${c.bien === c.total && c.conocida ? 'bien' : 'fin'}`}>
@@ -593,41 +626,6 @@ export function Visor({
             <div className="estado-corto neutro">{antesTexto}</div>
           )}
           </div>
-        <div className="col-izq">
-          <div className="controles">
-            <button className="mini icono" onClick={() => irEvento(Math.max(0, foto.ev - 1))} aria-label="Evento anterior" title="Evento anterior">
-              <img src={urlSprite('ic-evento-atras', 2)} alt="" />
-            </button>
-            <button className="mini icono" onClick={() => setI(Math.max(0, i - 1))} aria-label="Paso anterior" title="Paso anterior">
-              <img src={urlSprite('ic-paso-atras', 2)} alt="" />
-            </button>
-            <button className="mini icono principal" onClick={() => (i >= fotos.length - 1 ? (setI(0), setPlay(true)) : setPlay(!play))} aria-label={play ? 'Pausa' : 'Reproducir'} title={play ? 'Pausa' : 'Reproducir'}>
-              <img src={urlSprite(play ? 'ic-pausa' : 'ic-play', 2)} alt="" />
-            </button>
-            <button className="mini icono" onClick={() => setI(Math.min(fotos.length - 1, i + 1))} aria-label="Paso siguiente" title="Paso siguiente">
-              <img src={urlSprite('ic-paso', 2)} alt="" />
-            </button>
-            <button className="mini icono" onClick={() => irEvento(Math.min(evs.length - 1, foto.ev + 1))} aria-label="Evento siguiente" title="Evento siguiente">
-              <img src={urlSprite('ic-evento', 2)} alt="" />
-            </button>
-            <button className="mini icono vel" onClick={() => setVel([1, 2, 4][([1, 2, 4].indexOf(vel) + 1) % 3])} aria-label="Velocidad" title="Velocidad">
-              ×{vel}
-            </button>
-            <label className="check">
-              <input type="checkbox" checked={parar} onChange={(e) => setParar(e.target.checked)} /> parar en los fallos
-            </label>
-          </div>
-          <Archivera quien={habla} titulo={`EVENTO ${ev.n}`}>
-            {foto.ev === 0 && <p className="presenta">«{COMPANIA[mision.quien].presentacion}»</p>}
-            {foto.ev === 0 && mision.jefe && <p className="presenta amenaza">{JEFES[mision.acto].nombre}. {JEFES[mision.acto].amenaza}</p>}
-            <p>{ev.texto}</p>
-            <p className="orden">
-              ▸ <code>{ev.textoOrden}</code>
-              {visto && devuelven && <span className="dev"> devuelven: {devuelven}</span>}
-            </p>
-          </Archivera>
-        </div>
-        <div className="col-der">
           <div className="ram-tit eventos-tit">EVENTOS</div>
           <ol className="eventos" ref={lista}>
             {evs.slice(0, c.juicios.length).map((e, k) => {

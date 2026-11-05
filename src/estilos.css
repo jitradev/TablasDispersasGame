@@ -2683,3 +2683,49 @@ button.cerrar .ico {
   font-size: 12px;
   padding: 10px 14px;
 }
+
+/* ------------------------------------------------------------------ el visor, versión final
+   izquierda: banda, mandos y diálogo, cada uno a su tamaño (el diálogo se ajusta a su texto).
+   derecha: un estado bajo y la lista de eventos, que ocupa lo que falte hasta medir lo mismo
+   que toda la columna izquierda (contain: size hace que la derecha no empuje la altura). */
+.visor-arriba {
+  grid-template-rows: auto;
+}
+.visor-arriba > .col-izq {
+  grid-column: 1;
+  grid-row: 1;
+}
+.col-izq .dialogo {
+  height: auto;
+  overflow: visible;
+}
+.visor-arriba > .col-der {
+  grid-column: 2;
+  grid-row: 1;
+  contain: size;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.col-der > .estado {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+}
+.col-der > .estado > .estado-corto {
+  flex: none;
+  min-height: 0;
+  padding: 10px 12px;
+  gap: 6px;
+}
+.col-der .eventos-tit {
+  margin-top: 12px;
+}
+.col-der .eventos {
+  flex: 1 1 0;
+  min-height: 0;
+}
+@media (max-width: 900px) {
+  .visor-arriba > .col-der { grid-column: 1; grid-row: 2; contain: none; }
+  .col-der .eventos { flex: none; height: 300px; }
+}
