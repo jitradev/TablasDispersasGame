@@ -496,7 +496,7 @@ CA H 11 2 7 1
 V 1 816
 V 2 252
 V 13 16
-EV 21 LIBERAR | Ulf sella la cripta y se vacían las tablas. Al fondo, algo se mueve dentro de un cofre
+EV 21 LIBERAR | Ulf sella la sala y se vacían las tablas. Al fondo de la cripta, una losa de piedra empieza a moverse
 F 13 TablaDispersaLista.c 100
 F 1 TablaDispersaLista.c 104
 F 2 TablaDispersaArray.c 95

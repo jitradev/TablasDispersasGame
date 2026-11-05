@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { urlSprite } from './juego/sprites';
 import { sonar } from './juego/sonido';
 import { BotonSonido } from './juego/BotonSonido';
@@ -7,6 +7,7 @@ import { corregir, Correccion } from './practica/corregir';
 import { ACTOS, MISIONES } from './practica/misiones';
 import { COMPANIA, JEFES, MERLA } from './practica/personajes';
 import { Visor } from './practica/Visor';
+import { Entrada, Prologo } from './practica/Entrada';
 
 // ------------------------------------------------------------------ registros guardados
 
@@ -16,6 +17,15 @@ interface Subido {
 }
 const CLAVE = 'cofres-dispersos-campana-v2';
 const CLAVE_ACTO = 'cofres-dispersos-campana-acto';
+/** Las misiones cuya animación ya se ha visto entera: solo de esas se enseña la nota. */
+const CLAVE_VISTAS = 'cofres-dispersos-campana-vistas';
+function cargarVistas(): Record<string, boolean> {
+  try {
+    return JSON.parse(localStorage.getItem(CLAVE_VISTAS) ?? '{}') ?? {};
+  } catch {
+    return {};
+  }
+}
 function cargar(): Record<string, Subido> {
   try {
     return JSON.parse(localStorage.getItem(CLAVE) ?? '{}') ?? {};
@@ -46,29 +56,6 @@ function Estrellas({ n, tam = 3 }: { n: number; tam?: number }) {
   );
 }
 
-// ------------------------------------------------------------------ subir ficheros
-
-function SubirRegistro({ fichero, subir, otra }: { fichero: string; subir: (fs: FileList | File[]) => void; otra: boolean }) {
-  const input = useRef<HTMLInputElement>(null);
-  return (
-    <>
-      <input
-        ref={input}
-        type="file"
-        accept=".txt,text/plain"
-        hidden
-        onChange={(e) => {
-          if (e.target.files) subir(e.target.files);
-          e.target.value = '';
-        }}
-      />
-      <button className={otra ? 'enlace t-resubir' : 'grande t-subir'} onClick={() => input.current?.click()}>
-        {otra ? `volver a subir ${fichero}` : '⬆ SUBIR REGISTRO'}
-      </button>
-    </>
-  );
-}
-
 // ------------------------------------------------------------------ inicio
 
 /** Para abrir un acto hay que sacar al menos estas estrellas en el jefe del anterior. Con 0 (como ahora) están todos abiertos. */
@@ -84,16 +71,15 @@ const PROFESOR = (() => {
 
 function Inicio({
   correcciones,
-  errores,
-  subir,
+  pendientes,
   ver,
   borrar,
   acto,
   setActo,
 }: {
   correcciones: Record<string, Correccion>;
-  errores: Record<string, string[]>;
-  subir: (fs: FileList | File[], mision: string) => void;
+  /** Misiones con registro subido pero cuya animación aún no se ha visto. */
+  pendientes: Record<string, boolean>;
   ver: (id: string) => void;
   borrar: () => void;
   acto: number;
@@ -103,7 +89,6 @@ function Inicio({
   const maga = useMemo(() => urlSprite('maga', 6), []);
   const fantasma = useMemo(() => urlSprite('fantasma', 5), []);
   const candado = useMemo(() => urlSprite('llave', 4), []);
-  const [encima, setEncima] = useState<string | null>(null);
   const hechas = MISIONES.map((m) => correcciones[m.id]);
   const alumnos = [...new Set(hechas.filter(Boolean).map((c) => c!.reg.alumno))];
   /** Los nombres de verdad: el texto de ejemplo de alumno.h no se enseña. */
@@ -133,6 +118,8 @@ function Inicio({
       <h1 className="titulo-juego">Lord of EDA</h1>
       <div className="sub">LOS COFRES DISPERSOS · LA CAMPAÑA DE LAS LISTAS DISPERSAS · ESTRUCTURA DE DATOS</div>
 
+      <Prologo />
+
       <div className="compania">
         {[MERLA, ...Object.values(COMPANIA)].map((p) => (
           <figure key={p.id}>
@@ -147,7 +134,7 @@ function Inicio({
 
       <section className="intro">
         <p>
-          El Gremio guarda el inventario de todo el reino en el Libro de los Cofres, que son dos <b>tablas de dispersión</b>: cada objeto tiene su número, que es la clave, y se guarda cuántos hay. Pero un cofre de la cripta ha empezado a tragárselo todo, un troll cobra peajes imposibles en el camino, un nigromante retuerce los números desde su torre y un dragón guarda un tesoro que nadie ha sabido contar. Merla, la maga del Libro, reúne una compañía para arreglarlo. La campaña tiene <b>cuatro actos</b>, uno por sesión de 2 horas, todos abiertos desde el principio, y se juega entera sobre <b>un solo proyecto base</b>: el <code>Listas_Dispersas</code> de clase, con sus dos tablas, la de listas y la del array.
+          El Gremio guarda el inventario de todo el reino en el Libro de los Cofres, que son dos <b>tablas de dispersión</b>: cada objeto tiene su número, que es la clave, y se guarda cuántos hay. Merla, la maga que lo guarda, reúne una compañía para recuperarlo, acto a acto. La campaña tiene <b>cuatro actos</b>, uno por sesión de 2 horas, todos abiertos desde el principio, y se juega entera sobre <b>un solo proyecto base</b>: el <code>Listas_Dispersas</code> de clase, con sus dos tablas, la de listas y la del array.
         </p>
         <p>
           Cada ejercicio tiene su misión. Tu programa juega la misión y deja un registro de lo que ha hecho con la memoria; lo subes aquí y ves la animación de las tablas, evento a evento: a qué cubo va cada clave, qué casillas mira cada búsqueda... y cada fantasma que se te escapa. Cada acto termina con su jefe.
@@ -173,7 +160,7 @@ function Inicio({
         <li>
           <span className="num">3</span>
           <div>
-            <b>Sube el registro</b> en la tarjeta de su misión, mira la animación y corrige lo que falle. Al acabar la sesión, comprime el proyecto y entrégalo en la PDU.
+            <b>Entra en la misión</b> y sube allí su registro: se juega sola y la nota sale al final. Corrige lo que falle. Al acabar la sesión, comprime el proyecto y entrégalo en la PDU.
           </div>
         </li>
       </ol>
@@ -243,17 +230,7 @@ function Inicio({
             return (
               <div
                 key={m.id}
-                className={`tarjeta ${c ? (c.bien === c.total && c.conocida ? 'hecha' : 'subida-ok') : ''} ${m.jefe ? 'jefe' : ''} ${encima === m.id ? 'encima' : ''}`}
-                onDragOver={(e) => {
-                  e.preventDefault();
-                  setEncima(m.id);
-                }}
-                onDragLeave={() => setEncima(null)}
-                onDrop={(e) => {
-                  e.preventDefault();
-                  setEncima(null);
-                  subir(e.dataTransfer.files, m.id);
-                }}
+                className={`tarjeta ${c ? (c.bien === c.total && c.conocida ? 'hecha' : 'subida-ok') : ''} ${m.jefe ? 'jefe' : ''}`}
               >
                 <div className="iconos">
                   <img src={urlSprite(m.quien, 4)} alt="" />
@@ -275,30 +252,23 @@ function Inicio({
                     </div>
                     {!c.reg.fin && <div className="t-aviso">El programa se cortó en el evento {c.reg.eventos.length}.</div>}
                     {c.aviso && <div className="t-aviso">{c.aviso}</div>}
-                    <button
-                      className="grande"
-                      onClick={() => {
-                        sonar('click');
-                        ver(m.id);
-                      }}
-                    >
-                      ▶ VER ANIMACIÓN
-                    </button>
-                    <SubirRegistro fichero={`${m.id}.txt`} subir={(fs) => subir(fs, m.id)} otra />
                   </>
+                ) : pendientes[m.id] ? (
+                  <div className="t-falta">Registro subido. Entra a verla: la nota sale al final de la animación.</div>
                 ) : (
-                  <>
-                    <div className="t-falta">
-                      Ejecuta <code>{m.target}</code> y sube <code>registros/{m.id}.txt</code> (o arrástralo a esta tarjeta).
-                    </div>
-                    <SubirRegistro fichero={`${m.id}.txt`} subir={(fs) => subir(fs, m.id)} otra={false} />
-                  </>
-                )}
-                {(errores[m.id] ?? []).map((e, k) => (
-                  <div key={k} className="t-aviso">
-                    {e}
+                  <div className="t-falta">
+                    Ejecuta <code>{m.target}</code> en CLion y entra en la misión para subir su registro.
                   </div>
-                ))}
+                )}
+                <button
+                  className="grande t-entrar"
+                  onClick={() => {
+                    sonar('click');
+                    ver(m.id);
+                  }}
+                >
+                  {c ? '▶ VOLVER A LA MISIÓN' : pendientes[m.id] ? '▶ VER CÓMO SALE' : '▶ ENTRAR EN LA MISIÓN'}
+                </button>
               </div>
             );
           })}
@@ -426,6 +396,15 @@ export default function App() {
   const [subidos, setSubidosR] = useState<Record<string, Subido>>(cargar);
   const [errores, setErrores] = useState<Record<string, string[]>>({});
   const [viendo, setViendo] = useState<string | null>(null);
+  const [vistas, setVistasR] = useState<Record<string, boolean>>(cargarVistas);
+  const setVistas = (v: Record<string, boolean>) => {
+    setVistasR(v);
+    try {
+      localStorage.setItem(CLAVE_VISTAS, JSON.stringify(v));
+    } catch {
+      /* sin almacenamiento */
+    }
+  };
   const [acto, setActoR] = useState<number>(() => {
     try {
       return Math.min(4, Math.max(1, Number(localStorage.getItem(CLAVE_ACTO)) || 1));
@@ -469,15 +448,18 @@ export default function App() {
         if (reg.mision !== esperada) {
           errs.push(
             titulo(reg.mision)
-              ? `«${f.name}» es el registro de «${titulo(reg.mision)}». Aquí va registros/${esperada}.txt; ese súbelo en su tarjeta.`
+              ? `«${f.name}» es el registro de «${titulo(reg.mision)}». Aquí va registros/${esperada}.txt; ese súbelo en su misión.`
               : `«${f.name}» es de la misión «${reg.mision}», que no es de esta práctica.`,
           );
           continue;
         }
         corregir(reg);
         nuevos[reg.mision] = { fichero: f.name, texto };
-        const cc = corregir(reg);
-        sonar(cc.conocida && cc.bien === cc.total ? 'victoria' : 'sube');
+        // registro nuevo: su animación hay que volver a verla para saber la nota
+        const v = { ...vistas };
+        delete v[reg.mision];
+        setVistas(v);
+        sonar('sube');
       } catch (e) {
         errs.push(e instanceof ErrorRegistro ? e.message : `No se ha podido leer «${f.name}».`);
       }
@@ -492,6 +474,25 @@ export default function App() {
   }, [viendo]);
 
   const mision = MISIONES.find((m) => m.id === viendo);
-  if (viendo && correcciones[viendo] && mision) return <Visor key={viendo + correcciones[viendo].reg.eventos.length} c={correcciones[viendo]} mision={mision} volver={() => setViendo(null)} />;
-  return <Inicio correcciones={correcciones} errores={errores} subir={subir} ver={setViendo} borrar={() => setSubidos({})} acto={acto} setActo={setActo} />;
+  const volver = () => {
+    setErrores({});
+    setViendo(null);
+  };
+  if (viendo && mision && correcciones[viendo])
+    return (
+      <Visor
+        key={viendo + subidos[viendo].texto.length + subidos[viendo].fichero}
+        c={correcciones[viendo]}
+        mision={mision}
+        volver={volver}
+        estreno={!vistas[viendo]}
+        alTerminar={() => setVistas({ ...cargarVistas(), [viendo]: true })}
+        resubir={(fs) => subir(fs, viendo)}
+        errores={errores[viendo] ?? []}
+      />
+    );
+  if (viendo && mision) return <Entrada mision={mision} num={MISIONES.indexOf(mision) + 1} volver={volver} subir={(fs) => subir(fs, viendo)} errores={errores[viendo] ?? []} />;
+  const vistasC = Object.fromEntries(Object.entries(correcciones).filter(([id]) => vistas[id]));
+  const pendientes = Object.fromEntries(Object.keys(correcciones).filter((id) => !vistas[id]).map((id) => [id, true]));
+  return <Inicio correcciones={vistasC} pendientes={pendientes} ver={setViendo} borrar={() => (setSubidos({}), setVistas({}))} acto={acto} setActo={setActo} />;
 }

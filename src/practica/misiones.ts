@@ -3,7 +3,7 @@ import m1 from '../../proyecto-base/eventos/mision1-camino.txt?raw';
 import m2 from '../../proyecto-base/eventos/mision2-mapa.txt?raw';
 import m3 from '../../proyecto-base/eventos/mision3-mercado.txt?raw';
 import m4 from '../../proyecto-base/eventos/mision4-cripta-encantada.txt?raw';
-import m5 from '../../proyecto-base/eventos/mision5-cofre-gloton.txt?raw';
+import m5 from '../../proyecto-base/eventos/mision5-rey-cripta.txt?raw';
 import m6 from '../../proyecto-base/eventos/mision6-escriba.txt?raw';
 import m7 from '../../proyecto-base/eventos/mision7-balanza.txt?raw';
 import m8 from '../../proyecto-base/eventos/mision8-pacto.txt?raw';
@@ -60,7 +60,7 @@ export const MISIONES: Mision[] = [
   { acto: 1, id: 'mision2-mapa', target: 'mision2', titulo: 'El mapa de las colisiones', resumen: 'Ejercicio 2, medir las colisiones: un cubo con cuatro nodos, un grupo que crece, una BORRADA en medio y la vuelta del array.', ordenes: ordenesDe(m2), quien: 'bastian' },
   { acto: 1, id: 'mision3-mercado', target: 'mision3', titulo: 'El mercado de los trueques', resumen: 'Ejercicio 3, cambiar la clave: el nodo del medio, el primero, a una clave que ya está, a una que no existe y a sí misma.', ordenes: ordenesDe(m3), quien: 'rina' },
   { acto: 1, id: 'mision4-cripta-encantada', target: 'mision4', titulo: 'La cripta encantada', resumen: 'Ejercicio 4, quitar los agotados: ninguno, el primero, varios seguidos y todos, y después buscar e insertar con las BORRADA.', ordenes: ordenesDe(m4), quien: 'ulf' },
-  { acto: 1, id: 'mision5-cofre-gloton', target: 'mision5', titulo: 'El Cofre Glotón', resumen: `Ejercicio 5, el jefe del acto 1: ${n(m5)} eventos con dos inventarios, el de Lis y lo que escupe el Cofre, que se fusionan una y otra vez.`, ordenes: ordenesDe(m5), jefe: true, quien: 'lis' },
+  { acto: 1, id: 'mision5-rey-cripta', target: 'mision5', titulo: 'Odric, el Rey de la Cripta', resumen: `Ejercicio 5, el jefe del acto 1: ${n(m5)} eventos con dos inventarios, el de Lis y el tesoro del rey muerto, que se fusionan una y otra vez.`, ordenes: ordenesDe(m5), jefe: true, quien: 'lis' },
 
   { acto: 2, id: 'mision6-escriba', target: 'mision6', titulo: 'El escriba de la caravana', resumen: 'Ejercicio 6, copiar: nodos nuevos en el mismo orden, una copia que no comparte nada, copiar encima de otra copia y copiar lo vacío.', ordenes: ordenesDe(m6), quien: 'rina' },
   { acto: 2, id: 'mision7-balanza', target: 'mision7', titulo: 'La balanza del mercader', resumen: 'Ejercicio 7, comparar: lo mismo en otro orden, un valor distinto, un objeto de más y el mismo número de objetos pero distintos.', ordenes: ordenesDe(m7), quien: 'ulf' },

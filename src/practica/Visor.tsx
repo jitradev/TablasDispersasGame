@@ -280,7 +280,7 @@ function hablante(texto: string, quien: string, acto: number): string {
   return quien;
 }
 
-function Archivera({ quien, titulo, children }: { quien: string; titulo?: string; children: React.ReactNode }) {
+export function Archivera({ quien, titulo, children }: { quien: string; titulo?: string; children: React.ReactNode }) {
   const r = useMemo(() => urlSprite(quien, quien in COMPANIA || quien === MERLA.id ? 4 : 2), [quien]);
   const jefe = Object.values(JEFES).find((x) => x.id === quien);
   return (
@@ -309,7 +309,24 @@ const nombreLista = (m?: ML) => `LISTAS · ${m && m.hf !== 'CLASE' ? `HASH DE ${
 const nombreArray = (m?: MA) => `ARRAY · ${m ? NOMBRE_SONDA[m.sonda] : 'DIRECCIONAMIENTO ABIERTO'}${m && m.hf !== 'CLASE' ? ` · HASH DE ${NOMBRE_HASH[m.hf]}` : ''}`;
 const nombreFuncion: Record<HashL, string> = { CLASE: 'hash', PLEGAMIENTO: 'plegamiento', MITAD: 'mitadCuadrado', POLINOMICO: 'polinomico' };
 
-export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; volver: () => void }) {
+export function Visor({
+  c,
+  mision,
+  volver,
+  estreno = false,
+  alTerminar,
+  resubir,
+  errores = [],
+}: {
+  c: Correccion;
+  mision: Mision;
+  volver: () => void;
+  /** La primera vez que se ve un registro: la nota y los ✓/✗ se descubren al avanzar. */
+  estreno?: boolean;
+  alTerminar?: () => void;
+  resubir?: (fs: FileList | File[]) => void;
+  errores?: string[];
+}) {
   const evs = c.reg.eventos;
   const fotos = useMemo(() => {
     const r: Foto[] = [];
@@ -331,6 +348,22 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
   const ev: EventoReg = evs[foto.ev];
   const j = c.juicios[foto.ev];
   const visto = foto.fase === 'despues';
+  // hasta qué evento se ha visto ya el resultado; en el estreno se va descubriendo
+  const ultimo = c.juicios.length - 1;
+  const [alcanzado, setAlcanzado] = useState(estreno ? -1 : Infinity);
+  const hasta = visto ? foto.ev : foto.ev - 1;
+  if (hasta > alcanzado) setAlcanzado(hasta);
+  const terminado = alcanzado >= ultimo;
+  const revelado = (k: number) => k <= alcanzado;
+  const avisado = useRef(false);
+  useEffect(() => {
+    if (terminado && estreno && !avisado.current) {
+      avisado.current = true;
+      alTerminar?.();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [terminado]);
+  const subirInput = useRef<HTMLInputElement>(null);
 
   // el estado de las tablas tal y como las dejó el alumno al final de cada evento
   type Est = { l?: ML; a?: MA; existe: boolean };
@@ -444,10 +477,33 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
         </button>
         <div className={`titulo-ev ${mision.jefe ? 'jefe' : ''}`}>{mision.titulo}</div>
         <div className="pts">
-          {c.bien}/{c.total} bien{c.reg.alumno && !c.reg.alumno.startsWith('Escribe aqui') ? ` · ${c.reg.alumno}` : ''}
+          {terminado ? `${c.bien}/${c.total} bien` : `evento ${foto.ev} de ${ultimo}`}
+          {c.reg.alumno && !c.reg.alumno.startsWith('Escribe aqui') ? ` · ${c.reg.alumno}` : ''}
         </div>
+        {resubir && (
+          <>
+            <input
+              ref={subirInput}
+              type="file"
+              accept=".txt,text/plain"
+              hidden
+              onChange={(e) => {
+                if (e.target.files) resubir(e.target.files);
+                e.target.value = '';
+              }}
+            />
+            <button className="mini" onClick={() => subirInput.current?.click()} title="Subir otra versión del registro de esta misión">
+              ⬆ OTRO REGISTRO
+            </button>
+          </>
+        )}
         <BotonSonido />
       </header>
+      {errores.map((e, k) => (
+        <div key={k} className="aviso mal">
+          {e}
+        </div>
+      ))}
       <div className="visor-arriba">
         <div className="col-izq">
           <Banda tam={tamL} largos={tablaL?.cubos.map((x) => x.length) ?? []} destino={cubo} rotulo={(q === 'B' ? 'BOTÍN · ' : '') + rotulo} titulo={`LISTAS: ${tamL} CUBOS`} quien={mision.quien} jefe={jefe} efecto={efecto} />
@@ -485,6 +541,15 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
           </Archivera>
         </div>
         <div className="col-der">
+          {terminado && visto && i === fotos.length - 1 && !(c.bien === c.total && c.conocida) && (
+            <div className="resultado">
+              <div className="res-tit">{c.reg.fin ? 'MISIÓN TERMINADA' : 'EL PROGRAMA SE CORTÓ'}</div>
+              <div className="res-est">{[0, 1, 2].map((k) => (k < (c.conocida ? c.estrellas : 0) ? '★' : '☆')).join(' ')}</div>
+              <div>
+                {c.bien} de {c.total} eventos bien. Los ✗ de la lista te dicen qué ejercicio revisar; arréglalo, vuelve a ejecutar <code>{mision.target}</code> y sube el registro otra vez.
+              </div>
+            </div>
+          )}
           {visto && i === fotos.length - 1 && c.bien === c.total && c.conocida && (
             <div className="victoria">
               <span>★</span> {mision.jefe ? '¡JEFE VENCIDO!' : '¡MISIÓN SUPERADA!'} <span>★</span>
@@ -533,19 +598,20 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
           <ol className="eventos" ref={lista}>
             {evs.slice(0, c.juicios.length).map((e, k) => {
               const jj = c.juicios[k];
+              const ve = revelado(k);
               return (
-                <li key={k} className={`${k === foto.ev ? 'actual' : ''} ${jj.inicial ? '' : jj.ok ? 'ok' : 'ko'}`} title={jj.fallos.map((x) => (x.ej ? `Ej. ${x.ej}: ` : '') + x.f.titulo).join('\n')}>
-                  <button onClick={() => irEvento(k)}>
-                    <span className="marca">{jj.inicial ? '·' : jj.ok ? '✓' : '✗'}</span>
+                <li key={k} className={`${k === foto.ev ? 'actual' : ''} ${jj.inicial || !ve ? '' : jj.ok ? 'ok' : 'ko'} ${!terminado && k > alcanzado + 1 ? 'oculto' : ''}`} title={ve ? jj.fallos.map((x) => (x.ej ? `Ej. ${x.ej}: ` : '') + x.f.titulo).join('\n') : ''}>
+                  <button onClick={() => irEvento(k)} disabled={!terminado && k > alcanzado + 1}>
+                    <span className="marca">{jj.inicial || !ve ? '·' : jj.ok ? '✓' : '✗'}</span>
                     <span className="n">{e.n}</span>
                     <code>{e.textoOrden}</code>
                   </button>
                 </li>
               );
             })}
-            {faltan > 0 && <li className="falta">… y {faltan} eventos a los que el programa no llegó</li>}
+            {terminado && faltan > 0 && <li className="falta">… y {faltan} eventos a los que el programa no llegó</li>}
           </ol>
-          {c.aviso && <div className="aviso mal">{c.aviso}</div>}
+          {terminado && c.aviso && <div className="aviso mal">{c.aviso}</div>}
         </div>
       </div>
       <div className="tablas">

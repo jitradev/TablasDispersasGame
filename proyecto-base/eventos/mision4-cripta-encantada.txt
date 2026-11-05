@@ -20,4 +20,4 @@ AGOTAR 10 | La niebla más negra de todas, la del 10: no queda nada
 BUSCAR 409 | Ulf busca las gemas en la cripta vacía
 ACTUALIZAR 409 1 | Entre los huesos brilla una gema
 BUSCAR 409 | Ahí está
-LIBERAR | Ulf sella la cripta y se vacían las tablas. Al fondo, algo se mueve dentro de un cofre
+LIBERAR | Ulf sella la sala y se vacían las tablas. Al fondo de la cripta, una losa de piedra empieza a moverse

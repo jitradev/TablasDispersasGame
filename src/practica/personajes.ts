@@ -70,10 +70,10 @@ export interface Jefe {
 
 export const JEFES: Record<number, Jefe> = {
   1: {
-    id: 'gloton',
-    nombre: 'EL COFRE GLOTÓN',
-    amenaza: 'Parecía un cofre más de la cripta. Abre la tapa y enseña los dientes: «Todo lo que tengas con pocas unidades... ñam. Y lo que te escupa, a ver si sabes juntarlo».',
-    derrota: 'La tapa se cierra de golpe y el Cofre Glotón vuelve a ser madera vieja. Todo lo que se tragó está en tu inventario, en su cubo.',
+    id: 'espectro',
+    nombre: 'ODRIC, EL REY DE LA CRIPTA',
+    amenaza: 'La losa del sarcófago se desliza sola. Una corona oxidada, dos ojos verdes en la oscuridad y una voz que hiela: «Lo que entra en mi cripta es mío. Mi aliento consume lo que tienes en poca cantidad... y mi tesoro solo lo guarda quien sabe juntarlo».',
+    derrota: 'Odric se deshace en polvo y su corona rueda por el suelo. Todo su tesoro está en tu inventario, cada cosa en su cubo.',
   },
   2: {
     id: 'troll',
@@ -94,3 +94,15 @@ export const JEFES: Record<number, Jefe> = {
     derrota: 'Ascuaferro ruge, despliega las alas y huye por la boca de la montaña. Su tesoro es tuyo, y cada pieza está donde debe.',
   },
 };
+
+/** El prólogo de la campaña: lo cuenta Merla en la portada y antes de la primera misión. */
+export const PROLOGO: string[] = [
+  'Todo empezó con el Libro de los Cofres.',
+  'Hace mucho, cuando los reinos aún no tenían nombre, los sabios del Gremio buscaron la forma de guardar todo lo que existía y encontrarlo al instante. No lo pusieron en fila, porque buscar en una fila es lento. Le dieron a cada cosa un número, y a cada número un hueco.',
+  'Así nacieron las tablas dispersas: una de listas, con cubos donde caben muchos, y otra de casillas, para quien sabe buscar sitio cuando el suyo está ocupado.',
+  'Durante siglos hubo paz, y cada cofre estuvo en su lugar.',
+  'Pero el poder de encontrarlo todo despierta la codicia. Un rey muerto quiso llevarse su tesoro a la tumba. Un troll aprendió a cobrar por lo que no era suyo. Un nigromante descubrió que quien elige la función hash decide dónde cae cada cosa. Y en la montaña, un dragón empezó a amontonar lo que nadie podía contar.',
+  'El Libro cayó en el olvido. Las colisiones crecieron. Lo que se perdía en la memoria se convertía en fantasma.',
+  'Y el destino del Libro no recayó en un rey, ni en un mago, ni en un guerrero, sino en alguien que acababa de llegar al Gremio con un portátil y un proyecto de CLion.',
+  'Tú.',
+];

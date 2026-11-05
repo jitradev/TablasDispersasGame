@@ -1,0 +1,75 @@
+# Mision 5: Odric, el Rey de la Cripta (el jefe del acto 1, ejercicio 5: juntar dos inventarios). Te acompaña Lis, la escudera.
+# Cada linea: ORDEN argumentos | lo que pasa en la historia
+# Las ordenes con B van al botin, el tesoro del rey; FUSIONAR mete el botin en el inventario.
+ACTUALIZAR B 573 5 | Al fondo de la cripta, la losa de un sarcófago se desliza sola. Odric, el Rey de la Cripta, se levanta, y lo primero que reclama es el objeto 573 (5) para su tesoro
+ACTUALIZAR B 875 5 | Odric abre otro nicho de la cripta: el objeto 875 (5) cae en su tesoro
+ACTUALIZAR B 487 4 | Del sarcófago rueda el objeto 487: 4 al tesoro de Odric
+ACTUALIZAR B -47 6 | Odric: «Esto también es mío». El objeto -47 (6) va a su tesoro
+ACTUALIZAR B 42 6 | Una armadura vacía deja caer el objeto 42 (6) en el tesoro
+ACTUALIZAR B -81 1 | Entre el polvo de la tumba aparece el objeto -81 (1), y Odric lo suma a su tesoro
+FUSIONAR | Lis aparta a Odric con el escudo y mete su tesoro en el inventario, cada objeto en su cubo
+BUSCAR 875 | Lis comprueba si sigue teniendo el objeto 875
+ACTUALIZAR B 475 5 | Odric abre otro nicho de la cripta: el objeto 475 (5) cae en su tesoro
+ACTUALIZAR B 239 1 | Del sarcófago rueda el objeto 239: 1 al tesoro de Odric
+ACTUALIZAR B 670 5 | Odric: «Esto también es mío». El objeto 670 (5) va a su tesoro
+ACTUALIZAR B 85 2 | Una armadura vacía deja caer el objeto 85 (2) en el tesoro
+BUSCAR B 0 | Lis rebusca en el tesoro de Odric algo que no está
+FUSIONAR | Lis se lleva el tesoro antes de que el rey vuelva a cerrarlo: lo repetido se suma
+AGOTAR 5 | Odric exhala su aliento helado: se consume todo lo que tenga menos de 5
+BUSCAR 573 | Lis comprueba si sigue teniendo el objeto 573
+ACTUALIZAR B -47 4 | Entre el polvo de la tumba aparece el objeto -47 (4), y Odric lo suma a su tesoro
+ACTUALIZAR B 573 6 | Odric abre otro nicho de la cripta: el objeto 573 (6) cae en su tesoro
+ACTUALIZAR B 875 1 | Del sarcófago rueda el objeto 875: 1 al tesoro de Odric
+ACTUALIZAR B 725 5 | Odric: «Esto también es mío». El objeto 725 (5) va a su tesoro
+ACTUALIZAR B 691 1 | Una armadura vacía deja caer el objeto 691 (1) en el tesoro
+ACTUALIZAR B 573 4 | Entre el polvo de la tumba aparece el objeto 573 (4), y Odric lo suma a su tesoro
+FUSIONAR | Lis junta el tesoro con su inventario
+BUSCAR 875 | Lis comprueba si sigue teniendo el objeto 875
+ACTUALIZAR B 691 2 | Odric abre otro nicho de la cripta: el objeto 691 (2) cae en su tesoro
+ACTUALIZAR B 192 6 | Del sarcófago rueda el objeto 192: 6 al tesoro de Odric
+ACTUALIZAR B 429 4 | Odric: «Esto también es mío». El objeto 429 (4) va a su tesoro
+FUSIONAR | Lis guarda todo el tesoro en su inventario
+AGOTAR 6 | Odric exhala su aliento helado: se consume todo lo que tenga menos de 6
+BUSCAR 192 | Lis comprueba si sigue teniendo el objeto 192
+ACTUALIZAR B 215 5 | Una armadura vacía deja caer el objeto 215 (5) en el tesoro
+ACTUALIZAR B 102 4 | Entre el polvo de la tumba aparece el objeto 102 (4), y Odric lo suma a su tesoro
+ACTUALIZAR B 192 3 | Odric abre otro nicho de la cripta: el objeto 192 (3) cae en su tesoro
+ACTUALIZAR B 395 2 | Del sarcófago rueda el objeto 395: 2 al tesoro de Odric
+ACTUALIZAR B 15 5 | Odric: «Esto también es mío». El objeto 15 (5) va a su tesoro
+BUSCAR B 0 | Lis rebusca en el tesoro de Odric algo que no está
+ACTUALIZAR 495 4 | Lis recoge del suelo el objeto 495 (4)
+ACTUALIZAR 642 2 | Lis arranca de la pared el objeto 642 (2)
+FUSIONAR | Lis aparta a Odric con el escudo y mete su tesoro en el inventario, cada objeto en su cubo
+AGOTAR 5 | Odric exhala su aliento helado: se consume todo lo que tenga menos de 5
+ACTUALIZAR B 162 6 | Una armadura vacía deja caer el objeto 162 (6) en el tesoro
+ACTUALIZAR B 494 1 | Entre el polvo de la tumba aparece el objeto 494 (1), y Odric lo suma a su tesoro
+ACTUALIZAR B 573 5 | Odric abre otro nicho de la cripta: el objeto 573 (5) cae en su tesoro
+ACTUALIZAR B 757 4 | Del sarcófago rueda el objeto 757: 4 al tesoro de Odric
+ACTUALIZAR 502 6 | Entre los huesos, Lis encuentra el objeto 502 (6)
+ACTUALIZAR 129 5 | Lis recoge del suelo el objeto 129 (5)
+FUSIONAR | Lis se lleva el tesoro antes de que el rey vuelva a cerrarlo: lo repetido se suma
+AGOTAR 6 | Odric exhala su aliento helado: se consume todo lo que tenga menos de 6
+ACTUALIZAR B 875 6 | Odric: «Esto también es mío». El objeto 875 (6) va a su tesoro
+ACTUALIZAR B -47 4 | Una armadura vacía deja caer el objeto -47 (4) en el tesoro
+ACTUALIZAR B 47 3 | Entre el polvo de la tumba aparece el objeto 47 (3), y Odric lo suma a su tesoro
+FUSIONAR | Lis junta el tesoro con su inventario
+BUSCAR -47 | Lis comprueba si sigue teniendo el objeto -47
+ACTUALIZAR B -268 2 | Odric abre otro nicho de la cripta: el objeto -268 (2) cae en su tesoro
+ACTUALIZAR B 18 6 | Del sarcófago rueda el objeto 18: 6 al tesoro de Odric
+ACTUALIZAR B 573 1 | Odric: «Esto también es mío». El objeto 573 (1) va a su tesoro
+ACTUALIZAR B -35 3 | Una armadura vacía deja caer el objeto -35 (3) en el tesoro
+ACTUALIZAR B 875 1 | Entre el polvo de la tumba aparece el objeto 875 (1), y Odric lo suma a su tesoro
+ACTUALIZAR B -23 6 | Odric abre otro nicho de la cripta: el objeto -23 (6) cae en su tesoro
+ACTUALIZAR 360 4 | Lis arranca de la pared el objeto 360 (4)
+FUSIONAR | Lis guarda todo el tesoro en su inventario
+AGOTAR 6 | Odric exhala su aliento helado: se consume todo lo que tenga menos de 6
+ACTUALIZAR B 14 5 | Del sarcófago rueda el objeto 14: 5 al tesoro de Odric
+ACTUALIZAR B 875 1 | Odric: «Esto también es mío». El objeto 875 (1) va a su tesoro
+ACTUALIZAR B 875 3 | Una armadura vacía deja caer el objeto 875 (3) en el tesoro
+ACTUALIZAR 397 4 | Entre los huesos, Lis encuentra el objeto 397 (4)
+ACTUALIZAR 473 5 | Lis recoge del suelo el objeto 473 (5)
+FUSIONAR | Lis aparta a Odric con el escudo y mete su tesoro en el inventario, cada objeto en su cubo
+AGOTAR 6 | Odric exhala su aliento helado: se consume todo lo que tenga menos de 6
+FUSIONAR | Lis vuelve a fusionar con el tesoro vacío: no tiene que cambiar nada
+BUSCAR 0 | Merla hace recuento: ¿quedó algo con el número 0?
+LIBERAR | Odric se deshace en polvo y su corona rueda por el suelo. Lis y tú vaciáis todas las tablas

@@ -8,14 +8,14 @@ TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 V 1 816
 V 2 252
-EV 1 ABUNDANTE | Merla te entrega la mochila del Gremio: «¿Qué es lo que más llevas?». Está vacía, y la respuesta también tiene que serlo
+EV 1 ABUNDANTE | Merla: «Esta historia no empieza en una torre ni en un campo de batalla, sino aquí, en la aldea, la mañana de la fiesta de la cosecha». Te da la mochila del Gremio y te pregunta qué es lo que más llevas. Está vacía, y la respuesta también tiene que serlo
 RL 0 0 0
 RA 0 0 0
 TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 V 1 816
 V 2 252
-EV 2 ACTUALIZAR 5 3 | Al amanecer, Hilda y tú salís de la aldea con 3 antorchas (objeto 5)
+EV 2 ACTUALIZAR 5 3 | Hilda, la herrera, te pide ayuda con los preparativos de la fiesta. Empezáis con 3 antorchas para la hoguera (objeto 5)
 M 3 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -38,7 +38,7 @@ CA H 5 1 5 3
 V 1 816
 V 2 252
 V 3 16
-EV 4 ACTUALIZAR 23 1 | La curandera del molino os da una poción para el camino (objeto 23)
+EV 4 ACTUALIZAR 23 1 | La curandera del molino os da una poción por si alguien se pasa con la sidra (objeto 23)
 M 4 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -118,7 +118,7 @@ V 3 16
 V 4 16
 V 5 16
 V 6 16
-EV 8 ACTUALIZAR 207 5 | En la fragua del cruce, Hilda forja 5 clavos (objeto 207): empatan con las flechas
+EV 8 ACTUALIZAR 207 5 | En su fragua, Hilda forja 5 clavos (objeto 207): empatan con las flechas
 M 7 16 TablaDispersaLista.c 53
 RL 1
 RA 1
@@ -286,7 +286,7 @@ V 5 16
 V 6 16
 V 7 16
 V 8 16
-EV 14 ELIMINAR 106 | La posada del cruce cuesta cara: se van todas las monedas
+EV 14 ELIMINAR 106 | El barril de sidra de la fiesta cuesta caro: se van todas las monedas
 F 5 TablaDispersaLista.c 90
 RL 1 9
 RA 1 9
@@ -366,7 +366,7 @@ V 3 16
 V 4 16
 V 6 16
 V 7 16
-EV 17 ELIMINAR 43 | Lobos al anochecer: gastáis todas las flechas
+EV 17 ELIMINAR 43 | Hay concurso de tiro con arco: gastáis todas las flechas
 F 6 TablaDispersaLista.c 90
 RL 1 5
 RA 1 5
@@ -388,7 +388,7 @@ V 2 252
 V 3 16
 V 4 16
 V 7 16
-EV 18 ELIMINAR 207 | Los clavos se quedan en la empalizada del campamento
+EV 18 ELIMINAR 207 | Los clavos se quedan en los tablones del escenario
 F 7 TablaDispersaLista.c 90
 RL 1 5
 RA 1 5
@@ -408,7 +408,7 @@ V 1 816
 V 2 252
 V 3 16
 V 4 16
-EV 19 ABUNDANTE | Al llegar a las puertas del Gremio solo quedan las antorchas y la poción
+EV 19 ABUNDANTE | Cuando empieza la fiesta solo quedan las antorchas y la poción
 RL 1 5 3
 RA 1 5 3
 TL H 1 101 2 1 0
@@ -427,7 +427,7 @@ V 1 816
 V 2 252
 V 3 16
 V 4 16
-EV 20 LIBERAR | Merla cierra el diario del viaje: se vacían las tablas, y no debe quedar ni un byte perdido
+EV 20 LIBERAR | Esa noche, junto a la hoguera, Merla os habla de la cripta del Gremio y de un rey que no descansa. Se vacían las tablas, y no debe quedar ni un byte perdido
 F 3 TablaDispersaLista.c 100
 F 4 TablaDispersaLista.c 100
 F 1 TablaDispersaLista.c 104

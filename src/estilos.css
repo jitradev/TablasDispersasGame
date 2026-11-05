@@ -1580,3 +1580,183 @@ button.boton-sonido {
 .dialogo .presenta.amenaza {
   color: #8c2f1f;
 }
+
+/* ------------------------------------------------------------------ prólogo */
+.prologo {
+  max-width: 860px;
+  margin: 8px auto 26px;
+  text-align: center;
+}
+.prologo-tit {
+  font-family: var(--pixel);
+  font-size: 11px;
+  letter-spacing: 6px;
+  color: var(--c3);
+  margin-bottom: 12px;
+}
+.prologo-cuerpo {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  text-align: left;
+}
+.prologo-maga {
+  image-rendering: pixelated;
+  flex: none;
+  margin-top: 6px;
+  animation: respira 3s ease-in-out infinite;
+}
+.prologo p {
+  font-family: var(--titulo);
+  font-size: 21px;
+  line-height: 1.45;
+  color: var(--cc);
+  margin: 0 0 10px;
+  opacity: 0;
+  animation: prologo-aparece 1.6s ease-out forwards;
+}
+.prologo p:first-child {
+  font-size: 26px;
+  color: var(--c4);
+}
+.prologo p.tu {
+  font-size: 30px;
+  color: var(--c4);
+  text-align: center;
+  margin-top: 14px;
+}
+.prologo-firma {
+  font-size: 15px;
+  color: var(--ce);
+  text-align: right;
+  font-style: italic;
+  opacity: 0;
+  animation: prologo-aparece 1.6s ease-out forwards;
+}
+.prologo.compacto {
+  max-width: 980px;
+  margin-top: 18px;
+}
+.prologo.compacto p {
+  font-size: 18px;
+}
+.prologo.compacto p:first-child {
+  font-size: 22px;
+}
+@keyframes prologo-aparece {
+  from { opacity: 0; transform: translateY(6px); filter: blur(2px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@media (max-width: 640px) {
+  .prologo-cuerpo { flex-direction: column; align-items: center; }
+  .prologo p { font-size: 18px; }
+}
+
+/* ------------------------------------------------------------------ entrada a una misión */
+.entrada {
+  max-width: 980px;
+}
+.escena {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 40px;
+  margin: 22px 0 6px;
+  padding: 18px 0 12px;
+  background: linear-gradient(transparent 70%, #2b3a3f 70%);
+  border-bottom: 3px solid var(--c6);
+}
+.escena.con-jefe {
+  background: linear-gradient(#2a1714 0, #1c1712 70%, #2b2016 70%);
+}
+.escena img {
+  image-rendering: pixelated;
+}
+.escena-companero {
+  animation: salta-suave 1.4s ease-in-out infinite;
+}
+.escena-jefe {
+  animation: respira 2.2s ease-in-out infinite;
+}
+.escena-vs {
+  font-family: var(--pixel);
+  font-size: 20px;
+  color: var(--c2);
+  align-self: center;
+  animation: destella 0.9s steps(2) infinite;
+}
+@keyframes salta-suave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.entrada-dialogos .dialogo + .dialogo {
+  margin-top: 14px;
+}
+.pasos-mision {
+  margin: 20px 0 14px;
+  padding-left: 24px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.zona-subir {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 26px 16px;
+  border: 4px dashed var(--c3);
+  background: #221a12;
+  transition: background 0.15s, transform 0.15s;
+}
+.zona-subir.encima {
+  background: #3a2a18;
+  transform: scale(1.01);
+  border-color: var(--c4);
+}
+.zona-subir img {
+  image-rendering: pixelated;
+  animation: respira 1.8s ease-in-out infinite;
+}
+.zona-texto {
+  font-family: var(--pixel);
+  font-size: 12px;
+  color: var(--c4);
+}
+.entrada-error {
+  margin-top: 12px;
+}
+.t-entrar {
+  margin-top: 8px;
+}
+
+/* ------------------------------------------------------------------ resultado al final de la animación */
+.resultado {
+  text-align: center;
+  background: var(--c8);
+  outline: 3px solid var(--c3);
+  padding: 14px;
+  margin-bottom: 10px;
+  animation: aparece 0.35s steps(4);
+}
+.resultado .res-tit {
+  font-family: var(--pixel);
+  font-size: 12px;
+  color: var(--c4);
+  margin-bottom: 6px;
+}
+.resultado .res-est {
+  font-size: 26px;
+  color: var(--c4);
+  letter-spacing: 6px;
+  margin-bottom: 6px;
+}
+.eventos li.oculto {
+  opacity: 0.35;
+}
+.eventos li.oculto button {
+  cursor: default;
+}
+@media (prefers-reduced-motion: reduce) {
+  .prologo p, .prologo-firma { animation: none; opacity: 1; }
+  .escena img, .zona-subir img, .prologo-maga { animation: none; }
+}

@@ -1,23 +1,23 @@
 # Mision 1: el camino del Gremio (ejercicio 1: el objeto con mas unidades). Te acompaña Hilda, la herrera enana.
 # Cada linea: ORDEN argumentos | lo que pasa en la historia
 # Cada objeto tiene su numero (la clave) y se guarda cuantos hay (el elemento).
-ABUNDANTE | Merla te entrega la mochila del Gremio: «¿Qué es lo que más llevas?». Está vacía, y la respuesta también tiene que serlo
-ACTUALIZAR 5 3 | Al amanecer, Hilda y tú salís de la aldea con 3 antorchas (objeto 5)
+ABUNDANTE | Merla: «Esta historia no empieza en una torre ni en un campo de batalla, sino aquí, en la aldea, la mañana de la fiesta de la cosecha». Te da la mochila del Gremio y te pregunta qué es lo que más llevas. Está vacía, y la respuesta también tiene que serlo
+ACTUALIZAR 5 3 | Hilda, la herrera, te pide ayuda con los preparativos de la fiesta. Empezáis con 3 antorchas para la hoguera (objeto 5)
 ABUNDANTE | Hilda gruñe: «Con una sola cosa, lo que más hay es esa»
-ACTUALIZAR 23 1 | La curandera del molino os da una poción para el camino (objeto 23)
+ACTUALIZAR 23 1 | La curandera del molino os da una poción por si alguien se pasa con la sidra (objeto 23)
 ACTUALIZAR 106 2 | Hilda saca 2 monedas del fondo del pozo (objeto 106): en las listas van al cubo de las antorchas
 ACTUALIZAR 43 5 | Un cazador os vende 5 flechas (objeto 43): en el array chocan con la poción
 ABUNDANTE | «¿Y ahora?». Mandan las flechas
-ACTUALIZAR 207 5 | En la fragua del cruce, Hilda forja 5 clavos (objeto 207): empatan con las flechas
+ACTUALIZAR 207 5 | En su fragua, Hilda forja 5 clavos (objeto 207): empatan con las flechas
 ABUNDANTE | Empate a 5. Las cuentas de los enanos son claras: gana la clave más pequeña
 ACTUALIZAR -40 5 | Bajo una piedra aparece un amuleto maldito, marcado con un número negativo (objeto -40, 5 cargas)
 ABUNDANTE | Otro empate a 5, y ahora la clave más pequeña es negativa
 ACTUALIZAR 106 9 | Un carretero os paga por arreglarle el eje: ya tenéis 9 monedas
 ABUNDANTE | Las monedas pasan delante de todo
-ELIMINAR 106 | La posada del cruce cuesta cara: se van todas las monedas
+ELIMINAR 106 | El barril de sidra de la fiesta cuesta caro: se van todas las monedas
 ABUNDANTE | Sin las monedas, vuelve el empate a 5
 ELIMINAR -40 | Hilda tira el amuleto al río antes de que os maldiga
-ELIMINAR 43 | Lobos al anochecer: gastáis todas las flechas
-ELIMINAR 207 | Los clavos se quedan en la empalizada del campamento
-ABUNDANTE | Al llegar a las puertas del Gremio solo quedan las antorchas y la poción
-LIBERAR | Merla cierra el diario del viaje: se vacían las tablas, y no debe quedar ni un byte perdido
+ELIMINAR 43 | Hay concurso de tiro con arco: gastáis todas las flechas
+ELIMINAR 207 | Los clavos se quedan en los tablones del escenario
+ABUNDANTE | Cuando empieza la fiesta solo quedan las antorchas y la poción
+LIBERAR | Esa noche, junto a la hoguera, Merla os habla de la cripta del Gremio y de un rey que no descansa. Se vacían las tablas, y no debe quedar ni un byte perdido

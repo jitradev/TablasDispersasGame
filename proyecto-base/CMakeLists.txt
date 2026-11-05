@@ -14,7 +14,7 @@
 #   mision2   -> eventos/mision2-mapa.txt               (ejercicio 2)
 #   mision3   -> eventos/mision3-mercado.txt            (ejercicio 3)
 #   mision4   -> eventos/mision4-cripta-encantada.txt   (ejercicio 4)
-#   mision5   -> eventos/mision5-cofre-gloton.txt       (ejercicio 5, jefe)
+#   mision5   -> eventos/mision5-rey-cripta.txt       (ejercicio 5, jefe)
 #
 #   ACTO 2, LAS CARAVANAS
 #   mision6   -> eventos/mision6-escriba.txt            (ejercicio 6)
@@ -65,7 +65,7 @@ mision(mision1 main_mision.c mision1-camino)
 mision(mision2 main_mision.c mision2-mapa)
 mision(mision3 main_mision.c mision3-mercado)
 mision(mision4 main_mision.c mision4-cripta-encantada)
-mision(mision5 main_mision.c mision5-cofre-gloton)
+mision(mision5 main_mision.c mision5-rey-cripta)
 
 mision(mision6 main_mision.c mision6-escriba)
 mision(mision7 main_mision.c mision7-balanza)
