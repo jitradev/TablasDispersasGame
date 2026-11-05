@@ -1,0 +1,22 @@
+# Mision 2: el mapa de las colisiones (ejercicio 2: medir las colisiones). Te acompaña Bastián, el cartógrafo.
+# Cada linea: ORDEN argumentos | lo que pasa en la historia
+COLISIONES | Bastián mide las tablas recién creadas: todo vacío
+ACTUALIZAR 5 1 | Un objeto en el cubo 5 de las listas y en la casilla 5 del array
+COLISIONES | Un cubo con un nodo y un grupo de una casilla
+ACTUALIZAR 106 1 | El 106 cae en el cubo 5 de las listas y en la casilla 6 del array
+ACTUALIZAR 207 1 | El 207 también al cubo 5; en el array, a la 7
+ACTUALIZAR 308 1 | El 308, al cubo 5 y a la casilla 8
+COLISIONES | Un cubo con cuatro nodos, y cuatro casillas seguidas en el array
+ACTUALIZAR 25 1 | El 25: en el array choca con el 5 y acaba en la 9
+ACTUALIZAR 12 1 | El 12: casilla 12, suelta
+COLISIONES | El grupo del array crece hasta la 9; el 12 va aparte
+ELIMINAR 207 | Bastián quita el 207: su casilla queda BORRADA
+COLISIONES | La BORRADA no corta el grupo: la exploración tampoco se para en ella
+ACTUALIZAR 10 1 | El 10 rellena el hueco entre el grupo y el 12
+COLISIONES | Ahora el grupo va de la 5 a la 10
+ACTUALIZAR 19 1 | El 19, en la última casilla
+ACTUALIZAR 39 1 | El 39 también quiere la 19: el array da la vuelta y lo deja en la 0
+COLISIONES | La 19 y la 0 no se juntan: el grupo se cuenta sin dar la vuelta
+ACTUALIZAR 207 2 | El 207 vuelve: en el array aprovecha su casilla BORRADA
+COLISIONES | Sin BORRADA otra vez
+LIBERAR | Bastián cierra el mapa y se vacían las tablas
