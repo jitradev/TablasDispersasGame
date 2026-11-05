@@ -422,7 +422,6 @@ function PantallaActo({
                   MISIÓN {num} · target <code>{m.target}</code>
                 </div>
                 <div className="t-tit">{m.titulo}</div>
-                <div className="t-ej">{m.ejercicio}</div>
                 <div className="t-res">{m.resumen}</div>
                 <div className="t-quien">Te acompaña {COMPANIA[m.quien].nombre.split(',')[0].toLowerCase().replace(/^./, (x) => x.toUpperCase())}</div>
                 {c ? (
