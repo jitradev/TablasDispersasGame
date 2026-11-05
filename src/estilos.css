@@ -2608,3 +2608,62 @@ button.cerrar .ico {
 @media (prefers-reduced-motion: reduce) {
   .ventana.aviso-pop { animation: none; }
 }
+
+/* el estado, en corto: el detalle sale en la ventana */
+.visor-arriba > .estado > .estado-corto {
+  flex: 1 0 auto;
+}
+.estado-corto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  padding: 14px 16px;
+  border: 3px solid var(--cf);
+  background: #201912;
+  font-size: 18px;
+  line-height: 1.4;
+}
+.estado-corto .ec-cab {
+  font-family: var(--pixel);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.estado-corto .ec-est {
+  font-size: 30px;
+  color: var(--c4);
+  letter-spacing: 8px;
+}
+.estado-corto.bien {
+  border-color: var(--c6);
+  background: #1c2614;
+}
+.estado-corto.bien .ec-cab {
+  color: #a9d98a;
+}
+.estado-corto.mal {
+  border-color: #c0392b;
+  background: #3a1a12;
+}
+.estado-corto.mal .ec-cab {
+  color: #ff8a70;
+}
+.estado-corto.fin .ec-cab {
+  color: var(--c4);
+}
+.estado-corto .ej {
+  margin-right: 8px;
+}
+.estado-corto button.grande {
+  margin: 4px 0 0;
+}
+.estado-corto.neutro {
+  color: var(--cg);
+}
+
+.visor-arriba > .estado {
+  scrollbar-gutter: auto;
+  padding-right: 0;
+}

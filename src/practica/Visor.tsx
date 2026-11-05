@@ -553,44 +553,44 @@ export function Visor({
           <Banda tam={tamL} largos={tablaL?.cubos.map((x) => x.length) ?? []} destino={cubo} rotulo={(q === 'B' ? 'BOTÍN · ' : '') + rotulo} titulo={`LISTAS: ${tamL} CUBOS`} quien={mision.quien} jefe={jefe} efecto={efecto} />
         </div>
           <div className="estado">
-          {terminado && visto && i === fotos.length - 1 && botonSiguiente}
-          {j && visto ? (
+          {terminado && visto && i === fotos.length - 1 ? (
+            <div className={`estado-corto ${c.bien === c.total && c.conocida ? 'bien' : 'fin'}`}>
+              <div className="ec-cab">{c.bien === c.total && c.conocida ? (mision.jefe ? '¡JEFE VENCIDO!' : '¡MISIÓN SUPERADA!') : 'MISIÓN TERMINADA'}</div>
+              <div className="ec-est">{[0, 1, 2].map((k) => (k < (c.conocida ? c.estrellas : 0) ? '★' : '☆')).join(' ')}</div>
+              <div>
+                {c.bien} de {c.total} eventos bien
+              </div>
+              <button className="grande" onClick={() => setPopup('fin')}>
+                VER EL RESULTADO
+              </button>
+            </div>
+          ) : j && visto ? (
             j.inicial ? (
-              <div className="aviso neutro">Las dos tablas recién creadas: {TAM_LISTA} cubos a NULL y {TAM_ARRAY} casillas VACIA.</div>
+              <div className="estado-corto neutro">Las dos tablas recién creadas: {TAM_LISTA} cubos a NULL y {TAM_ARRAY} casillas VACIA.</div>
             ) : j.ok ? (
-              <div key={`bien-${i}`} className="aviso bien">
-                <b>✓ Bien</b>
-                <br />
-                Las tablas quedan como tenían que quedar{devuelven ? ' y devuelven lo que toca' : ''}.
+              <div key={`bien-${i}`} className="estado-corto bien">
+                <div className="ec-cab">✓ BIEN</div>
+                <div>Las tablas quedan como tenían que quedar{devuelven ? ' y devuelven lo que toca' : ''}.</div>
               </div>
             ) : (
-              j.fallos.map((x, k) => (
-                <div key={`${i}-${k}`} className="aviso mal">
-                  {x.ej && <span className="ej">EJERCICIO {x.ej}</span>}
-                  <b>
-                    {x.donde ? `${x.donde}: ` : ''}
-                    {x.f.titulo}
-                  </b>
-                  <br />
-                  {x.f.detalle}
+              <div key={`mal-${i}`} className="estado-corto mal">
+                <div className="ec-cab">✗ FALLO EN EL EVENTO {ev.n}</div>
+                <div>
+                  {[...new Set(j.fallos.map((x) => x.ej).filter(Boolean))].map((e) => (
+                    <span key={e} className="ej">
+                      EJERCICIO {e}
+                    </span>
+                  ))}
+                  {j.fallos.length} fallo{j.fallos.length > 1 ? 's' : ''}
+                  {j.fantasmas.length > 0 ? ` · ${j.fantasmas.length} bloque${j.fantasmas.length > 1 ? 's' : ''} perdido${j.fantasmas.length > 1 ? 's' : ''}` : ''}
                 </div>
-              ))
+                <button className="grande" onClick={() => setPopup('fallo')}>
+                  VER EL FALLO
+                </button>
+              </div>
             )
           ) : (
-            <div className="aviso neutro">{antesTexto}</div>
-          )}
-          {visto && j && j.fantasmas.length > 0 && (
-            <div className="fantasmas">
-              <img src={urlSprite('fantasma', 3)} alt="" />
-              <div>
-                <b>
-                  {j.fantasmas.length} bloque{j.fantasmas.length > 1 ? 's' : ''} perdido{j.fantasmas.length > 1 ? 's' : ''}
-                </b>
-                {j.fantasmas.slice(0, 3).map((id) => (
-                  <div key={id}>{describirBloque(c.reg.bloques.get(id)).replace(/,$/, '')}</div>
-                ))}
-              </div>
-            </div>
+            <div className="estado-corto neutro">{antesTexto}</div>
           )}
           </div>
         <div className="col-izq">
