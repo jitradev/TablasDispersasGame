@@ -318,6 +318,7 @@ export function Visor({
   alTerminar,
   resubir,
   errores = [],
+  siguiente,
 }: {
   c: Correccion;
   mision: Mision;
@@ -327,6 +328,8 @@ export function Visor({
   alTerminar?: () => void;
   resubir?: (fs: FileList | File[]) => void;
   errores?: string[];
+  /** La misión que va después, para el botón del final. */
+  siguiente?: { titulo: string; ir: () => void };
 }) {
   const evs = c.reg.eventos;
   const fotos = useMemo(() => {
@@ -557,6 +560,28 @@ export function Visor({
             <div className="victoria">
               <span>★</span> {mision.jefe ? '¡JEFE VENCIDO!' : '¡MISIÓN SUPERADA!'} <span>★</span>
               {mision.jefe && <small className="derrota">{JEFES[mision.acto].derrota}</small>}
+            </div>
+          )}
+          {terminado && visto && i === fotos.length - 1 && (
+            <div className="siguiente-mision">
+              {siguiente ? (
+                <button
+                  className="grande"
+                  onClick={() => {
+                    sonar('sube');
+                    siguiente.ir();
+                  }}
+                >
+                  SIGUIENTE MISIÓN
+                  <Ico n="evento" detras />
+                  <small>{siguiente.titulo}</small>
+                </button>
+              ) : (
+                <button className="grande" onClick={volver}>
+                  <Ico n="volver" />
+                  VOLVER A LOS ACTOS
+                </button>
+              )}
             </div>
           )}
           {j && visto ? (

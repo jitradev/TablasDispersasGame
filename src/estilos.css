@@ -2305,3 +2305,33 @@ button.cerrar .ico {
   align-content: start;
   grid-auto-rows: 52px;
 }
+
+/* el aviso de tabla liberada: solo lo que ocupa su texto */
+.tablas > .panel > .aviso {
+  flex: none;
+  height: auto;
+}
+/* el botón grande del final */
+.siguiente-mision {
+  margin-bottom: 12px;
+}
+.siguiente-mision button.grande {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 16px 18px;
+  font-size: 15px;
+  animation: aparece-suave 0.5s ease-out both;
+}
+.siguiente-mision button.grande small {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--titulo);
+  font-size: 17px;
+  letter-spacing: 0;
+  color: #e6f0d8;
+}
+/* tabla liberada (o ilegible): el panel se encoge al aviso */
+.tablas > .panel:has(> .aviso) {
+  height: auto;
+}

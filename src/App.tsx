@@ -509,6 +509,20 @@ export default function App() {
     setErrores({});
     setViendo(null);
   };
+  // la misión que va después: se entra en ella (y en su acto) sin pasar por la portada
+  const siguienteDe = (m: (typeof MISIONES)[number]) => {
+    const sig = MISIONES[MISIONES.indexOf(m) + 1];
+    if (!sig) return undefined;
+    return {
+      titulo: sig.titulo,
+      ir: () => {
+        setErrores({});
+        setActo(sig.acto);
+        setViendo(sig.id);
+        window.scrollTo(0, 0);
+      },
+    };
+  };
   if (viendo && mision && correcciones[viendo])
     return (
       <Visor
@@ -520,6 +534,7 @@ export default function App() {
         alTerminar={() => setVistas({ ...cargarVistas(), [viendo]: true })}
         resubir={(fs) => subir(fs, viendo)}
         errores={errores[viendo] ?? []}
+        siguiente={siguienteDe(mision)}
       />
     );
   if (viendo && mision) return <Entrada mision={mision} num={MISIONES.indexOf(mision) + 1} volver={volver} subir={(fs) => subir(fs, viendo)} errores={errores[viendo] ?? []} />;
