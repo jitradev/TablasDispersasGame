@@ -1658,7 +1658,7 @@ button.boton-sonido {
 .entrada {
   max-width: 980px;
 }
-.escena {
+.escena-entrada {
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -1668,10 +1668,10 @@ button.boton-sonido {
   background: linear-gradient(transparent 70%, #2b3a3f 70%);
   border-bottom: 3px solid var(--c6);
 }
-.escena.con-jefe {
+.escena-entrada.con-jefe {
   background: linear-gradient(#2a1714 0, #1c1712 70%, #2b2016 70%);
 }
-.escena img {
+.escena-entrada img {
   image-rendering: pixelated;
 }
 .escena-companero {
@@ -1760,7 +1760,7 @@ button.boton-sonido {
 }
 @media (prefers-reduced-motion: reduce) {
   .prologo p, .prologo-firma { animation: none; opacity: 1; }
-  .escena img, .zona-subir img, .prologo-maga { animation: none; }
+  .escena-entrada img, .zona-subir img, .prologo-maga { animation: none; }
 }
 
 /* la etiqueta del ejercicio, aparte de la historia */
@@ -2484,23 +2484,27 @@ button.cerrar .ico {
   50% { opacity: 1; }
 }
 
-/* ------------------------------------------------------------------ el visor: tamaños fijos y columnas alineadas */
+/* ------------------------------------------------------------------ el visor: dos filas alineadas
+   arriba la banda y el estado (que mide lo que la banda); abajo los mandos y el
+   diálogo, y la lista de eventos (que mide lo que ellos). contain: size hace que
+   el estado y la lista no empujen: cogen el alto de su fila y hacen scroll. */
 .visor-arriba {
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 1fr);
+  grid-template-rows: auto auto;
+  row-gap: 0;
   align-items: stretch;
 }
-.col-izq .dialogo {
-  height: 168px;
-  box-sizing: border-box;
-  overflow-y: auto;
+.va-banda {
+  grid-column: 1;
+  grid-row: 1;
 }
-.col-der {
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
+.va-banda canvas {
+  display: block;
 }
-.col-der .estado {
-  flex: none;
-  height: 236px;
+.visor-arriba > .estado {
+  grid-column: 2;
+  grid-row: 1;
+  contain: size;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -2508,12 +2512,29 @@ button.cerrar .ico {
   padding-right: 4px;
   scrollbar-gutter: stable;
 }
-.col-der .estado > * {
+.visor-arriba > .estado > * {
   flex: none;
   margin: 0;
 }
-.col-der .estado .fantasmas {
+.visor-arriba > .estado .fantasmas {
   margin-top: 0;
+}
+.visor-arriba > .col-izq {
+  grid-column: 1;
+  grid-row: 2;
+}
+.col-izq .dialogo {
+  height: 168px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.visor-arriba > .col-der {
+  grid-column: 2;
+  grid-row: 2;
+  contain: size;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 .col-der .eventos-tit {
   flex: none;
@@ -2521,12 +2542,69 @@ button.cerrar .ico {
 }
 .col-der .eventos {
   flex: 1 1 0;
-  min-height: 140px;
+  min-height: 0;
   max-height: none;
 }
 @media (max-width: 900px) {
-  .col-der .eventos {
-    flex: none;
-    height: 300px;
+  .visor-arriba > .estado,
+  .visor-arriba > .col-der {
+    grid-column: 1;
+    contain: none;
   }
+  .visor-arriba > .estado { grid-row: 2; max-height: 260px; margin-top: 12px; }
+  .visor-arriba > .col-izq { grid-row: 3; }
+  .visor-arriba > .col-der { grid-row: 4; }
+  .col-der .eventos { flex: none; height: 300px; }
+}
+
+/* ------------------------------------------------------------------ la ventana del fallo y del final */
+.ventana.aviso-pop {
+  position: relative;
+  width: min(640px, 100%);
+  background: var(--c8);
+  border: 4px solid var(--c0);
+  outline: 3px solid var(--c3);
+  padding: 22px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  animation: pop-entra 0.3s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+.ventana.aviso-pop.fallo {
+  outline-color: #c0392b;
+}
+.ventana.aviso-pop > * {
+  margin: 0;
+}
+.ventana.aviso-pop .cerrar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.pop-tit {
+  font-family: var(--pixel);
+  font-size: 14px;
+  color: #ef6b4a;
+  text-align: center;
+}
+.pop-orden {
+  text-align: center;
+}
+.pop-orden code {
+  font-size: 18px;
+}
+.pop-seguir {
+  align-self: center;
+}
+.ventana.aviso-pop .resultado,
+.ventana.aviso-pop .victoria {
+  margin: 0;
+}
+@keyframes pop-entra {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ventana.aviso-pop { animation: none; }
 }

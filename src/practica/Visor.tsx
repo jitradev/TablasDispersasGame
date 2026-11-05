@@ -346,6 +346,8 @@ export function Visor({
   const [play, setPlay] = useState(true);
   const [vel, setVel] = useState(1);
   const [parar, setParar] = useState(true);
+  // la ventana que salta al pararse en un fallo o al terminar la misión
+  const [popup, setPopup] = useState<null | 'fallo' | 'fin'>(null);
   const [golpe, setGolpe] = useState(-1e9);
   const lista = useRef<HTMLOListElement>(null);
   const foto = fotos[Math.min(i, fotos.length - 1)];
@@ -368,6 +370,12 @@ export function Visor({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [terminado]);
   const subirInput = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    if (!popup) return;
+    const tecla = (e: KeyboardEvent) => e.key === 'Escape' && setPopup(null);
+    window.addEventListener('keydown', tecla);
+    return () => window.removeEventListener('keydown', tecla);
+  }, [popup]);
   // la trompa: empieza la misión (solo la primera vez que se ve este registro)
   useEffect(() => {
     if (estreno) sonar('inicio');
@@ -420,8 +428,12 @@ export function Visor({
       sonar(mision.jefe ? 'golpe' : 'bien');
     } else {
       sonar(j.fallos.some((f) => f.f.titulo.includes('fantasma')) ? 'fantasma' : 'fallo');
-      if (parar && play) setPlay(false);
+      if (parar && play) {
+        setPlay(false);
+        setPopup('fallo');
+      }
     }
+    if (i === fotos.length - 1) setTimeout(() => setPopup('fin'), 650);
     if (i === fotos.length - 1 && c.bien === c.total && c.conocida) setTimeout(() => sonar('victoria'), 450);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [i]);
@@ -463,6 +475,28 @@ export function Visor({
   const bienHasta = c.juicios.slice(0, foto.ev + (visto ? 1 : 0)).filter((x) => x.ok && !x.inicial).length;
   const jefe = mision.jefe ? { total: 10, quedan: 10 - Math.floor((10 * bienHasta) / c.total), golpe, sprite: JEFES[mision.acto].id } : undefined;
   const habla = hablante(ev.texto, mision.quien, mision.acto);
+  const botonSiguiente = (
+            <div className="siguiente-mision">
+              {siguiente ? (
+                <button
+                  className="grande"
+                  onClick={() => {
+                    sonar('sube');
+                    siguiente.ir();
+                  }}
+                >
+                  SIGUIENTE MISIÓN
+                  <Ico n="evento" detras />
+                  <small>{siguiente.titulo}</small>
+                </button>
+              ) : (
+                <button className="grande" onClick={volver}>
+                  <Ico n="volver" />
+                  VOLVER A LOS ACTOS
+                </button>
+              )}
+            </div>
+  );
   const faltan = c.total - c.juicios.filter((x) => !x.inicial).length;
   const sonda = arrRec?.sonda ?? 'LIN';
   const rotulo =
@@ -515,80 +549,11 @@ export function Visor({
         </div>
       ))}
       <div className="visor-arriba">
-        <div className="col-izq">
+        <div className="va-banda">
           <Banda tam={tamL} largos={tablaL?.cubos.map((x) => x.length) ?? []} destino={cubo} rotulo={(q === 'B' ? 'BOTÍN · ' : '') + rotulo} titulo={`LISTAS: ${tamL} CUBOS`} quien={mision.quien} jefe={jefe} efecto={efecto} />
-          <div className="controles">
-            <button className="mini icono" onClick={() => irEvento(Math.max(0, foto.ev - 1))} aria-label="Evento anterior" title="Evento anterior">
-              <img src={urlSprite('ic-evento-atras', 2)} alt="" />
-            </button>
-            <button className="mini icono" onClick={() => setI(Math.max(0, i - 1))} aria-label="Paso anterior" title="Paso anterior">
-              <img src={urlSprite('ic-paso-atras', 2)} alt="" />
-            </button>
-            <button className="mini icono principal" onClick={() => (i >= fotos.length - 1 ? (setI(0), setPlay(true)) : setPlay(!play))} aria-label={play ? 'Pausa' : 'Reproducir'} title={play ? 'Pausa' : 'Reproducir'}>
-              <img src={urlSprite(play ? 'ic-pausa' : 'ic-play', 2)} alt="" />
-            </button>
-            <button className="mini icono" onClick={() => setI(Math.min(fotos.length - 1, i + 1))} aria-label="Paso siguiente" title="Paso siguiente">
-              <img src={urlSprite('ic-paso', 2)} alt="" />
-            </button>
-            <button className="mini icono" onClick={() => irEvento(Math.min(evs.length - 1, foto.ev + 1))} aria-label="Evento siguiente" title="Evento siguiente">
-              <img src={urlSprite('ic-evento', 2)} alt="" />
-            </button>
-            <button className="mini icono vel" onClick={() => setVel([1, 2, 4][([1, 2, 4].indexOf(vel) + 1) % 3])} aria-label="Velocidad" title="Velocidad">
-              ×{vel}
-            </button>
-            <label className="check">
-              <input type="checkbox" checked={parar} onChange={(e) => setParar(e.target.checked)} /> parar en los fallos
-            </label>
-          </div>
-          <Archivera quien={habla} titulo={`EVENTO ${ev.n}`}>
-            {foto.ev === 0 && <p className="presenta">«{COMPANIA[mision.quien].presentacion}»</p>}
-            {foto.ev === 0 && mision.jefe && <p className="presenta amenaza">{JEFES[mision.acto].nombre}. {JEFES[mision.acto].amenaza}</p>}
-            <p>{ev.texto}</p>
-            <p className="orden">
-              ▸ <code>{ev.textoOrden}</code>
-              {visto && devuelven && <span className="dev"> devuelven: {devuelven}</span>}
-            </p>
-          </Archivera>
         </div>
-        <div className="col-der">
           <div className="estado">
-          {terminado && visto && i === fotos.length - 1 && !(c.bien === c.total && c.conocida) && (
-            <div className="resultado">
-              <div className="res-tit">{c.reg.fin ? 'MISIÓN TERMINADA' : 'EL PROGRAMA SE CORTÓ'}</div>
-              <div className="res-est">{[0, 1, 2].map((k) => (k < (c.conocida ? c.estrellas : 0) ? '★' : '☆')).join(' ')}</div>
-              <div>
-                {c.bien} de {c.total} eventos bien. Los ✗ de la lista te dicen qué ejercicio revisar; arréglalo, vuelve a ejecutar <code>{mision.target}</code> y sube el registro otra vez.
-              </div>
-            </div>
-          )}
-          {visto && i === fotos.length - 1 && c.bien === c.total && c.conocida && (
-            <div className="victoria">
-              <span>★</span> {mision.jefe ? '¡JEFE VENCIDO!' : '¡MISIÓN SUPERADA!'} <span>★</span>
-              {mision.jefe && <small className="derrota">{JEFES[mision.acto].derrota}</small>}
-            </div>
-          )}
-          {terminado && visto && i === fotos.length - 1 && (
-            <div className="siguiente-mision">
-              {siguiente ? (
-                <button
-                  className="grande"
-                  onClick={() => {
-                    sonar('sube');
-                    siguiente.ir();
-                  }}
-                >
-                  SIGUIENTE MISIÓN
-                  <Ico n="evento" detras />
-                  <small>{siguiente.titulo}</small>
-                </button>
-              ) : (
-                <button className="grande" onClick={volver}>
-                  <Ico n="volver" />
-                  VOLVER A LOS ACTOS
-                </button>
-              )}
-            </div>
-          )}
+          {terminado && visto && i === fotos.length - 1 && botonSiguiente}
           {j && visto ? (
             j.inicial ? (
               <div className="aviso neutro">Las dos tablas recién creadas: {TAM_LISTA} cubos a NULL y {TAM_ARRAY} casillas VACIA.</div>
@@ -628,6 +593,41 @@ export function Visor({
             </div>
           )}
           </div>
+        <div className="col-izq">
+          <div className="controles">
+            <button className="mini icono" onClick={() => irEvento(Math.max(0, foto.ev - 1))} aria-label="Evento anterior" title="Evento anterior">
+              <img src={urlSprite('ic-evento-atras', 2)} alt="" />
+            </button>
+            <button className="mini icono" onClick={() => setI(Math.max(0, i - 1))} aria-label="Paso anterior" title="Paso anterior">
+              <img src={urlSprite('ic-paso-atras', 2)} alt="" />
+            </button>
+            <button className="mini icono principal" onClick={() => (i >= fotos.length - 1 ? (setI(0), setPlay(true)) : setPlay(!play))} aria-label={play ? 'Pausa' : 'Reproducir'} title={play ? 'Pausa' : 'Reproducir'}>
+              <img src={urlSprite(play ? 'ic-pausa' : 'ic-play', 2)} alt="" />
+            </button>
+            <button className="mini icono" onClick={() => setI(Math.min(fotos.length - 1, i + 1))} aria-label="Paso siguiente" title="Paso siguiente">
+              <img src={urlSprite('ic-paso', 2)} alt="" />
+            </button>
+            <button className="mini icono" onClick={() => irEvento(Math.min(evs.length - 1, foto.ev + 1))} aria-label="Evento siguiente" title="Evento siguiente">
+              <img src={urlSprite('ic-evento', 2)} alt="" />
+            </button>
+            <button className="mini icono vel" onClick={() => setVel([1, 2, 4][([1, 2, 4].indexOf(vel) + 1) % 3])} aria-label="Velocidad" title="Velocidad">
+              ×{vel}
+            </button>
+            <label className="check">
+              <input type="checkbox" checked={parar} onChange={(e) => setParar(e.target.checked)} /> parar en los fallos
+            </label>
+          </div>
+          <Archivera quien={habla} titulo={`EVENTO ${ev.n}`}>
+            {foto.ev === 0 && <p className="presenta">«{COMPANIA[mision.quien].presentacion}»</p>}
+            {foto.ev === 0 && mision.jefe && <p className="presenta amenaza">{JEFES[mision.acto].nombre}. {JEFES[mision.acto].amenaza}</p>}
+            <p>{ev.texto}</p>
+            <p className="orden">
+              ▸ <code>{ev.textoOrden}</code>
+              {visto && devuelven && <span className="dev"> devuelven: {devuelven}</span>}
+            </p>
+          </Archivera>
+        </div>
+        <div className="col-der">
           <div className="ram-tit eventos-tit">EVENTOS</div>
           <ol className="eventos" ref={lista}>
             {evs.slice(0, c.juicios.length).map((e, k) => {
@@ -648,6 +648,70 @@ export function Visor({
           {terminado && c.aviso && <div className="aviso mal">{c.aviso}</div>}
         </div>
       </div>
+      {popup && (
+        <div className="ventana-fondo" onClick={() => setPopup(null)}>
+          <div className={`ventana aviso-pop ${popup}`} role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
+            <button className="mini cerrar" onClick={() => setPopup(null)} aria-label="Cerrar">
+              <Ico n="cerrar" />
+            </button>
+            {popup === 'fin' ? (
+              <>
+          {terminado && visto && i === fotos.length - 1 && !(c.bien === c.total && c.conocida) && (
+                  <div className="resultado">
+                    <div className="res-tit">{c.reg.fin ? 'MISIÓN TERMINADA' : 'EL PROGRAMA SE CORTÓ'}</div>
+                    <div className="res-est">{[0, 1, 2].map((k) => (k < (c.conocida ? c.estrellas : 0) ? '★' : '☆')).join(' ')}</div>
+                    <div>
+                      {c.bien} de {c.total} eventos bien. Los ✗ de la lista te dicen qué ejercicio revisar; arréglalo, vuelve a ejecutar <code>{mision.target}</code> y sube el registro otra vez.
+                    </div>
+                  </div>
+                )}
+                {visto && i === fotos.length - 1 && c.bien === c.total && c.conocida && (
+                  <div className="victoria">
+                    <span>★</span> {mision.jefe ? '¡JEFE VENCIDO!' : '¡MISIÓN SUPERADA!'} <span>★</span>
+                    {mision.jefe && <small className="derrota">{JEFES[mision.acto].derrota}</small>}
+                  </div>
+                )}
+                {terminado && botonSiguiente}
+                {c.aviso && <div className="aviso mal">{c.aviso}</div>}
+              </>
+            ) : (
+              <>
+                <div className="pop-tit">FALLO EN EL EVENTO {ev.n}</div>
+                <div className="pop-orden">
+                  <code>{ev.textoOrden}</code>
+                </div>
+                {j?.fallos.map((x, k) => (
+                  <div key={k} className="aviso mal">
+                    {x.ej && <span className="ej">EJERCICIO {x.ej}</span>}
+                    <b>
+                      {x.donde ? `${x.donde}: ` : ''}
+                      {x.f.titulo}
+                    </b>
+                    <br />
+                    {x.f.detalle}
+                  </div>
+                ))}
+              </>
+            )}
+            {j && j.fantasmas.length > 0 && (
+              <div className="fantasmas">
+                <img src={urlSprite('fantasma', 3)} alt="" />
+                <div>
+                  <b>
+                    {j.fantasmas.length} bloque{j.fantasmas.length > 1 ? 's' : ''} perdido{j.fantasmas.length > 1 ? 's' : ''}
+                  </b>
+                  {j.fantasmas.slice(0, 3).map((id) => (
+                    <div key={id}>{describirBloque(c.reg.bloques.get(id)).replace(/,$/, '')}</div>
+                  ))}
+                </div>
+              </div>
+            )}
+            <button className="grande pop-seguir" onClick={() => setPopup(null)}>
+              {popup === 'fin' ? 'VER LA MISIÓN' : 'SEGUIR'}
+            </button>
+          </div>
+        </div>
+      )}
       <div className="tablas">
         <PanelArray m={ahoraH.a} antes={visto ? antesH.a : undefined} recorrido={q === 'H' ? recorrido : []} error={errorDe('H', 'A')} titulo={hayBotin ? 'INVENTARIO · ' : ''} nombre={nombreArray(ahoraH.a ?? antesH.a)} />
         <PanelLista m={ahoraH.l} antes={visto ? antesH.l : undefined} cubo={q === 'H' ? cubo : null} nuevos={q === 'H' ? nuevosNodos : new Set()} error={errorDe('H', 'L')} titulo={hayBotin ? 'INVENTARIO · ' : ''} nombre={nombreLista(ahoraH.l ?? antesH.l)} />

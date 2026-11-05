@@ -45,7 +45,7 @@ export function Entrada({
         <BotonSonido />
       </header>
 
-      <div className={`escena ${jefe ? 'con-jefe' : ''}`}>
+      <div className={`escena-entrada ${jefe ? 'con-jefe' : ''}`}>
         <img src={companero} alt="" className="escena-companero" />
         {jefe && <span className="escena-vs">VS</span>}
         {jefe && <img src={jefeImg} alt="" className="escena-jefe" />}
