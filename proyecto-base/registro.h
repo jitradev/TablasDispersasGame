@@ -29,7 +29,7 @@ void reg_ref(const void *p);                  /* escribe la referencia de p: 0, 
 void reg_printf(const char *formato, ...);    /* escribe en el registro */
 
 /* Las usa main_mision.c */
-int  reg_abrir(const char *salida, const char *mision, const char *alumno);
+int  reg_abrir(const char *salida, const char *mision);
 void reg_vivos(void);                          /* los bloques vivos, para encontrar fugas */
 void reg_cerrar(void);
 

@@ -36,7 +36,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include "alumno.h"
 #include "registro.h"
 #include "TablaDispersaArray.h"
 #include "TablaDispersaLista.h"
@@ -89,7 +88,7 @@ int main(void) {
         printf("No encuentro el fichero de eventos:\n  %s\n", eventos);
         return 1;
     }
-    if (!reg_abrir(salida, MISION, ALUMNO)) {
+    if (!reg_abrir(salida, MISION)) {
         printf("No puedo escribir el registro:\n  %s\n", salida);
         fclose(fe);
         return 1;

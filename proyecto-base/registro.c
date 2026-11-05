@@ -1,7 +1,7 @@
 /* EDA - Practica de listas dispersas: el registro (ver registro.h).
  *
  * Lineas que escribe este fichero:
- *   COFRES 5 / ALUMNO <nombre> / MISION <mision>     cabecera
+ *   COFRES 5 / MISION <mision>                       cabecera
  *   M <bloque> <bytes> <fich> <linea>                malloc
  *   F <bloque> <fich> <linea>                        free
  *   E <mensaje>                                      error de memoria
@@ -124,10 +124,10 @@ void reg_vivos(void) {
     fflush(reg);
 }
 
-int reg_abrir(const char *salida, const char *mision, const char *alumno) {
+int reg_abrir(const char *salida, const char *mision) {
     reg = fopen(salida, "w");
     if (reg == NULL) return 0;
-    fprintf(reg, "COFRES 5\nALUMNO %s\nMISION %s\n", alumno, mision);
+    fprintf(reg, "COFRES 5\nMISION %s\n", mision);
     fflush(reg);
     return 1;
 }

@@ -40,7 +40,6 @@ function guardar(r: Record<string, Subido>) {
     /* sin almacenamiento: se trabaja igual */
   }
 }
-const NOMBRE_PLANTILLA = 'Escribe aqui tu nombre y apellidos';
 
 // ------------------------------------------------------------------ piezas
 
@@ -183,9 +182,6 @@ function Inicio({
 }) {
   const candado = useMemo(() => urlSprite('llave', 4), []);
   const hechas = MISIONES.map((m) => correcciones[m.id]);
-  const alumnos = [...new Set(hechas.filter(Boolean).map((c) => c!.reg.alumno))];
-  /** Los nombres de verdad: el texto de ejemplo de alumno.h no se enseña. */
-  const nombres = alumnos.filter((a) => a && !a.startsWith(NOMBRE_PLANTILLA));
   const notaDe = (n: number) => {
     const ms = MISIONES.filter((m) => m.acto === n);
     return ms.reduce((s, m) => s + (correcciones[m.id]?.conocida ? correcciones[m.id].bien / correcciones[m.id].total : 0), 0) / ms.length;
@@ -291,9 +287,7 @@ function Inicio({
           <section className="resumen">
             <div className="res-cab">
               <div className="ram-tit">RESUMEN DE LA CAMPAÑA</div>
-              {nombres.length > 0 && <div className="res-alumno">{nombres.join(' / ')}</div>}
             </div>
-            {nombres.length > 1 && <div className="aviso mal">Los registros llevan nombres distintos: vuelve a ejecutar las misiones con tu código.</div>}
             {ACTOS.map((a) => {
               const nota = notaDe(a.n) * 10;
               return (

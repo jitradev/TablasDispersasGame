@@ -488,7 +488,6 @@ export function Visor({
         <div className={`titulo-ev ${mision.jefe ? 'jefe' : ''}`}>{mision.titulo}</div>
         <div className="pts">
           {terminado ? `${c.bien}/${c.total} bien` : `evento ${foto.ev} de ${ultimo}`}
-          {c.reg.alumno && !c.reg.alumno.startsWith('Escribe aqui') ? ` · ${c.reg.alumno}` : ''}
         </div>
         {resubir && (
           <>

@@ -1,5 +1,4 @@
 COFRES 5
-ALUMNO Escribe aqui tu nombre y apellidos
 MISION mision5-rey-cripta
 EV 0 CREAR | Se crea el inventario
 M 1 816 TablaDispersaLista.c 40
