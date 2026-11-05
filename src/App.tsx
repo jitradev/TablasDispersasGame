@@ -261,7 +261,9 @@ function Inicio({
               Con un conjuro listo, ejecuta el target de su misión (<code>mision1</code>, <code>mision2</code>...) desde el desplegable de arriba a la derecha. Tu programa juega la misión y deja su registro en <code>registros/</code>.
             </li>
             <li>Entra en la misión y entrégale ese registro. La misión se juega sola, evento a evento; cómo te ha ido lo sabrás al final.</li>
-            <li>Al caer la noche, cuando acabe la sesión, comprime el proyecto entero y llévalo a la PDU.</li>
+            <li>
+              Antes de que acabe el <b>viernes 11 de diciembre a las 23:59</b>, comprime el proyecto entero y llévalo a la PDU. Puedes llevarlo al caer la noche de cada sesión y volver a llevarlo después: vale el último.
+            </li>
           </ol>
           <div className="ordenes-botones">
             <a className="boton grande" href="/proyecto-base.zip" download="listas-dispersas-campana.zip" onClick={() => sonar('click')}>
