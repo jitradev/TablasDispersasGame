@@ -1760,3 +1760,26 @@ button.boton-sonido {
   .prologo p, .prologo-firma { animation: none; opacity: 1; }
   .escena img, .zona-subir img, .prologo-maga { animation: none; }
 }
+
+/* la etiqueta del ejercicio, aparte de la historia */
+.t-ej,
+.entrada-ej {
+  font-family: var(--pixel);
+  font-size: 8px;
+  line-height: 1.7;
+  color: var(--c3);
+  margin: 2px 0 6px;
+}
+.entrada-ej {
+  font-size: 10px;
+  text-align: center;
+  margin: 10px 0 0;
+}
+.t-res {
+  font-style: italic;
+}
+.acto-cab .acto-tec {
+  font-size: 15px;
+  color: var(--cd);
+  margin-top: 4px;
+}

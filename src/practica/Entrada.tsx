@@ -72,10 +72,14 @@ export function Entrada({
         {jefe && <img src={jefeImg} alt="" className="escena-jefe" />}
       </div>
 
+      <div className="entrada-ej">{mision.ejercicio}</div>
+
       <div className="entrada-dialogos">
+        <Archivera quien={MERLA.id} titulo="LA HISTORIA">
+          <p>{mision.resumen}</p>
+        </Archivera>
         <Archivera quien={mision.quien} titulo="ANTES DE EMPEZAR">
           <p className="presenta">«{COMPANIA[mision.quien].presentacion}»</p>
-          <p>{mision.resumen}</p>
         </Archivera>
         {jefe && (
           <Archivera quien={jefe.id} titulo="EL JEFE DEL ACTO">

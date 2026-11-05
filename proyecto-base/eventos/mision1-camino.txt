@@ -1,4 +1,4 @@
-# Mision 1: el camino del Gremio (ejercicio 1: el objeto con mas unidades). Te acompaña Hilda, la herrera enana.
+# Mision 1: la fiesta de la cosecha (ejercicio 1: el objeto con mas unidades). Te acompaña Hilda, la herrera enana.
 # Cada linea: ORDEN argumentos | lo que pasa en la historia
 # Cada objeto tiene su numero (la clave) y se guarda cuantos hay (el elemento).
 ABUNDANTE | Merla: «Esta historia no empieza en una torre ni en un campo de batalla, sino aquí, en la aldea, la mañana de la fiesta de la cosecha». Te da la mochila del Gremio y te pregunta qué es lo que más llevas. Está vacía, y la respuesta también tiene que serlo
