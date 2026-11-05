@@ -2489,7 +2489,7 @@ button.cerrar .ico {
    diálogo, y la lista de eventos (que mide lo que ellos). contain: size hace que
    el estado y la lista no empujen: cogen el alto de su fila y hacen scroll. */
 .visor-arriba {
-  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 1fr);
+  grid-template-columns: minmax(0, 2.3fr) minmax(280px, 1fr);
   grid-template-rows: auto auto;
   row-gap: 0;
   align-items: stretch;
@@ -2666,4 +2666,20 @@ button.cerrar .ico {
 .visor-arriba > .estado {
   scrollbar-gutter: auto;
   padding-right: 0;
+}
+
+/* el resumen corto, más compacto en la columna estrecha */
+.estado-corto {
+  font-size: 16px;
+  padding: 12px;
+}
+.estado-corto .ec-cab {
+  font-size: 12px;
+}
+.estado-corto .ec-est {
+  font-size: 26px;
+}
+.estado-corto button.grande {
+  font-size: 12px;
+  padding: 10px 14px;
 }
