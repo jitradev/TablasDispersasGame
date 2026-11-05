@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { urlSprite } from './juego/sprites';
+import { sonar } from './juego/sonido';
+import { BotonSonido } from './juego/BotonSonido';
 import { leerRegistro, ErrorRegistro } from './practica/registro';
 import { corregir, Correccion } from './practica/corregir';
 import { ACTOS, MISIONES } from './practica/misiones';
@@ -69,8 +71,8 @@ function SubirRegistro({ fichero, subir, otra }: { fichero: string; subir: (fs: 
 
 // ------------------------------------------------------------------ inicio
 
-/** Para abrir un acto hay que sacar al menos estas estrellas en el jefe del anterior. Con 0 están todos abiertos. */
-const ESTRELLAS_PARA_ABRIR: number = 2;
+/** Para abrir un acto hay que sacar al menos estas estrellas en el jefe del anterior. Con 0 (como ahora) están todos abiertos. */
+const ESTRELLAS_PARA_ABRIR: number = 0;
 /** Con ?profesor en la dirección (por ejemplo https://.../?profesor) se ven todos los actos abiertos. */
 const PROFESOR = (() => {
   try {
@@ -124,8 +126,11 @@ function Inicio({
         <img src={buho} alt="" className="flota" />
         <img src={fantasma} alt="" className="flota lento" />
       </div>
-      <h1>Cofres Dispersos</h1>
-      <div className="sub">LA CAMPAÑA · PRÁCTICA DE LISTAS DISPERSAS · ESTRUCTURA DE DATOS</div>
+      <div className="boton-sonido-portada">
+        <BotonSonido />
+      </div>
+      <h1 className="titulo-juego">Lord of EDA</h1>
+      <div className="sub">LOS COFRES DISPERSOS · LA CAMPAÑA DE LAS LISTAS DISPERSAS · ESTRUCTURA DE DATOS</div>
 
       <div className="compania">
         {[MERLA, ...Object.values(COMPANIA)].map((p) => (
@@ -138,10 +143,10 @@ function Inicio({
 
       <section className="intro">
         <p>
-          El Gremio guarda su inventario en <b>tablas de dispersión</b>. Cada objeto tiene su número, que es la clave, y se guarda cuántos hay. La campaña tiene <b>cuatro actos</b>, uno por sesión de 2 horas, y se juega entera sobre <b>un solo proyecto base</b>: el <code>Listas_Dispersas</code> de clase, con sus dos tablas, la de listas y la del array.
+          El Gremio guarda su inventario en <b>tablas de dispersión</b>. Cada objeto tiene su número, que es la clave, y se guarda cuántos hay. La campaña tiene <b>cuatro actos</b>, uno por sesión de 2 horas, todos abiertos desde el principio, y se juega entera sobre <b>un solo proyecto base</b>: el <code>Listas_Dispersas</code> de clase, con sus dos tablas, la de listas y la del array.
         </p>
         <p>
-          Cada ejercicio tiene su misión. Tu programa juega la misión y deja un registro de lo que ha hecho con la memoria; lo subes aquí y ves la animación de las tablas, evento a evento: a qué cubo va cada clave, qué casillas mira cada búsqueda... y cada fantasma que se te escapa. El jefe de cada acto abre el siguiente.
+          Cada ejercicio tiene su misión. Tu programa juega la misión y deja un registro de lo que ha hecho con la memoria; lo subes aquí y ves la animación de las tablas, evento a evento: a qué cubo va cada clave, qué casillas mira cada búsqueda... y cada fantasma que se te escapa. Cada acto termina con su jefe.
         </p>
       </section>
 
@@ -181,7 +186,10 @@ function Inicio({
           const estrellas = ms.reduce((s, m) => s + (correcciones[m.id]?.conocida ? correcciones[m.id].estrellas : 0), 0);
           const abre = abierto(a.n);
           return (
-            <button key={a.n} className={`acto ${a.n === acto ? 'elegido' : ''} ${abre ? '' : 'cerrado'}`} onClick={() => setActo(a.n)}>
+            <button key={a.n} className={`acto ${a.n === acto ? 'elegido' : ''} ${abre ? '' : 'cerrado'}`} onClick={() => {
+                sonar('click');
+                setActo(a.n);
+              }}>
               <span className="a-num">ACTO {a.n}</span>
               <span className="a-tit">{a.titulo}</span>
               <span className="a-lugar">{a.lugar}</span>
@@ -262,7 +270,13 @@ function Inicio({
                     </div>
                     {!c.reg.fin && <div className="t-aviso">El programa se cortó en el evento {c.reg.eventos.length}.</div>}
                     {c.aviso && <div className="t-aviso">{c.aviso}</div>}
-                    <button className="grande" onClick={() => ver(m.id)}>
+                    <button
+                      className="grande"
+                      onClick={() => {
+                        sonar('click');
+                        ver(m.id);
+                      }}
+                    >
                       ▶ VER ANIMACIÓN
                     </button>
                     <SubirRegistro fichero={`${m.id}.txt`} subir={(fs) => subir(fs, m.id)} otra />
@@ -456,10 +470,13 @@ export default function App() {
         }
         corregir(reg);
         nuevos[reg.mision] = { fichero: f.name, texto };
+        const cc = corregir(reg);
+        sonar(cc.conocida && cc.bien === cc.total ? 'victoria' : 'sube');
       } catch (e) {
         errs.push(e instanceof ErrorRegistro ? e.message : `No se ha podido leer «${f.name}».`);
       }
     }
+    if (errs.length) sonar('fallo');
     setErrores({ ...errores, [esperada]: errs });
     setSubidos(nuevos);
   };

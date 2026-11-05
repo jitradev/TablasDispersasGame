@@ -9,6 +9,8 @@ import { Correccion, describirBloque, dondeTabla, Fallo } from './corregir';
 import { BORRADA, Clave, cuboDe, hash2, HashL, MA, ML, mundoInicial, OCUPADA, recorridoA, Sonda, TAM_ARRAY, TAM_LISTA } from './tablas';
 import { Mision } from './misiones';
 import { COMPANIA, MERLA } from './personajes';
+import { sonar } from '../juego/sonido';
+import { BotonSonido } from '../juego/BotonSonido';
 import { EventoReg, Inv } from './registro';
 
 const FUENTE = '"Press Start 2P", monospace';
@@ -53,6 +55,17 @@ interface PropsBanda {
   titulo: string;
   quien: string;
   jefe?: { total: number; quedan: number; golpe: number };
+  /** Cuándo acabó el último evento y si salió bien: chispas doradas o rojas. */
+  efecto?: { t: number; ok: boolean };
+}
+
+interface Particula {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  vida: number;
+  color: string;
 }
 
 function Banda(props: PropsBanda) {
@@ -60,6 +73,9 @@ function Banda(props: PropsBanda) {
   const p$ = useRef(props);
   p$.current = props;
   const x$ = useRef(30);
+  const llego$ = useRef(0);
+  const efecto$ = useRef(0);
+  const parts$ = useRef<Particula[]>([]);
   useEffect(() => {
     const cv = ref.current!;
     let vivo = true;
@@ -108,15 +124,56 @@ function Banda(props: PropsBanda) {
           g.fillRect(x - 1, 98 - k2 * 4, 3, 3);
         }
       }
+      if (p.destino !== null) {
+        const pulso = 2 + Math.round((Math.sin(t / 150) + 1) * 1.5);
+        g.fillStyle = PAL['4'];
+        g.fillRect(Math.round(xc(p.destino)) - pulso, 104, pulso * 2 + 1, 2);
+      }
       texto(g, '0', xc(0), 113, PAL.e, 'center');
       texto(g, String(p.tam - 1), xc(p.tam - 1), 113, PAL.e, 'center');
       // el personaje camina hasta el cubo
       const objetivo = p.destino === null ? 30 : xc(p.destino);
       const dx = objetivo - x$.current;
       const anda = Math.abs(dx) > 1;
-      if (anda) x$.current += Math.sign(dx) * Math.min(Math.abs(dx), 3);
+      if (anda) {
+        x$.current += Math.sign(dx) * Math.min(Math.abs(dx), 3);
+        llego$.current = t;
+        // polvo de los pies
+        if (Math.random() < 0.35) parts$.current.push({ x: x$.current, y: 99, vx: -Math.sign(dx) * Math.random(), vy: -Math.random() * 0.6, vida: 22, color: PAL.f });
+      }
+      // un saltito al llegar
+      const tras = t - llego$.current;
+      const salto = !anda && tras < 320 ? Math.round(Math.sin((tras / 320) * Math.PI) * 6) : 0;
+      // al acabar un evento, chispas: doradas si sale bien, rojas si no
+      if (p.efecto && p.efecto.t !== efecto$.current) {
+        efecto$.current = p.efecto.t;
+        const ok = p.efecto.ok;
+        for (let k = 0; k < (ok ? 18 : 12); k++) {
+          const ang = (Math.PI * 2 * k) / (ok ? 18 : 12) + Math.random() * 0.3;
+          parts$.current.push({
+            x: x$.current,
+            y: 78,
+            vx: Math.cos(ang) * (1 + Math.random() * 1.5),
+            vy: Math.sin(ang) * (1 + Math.random() * 1.5) - (ok ? 1.2 : 0),
+            vida: ok ? 40 : 30,
+            color: ok ? (k % 2 ? PAL['4'] : PAL['5']) : k % 2 ? '#ff4d4d' : PAL['2'],
+          });
+        }
+      }
+      const temblor = p.efecto && !p.efecto.ok && t - p.efecto.t < 350 ? Math.round(Math.sin(t / 25) * 2) : 0;
       const fr = `${p.quien}-${anda && Math.floor(t / 140) % 2 ? 'heroe2' : 'heroe1'}`;
-      pintar(g, fr, x$.current - 12, p.jefe ? 68 : 68, 2);
+      pintar(g, fr, x$.current - 12 + temblor, 68 - salto, 2);
+      for (const q of parts$.current) {
+        q.x += q.vx;
+        q.y += q.vy;
+        q.vy += 0.06;
+        q.vida--;
+        g.fillStyle = q.color;
+        g.globalAlpha = Math.max(0, Math.min(1, q.vida / 20));
+        g.fillRect(Math.round(q.x), Math.round(q.y), 2, 2);
+      }
+      g.globalAlpha = 1;
+      parts$.current = parts$.current.filter((q) => q.vida > 0);
       if (!p.jefe) texto(g, p.titulo, 8, 8, PAL.d);
       texto(g, p.rotulo, W - 8, 130, PAL['4'], 'right');
       requestAnimationFrame(tick);
@@ -132,7 +189,7 @@ function Banda(props: PropsBanda) {
 // ------------------------------------------------------------------ paneles
 
 function PanelArray({ m, antes, recorrido, error, titulo = '', nombre = 'ARRAY · DIRECCIONAMIENTO ABIERTO' }: { m?: MA; antes?: MA; recorrido: number[]; error?: Fallo; titulo?: string; nombre?: string }) {
-  if (!m) return <div className="panel"><div className="panel-tit">{titulo}{nombre}</div><div className="aviso mal">{error?.detalle ?? 'No se puede leer.'}</div></div>;
+  if (!m) return <div className="panel"><div className="panel-tit">{titulo}{nombre}</div><div className={`aviso ${error?.titulo === '' ? 'libre' : 'mal'}`}>{error?.detalle ?? 'No se puede leer.'}</div></div>;
   const ocup = m.casillas.filter((c) => c.marca === OCUPADA).length;
   return (
     <div className="panel">
@@ -145,7 +202,11 @@ function PanelArray({ m, antes, recorrido, error, titulo = '', nombre = 'ARRAY �
           const cambia = antes && (antes.tam !== m.tam || !a || a.marca !== c.marca || a.clave !== c.clave || a.valor !== c.valor);
           const paso = recorrido.indexOf(i);
           return (
-            <div key={i} className={`casilla ${c.marca === OCUPADA ? 'ocupada' : c.marca === BORRADA ? 'borrada' : 'vacia'} ${cambia ? 'cambia' : ''} ${paso >= 0 ? 'explora' : ''}`}>
+            <div
+              key={`${i}-${c.marca}-${c.clave}-${c.valor}`}
+              className={`casilla ${c.marca === OCUPADA ? 'ocupada' : c.marca === BORRADA ? 'borrada' : 'vacia'} ${cambia ? 'cambia' : ''} ${paso >= 0 ? 'explora' : ''}`}
+              style={paso >= 0 ? { animationDelay: `${paso * 140}ms` } : undefined}
+            >
               <span className="idx">{i}</span>
               {paso >= 0 && <span className="paso">{paso + 1}</span>}
               {c.marca === OCUPADA ? (
@@ -171,7 +232,7 @@ function PanelLista({ m, antes, cubo, nuevos, error, titulo = '', nombre = 'LIST
   useEffect(() => {
     fila.current?.scrollIntoView({ block: 'nearest' });
   }, [cubo, m]);
-  if (!m) return <div className="panel"><div className="panel-tit">{titulo}{nombre}</div><div className="aviso mal">{error?.detalle ?? 'No se puede leer.'}</div></div>;
+  if (!m) return <div className="panel"><div className="panel-tit">{titulo}{nombre}</div><div className={`aviso ${error?.titulo === '' ? 'libre' : 'mal'}`}>{error?.detalle ?? 'No se puede leer.'}</div></div>;
   const n = m.cubos.reduce((s, c) => s + c.length, 0);
   const llenos = m.cubos.map((c, i) => [i, c] as const).filter(([i, c]) => c.length || i === cubo);
   return (
@@ -184,10 +245,10 @@ function PanelLista({ m, antes, cubo, nuevos, error, titulo = '', nombre = 'LIST
         {llenos.map(([i, claves]) => (
           <div key={i} ref={i === cubo ? fila : undefined} className={`cubo ${i === cubo ? 'destino' : ''}`}>
             <span className="idx">[{i}]</span>
-            {claves.map((k, p) => {
+            {claves.map((k) => {
               const cambia = antes && (antes.valores.get(k) !== m.valores.get(k) || antes.tam !== m.tam || cuboDe(antes, k) !== i || !antes.cubos[i]?.includes(k));
               return (
-                <span key={p} className="cadena">
+                <span key={`${k}-${m.valores.get(k)}-${i}`} className="cadena">
                   <span className={`nodo ${cambia ? 'cambia' : ''} ${nuevos.has(k) ? 'nuevo' : ''}`}>
                     <img src={icono(k)} alt="" />
                     {k}:{m.valores.get(k)}
@@ -290,12 +351,28 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
   }, [foto, c]);
   const hayBotin = ahoraB.existe || antesB.existe;
 
+  const [efecto, setEfecto] = useState<{ t: number; ok: boolean } | undefined>();
   useEffect(() => {
-    if (!visto || !j || j.inicial) return;
-    if (j.ok) setGolpe(performance.now());
-    else if (parar && play) setPlay(false);
+    if (!visto) {
+      if (i > 0 && ev.orden !== 'CREAR') sonar('paso');
+      return;
+    }
+    if (!j || j.inicial) return;
+    setEfecto({ t: performance.now(), ok: j.ok });
+    if (j.ok) {
+      setGolpe(performance.now());
+      sonar(mision.jefe ? 'golpe' : 'bien');
+    } else {
+      sonar(j.fallos.some((f) => f.f.titulo.includes('fantasma')) ? 'fantasma' : 'fallo');
+      if (parar && play) setPlay(false);
+    }
+    if (i === fotos.length - 1 && c.bien === c.total && c.conocida) setTimeout(() => sonar('victoria'), 450);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [i]);
+  useEffect(() => {
+    if (mision.jefe) sonar('jefe');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   useEffect(() => {
     if (!play) return;
     if (i >= fotos.length - 1) {
@@ -336,7 +413,9 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
       ? ev.orden
       : `${hfL === 'CLASE' ? `hash(${clave}) = ${clave} mod ${tamL}` : `${nombreFuncion[hfL]}(${clave})`} = ${cubo}${sonda === 'DOB' ? ` · h2 = ${hash2(clave)}` : ''}`;
   const devuelven = (ev.rl.length > 0 || ev.ra.length > 0) && [ev.rl.length ? `listas ${fmt(ev.rl, ev.orden)}` : '', ev.ra.length ? `array ${fmt(ev.ra, ev.orden)}` : ''].filter(Boolean).join(' · ');
-  const errorDe = (inv: Inv, t: 'L' | 'A') => j?.fallos.find((x) => x.donde === dondeTabla(inv, t))?.f;
+  const liberada = visto && ev.orden === 'LIBERAR' && j?.ok;
+  const errorDe = (inv: Inv, t: 'L' | 'A') =>
+    liberada ? { titulo: '', detalle: 'Liberada: toda su memoria ha vuelto al sistema, sin fantasmas.' } : j?.fallos.find((x) => x.donde === dondeTabla(inv, t))?.f;
   const antesTexto =
     clave === null
       ? `Antes de ${ev.textoOrden}.`
@@ -352,10 +431,11 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
         <div className="pts">
           {c.bien}/{c.total} bien · {c.reg.alumno}
         </div>
+        <BotonSonido />
       </header>
       <div className="visor-arriba">
         <div className="col-izq">
-          <Banda tam={tamL} largos={tablaL?.cubos.map((x) => x.length) ?? []} destino={cubo} rotulo={(q === 'B' ? 'BOTÍN · ' : '') + rotulo} titulo={`LISTAS: ${tamL} CUBOS`} quien={mision.quien} jefe={jefe} />
+          <Banda tam={tamL} largos={tablaL?.cubos.map((x) => x.length) ?? []} destino={cubo} rotulo={(q === 'B' ? 'BOTÍN · ' : '') + rotulo} titulo={`LISTAS: ${tamL} CUBOS`} quien={mision.quien} jefe={jefe} efecto={efecto} />
           <div className="controles">
             <button className="mini" onClick={() => irEvento(Math.max(0, foto.ev - 1))} aria-label="Evento anterior">
               ⏮
@@ -389,18 +469,23 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
           </Archivera>
         </div>
         <div className="col-der">
+          {visto && i === fotos.length - 1 && c.bien === c.total && c.conocida && (
+            <div className="victoria">
+              <span>★</span> ¡MISIÓN SUPERADA! <span>★</span>
+            </div>
+          )}
           {j && visto ? (
             j.inicial ? (
               <div className="aviso neutro">Las dos tablas recién creadas: {TAM_LISTA} cubos a NULL y {TAM_ARRAY} casillas VACIA.</div>
             ) : j.ok ? (
-              <div className="aviso bien">
+              <div key={`bien-${i}`} className="aviso bien">
                 <b>✓ Bien</b>
                 <br />
                 Las tablas quedan como tenían que quedar{devuelven ? ' y devuelven lo que toca' : ''}.
               </div>
             ) : (
               j.fallos.map((x, k) => (
-                <div key={k} className="aviso mal">
+                <div key={`${i}-${k}`} className="aviso mal">
                   {x.ej && <span className="ej">EJERCICIO {x.ej}</span>}
                   <b>
                     {x.donde ? `${x.donde}: ` : ''}

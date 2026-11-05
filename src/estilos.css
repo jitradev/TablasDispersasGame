@@ -1339,3 +1339,187 @@ button.acto.elegido:focus {
 button.acto:focus-visible {
   outline-color: var(--c4);
 }
+
+/* ---------- Lord of EDA: título, sonido y animaciones ---------- */
+.inicio h1.titulo-juego {
+  font-size: clamp(34px, 8vw, 72px);
+  font-family: var(--titulo);
+  background: linear-gradient(100deg, var(--c4) 0%, #fff3c4 45%, var(--c4) 55%, var(--c3) 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(3px 3px 0 var(--c0));
+  animation: brillo 4s linear infinite;
+}
+@keyframes brillo {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -150% 0;
+  }
+}
+.boton-sonido-portada {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+}
+.inicio {
+  position: relative;
+}
+button.boton-sonido {
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 6px 9px;
+  line-height: 1;
+}
+
+/* la exploración del array: las casillas se encienden una tras otra */
+.casilla.explora {
+  animation: sondea 0.5s steps(3) both;
+}
+@keyframes sondea {
+  0% {
+    outline-color: transparent;
+    transform: translateY(0);
+  }
+  40% {
+    outline-color: #fff3c4;
+    transform: translateY(-4px);
+  }
+  100% {
+    outline-color: var(--c4);
+    transform: translateY(0);
+  }
+}
+/* lo que cambia aparece de golpe, como un cofre que se abre */
+.casilla.cambia,
+.cubo .nodo.cambia,
+.cubo .nodo.nuevo {
+  animation: salta 0.4s steps(4);
+}
+@keyframes salta {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.casilla.cambia.explora {
+  animation:
+    salta 0.4s steps(4),
+    sondea 0.5s steps(3) both;
+}
+.cubo.destino {
+  animation: late 1.2s steps(4) infinite;
+}
+@keyframes late {
+  50% {
+    box-shadow: 0 0 0 3px rgba(240, 200, 80, 0.35);
+  }
+}
+.aviso.bien {
+  animation: aparece 0.3s steps(4);
+}
+.aviso.mal {
+  animation: tiembla 0.4s steps(6);
+}
+@keyframes tiembla {
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+.fantasmas img {
+  animation: flota 1.6s steps(6) infinite alternate;
+}
+.victoria {
+  font-family: var(--pixel);
+  font-size: 13px;
+  text-align: center;
+  color: var(--c0);
+  background: var(--c4);
+  padding: 12px;
+  margin-bottom: 10px;
+  outline: 3px solid var(--c5);
+  animation:
+    aparece 0.35s steps(4),
+    destella 0.8s steps(2) infinite 0.35s;
+}
+.victoria span {
+  display: inline-block;
+  animation: gira 1.2s steps(8) infinite;
+}
+@keyframes destella {
+  50% {
+    background: #fff3c4;
+  }
+}
+@keyframes gira {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* tarjetas y estrellas */
+.tarjeta {
+  transition: transform 0.15s steps(3);
+}
+.tarjeta:hover {
+  transform: translateY(-3px);
+}
+.tarjeta.hecha .estrellas img {
+  animation: estrella 0.5s steps(4) both;
+}
+.tarjeta.hecha .estrellas img:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.tarjeta.hecha .estrellas img:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes estrella {
+  0% {
+    transform: scale(0) rotate(-90deg);
+  }
+  70% {
+    transform: scale(1.4) rotate(10deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.acto {
+  transition: transform 0.12s steps(3);
+}
+.acto:hover {
+  transform: translateY(-3px);
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.panel .aviso.libre {
+  background: #1c2a22;
+  border-color: var(--c6);
+  color: var(--cc);
+}
