@@ -6,31 +6,8 @@ import { urlSprite } from '../juego/sprites';
 import { sonar } from '../juego/sonido';
 import { BotonSonido } from '../juego/BotonSonido';
 import { Mision } from './misiones';
-import { COMPANIA, JEFES, MERLA, PROLOGO } from './personajes';
+import { COMPANIA, JEFES, MERLA } from './personajes';
 import { Archivera } from './Visor';
-
-/** El prólogo, línea a línea, como el principio de una gran historia. */
-export function Prologo({ compacto = false }: { compacto?: boolean }) {
-  const maga = useMemo(() => urlSprite(MERLA.id, 5), []);
-  return (
-    <section className={`prologo ${compacto ? 'compacto' : ''}`}>
-      <div className="prologo-tit">PRÓLOGO</div>
-      <div className="prologo-cuerpo">
-        {!compacto && <img src={maga} alt="" className="prologo-maga" />}
-        <div>
-          {PROLOGO.map((l, k) => (
-            <p key={k} className={k === PROLOGO.length - 1 ? 'tu' : ''} style={{ animationDelay: `${0.4 + k * 1.1}s` }}>
-              {l}
-            </p>
-          ))}
-          <div className="prologo-firma" style={{ animationDelay: `${0.4 + PROLOGO.length * 1.1}s` }}>
-            Merla, guardiana del Libro de los Cofres
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export function Entrada({
   mision,
@@ -63,8 +40,6 @@ export function Entrada({
         <div className="pts" />
         <BotonSonido />
       </header>
-
-      {num === 1 && <Prologo compacto />}
 
       <div className={`escena ${jefe ? 'con-jefe' : ''}`}>
         <img src={companero} alt="" className="escena-companero" />
