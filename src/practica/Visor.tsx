@@ -135,8 +135,10 @@ function Banda(props: PropsBanda) {
       const objetivo = p.destino === null ? 30 : xc(p.destino);
       const dx = objetivo - x$.current;
       const anda = Math.abs(dx) > 1;
+      if (!anda) x$.current = objetivo;
       if (anda) {
-        x$.current += Math.sign(dx) * Math.min(Math.abs(dx), 3);
+        // rápido cuando está lejos y suave al final: llega en unos 300 ms
+        x$.current += Math.sign(dx) * Math.min(Math.abs(dx), Math.max(3, Math.abs(dx) * 0.16));
         llego$.current = t;
         // polvo de los pies
         if (Math.random() < 0.35) parts$.current.push({ x: x$.current, y: 99, vx: -Math.sign(dx) * Math.random(), vy: -Math.random() * 0.6, vida: 22, color: PAL.f });
@@ -429,7 +431,7 @@ export function Visor({ c, mision, volver }: { c: Correccion; mision: Mision; vo
         </button>
         <div className={`titulo-ev ${mision.jefe ? 'jefe' : ''}`}>{mision.titulo}</div>
         <div className="pts">
-          {c.bien}/{c.total} bien · {c.reg.alumno}
+          {c.bien}/{c.total} bien{c.reg.alumno && !c.reg.alumno.startsWith('Escribe aqui') ? ` · ${c.reg.alumno}` : ''}
         </div>
         <BotonSonido />
       </header>
