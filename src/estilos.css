@@ -2203,6 +2203,9 @@ details.ordenes > summary:focus-visible {
   margin: 0;
 }
 .ventana-fondo .ventana.en-claro.ancho {
-  width: 100%;
+  width: min(1180px, 100%);
   max-width: none;
+}
+.ventana-fondo {
+  padding: 48px max(24px, 6vw);
 }
