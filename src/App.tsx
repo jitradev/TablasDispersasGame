@@ -474,7 +474,7 @@ export default function App() {
   useEffect(() => {
     if (intro || !animarTitulo) return;
     document.body.classList.add('sin-scroll');
-    const t = setTimeout(() => setAnimarTitulo(false), 4600);
+    const t = setTimeout(() => setAnimarTitulo(false), 5300);
     return () => {
       clearTimeout(t);
       document.body.classList.remove('sin-scroll');

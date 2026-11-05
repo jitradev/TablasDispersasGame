@@ -2738,3 +2738,27 @@ button.cerrar .ico {
   flex: 1 0 auto;
   box-sizing: border-box;
 }
+
+/* mientras el título sube, la portada no responde: nada se pulsa a ciegas */
+.inicio.con-entrada {
+  pointer-events: none;
+}
+/* el estado de arriba a la derecha, con letra más grande */
+.estado-corto {
+  font-size: 19px;
+  line-height: 1.35;
+}
+.estado-corto .ec-cab {
+  font-size: 15px;
+}
+.estado-corto .ec-est {
+  font-size: 30px;
+  line-height: 1;
+}
+.estado-corto button.grande {
+  font-size: 14px;
+  padding: 9px 16px;
+}
+.col-der > .estado {
+  height: 176px;
+}

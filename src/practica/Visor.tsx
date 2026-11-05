@@ -609,11 +609,7 @@ export function Visor({
               <div key={`mal-${i}`} className="estado-corto mal">
                 <div className="ec-cab">✗ FALLO EN EL EVENTO {ev.n}</div>
                 <div>
-                  {[...new Set(j.fallos.map((x) => x.ej).filter(Boolean))].map((e) => (
-                    <span key={e} className="ej">
-                      EJERCICIO {e}
-                    </span>
-                  ))}
+                  {[...new Set(j.fallos.map((x) => x.ej).filter(Boolean))].map((e) => `Ejercicio ${e} · `)}
                   {j.fallos.length} fallo{j.fallos.length > 1 ? 's' : ''}
                   {j.fantasmas.length > 0 ? ` · ${j.fantasmas.length} bloque${j.fantasmas.length > 1 ? 's' : ''} perdido${j.fantasmas.length > 1 ? 's' : ''}` : ''}
                 </div>
