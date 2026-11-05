@@ -2729,3 +2729,12 @@ button.cerrar .ico {
   .visor-arriba > .col-der { grid-column: 1; grid-row: 2; contain: none; }
   .col-der .eventos { flex: none; height: 300px; }
 }
+/* el estado de arriba a la derecha: siempre la misma altura */
+.col-der > .estado {
+  height: 160px;
+  overflow-y: auto;
+}
+.col-der > .estado > .estado-corto {
+  flex: 1 0 auto;
+  box-sizing: border-box;
+}
