@@ -551,6 +551,7 @@ export function Visor({
           </Archivera>
         </div>
         <div className="col-der">
+          <div className="estado">
           {terminado && visto && i === fotos.length - 1 && !(c.bien === c.total && c.conocida) && (
             <div className="resultado">
               <div className="res-tit">{c.reg.fin ? 'MISIÓN TERMINADA' : 'EL PROGRAMA SE CORTÓ'}</div>
@@ -626,6 +627,7 @@ export function Visor({
               </div>
             </div>
           )}
+          </div>
           <div className="ram-tit eventos-tit">EVENTOS</div>
           <ol className="eventos" ref={lista}>
             {evs.slice(0, c.juicios.length).map((e, k) => {

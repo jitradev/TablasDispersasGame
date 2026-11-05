@@ -2483,3 +2483,50 @@ button.cerrar .ico {
   0%, 100% { opacity: 0.45; }
   50% { opacity: 1; }
 }
+
+/* ------------------------------------------------------------------ el visor: tamaños fijos y columnas alineadas */
+.visor-arriba {
+  align-items: stretch;
+}
+.col-izq .dialogo {
+  height: 168px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.col-der {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.col-der .estado {
+  flex: none;
+  height: 236px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 4px;
+  scrollbar-gutter: stable;
+}
+.col-der .estado > * {
+  flex: none;
+  margin: 0;
+}
+.col-der .estado .fantasmas {
+  margin-top: 0;
+}
+.col-der .eventos-tit {
+  flex: none;
+  margin-top: 12px;
+}
+.col-der .eventos {
+  flex: 1 1 0;
+  min-height: 140px;
+  max-height: none;
+}
+@media (max-width: 900px) {
+  .col-der .eventos {
+    flex: none;
+    height: 300px;
+  }
+}
