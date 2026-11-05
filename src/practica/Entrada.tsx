@@ -65,18 +65,8 @@ export function Entrada({
         )}
       </div>
 
-      <EnClaroMision ej={ejercicioDe(mision.target)} jefe={!!mision.jefe} acto={mision.acto} />
+      <EnClaroMision ej={ejercicioDe(mision.target)} jefe={!!mision.jefe} acto={mision.acto} target={mision.target} fichero={fichero} />
 
-      <ol className="pasos-mision">
-        <li>Programa lo de arriba en el bloque del acto {mision.acto} de los dos ficheros .c.</li>
-        <li>
-          En CLion, elige el target <code>{mision.target}</code> en el desplegable de arriba a la derecha y ejecútalo.
-        </li>
-        <li>
-          Suelta aquí abajo <code>{fichero}</code>, o pulsa el botón y búscalo.
-        </li>
-        <li>La misión se juega sola, evento a evento. Cómo te ha ido lo sabrás al final.</li>
-      </ol>
 
       <div
         className={`zona-subir ${encima ? 'encima' : ''}`}

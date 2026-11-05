@@ -80,9 +80,11 @@ function prologoVisto(): boolean {
   }
 }
 
-/** El prólogo a pantalla completa, línea a línea, con su botón para saltarlo. */
+/** El prólogo a pantalla completa: cada frase aparece despacio, se queda y se
+ * funde con la siguiente. Se puede saltar. */
 function Intro({ alAcabar }: { alAcabar: () => void }) {
   const [k, setK] = useState(0);
+  const [saliendo, setSaliendo] = useState(false);
   const fin = useRef(false);
   const acabar = () => {
     if (fin.current) return;
@@ -92,33 +94,35 @@ function Intro({ alAcabar }: { alAcabar: () => void }) {
     } catch {
       /* sin almacenamiento */
     }
-    alAcabar();
+    setSaliendo(true);
+    setTimeout(alAcabar, 1400);
   };
+  const siguiente = () => (k < PROLOGO.length - 1 ? setK(k + 1) : acabar());
   useEffect(() => {
-    const espera = k < PROLOGO.length ? 1400 + PROLOGO[k].length * 38 : 3200;
-    const t = setTimeout(() => (k < PROLOGO.length ? setK(k + 1) : acabar()), espera);
+    const espera = 3200 + PROLOGO[k].length * 45 + (k === PROLOGO.length - 1 ? 1500 : 0);
+    const t = setTimeout(siguiente, espera);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [k]);
   useEffect(() => {
+    document.body.classList.add('sin-scroll');
+    return () => document.body.classList.remove('sin-scroll');
+  }, []);
+  useEffect(() => {
     const tecla = (e: KeyboardEvent) => {
       if (e.key === 'Escape') acabar();
-      else if (e.key === ' ' || e.key === 'Enter' || e.key === 'ArrowRight') setK((x) => Math.min(PROLOGO.length, x + 1));
+      else if (e.key === ' ' || e.key === 'Enter' || e.key === 'ArrowRight') siguiente();
     };
     window.addEventListener('keydown', tecla);
     return () => window.removeEventListener('keydown', tecla);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  // las líneas viejas se van apagando: se lee como el principio de una película
+  });
   return (
-    <div className="intro-cine" onClick={() => setK((x) => Math.min(PROLOGO.length, x + 1))}>
-      <div className="cine-texto">
-        {PROLOGO.slice(0, k + 1).map((l, i) => (
-          <p key={i} className={`${i === PROLOGO.length - 1 ? 'tu' : ''} ${i < k - 2 ? 'lejos' : ''}`}>
-            {l}
-          </p>
-        ))}
-      </div>
+    <div className={`intro-cine ${saliendo ? 'saliendo' : ''}`} onClick={siguiente}>
+      {PROLOGO.map((l, i) => (
+        <p key={i} className={`cine-frase ${i === k ? 'visible' : ''} ${i === PROLOGO.length - 1 ? 'tu' : ''} ${i === 0 ? 'primera' : ''}`} aria-hidden={i !== k}>
+          {l}
+        </p>
+      ))}
       <button
         className="saltar"
         onClick={(e) => {
@@ -135,7 +139,6 @@ function Intro({ alAcabar }: { alAcabar: () => void }) {
 
 // ------------------------------------------------------------------ la portada: elegir el acto
 
-const BLOQUE: Record<number, string> = { 1: 'ACTO 1: EL GREMIO', 2: 'ACTO 2: LAS CARAVANAS', 3: 'ACTO 3: CREAR DISTINTOS HASH', 4: 'ACTO 4: JUEGO CON COLISIONES' };
 
 function Inicio({
   correcciones,
@@ -183,8 +186,6 @@ function Inicio({
       </div>
       <h1 className="titulo-juego">Lord of EDA</h1>
       <div className="tras-titulo">
-        <div className="sub">LOS COFRES DISPERSOS · LA CAMPAÑA DE LAS LISTAS DISPERSAS · ESTRUCTURA DE DATOS</div>
-
         <div className="elige">ELIGE TU ACTO</div>
         <div className="mapa-actos grande">
           {ACTOS.map((a) => {
@@ -218,6 +219,37 @@ function Inicio({
             );
           })}
         </div>
+
+        <section className="ordenes">
+          <div className="ordenes-cab">
+            <img src={urlSprite(MERLA.id, 4)} alt="" />
+            <div>
+              <div className="ordenes-tit">LAS ÓRDENES DE MERLA</div>
+              <div className="ordenes-sub">«Escucha bien, que no lo repetiré»</div>
+            </div>
+          </div>
+          <ol>
+            <li>
+              El primer día en el Gremio, recoge el Libro de los Cofres, que es el <b>proyecto base</b>. Ábrelo en CLion (<i>File &gt; Open</i>, la carpeta entera) y guárdalo bien: te servirá para los cuatro actos.
+            </li>
+            <li>
+              Cada acto tiene sus conjuros, y se escriben en <code>TablaDispersaLista.c</code> y <code>TablaDispersaArray.c</code>, en el bloque de su acto. El pergamino del Gremio cuenta qué tiene que hacer cada uno.
+            </li>
+            <li>
+              Con un conjuro listo, ejecuta el target de su misión (<code>mision1</code>, <code>mision2</code>...) desde el desplegable de arriba a la derecha. Tu programa juega la misión y deja su registro en <code>registros/</code>.
+            </li>
+            <li>Entra en la misión y entrégale ese registro. La misión se juega sola, evento a evento; cómo te ha ido lo sabrás al final.</li>
+            <li>Al caer la noche, cuando acabe la sesión, comprime el proyecto entero y llévalo a la PDU.</li>
+          </ol>
+          <div className="ordenes-botones">
+            <a className="boton grande" href="/proyecto-base.zip" download="listas-dispersas-campana.zip" onClick={() => sonar('click')}>
+              RECOGER EL LIBRO (PROYECTO BASE)
+            </a>
+            <a className="boton grande secundario" href="/enunciado-lord-of-eda.pdf" target="_blank" rel="noreferrer" onClick={() => sonar('click')}>
+              LEER EL PERGAMINO (ENUNCIADO)
+            </a>
+          </div>
+        </section>
 
         <div className="compania">
           {[MERLA, ...Object.values(COMPANIA)].map((p) => (
@@ -299,7 +331,6 @@ function PantallaActo({
 }) {
   const a = ACTOS[n - 1];
   const misiones = MISIONES.filter((m) => m.acto === n);
-  const maga = useMemo(() => urlSprite(MERLA.id, 4), []);
   const jefe = JEFES[n];
   return (
     <div className="pantalla acto-pantalla">
@@ -335,42 +366,6 @@ function PantallaActo({
         </div>
       </div>
 
-      <section className="ordenes">
-        <div className="ordenes-cab">
-          <img src={maga} alt="" />
-          <div>
-            <div className="ordenes-tit">LAS ÓRDENES DE MERLA</div>
-            <div className="ordenes-sub">«Escucha bien, que no lo repetiré»</div>
-          </div>
-        </div>
-        <ol>
-          {n === 1 ? (
-            <li>
-              Es tu primer día en el Gremio: recoge el Libro de los Cofres, que es el <b>proyecto base</b>. Ábrelo en CLion (<i>File &gt; Open</i>, la carpeta entera) y guárdalo bien, porque te servirá para los cuatro actos.
-            </li>
-          ) : (
-            <li>
-              Sigue con el mismo Libro de los Cofres, el <b>proyecto base</b> que abriste en el primer acto. Si lo perdiste por el camino, aquí tienes otro, pero tendrás que volver a escribir lo de los actos anteriores.
-            </li>
-          )}
-          <li>
-            Los conjuros de este acto se escriben en <code>TablaDispersaLista.c</code> y <code>TablaDispersaArray.c</code>, en el bloque <code>{BLOQUE[n]}</code>. El pergamino del Gremio explica qué tiene que hacer cada uno.
-          </li>
-          <li>
-            Con un conjuro listo, ejecuta el target de su misión (<code>{misiones[0].target}</code>, <code>{misiones[1].target}</code>...) desde el desplegable de arriba a la derecha. Tu programa juega la misión y deja su registro en <code>registros/</code>.
-          </li>
-          <li>Entra en la misión y entrégale ese registro. La misión se juega sola, evento a evento; cómo te ha ido lo sabrás al final.</li>
-          <li>Al caer la noche, cuando acabe la sesión, comprime el proyecto entero y llévalo a la PDU.</li>
-        </ol>
-        <div className="ordenes-botones">
-          <a className="boton grande" href="/proyecto-base.zip" download="listas-dispersas-campana.zip" onClick={() => sonar('click')}>
-            {n === 1 ? 'RECOGER EL LIBRO (PROYECTO BASE)' : 'OTRO LIBRO (PROYECTO BASE)'}
-          </a>
-          <a className="boton grande secundario" href="/enunciado-lord-of-eda.pdf" target="_blank" rel="noreferrer" onClick={() => sonar('click')}>
-            LEER EL PERGAMINO (ENUNCIADO)
-          </a>
-        </div>
-      </section>
 
       <EnClaroActo acto={n} />
 
@@ -448,8 +443,12 @@ export default function App() {
   const [animarTitulo, setAnimarTitulo] = useState(true);
   useEffect(() => {
     if (intro || !animarTitulo) return;
-    const t = setTimeout(() => setAnimarTitulo(false), 4500);
-    return () => clearTimeout(t);
+    document.body.classList.add('sin-scroll');
+    const t = setTimeout(() => setAnimarTitulo(false), 4600);
+    return () => {
+      clearTimeout(t);
+      document.body.classList.remove('sin-scroll');
+    };
   }, [intro, animarTitulo]);
   const setSubidos = (s: Record<string, Subido>) => {
     setSubidosR(s);

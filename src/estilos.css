@@ -1798,41 +1798,45 @@ button.boton-sonido {
   cursor: pointer;
   z-index: 50;
 }
-.cine-texto {
-  max-width: 760px;
-  max-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  overflow: hidden;
-}
-.cine-texto p {
+.cine-frase {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(760px, calc(100vw - 48px));
+  margin: 0;
+  transform: translate(-50%, -46%);
   font-family: var(--titulo);
-  font-size: clamp(19px, 2.4vw, 26px);
-  line-height: 1.5;
+  font-size: clamp(20px, 2.6vw, 28px);
+  line-height: 1.6;
   color: #eadbb8;
   text-align: center;
-  margin: 0 0 18px;
-  animation: cine-aparece 2.2s ease-out both;
-  transition: opacity 2s, filter 2s;
+  opacity: 0;
+  filter: blur(4px);
+  transition: opacity 1.6s ease-in-out, transform 2.4s ease-out, filter 1.6s ease-in-out;
+  pointer-events: none;
 }
-.cine-texto p:first-child {
+.cine-frase.visible {
+  opacity: 1;
+  filter: none;
+  transform: translate(-50%, -50%);
+  transition-delay: 0.9s;
+}
+.cine-frase.primera {
   color: var(--c4);
-  font-size: clamp(22px, 3vw, 32px);
+  font-size: clamp(24px, 3.2vw, 36px);
 }
-.cine-texto p.lejos {
-  opacity: 0.28;
-  filter: blur(0.6px);
-}
-.cine-texto p.tu {
-  font-size: clamp(36px, 5vw, 56px);
+.cine-frase.tu {
   color: var(--c4);
-  margin-top: 14px;
-  animation-duration: 3s;
+  font-size: clamp(44px, 7vw, 80px);
 }
-@keyframes cine-aparece {
-  from { opacity: 0; transform: translateY(10px); filter: blur(3px); }
-  to { opacity: 1; transform: none; filter: none; }
+.intro-cine {
+  transition: opacity 1.4s ease-in-out;
+}
+.intro-cine.saliendo {
+  opacity: 0;
+}
+body.sin-scroll {
+  overflow: hidden;
 }
 .saltar {
   position: fixed;
@@ -1857,18 +1861,18 @@ button.boton-sonido {
   margin: 18px 0 8px;
 }
 .inicio.con-entrada h1.titulo-juego {
-  animation: brillo 4s linear infinite, titulo-sube 4.2s ease-in-out both;
+  animation: brillo 4s linear infinite, titulo-sube 4.4s cubic-bezier(0.65, 0, 0.35, 1) both;
 }
 .inicio.con-entrada .tras-titulo {
-  animation: aparece-suave 1.2s ease-out 3.4s both;
+  animation: aparece-suave 1.4s ease-out 3.8s both;
 }
 .inicio.con-entrada .boton-sonido-portada {
   animation: aparece-suave 1s ease-out 3.4s both;
 }
 @keyframes titulo-sube {
-  0% { opacity: 0; transform: translateY(36vh) scale(2.1); }
-  25% { opacity: 1; transform: translateY(36vh) scale(2.1); }
-  60% { opacity: 1; transform: translateY(36vh) scale(2.1); }
+  0% { opacity: 0; transform: translateY(34vh) scale(1.8); filter: blur(6px) drop-shadow(3px 3px 0 var(--c0)); }
+  25% { opacity: 1; transform: translateY(34vh) scale(1.8); filter: blur(0) drop-shadow(3px 3px 0 var(--c0)); }
+  55% { opacity: 1; transform: translateY(34vh) scale(1.8); }
   100% { opacity: 1; transform: none; }
 }
 @keyframes aparece-suave {
@@ -1984,7 +1988,8 @@ a.boton.secundario {
   background: #6b4e2e;
 }
 @media (prefers-reduced-motion: reduce) {
-  .inicio.con-entrada h1.titulo-juego, .inicio.con-entrada .tras-titulo, .inicio.con-entrada .boton-sonido-portada, .cine-texto p, .relato-acto p { animation: none; }
+  .inicio.con-entrada h1.titulo-juego, .inicio.con-entrada .tras-titulo, .inicio.con-entrada .boton-sonido-portada, .relato-acto p { animation: none; }
+  .cine-frase { transition: opacity 0.6s; filter: none; }
 }
 .ordenes b {
   color: #8c2f1f;
@@ -2103,4 +2108,62 @@ a.boton.secundario:hover {
 
 .en-claro code.ec-firma + code.ec-firma {
   margin-top: 4px;
+}
+
+/* ------------------------------------------------------------------ la ventana del pergamino */
+.ec-boton {
+  text-align: center;
+  margin: 18px 0 22px;
+}
+button.grande.pergamino {
+  background: #4b6a78;
+  color: #fff8e6;
+}
+button.grande.pergamino:hover {
+  background: #5a7f8f;
+}
+.ventana-fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(8, 6, 4, 0.78);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+  overflow-y: auto;
+  animation: aparece-suave 0.25s ease-out;
+}
+.ventana.en-claro {
+  position: relative;
+  width: min(980px, 100%);
+  margin: 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+.ventana .cerrar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.ec-sub {
+  font-family: var(--pixel);
+  font-size: 9px;
+  color: #9fd0e0;
+  margin: 14px 0 6px;
+  letter-spacing: 1px;
+}
+.ec-pasos {
+  margin: 0 0 8px;
+  padding-left: 24px;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.ec-pasos code,
+.ec-intro code {
+  background: #11181b;
+  color: #ffe08a;
+}
+
+html {
+  overflow-x: clip;
 }
