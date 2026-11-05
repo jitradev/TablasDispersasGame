@@ -1,0 +1,23 @@
+# Mision 7: la balanza del mercader (ejercicio 7: comparar dos inventarios). Te acompaña Ulf, el barquero.
+# Cada linea: ORDEN argumentos | lo que pasa en la historia
+# Las ordenes con B van al otro inventario, el del mercader. IGUALES compara los dos.
+IGUALES | Ulf y el mercader no llevan nada: dos inventarios vacíos son iguales
+ACTUALIZAR 5 3 | Ulf sube 3 antorchas (objeto 5)
+ACTUALIZAR 106 2 | 2 monedas (objeto 106): en las listas, delante de las antorchas en el cubo 5
+ACTUALIZAR 25 1 | Una cuerda (objeto 25): en el array choca con las antorchas y acaba en la 7
+ACTUALIZAR B 106 2 | El mercader sube lo mismo, pero en otro orden: primero las monedas
+ACTUALIZAR B 25 1 | Después la cuerda: en su array se queda en la casilla 5
+ACTUALIZAR B 5 3 | Y las antorchas al final: en su array, a la 7
+IGUALES | Lo mismo en otro orden y en otras casillas: son iguales
+ACTUALIZAR B 5 4 | El mercader encuentra otra antorcha
+IGUALES | Ahora no: las antorchas no cuadran
+ACTUALIZAR B 5 3 | Se la regala a un niño y vuelve a tener 3
+IGUALES | Otra vez iguales
+ACTUALIZAR B 44 1 | El mercader compra una gema (objeto 44)
+IGUALES | Él tiene un objeto más
+ACTUALIZAR 45 1 | Ulf compra un escudo (objeto 45): los dos tienen cuatro objetos, pero no los mismos
+IGUALES | Mismo número de objetos, y aun así distintos
+ELIMINAR B 44 | El mercader vende la gema
+ELIMINAR 45 | Ulf vende el escudo
+IGUALES | Iguales otra vez, con las BORRADA en sitios distintos
+LIBERAR | Cierra el mercado y se vacían las tablas

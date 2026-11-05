@@ -1,0 +1,23 @@
+# Mision 1: el camino del Gremio (ejercicio 1: el objeto con mas unidades). Te acompaña Hilda, la herrera.
+# Cada linea: ORDEN argumentos | lo que pasa en la historia
+# Cada objeto tiene su numero (la clave) y se guarda cuantos hay (el elemento).
+ABUNDANTE | Hilda mira qué es lo que más lleva... con la mochila vacía
+ACTUALIZAR 5 3 | Salís de la aldea con 3 antorchas (objeto 5)
+ABUNDANTE | Con un solo objeto, ese es el que más hay
+ACTUALIZAR 23 1 | La curandera del molino os regala una poción (objeto 23)
+ACTUALIZAR 106 2 | Hilda pesca 2 monedas del pozo (objeto 106): en las listas, al cubo de las antorchas
+ACTUALIZAR 43 5 | Recogéis 5 flechas (objeto 43): en el array chocan con las pociones
+ABUNDANTE | Ahora lo que más hay son flechas
+ACTUALIZAR 207 5 | Hilda forja 5 clavos (objeto 207): empatan con las flechas
+ABUNDANTE | Empate a 5: gana la clave más pequeña
+ACTUALIZAR -40 5 | Un amuleto maldito con número negativo, también 5 (objeto -40)
+ABUNDANTE | Otro empate a 5, y la clave más pequeña ahora es negativa
+ACTUALIZAR 106 9 | Encontráis más monedas: ahora 9
+ABUNDANTE | Las monedas pasan delante
+ELIMINAR 106 | Pagáis la posada con todas las monedas
+ABUNDANTE | Sin las monedas, vuelve el empate a 5
+ELIMINAR -40 | Os libráis del amuleto
+ELIMINAR 43 | Disparáis las flechas
+ELIMINAR 207 | Gastáis los clavos
+ABUNDANTE | Ya solo quedan antorchas y una poción
+LIBERAR | Fin del viaje: Hilda vacía las tablas

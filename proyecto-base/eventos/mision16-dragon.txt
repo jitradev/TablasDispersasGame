@@ -1,0 +1,44 @@
+# Mision 16: el dragon de las colisiones (jefe final, ejercicios 13, 14 y 15 y lo de antes). Te acompaña Lis, la arquera del bosque.
+# Cada linea: ORDEN argumentos | lo que pasa en la historia
+# El inventario de Lis usa el plegamiento y, en el array, la exploracion cuadratica; el tesoro del dragon (el botin), el de clase con doble hashing.
+FUNCION PLEGAMIENTO | Lis pliega su inventario para que el dragón no adivine dónde guarda cada cosa
+SONDEO CUADRATICO | Y en el array busca sitio de cuadrado en cuadrado
+SONDEO B DOBLE | El dragón guarda su tesoro a saltos
+ACTUALIZAR 1234 3 | 3 brújulas (objeto 1234)
+ACTUALIZAR 3412 2 | 2 sextantes (objeto 3412): el plegamiento los junta con las brújulas
+ACTUALIZAR 5612 4 | 4 mapas (objeto 5612)
+ACTUALIZAR 1256 1 | Un pergamino (objeto 1256): con los mapas
+ACTUALIZAR 4321 5 | 5 catalejos (objeto 4321)
+ACTUALIZAR 2143 2 | 2 relojes (objeto 2143): con los catalejos
+ACTUALIZAR 7799 1 | Una cuerda (objeto 7799)
+ACTUALIZAR 9977 6 | 6 velas (objeto 9977): con la cuerda
+ACTUALIZAR B 3 9 | El dragón guarda 9 monedas de oro (objeto 3)
+ACTUALIZAR B 23 4 | 4 copas (objeto 23)
+ACTUALIZAR B 43 2 | 2 coronas (objeto 43)
+ACTUALIZAR B 63 7 | 7 gemas (objeto 63)
+ACTUALIZAR B 83 1 | Un cetro (objeto 83)
+ACTUALIZAR B 3412 1 | Y un sextante
+COLISIONES | ¿Cómo está el inventario de Lis?
+COLISIONES B | ¿Y el tesoro del dragón?
+COSTETOTAL | Lo que le cuesta a Lis encontrarlo todo
+COSTETOTAL B | Y al dragón
+COSTE B 83 | El cetro del dragón
+COSTE 2143 | Los relojes de Lis
+FRENTE 2143 | Lis pone los relojes delante en su cubo
+COSTE 2143 | Ahora se encuentran a la primera
+ELIMINAR B 23 | Lis roba las copas: en el tesoro queda una BORRADA
+ELIMINAR B 43 | Y las coronas
+COSTETOTAL B | El dragón tiene menos cosas que revisar
+LIMPIAR B | El dragón barre su cueva
+COSTETOTAL B | Esta vez barrer no ahorra nada: el polvo no estaba en el camino de nadie
+CAMBIAR 1256 3412 | El pergamino era un sextante: se suma
+BUSCAR 3412 | Lis tiene 3 sextantes
+AGOTAR 2 | Lis suelta todo lo que tenga menos de 2 para correr más
+ABUNDANTE | Lo que más tiene Lis
+ABUNDANTE B | Lo que más tiene el dragón
+FUSIONAR | Lis vence al dragón y se queda su tesoro
+BUSCAR 3 | Las monedas de oro ya son de Lis
+BUSCAR 3412 | Y el sextante del dragón se ha sumado a los suyos
+COLISIONES | El inventario de Lis con todo el tesoro
+COSTETOTAL | Y lo que le cuesta encontrarlo
+LIBERAR | El dragón huye y se vacían las tablas

@@ -1,0 +1,26 @@
+# Mision 10: el pergamino plegado (ejercicio 10: el hash de plegamiento). Te acompaña Bastián, el cartógrafo.
+# Cada linea: ORDEN argumentos | lo que pasa en la historia
+# FUNCION elige la funcion hash de las dos tablas de un inventario (solo con el inventario vacio).
+# El inventario de Bastian usa el plegamiento; el botin (las ordenes con B) sigue con la de clase, para comparar.
+FUNCION PLEGAMIENTO | Bastián pliega su mapa: su inventario usará el hash de plegamiento
+ACTUALIZAR 1234 3 | 3 brújulas (objeto 1234): 12 + 34 = 46
+ACTUALIZAR B 1234 3 | Las mismas brújulas en el botín, con el hash de clase: 1234 mod 101 = 22
+ACTUALIZAR 3412 1 | Un sextante (objeto 3412): 34 + 12 = 46, el mismo cubo que las brújulas
+ACTUALIZAR B 3412 1 | En el botín, el sextante va al 79
+ACTUALIZAR 2143 2 | 2 catalejos (objeto 2143): 21 + 43 = 64
+ACTUALIZAR B 2143 2 | En el botín, 2143 mod 101 = 22: choca con las brújulas
+ACTUALIZAR 7799 4 | 4 rollos de cuerda (objeto 7799): 77 + 99 = 176, mod 101 = 75
+ACTUALIZAR B 7799 4 | En el botín, otra vez el 22
+ACTUALIZAR 9977 5 | 5 velas (objeto 9977): 99 + 77, el mismo cubo que las cuerdas
+ACTUALIZAR B 9977 5 | En el botín, el 79 otra vez
+ACTUALIZAR 12345 6 | 6 tintas (objeto 12345): tres trozos, 1 + 23 + 45 = 69
+ACTUALIZAR B 12345 6 | En el botín, 12345 mod 101 = 23
+COLISIONES | ¿Cómo reparte el plegamiento?
+COLISIONES B | ¿Y el hash de clase?
+BUSCAR 3412 | Bastián busca el sextante en su inventario
+BUSCAR B 2143 | Y los catalejos en el botín
+ELIMINAR 1234 | Se pierden las brújulas
+BUSCAR 3412 | El sextante sigue en el cubo 46
+FUNCION MITAD | Bastián intenta cambiar de función con el inventario lleno: no se puede
+ABUNDANTE | ¿Qué es lo que más tiene?
+LIBERAR | Bastián guarda el mapa y se vacían las tablas

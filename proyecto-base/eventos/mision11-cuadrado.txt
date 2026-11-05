@@ -1,0 +1,29 @@
+# Mision 11: el espejo del cuadrado (ejercicio 11: el hash de la mitad del cuadrado). Te acompaña Hilda, la herrera.
+# Cada linea: ORDEN argumentos | lo que pasa en la historia
+# El inventario de Hilda usa la mitad del cuadrado; el botin sigue con la de clase.
+FUNCION MITAD | Hilda mira su inventario en el espejo del cuadrado
+ACTUALIZAR 5 3 | 3 antorchas (objeto 5): 5 al cuadrado es 25, y sus cifras del centro dan 0
+ACTUALIZAR B 5 3 | En el botín, con el hash de clase, al cubo 5
+ACTUALIZAR 106 2 | 2 monedas (objeto 106): 11236, y las cifras del centro son 12
+ACTUALIZAR B 106 2 | En el botín, 106 mod 101 = 5: choca con las antorchas
+ACTUALIZAR 207 4 | 4 clavos (objeto 207): 42849, cifras del centro 28
+ACTUALIZAR B 207 4 | En el botín, también al cubo 5
+ACTUALIZAR 308 1 | Una llave (objeto 308): 94864, cifras del centro 48
+ACTUALIZAR B 308 1 | En el botín, el cubo 5 ya tiene cuatro
+ACTUALIZAR 25 2 | 2 pociones (objeto 25): 625, cifras del centro 6
+ACTUALIZAR B 25 2 | En el botín, al 25
+ACTUALIZAR 175 1 | Un escudo (objeto 175): 30625, también 6
+ACTUALIZAR B 175 1 | En el botín, al 74
+ACTUALIZAR 100 5 | 5 flechas (objeto 100): 10000, cifras del centro 0
+ACTUALIZAR B 100 5 | En el botín, al 100
+ACTUALIZAR 200 2 | 2 hachas (objeto 200): 40000, otra vez 0
+ACTUALIZAR B 200 2 | En el botín, al 99
+ACTUALIZAR 300 1 | Un yelmo (objeto 300): 90000, y otra vez 0: los números redondos se amontonan
+ACTUALIZAR B 300 1 | En el botín, al 98
+COLISIONES | ¿Cómo reparte la mitad del cuadrado?
+COLISIONES B | ¿Y el hash de clase?
+BUSCAR 200 | Hilda busca las hachas en el cubo de los redondos
+ELIMINAR 100 | Se disparan las flechas
+BUSCAR 300 | El yelmo sigue ahí
+COLISIONES | El cubo de los redondos ha encogido
+LIBERAR | Hilda se aparta del espejo y se vacían las tablas

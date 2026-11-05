@@ -1,0 +1,33 @@
+# Mision 8: el pacto de las caravanas (ejercicio 8: lo que tienen los dos). Te acompaña Bastián, el cartógrafo.
+# Cada linea: ORDEN argumentos | lo que pasa en la historia
+# INTERSECCION deja en el inventario de Bastian solo lo que tambien tiene la otra caravana (las ordenes con B).
+ACTUALIZAR 5 3 | Bastián lleva 3 antorchas (objeto 5)
+ACTUALIZAR 106 2 | 2 monedas (objeto 106): al cubo 5 de las listas
+ACTUALIZAR 207 4 | 4 clavos (objeto 207): también al cubo 5
+ACTUALIZAR 308 1 | Una llave (objeto 308): también al cubo 5
+ACTUALIZAR 409 2 | 2 gemas (objeto 409): el primero del cubo 5, con la llave detrás
+ACTUALIZAR 23 5 | 5 pociones (objeto 23)
+ACTUALIZAR 43 2 | 2 flechas (objeto 43): en el array, junto a las pociones
+ACTUALIZAR 24 3 | 3 cuerdas (objeto 24): en el array su casilla es la 4, pero el grupo la empuja hasta la 10
+ACTUALIZAR B 106 5 | La otra caravana tiene 5 monedas
+ACTUALIZAR B 207 1 | Un clavo
+ACTUALIZAR B 23 5 | 5 pociones
+ACTUALIZAR B 24 2 | 2 cuerdas
+ACTUALIZAR B 99 7 | Y 7 hachas (objeto 99), que Bastián no tiene
+INTERSECCION | El pacto: cada uno se queda con lo que tienen los dos, y con lo menos que tenga cualquiera
+BUSCAR 106 | Quedan 2 monedas, las de Bastián, que eran menos
+BUSCAR 207 | Y un clavo, el de la otra caravana
+BUSCAR 409 | Las gemas y la llave, las dos primeras del cubo 5, se han ido
+BUSCAR 43 | Las flechas, también: en el array su casilla queda BORRADA
+BUSCAR 23 | Las pociones siguen
+BUSCAR 24 | Y las cuerdas: en el array hay que pasar por las casillas que han quedado BORRADA
+ACTUALIZAR 63 1 | Un mapa (objeto 63): en el array aprovecha la BORRADA de las flechas
+INTERSECCION | Otro pacto: el mapa no lo tiene la otra caravana
+ELIMINAR B 106 | La otra caravana gasta sus monedas
+ELIMINAR B 207 | ... su clavo
+ELIMINAR B 23 | ... sus pociones
+ELIMINAR B 24 | ... sus cuerdas
+ELIMINAR B 99 | ... y sus hachas
+INTERSECCION | Un pacto con una caravana vacía deja a Bastián sin nada
+BUSCAR 23 | Ya no hay pociones
+LIBERAR | Se separan las caravanas y se vacían las tablas

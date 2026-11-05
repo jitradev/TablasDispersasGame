@@ -1,0 +1,43 @@
+# Mision 9: el recaudador del puente (ejercicio 9 y todo el acto 2, el jefe). Te acompaña Lis, la arquera del bosque.
+# Cada linea: ORDEN argumentos | lo que pasa en la historia
+# Las ordenes con B van a la bolsa del recaudador. DIFERENCIA cobra el peaje: resta al inventario de Lis lo que hay en la bolsa.
+ACTUALIZAR 5 10 | Lis llega al puente con 10 antorchas (objeto 5)
+ACTUALIZAR 106 4 | 4 monedas (objeto 106)
+ACTUALIZAR 207 6 | 6 clavos (objeto 207)
+ACTUALIZAR 308 2 | 2 llaves (objeto 308): el cubo 5 ya tiene cuatro nodos
+ACTUALIZAR 23 8 | 8 pociones (objeto 23)
+ACTUALIZAR 43 3 | 3 flechas (objeto 43)
+ACTUALIZAR 63 1 | Un mapa (objeto 63): en el array no encuentra sitio hasta la casilla 9
+ACTUALIZAR 12 5 | 5 cuerdas (objeto 12)
+ACTUALIZAR B 106 4 | El recaudador pide 4 monedas
+ACTUALIZAR B 207 2 | 2 clavos
+ACTUALIZAR B 308 5 | 5 llaves, más de las que tiene Lis
+ACTUALIZAR B 63 1 | El mapa
+ACTUALIZAR B 99 3 | Y 3 hachas, que Lis no tiene
+DIFERENCIA | Lis paga el peaje: lo que se queda a 0 o menos desaparece
+BUSCAR 207 | Le quedan 4 clavos
+BUSCAR 106 | Las monedas se han ido justas
+BUSCAR 308 | Las llaves no llegaban: se van todas
+BUSCAR 63 | Y el mapa
+BUSCAR 99 | Las hachas que pedía el recaudador nunca estuvieron
+COPIAR | El recaudador apunta en su bolsa todo lo que le queda a Lis, encima de lo que tenía
+IGUALES | La bolsa y el inventario son iguales
+DIFERENCIA | Y le cobra todo: Lis se queda sin nada
+IGUALES | Ahora ya no son iguales
+ACTUALIZAR 5 2 | Lis recoge 2 antorchas en la orilla
+ACTUALIZAR 23 1 | Una poción
+ACTUALIZAR 77 4 | Y 4 manzanas (objeto 77)
+INTERSECCION | El recaudador solo deja pasar lo que él también tiene, y en lo que tenga menos
+BUSCAR 77 | Las manzanas no pasan
+BUSCAR 5 | Las antorchas sí, las 2
+ELIMINAR B 207 | El recaudador vende sus clavos
+ELIMINAR B 43 | ... sus flechas
+ELIMINAR B 12 | ... y sus cuerdas
+ACTUALIZAR B 5 2 | Se queda con 2 antorchas
+ACTUALIZAR B 23 1 | Y una poción
+IGUALES | La bolsa y el inventario vuelven a ser iguales
+DIFERENCIA | El último peaje
+BUSCAR 23 | Lis no tiene nada
+COPIAR | El recaudador copia el inventario vacío en su bolsa
+IGUALES | Dos inventarios vacíos: iguales
+LIBERAR | Lis cruza el puente y se vacían las tablas

@@ -1,0 +1,29 @@
+# Mision 15: el golem de polvo (ejercicio 15: reorganizar). Te acompaña Ulf, el barquero.
+# Cada linea: ORDEN argumentos | lo que pasa en la historia
+# LIMPIAR barre las BORRADA del array; FRENTE pone delante, en su cubo de las listas, la clave que se busca mucho.
+ACTUALIZAR 3 2 | Ulf rescata 2 flechas (objeto 3)
+ACTUALIZAR 23 5 | 5 dagas (objeto 23): en el array, a la 4
+ACTUALIZAR 43 1 | Un hacha (objeto 43): a la 5
+ACTUALIZAR 63 4 | 4 lanzas (objeto 63): a la 6
+ACTUALIZAR 83 3 | 3 arcos (objeto 83): a la 7
+ACTUALIZAR 5 2 | 2 antorchas (objeto 5): su casilla está ocupada y acaba en la 8
+ACTUALIZAR 106 1 | Una moneda (objeto 106): en las listas, al cubo 5 delante de las antorchas
+ACTUALIZAR 207 3 | 3 clavos (objeto 207): también al cubo 5
+ACTUALIZAR 308 2 | 2 llaves (objeto 308): el cubo 5 ya tiene cuatro
+COSTETOTAL | Ulf mide cuánto cuesta encontrarlo todo
+ELIMINAR 3 | El gólem se traga las flechas y deja polvo
+ELIMINAR 23 | Y las dagas
+ELIMINAR 43 | Y el hacha
+COSTE 83 | Los arcos siguen costando lo mismo: el polvo también se pisa
+COSTETOTAL | Hay menos cosas, pero cada una cuesta lo mismo
+LIMPIAR | Ulf barre el polvo del array y vuelve a colocar cada cosa
+COSTETOTAL | Ahora cuesta mucho menos
+COSTE 5 | Las antorchas: en las listas son las últimas del cubo 5
+FRENTE 5 | Ulf las usa mucho y las pone delante
+COSTE 5 | Ahora se encuentran a la primera
+COSTE 308 | Las llaves, que eran las primeras, ahora van detrás de las antorchas
+FRENTE 308 | Ulf vuelve a poner delante las llaves
+FRENTE 999 | Algo que Ulf no tiene
+COSTETOTAL | El total en las listas no cambia al reordenar
+LIMPIAR | Barrer sin polvo no cambia nada
+LIBERAR | El gólem se deshace y se vacían las tablas

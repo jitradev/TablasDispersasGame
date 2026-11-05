@@ -1,0 +1,5 @@
+Aqui escriben los targets mision1 a mision16 sus registros.
+Despues de cada mision, sube su registro (por ejemplo mision1-camino.txt)
+en la tarjeta de esa mision de la web de la practica.
+Al terminar cada sesion, comprime la carpeta del proyecto entera (con esta
+carpeta dentro) y sube el zip a la entrega de ese acto en la PDU.
