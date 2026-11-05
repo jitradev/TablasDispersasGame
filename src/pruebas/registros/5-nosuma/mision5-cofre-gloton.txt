@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 COFRES 5
 ALUMNO Escribe aqui tu nombre y apellidos
 MISION mision5-cofre-gloton
@@ -34,10 +35,49 @@ RA 1
 TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 TL B 3 101 2 3 0
+=======
+COFRES 4
+ALUMNO Escribe aqui tu nombre y apellidos
+MISION mision5-cofre-gloton
+EV 0 CREAR | Se crea el inventario
+M 1 816 TablaDispersaLista.c 29
+M 2 244 TablaDispersaArray.c 38
+TL H 1 101 0 1
+TA H 2 20 0 2 2 2
+V 1 816
+V 2 244
+EV 1 ACTUALIZAR B 573 5 | El Cofre Glotón suelta el objeto 573 en el botín
+CREAR B
+M 3 816 TablaDispersaLista.c 29
+M 4 244 TablaDispersaArray.c 38
+M 5 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 0 1
+TA H 2 20 0 2 2 2
+TL B 3 101 1 3
+CL B 68 5
+NL B 5 573 5 0
+TA B 4 20 1 4 4 4
+CA B 13 1 573 5
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+V 5 16
+EV 2 ACTUALIZAR B 875 5 | El Cofre Glotón suelta el objeto 875 en el botín
+M 6 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 0 1
+TA H 2 20 0 2 2 2
+TL B 3 101 2 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 67 6
 NL B 6 875 5 0
 CL B 68 5
 NL B 5 573 5 0
+<<<<<<< HEAD
 TA B 4 20 2 4 4 4 0 0
 CA B 13 1 573 5
 CA B 15 1 875 5
@@ -54,30 +94,67 @@ RA 1
 TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 TL B 3 101 3 3 0
+=======
+TA B 4 20 2 4 4 4
+CA B 13 1 573 5
+CA B 15 1 875 5
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+V 5 16
+V 6 16
+EV 3 ACTUALIZAR B 487 4 | El Cofre Glotón suelta el objeto 487 en el botín
+M 7 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 0 1
+TA H 2 20 0 2 2 2
+TL B 3 101 3 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 67 6
 NL B 6 875 5 0
 CL B 68 5
 NL B 5 573 5 0
 CL B 83 7
 NL B 7 487 4 0
+<<<<<<< HEAD
 TA B 4 20 3 4 4 4 0 0
+=======
+TA B 4 20 3 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 7 1 487 4
 CA B 13 1 573 5
 CA B 15 1 875 5
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 7 16
 EV 4 ACTUALIZAR B -47 6 | El Cofre Glotón suelta el objeto -47 en el botín
+<<<<<<< HEAD
 M 8 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 TL B 3 101 4 3 0
+=======
+M 8 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 0 1
+TA H 2 20 0 2 2 2
+TL B 3 101 4 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 54 8
 NL B 8 -47 6 0
 CL B 67 6
@@ -86,26 +163,45 @@ CL B 68 5
 NL B 5 573 5 0
 CL B 83 7
 NL B 7 487 4 0
+<<<<<<< HEAD
 TA B 4 20 4 4 4 4 0 0
+=======
+TA B 4 20 4 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 7 1 487 4
 CA B 13 1 573 5
 CA B 14 1 -47 6
 CA B 15 1 875 5
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 7 16
 V 8 16
 EV 5 ACTUALIZAR B 42 6 | El Cofre Glotón suelta el objeto 42 en el botín
+<<<<<<< HEAD
 M 9 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 TL B 3 101 5 3 0
+=======
+M 9 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 0 1
+TA H 2 20 0 2 2 2
+TL B 3 101 5 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 42 9
 NL B 9 42 6 0
 CL B 54 8
@@ -116,28 +212,47 @@ CL B 68 5
 NL B 5 573 5 0
 CL B 83 7
 NL B 7 487 4 0
+<<<<<<< HEAD
 TA B 4 20 5 4 4 4 0 0
+=======
+TA B 4 20 5 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 2 1 42 6
 CA B 7 1 487 4
 CA B 13 1 573 5
 CA B 14 1 -47 6
 CA B 15 1 875 5
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 7 16
 V 8 16
 V 9 16
 EV 6 ACTUALIZAR B -81 1 | El Cofre Glotón suelta el objeto -81 en el botín
+<<<<<<< HEAD
 M 10 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
 TL B 3 101 6 3 0
+=======
+M 10 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 0 1
+TA H 2 20 0 2 2 2
+TL B 3 101 6 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 20 10
 NL B 10 -81 1 0
 CL B 42 9
@@ -150,7 +265,11 @@ CL B 68 5
 NL B 5 573 5 0
 CL B 83 7
 NL B 7 487 4 0
+<<<<<<< HEAD
 TA B 4 20 6 4 4 4 0 0
+=======
+TA B 4 20 6 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 2 1 42 6
 CA B 7 1 487 4
 CA B 13 1 573 5
@@ -158,9 +277,15 @@ CA B 14 1 -47 6
 CA B 15 1 875 5
 CA B 19 1 -81 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 7 16
@@ -170,7 +295,11 @@ V 10 16
 EV 7 FUSIONAR | Lis mete el botín en el inventario
 RL 1
 RA 1
+<<<<<<< HEAD
 TL H 1 101 6 1 0
+=======
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 20 10
 NL H 10 -81 1 0
 CL H 42 9
@@ -183,19 +312,32 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 83 7
 NL H 7 487 4 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 2 1 42 6
 CA H 7 1 487 4
 CA H 13 1 573 5
 CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 19 1 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 7 16
@@ -205,7 +347,11 @@ V 10 16
 EV 8 BUSCAR 875 | Lis busca el objeto 875
 RL 1 5
 RA 1 5
+<<<<<<< HEAD
 TL H 1 101 6 1 0
+=======
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 20 10
 NL H 10 -81 1 0
 CL H 42 9
@@ -218,19 +364,32 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 83 7
 NL H 7 487 4 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 2 1 42 6
 CA H 7 1 487 4
 CA H 13 1 573 5
 CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 19 1 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 7 16
@@ -238,10 +397,17 @@ V 8 16
 V 9 16
 V 10 16
 EV 9 ACTUALIZAR B 475 5 | El Cofre Glotón suelta el objeto 475 en el botín
+<<<<<<< HEAD
 M 11 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 6 1 0
+=======
+M 11 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 20 10
 NL H 10 -81 1 0
 CL H 42 9
@@ -254,13 +420,18 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 83 7
 NL H 7 487 4 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 2 1 42 6
 CA H 7 1 487 4
 CA H 13 1 573 5
 CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 19 1 -81 1
+<<<<<<< HEAD
 TL B 3 101 1 3 0
 CL B 71 11
 NL B 11 475 5 0
@@ -270,6 +441,17 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 1 3
+CL B 71 11
+NL B 11 475 5 0
+TA B 4 20 1 4 4 4
+CA B 15 1 475 5
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 7 16
@@ -278,10 +460,17 @@ V 9 16
 V 10 16
 V 11 16
 EV 10 ACTUALIZAR B 239 1 | El Cofre Glotón suelta el objeto 239 en el botín
+<<<<<<< HEAD
 M 12 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 6 1 0
+=======
+M 12 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 20 10
 NL H 10 -81 1 0
 CL H 42 9
@@ -294,18 +483,27 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 83 7
 NL H 7 487 4 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 2 1 42 6
 CA H 7 1 487 4
 CA H 13 1 573 5
 CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 19 1 -81 1
+<<<<<<< HEAD
 TL B 3 101 2 3 0
+=======
+TL B 3 101 2 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 37 12
 NL B 12 239 1 0
 CL B 71 11
 NL B 11 475 5 0
+<<<<<<< HEAD
 TA B 4 20 2 4 4 4 0 0
 CA B 15 1 475 5
 CA B 19 1 239 1
@@ -313,6 +511,15 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TA B 4 20 2 4 4 4
+CA B 15 1 475 5
+CA B 19 1 239 1
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 7 16
@@ -322,10 +529,17 @@ V 10 16
 V 11 16
 V 12 16
 EV 11 ACTUALIZAR B 670 5 | El Cofre Glotón suelta el objeto 670 en el botín
+<<<<<<< HEAD
 M 13 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 6 1 0
+=======
+M 13 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 20 10
 NL H 10 -81 1 0
 CL H 42 9
@@ -338,28 +552,46 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 83 7
 NL H 7 487 4 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 2 1 42 6
 CA H 7 1 487 4
 CA H 13 1 573 5
 CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 19 1 -81 1
+<<<<<<< HEAD
 TL B 3 101 3 3 0
+=======
+TL B 3 101 3 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 37 12
 NL B 12 239 1 0
 CL B 64 13
 NL B 13 670 5 0
 CL B 71 11
 NL B 11 475 5 0
+<<<<<<< HEAD
 TA B 4 20 3 4 4 4 0 0
+=======
+TA B 4 20 3 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 10 1 670 5
 CA B 15 1 475 5
 CA B 19 1 239 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 7 16
@@ -370,10 +602,17 @@ V 11 16
 V 12 16
 V 13 16
 EV 12 ACTUALIZAR B 85 2 | El Cofre Glotón suelta el objeto 85 en el botín
+<<<<<<< HEAD
 M 14 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 6 1 0
+=======
+M 14 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 20 10
 NL H 10 -81 1 0
 CL H 42 9
@@ -386,14 +625,22 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 83 7
 NL H 7 487 4 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 2 1 42 6
 CA H 7 1 487 4
 CA H 13 1 573 5
 CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 19 1 -81 1
+<<<<<<< HEAD
 TL B 3 101 4 3 0
+=======
+TL B 3 101 4 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 37 12
 NL B 12 239 1 0
 CL B 64 13
@@ -402,15 +649,25 @@ CL B 71 11
 NL B 11 475 5 0
 CL B 85 14
 NL B 14 85 2 0
+<<<<<<< HEAD
 TA B 4 20 4 4 4 4 0 0
+=======
+TA B 4 20 4 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 5 1 85 2
 CA B 10 1 670 5
 CA B 15 1 475 5
 CA B 19 1 239 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 7 16
@@ -424,7 +681,11 @@ V 14 16
 EV 13 BUSCAR B 0 | Lis busca en el botín un objeto que no está
 RL 0 0
 RA 0 0
+<<<<<<< HEAD
 TL H 1 101 6 1 0
+=======
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 20 10
 NL H 10 -81 1 0
 CL H 42 9
@@ -437,14 +698,22 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 83 7
 NL H 7 487 4 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 2 1 42 6
 CA H 7 1 487 4
 CA H 13 1 573 5
 CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 19 1 -81 1
+<<<<<<< HEAD
 TL B 3 101 4 3 0
+=======
+TL B 3 101 4 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 37 12
 NL B 12 239 1 0
 CL B 64 13
@@ -453,15 +722,25 @@ CL B 71 11
 NL B 11 475 5 0
 CL B 85 14
 NL B 14 85 2 0
+<<<<<<< HEAD
 TA B 4 20 4 4 4 4 0 0
+=======
+TA B 4 20 4 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 5 1 85 2
 CA B 10 1 670 5
 CA B 15 1 475 5
 CA B 19 1 239 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 7 16
@@ -475,7 +754,11 @@ V 14 16
 EV 14 FUSIONAR | Lis mete el botín en el inventario
 RL 1
 RA 1
+<<<<<<< HEAD
 TL H 1 101 10 1 0
+=======
+TL H 1 101 10 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 20 10
 NL H 10 -81 1 0
 CL H 37 12
@@ -496,7 +779,11 @@ CL H 83 7
 NL H 7 487 4 0
 CL H 85 14
 NL H 14 85 2 0
+<<<<<<< HEAD
 TA H 2 20 10 2 2 2 0 0
+=======
+TA H 2 20 10 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 1 239 1
 CA H 2 1 42 6
 CA H 5 1 85 2
@@ -507,12 +794,21 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 1 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 7 16
@@ -524,6 +820,7 @@ V 12 16
 V 13 16
 V 14 16
 EV 15 AGOTAR 5 | El Cofre Glotón muerde todo lo que tenga menos de 5
+<<<<<<< HEAD
 F 10 TablaDispersaLista.c 215
 F 12 TablaDispersaLista.c 215
 F 7 TablaDispersaLista.c 215
@@ -531,6 +828,15 @@ F 14 TablaDispersaLista.c 215
 RL 4
 RA 4
 TL H 1 101 6 1 0
+=======
+F 10 TablaDispersaLista.c 196
+F 12 TablaDispersaLista.c 196
+F 7 TablaDispersaLista.c 196
+F 14 TablaDispersaLista.c 196
+RL 4
+RA 4
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
@@ -543,7 +849,11 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 71 11
 NL H 11 475 5 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 85 2
@@ -554,12 +864,21 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 8 16
@@ -569,7 +888,11 @@ V 13 16
 EV 16 BUSCAR 573 | Lis busca el objeto 573
 RL 1 5
 RA 1 5
+<<<<<<< HEAD
 TL H 1 101 6 1 0
+=======
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
@@ -582,7 +905,11 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 71 11
 NL H 11 475 5 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 85 2
@@ -593,12 +920,21 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 8 16
@@ -606,10 +942,17 @@ V 9 16
 V 11 16
 V 13 16
 EV 17 ACTUALIZAR B -47 4 | El Cofre Glotón suelta el objeto -47 en el botín
+<<<<<<< HEAD
 M 15 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 6 1 0
+=======
+M 15 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
@@ -622,7 +965,11 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 71 11
 NL H 11 475 5 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 85 2
@@ -633,6 +980,7 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 1 3 0
 CL B 54 15
 NL B 15 -47 4 0
@@ -642,6 +990,17 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 1 3
+CL B 54 15
+NL B 15 -47 4 0
+TA B 4 20 1 4 4 4
+CA B 13 1 -47 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 8 16
@@ -650,10 +1009,17 @@ V 11 16
 V 13 16
 V 15 16
 EV 18 ACTUALIZAR B 573 6 | El Cofre Glotón suelta el objeto 573 en el botín
+<<<<<<< HEAD
 M 16 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 6 1 0
+=======
+M 16 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
@@ -666,7 +1032,11 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 71 11
 NL H 11 475 5 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 85 2
@@ -677,11 +1047,16 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 2 3 0
+=======
+TL B 3 101 2 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 54 15
 NL B 15 -47 4 0
 CL B 68 16
 NL B 16 573 6 0
+<<<<<<< HEAD
 TA B 4 20 2 4 4 4 0 0
 CA B 13 1 -47 4
 CA B 14 1 573 6
@@ -689,6 +1064,15 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TA B 4 20 2 4 4 4
+CA B 13 1 -47 4
+CA B 14 1 573 6
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 8 16
@@ -698,10 +1082,17 @@ V 13 16
 V 15 16
 V 16 16
 EV 19 ACTUALIZAR B 875 1 | El Cofre Glotón suelta el objeto 875 en el botín
+<<<<<<< HEAD
 M 17 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 6 1 0
+=======
+M 17 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
@@ -714,7 +1105,11 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 71 11
 NL H 11 475 5 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 85 2
@@ -725,21 +1120,35 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 3 3 0
+=======
+TL B 3 101 3 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 54 15
 NL B 15 -47 4 0
 CL B 67 17
 NL B 17 875 1 0
 CL B 68 16
 NL B 16 573 6 0
+<<<<<<< HEAD
 TA B 4 20 3 4 4 4 0 0
+=======
+TA B 4 20 3 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 13 1 -47 4
 CA B 14 1 573 6
 CA B 15 1 875 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 8 16
@@ -750,10 +1159,17 @@ V 15 16
 V 16 16
 V 17 16
 EV 20 ACTUALIZAR B 725 5 | El Cofre Glotón suelta el objeto 725 en el botín
+<<<<<<< HEAD
 M 18 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 6 1 0
+=======
+M 18 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
@@ -766,7 +1182,11 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 71 11
 NL H 11 475 5 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 85 2
@@ -777,7 +1197,11 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 4 3 0
+=======
+TL B 3 101 4 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 18 18
 NL B 18 725 5 0
 CL B 54 15
@@ -786,15 +1210,25 @@ CL B 67 17
 NL B 17 875 1 0
 CL B 68 16
 NL B 16 573 6 0
+<<<<<<< HEAD
 TA B 4 20 4 4 4 4 0 0
+=======
+TA B 4 20 4 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 5 1 725 5
 CA B 13 1 -47 4
 CA B 14 1 573 6
 CA B 15 1 875 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 8 16
@@ -806,10 +1240,17 @@ V 16 16
 V 17 16
 V 18 16
 EV 21 ACTUALIZAR B 691 1 | El Cofre Glotón suelta el objeto 691 en el botín
+<<<<<<< HEAD
 M 19 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 6 1 0
+=======
+M 19 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
@@ -822,7 +1263,11 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 71 11
 NL H 11 475 5 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 85 2
@@ -833,7 +1278,11 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 5 3 0
+=======
+TL B 3 101 5 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 18 18
 NL B 18 725 5 0
 CL B 54 15
@@ -844,16 +1293,26 @@ CL B 68 16
 NL B 16 573 6 0
 CL B 85 19
 NL B 19 691 1 0
+<<<<<<< HEAD
 TA B 4 20 5 4 4 4 0 0
+=======
+TA B 4 20 5 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 5 1 725 5
 CA B 11 1 691 1
 CA B 13 1 -47 4
 CA B 14 1 573 6
 CA B 15 1 875 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 8 16
@@ -868,7 +1327,11 @@ V 19 16
 EV 22 ACTUALIZAR B 573 4 | El Cofre Glotón suelta el objeto 573 en el botín
 RL 1
 RA 1
+<<<<<<< HEAD
 TL H 1 101 6 1 0
+=======
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
@@ -881,7 +1344,11 @@ CL H 68 5
 NL H 5 573 5 0
 CL H 71 11
 NL H 11 475 5 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 85 2
@@ -892,7 +1359,11 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 5 3 0
+=======
+TL B 3 101 5 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 18 18
 NL B 18 725 5 0
 CL B 54 15
@@ -903,16 +1374,26 @@ CL B 68 16
 NL B 16 573 4 0
 CL B 85 19
 NL B 19 691 1 0
+<<<<<<< HEAD
 TA B 4 20 5 4 4 4 0 0
+=======
+TA B 4 20 5 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 5 1 725 5
 CA B 11 1 691 1
 CA B 13 1 -47 4
 CA B 14 1 573 4
 CA B 15 1 875 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 8 16
@@ -927,7 +1408,11 @@ V 19 16
 EV 23 FUSIONAR | Lis mete el botín en el inventario
 RL 1
 RA 0
+<<<<<<< HEAD
 TL H 1 101 11 1 0
+=======
+TL H 1 101 11 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 18
 NL H 18 725 5 0
 CL H 42 9
@@ -947,7 +1432,11 @@ CL H 71 11
 NL H 11 475 5 0
 CL H 85 19
 NL H 19 691 1 0
+<<<<<<< HEAD
 TA H 2 20 8 2 2 2 0 0
+=======
+TA H 2 20 8 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 1 725 5
@@ -959,12 +1448,21 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 8 16
@@ -979,7 +1477,11 @@ V 19 16
 EV 24 BUSCAR 875 | Lis busca el objeto 875
 RL 1 1
 RA 1 5
+<<<<<<< HEAD
 TL H 1 101 11 1 0
+=======
+TL H 1 101 11 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 18
 NL H 18 725 5 0
 CL H 42 9
@@ -999,7 +1501,11 @@ CL H 71 11
 NL H 11 475 5 0
 CL H 85 19
 NL H 19 691 1 0
+<<<<<<< HEAD
 TA H 2 20 8 2 2 2 0 0
+=======
+TA H 2 20 8 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 1 725 5
@@ -1011,12 +1517,21 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 8 16
@@ -1029,10 +1544,17 @@ V 17 16
 V 18 16
 V 19 16
 EV 25 ACTUALIZAR B 691 2 | El Cofre Glotón suelta el objeto 691 en el botín
+<<<<<<< HEAD
 M 20 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 11 1 0
+=======
+M 20 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 11 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 18
 NL H 18 725 5 0
 CL H 42 9
@@ -1052,7 +1574,11 @@ CL H 71 11
 NL H 11 475 5 0
 CL H 85 19
 NL H 19 691 1 0
+<<<<<<< HEAD
 TA H 2 20 8 2 2 2 0 0
+=======
+TA H 2 20 8 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 1 725 5
@@ -1064,6 +1590,7 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 1 3 0
 CL B 85 20
 NL B 20 691 2 0
@@ -1073,6 +1600,17 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 1 3
+CL B 85 20
+NL B 20 691 2 0
+TA B 4 20 1 4 4 4
+CA B 11 1 691 2
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 8 16
@@ -1086,10 +1624,17 @@ V 18 16
 V 19 16
 V 20 16
 EV 26 ACTUALIZAR B 192 6 | El Cofre Glotón suelta el objeto 192 en el botín
+<<<<<<< HEAD
 M 21 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 11 1 0
+=======
+M 21 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 11 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 18
 NL H 18 725 5 0
 CL H 42 9
@@ -1109,7 +1654,11 @@ CL H 71 11
 NL H 11 475 5 0
 CL H 85 19
 NL H 19 691 1 0
+<<<<<<< HEAD
 TA H 2 20 8 2 2 2 0 0
+=======
+TA H 2 20 8 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 1 725 5
@@ -1121,11 +1670,16 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 2 3 0
+=======
+TL B 3 101 2 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 85 20
 NL B 20 691 2 0
 CL B 91 21
 NL B 21 192 6 0
+<<<<<<< HEAD
 TA B 4 20 2 4 4 4 0 0
 CA B 11 1 691 2
 CA B 12 1 192 6
@@ -1133,6 +1687,15 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TA B 4 20 2 4 4 4
+CA B 11 1 691 2
+CA B 12 1 192 6
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 8 16
@@ -1147,10 +1710,17 @@ V 19 16
 V 20 16
 V 21 16
 EV 27 ACTUALIZAR B 429 4 | El Cofre Glotón suelta el objeto 429 en el botín
+<<<<<<< HEAD
 M 22 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 11 1 0
+=======
+M 22 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 11 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 18
 NL H 18 725 5 0
 CL H 42 9
@@ -1170,7 +1740,11 @@ CL H 71 11
 NL H 11 475 5 0
 CL H 85 19
 NL H 19 691 1 0
+<<<<<<< HEAD
 TA H 2 20 8 2 2 2 0 0
+=======
+TA H 2 20 8 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 1 725 5
@@ -1182,21 +1756,35 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 3 3 0
+=======
+TL B 3 101 3 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 25 22
 NL B 22 429 4 0
 CL B 85 20
 NL B 20 691 2 0
 CL B 91 21
 NL B 21 192 6 0
+<<<<<<< HEAD
 TA B 4 20 3 4 4 4 0 0
+=======
+TA B 4 20 3 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 9 1 429 4
 CA B 11 1 691 2
 CA B 12 1 192 6
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 8 16
@@ -1214,7 +1802,11 @@ V 22 16
 EV 28 FUSIONAR | Lis mete el botín en el inventario
 RL 1
 RA 0
+<<<<<<< HEAD
 TL H 1 101 14 1 0
+=======
+TL H 1 101 14 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 18
 NL H 18 725 5 0
 CL H 25 22
@@ -1239,7 +1831,11 @@ NL H 20 691 2 19
 NL H 19 691 1 0
 CL H 91 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 10 2 2 2 0 0
+=======
+TA H 2 20 10 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 1 725 5
@@ -1253,12 +1849,21 @@ CA H 14 1 -47 6
 CA H 15 1 875 5
 CA H 16 1 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 5 16
 V 6 16
 V 8 16
@@ -1274,6 +1879,7 @@ V 20 16
 V 21 16
 V 22 16
 EV 29 AGOTAR 6 | El Cofre Glotón muerde todo lo que tenga menos de 6
+<<<<<<< HEAD
 F 18 TablaDispersaLista.c 215
 F 22 TablaDispersaLista.c 215
 F 15 TablaDispersaLista.c 215
@@ -1288,13 +1894,33 @@ F 19 TablaDispersaLista.c 215
 RL 11
 RA 7
 TL H 1 101 3 1 0
+=======
+F 18 TablaDispersaLista.c 196
+F 22 TablaDispersaLista.c 196
+F 15 TablaDispersaLista.c 196
+F 13 TablaDispersaLista.c 196
+F 17 TablaDispersaLista.c 196
+F 6 TablaDispersaLista.c 196
+F 16 TablaDispersaLista.c 196
+F 5 TablaDispersaLista.c 196
+F 11 TablaDispersaLista.c 196
+F 20 TablaDispersaLista.c 196
+F 19 TablaDispersaLista.c 196
+RL 11
+RA 7
+TL H 1 101 3 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
 NL H 8 -47 6 0
 CL H 91 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 3 2 2 2 0 0
+=======
+TA H 2 20 3 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 725 5
@@ -1308,26 +1934,43 @@ CA H 14 1 -47 6
 CA H 15 2 875 5
 CA H 16 2 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
 EV 30 BUSCAR 192 | Lis busca el objeto 192
 RL 1 6
 RA 1 6
+<<<<<<< HEAD
 TL H 1 101 3 1 0
+=======
+TL H 1 101 3 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
 NL H 8 -47 6 0
 CL H 91 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 3 2 2 2 0 0
+=======
+TA H 2 20 3 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 725 5
@@ -1341,27 +1984,47 @@ CA H 14 1 -47 6
 CA H 15 2 875 5
 CA H 16 2 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
 EV 31 ACTUALIZAR B 215 5 | El Cofre Glotón suelta el objeto 215 en el botín
+<<<<<<< HEAD
 M 23 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 3 1 0
+=======
+M 23 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 3 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
 NL H 8 -47 6 0
 CL H 91 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 3 2 2 2 0 0
+=======
+TA H 2 20 3 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 725 5
@@ -1375,6 +2038,7 @@ CA H 14 1 -47 6
 CA H 15 2 875 5
 CA H 16 2 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 1 3 0
 CL B 13 23
 NL B 23 215 5 0
@@ -1384,22 +2048,44 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 1 3
+CL B 13 23
+NL B 23 215 5 0
+TA B 4 20 1 4 4 4
+CA B 15 1 215 5
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
 V 23 16
 EV 32 ACTUALIZAR B 102 4 | El Cofre Glotón suelta el objeto 102 en el botín
+<<<<<<< HEAD
 M 24 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 3 1 0
+=======
+M 24 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 3 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
 NL H 8 -47 6 0
 CL H 91 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 3 2 2 2 0 0
+=======
+TA H 2 20 3 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 725 5
@@ -1413,11 +2099,16 @@ CA H 14 1 -47 6
 CA H 15 2 875 5
 CA H 16 2 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 2 3 0
+=======
+TL B 3 101 2 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 1 24
 NL B 24 102 4 0
 CL B 13 23
 NL B 23 215 5 0
+<<<<<<< HEAD
 TA B 4 20 2 4 4 4 0 0
 CA B 2 1 102 4
 CA B 15 1 215 5
@@ -1425,23 +2116,43 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TA B 4 20 2 4 4 4
+CA B 2 1 102 4
+CA B 15 1 215 5
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
 V 23 16
 V 24 16
 EV 33 ACTUALIZAR B 192 3 | El Cofre Glotón suelta el objeto 192 en el botín
+<<<<<<< HEAD
 M 25 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 3 1 0
+=======
+M 25 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 3 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
 NL H 8 -47 6 0
 CL H 91 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 3 2 2 2 0 0
+=======
+TA H 2 20 3 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 725 5
@@ -1455,21 +2166,35 @@ CA H 14 1 -47 6
 CA H 15 2 875 5
 CA H 16 2 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 3 3 0
+=======
+TL B 3 101 3 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 1 24
 NL B 24 102 4 0
 CL B 13 23
 NL B 23 215 5 0
 CL B 91 25
 NL B 25 192 3 0
+<<<<<<< HEAD
 TA B 4 20 3 4 4 4 0 0
+=======
+TA B 4 20 3 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 2 1 102 4
 CA B 12 1 192 3
 CA B 15 1 215 5
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -1477,17 +2202,28 @@ V 23 16
 V 24 16
 V 25 16
 EV 34 ACTUALIZAR B 395 2 | El Cofre Glotón suelta el objeto 395 en el botín
+<<<<<<< HEAD
 M 26 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 3 1 0
+=======
+M 26 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 3 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
 NL H 8 -47 6 0
 CL H 91 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 3 2 2 2 0 0
+=======
+TA H 2 20 3 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 725 5
@@ -1501,7 +2237,11 @@ CA H 14 1 -47 6
 CA H 15 2 875 5
 CA H 16 2 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 4 3 0
+=======
+TL B 3 101 4 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 1 24
 NL B 24 102 4 0
 CL B 13 23
@@ -1510,15 +2250,25 @@ CL B 91 25
 NL B 25 192 3 0
 CL B 92 26
 NL B 26 395 2 0
+<<<<<<< HEAD
 TA B 4 20 4 4 4 4 0 0
+=======
+TA B 4 20 4 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 2 1 102 4
 CA B 12 1 192 3
 CA B 15 1 215 5
 CA B 16 1 395 2
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -1527,17 +2277,28 @@ V 24 16
 V 25 16
 V 26 16
 EV 35 ACTUALIZAR B 15 5 | El Cofre Glotón suelta el objeto 15 en el botín
+<<<<<<< HEAD
 M 27 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 3 1 0
+=======
+M 27 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 3 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
 NL H 8 -47 6 0
 CL H 91 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 3 2 2 2 0 0
+=======
+TA H 2 20 3 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 725 5
@@ -1551,7 +2312,11 @@ CA H 14 1 -47 6
 CA H 15 2 875 5
 CA H 16 2 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 5 3 0
+=======
+TL B 3 101 5 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 1 24
 NL B 24 102 4 0
 CL B 13 23
@@ -1562,16 +2327,26 @@ CL B 91 25
 NL B 25 192 3 0
 CL B 92 26
 NL B 26 395 2 0
+<<<<<<< HEAD
 TA B 4 20 5 4 4 4 0 0
+=======
+TA B 4 20 5 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 2 1 102 4
 CA B 12 1 192 3
 CA B 15 1 215 5
 CA B 16 1 395 2
 CA B 17 1 15 5
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -1583,14 +2358,22 @@ V 27 16
 EV 36 BUSCAR B 0 | Lis busca en el botín un objeto que no está
 RL 0 0
 RA 0 0
+<<<<<<< HEAD
 TL H 1 101 3 1 0
+=======
+TL H 1 101 3 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
 NL H 8 -47 6 0
 CL H 91 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 3 2 2 2 0 0
+=======
+TA H 2 20 3 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 725 5
@@ -1604,7 +2387,11 @@ CA H 14 1 -47 6
 CA H 15 2 875 5
 CA H 16 2 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 5 3 0
+=======
+TL B 3 101 5 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 1 24
 NL B 24 102 4 0
 CL B 13 23
@@ -1615,16 +2402,26 @@ CL B 91 25
 NL B 25 192 3 0
 CL B 92 26
 NL B 26 395 2 0
+<<<<<<< HEAD
 TA B 4 20 5 4 4 4 0 0
+=======
+TA B 4 20 5 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 2 1 102 4
 CA B 12 1 192 3
 CA B 15 1 215 5
 CA B 16 1 395 2
 CA B 17 1 15 5
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -1634,10 +2431,17 @@ V 25 16
 V 26 16
 V 27 16
 EV 37 ACTUALIZAR 495 4 | Lis recoge el objeto 495
+<<<<<<< HEAD
 M 28 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 4 1 0
+=======
+M 28 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
@@ -1645,7 +2449,11 @@ NL H 8 -47 6 0
 CL H 91 28
 NL H 28 495 4 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 5 2 725 5
@@ -1659,7 +2467,11 @@ CA H 14 1 -47 6
 CA H 15 1 495 4
 CA H 16 2 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 5 3 0
+=======
+TL B 3 101 5 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 1 24
 NL B 24 102 4 0
 CL B 13 23
@@ -1670,16 +2482,26 @@ CL B 91 25
 NL B 25 192 3 0
 CL B 92 26
 NL B 26 395 2 0
+<<<<<<< HEAD
 TA B 4 20 5 4 4 4 0 0
+=======
+TA B 4 20 5 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 2 1 102 4
 CA B 12 1 192 3
 CA B 15 1 215 5
 CA B 16 1 395 2
 CA B 17 1 15 5
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -1690,10 +2512,17 @@ V 26 16
 V 27 16
 V 28 16
 EV 38 ACTUALIZAR 642 2 | Lis recoge el objeto 642
+<<<<<<< HEAD
 M 29 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 5 1 0
+=======
+M 29 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 36 29
 NL H 29 642 2 0
 CL H 42 9
@@ -1703,7 +2532,11 @@ NL H 8 -47 6 0
 CL H 91 28
 NL H 28 495 4 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 642 2
@@ -1718,7 +2551,11 @@ CA H 14 1 -47 6
 CA H 15 1 495 4
 CA H 16 2 475 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 5 3 0
+=======
+TL B 3 101 5 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 1 24
 NL B 24 102 4 0
 CL B 13 23
@@ -1729,16 +2566,26 @@ CL B 91 25
 NL B 25 192 3 0
 CL B 92 26
 NL B 26 395 2 0
+<<<<<<< HEAD
 TA B 4 20 5 4 4 4 0 0
+=======
+TA B 4 20 5 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 2 1 102 4
 CA B 12 1 192 3
 CA B 15 1 215 5
 CA B 16 1 395 2
 CA B 17 1 15 5
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -1752,7 +2599,11 @@ V 29 16
 EV 39 FUSIONAR | Lis mete el botín en el inventario
 RL 1
 RA 0
+<<<<<<< HEAD
 TL H 1 101 10 1 0
+=======
+TL H 1 101 10 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 1 24
 NL H 24 102 4 0
 CL H 13 23
@@ -1771,7 +2622,11 @@ NL H 28 495 4 21
 NL H 21 192 6 0
 CL H 92 26
 NL H 26 395 2 0
+<<<<<<< HEAD
 TA H 2 20 9 2 2 2 0 0
+=======
+TA H 2 20 9 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 642 2
@@ -1789,12 +2644,21 @@ CA H 16 1 215 5
 CA H 17 1 395 2
 CA H 18 1 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -1806,6 +2670,7 @@ V 27 16
 V 28 16
 V 29 16
 EV 40 AGOTAR 5 | El Cofre Glotón muerde todo lo que tenga menos de 5
+<<<<<<< HEAD
 F 24 TablaDispersaLista.c 215
 F 29 TablaDispersaLista.c 215
 F 25 TablaDispersaLista.c 215
@@ -1814,6 +2679,16 @@ F 26 TablaDispersaLista.c 215
 RL 5
 RA 4
 TL H 1 101 5 1 0
+=======
+F 24 TablaDispersaLista.c 196
+F 29 TablaDispersaLista.c 196
+F 25 TablaDispersaLista.c 196
+F 28 TablaDispersaLista.c 196
+F 26 TablaDispersaLista.c 196
+RL 5
+RA 4
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 13 23
 NL H 23 215 5 0
 CL H 15 27
@@ -1824,7 +2699,11 @@ CL H 54 8
 NL H 8 -47 6 0
 CL H 91 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 2 642 2
@@ -1842,22 +2721,38 @@ CA H 16 1 215 5
 CA H 17 2 395 2
 CA H 18 1 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
 V 23 16
 V 27 16
 EV 41 ACTUALIZAR B 162 6 | El Cofre Glotón suelta el objeto 162 en el botín
+<<<<<<< HEAD
 M 30 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 5 1 0
+=======
+M 30 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 13 23
 NL H 23 215 5 0
 CL H 15 27
@@ -1868,7 +2763,11 @@ CL H 54 8
 NL H 8 -47 6 0
 CL H 91 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 2 642 2
@@ -1886,6 +2785,7 @@ CA H 16 1 215 5
 CA H 17 2 395 2
 CA H 18 1 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 1 3 0
 CL B 61 30
 NL B 30 162 6 0
@@ -1895,6 +2795,17 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 1 3
+CL B 61 30
+NL B 30 162 6 0
+TA B 4 20 1 4 4 4
+CA B 2 1 162 6
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -1902,10 +2813,17 @@ V 23 16
 V 27 16
 V 30 16
 EV 42 ACTUALIZAR B 494 1 | El Cofre Glotón suelta el objeto 494 en el botín
+<<<<<<< HEAD
 M 31 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 5 1 0
+=======
+M 31 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 13 23
 NL H 23 215 5 0
 CL H 15 27
@@ -1916,7 +2834,11 @@ CL H 54 8
 NL H 8 -47 6 0
 CL H 91 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 2 642 2
@@ -1934,11 +2856,16 @@ CA H 16 1 215 5
 CA H 17 2 395 2
 CA H 18 1 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 2 3 0
+=======
+TL B 3 101 2 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 61 30
 NL B 30 162 6 0
 CL B 90 31
 NL B 31 494 1 0
+<<<<<<< HEAD
 TA B 4 20 2 4 4 4 0 0
 CA B 2 1 162 6
 CA B 14 1 494 1
@@ -1946,6 +2873,15 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TA B 4 20 2 4 4 4
+CA B 2 1 162 6
+CA B 14 1 494 1
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -1954,10 +2890,17 @@ V 27 16
 V 30 16
 V 31 16
 EV 43 ACTUALIZAR B 573 5 | El Cofre Glotón suelta el objeto 573 en el botín
+<<<<<<< HEAD
 M 32 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 5 1 0
+=======
+M 32 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 13 23
 NL H 23 215 5 0
 CL H 15 27
@@ -1968,7 +2911,11 @@ CL H 54 8
 NL H 8 -47 6 0
 CL H 91 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 2 642 2
@@ -1986,21 +2933,35 @@ CA H 16 1 215 5
 CA H 17 2 395 2
 CA H 18 1 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 3 3 0
+=======
+TL B 3 101 3 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 61 30
 NL B 30 162 6 0
 CL B 68 32
 NL B 32 573 5 0
 CL B 90 31
 NL B 31 494 1 0
+<<<<<<< HEAD
 TA B 4 20 3 4 4 4 0 0
+=======
+TA B 4 20 3 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 2 1 162 6
 CA B 13 1 573 5
 CA B 14 1 494 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2010,10 +2971,17 @@ V 30 16
 V 31 16
 V 32 16
 EV 44 ACTUALIZAR B 757 4 | El Cofre Glotón suelta el objeto 757 en el botín
+<<<<<<< HEAD
 M 33 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 5 1 0
+=======
+M 33 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 13 23
 NL H 23 215 5 0
 CL H 15 27
@@ -2024,7 +2992,11 @@ CL H 54 8
 NL H 8 -47 6 0
 CL H 91 21
 NL H 21 192 6 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 2 642 2
@@ -2042,7 +3014,11 @@ CA H 16 1 215 5
 CA H 17 2 395 2
 CA H 18 1 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 4 3 0
+=======
+TL B 3 101 4 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 50 33
 NL B 33 757 4 0
 CL B 61 30
@@ -2051,15 +3027,25 @@ CL B 68 32
 NL B 32 573 5 0
 CL B 90 31
 NL B 31 494 1 0
+<<<<<<< HEAD
 TA B 4 20 4 4 4 4 0 0
+=======
+TA B 4 20 4 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 2 1 162 6
 CA B 13 1 573 5
 CA B 14 1 494 1
 CA B 17 1 757 4
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2070,10 +3056,17 @@ V 31 16
 V 32 16
 V 33 16
 EV 45 ACTUALIZAR 502 6 | Lis recoge el objeto 502
+<<<<<<< HEAD
 M 34 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 6 1 0
+=======
+M 34 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 13 23
 NL H 23 215 5 0
 CL H 15 27
@@ -2086,7 +3079,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2104,7 +3101,11 @@ CA H 16 1 215 5
 CA H 17 2 395 2
 CA H 18 1 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 4 3 0
+=======
+TL B 3 101 4 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 50 33
 NL B 33 757 4 0
 CL B 61 30
@@ -2113,15 +3114,25 @@ CL B 68 32
 NL B 32 573 5 0
 CL B 90 31
 NL B 31 494 1 0
+<<<<<<< HEAD
 TA B 4 20 4 4 4 4 0 0
+=======
+TA B 4 20 4 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 2 1 162 6
 CA B 13 1 573 5
 CA B 14 1 494 1
 CA B 17 1 757 4
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2133,10 +3144,17 @@ V 32 16
 V 33 16
 V 34 16
 EV 46 ACTUALIZAR 129 5 | Lis recoge el objeto 129
+<<<<<<< HEAD
 M 35 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 7 1 0
+=======
+M 35 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 7 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 13 23
 NL H 23 215 5 0
 CL H 15 27
@@ -2151,7 +3169,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 7 2 2 2 0 0
+=======
+TA H 2 20 7 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2169,7 +3191,11 @@ CA H 16 1 215 5
 CA H 17 2 395 2
 CA H 18 1 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 4 3 0
+=======
+TL B 3 101 4 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 50 33
 NL B 33 757 4 0
 CL B 61 30
@@ -2178,15 +3204,25 @@ CL B 68 32
 NL B 32 573 5 0
 CL B 90 31
 NL B 31 494 1 0
+<<<<<<< HEAD
 TA B 4 20 4 4 4 4 0 0
+=======
+TA B 4 20 4 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 2 1 162 6
 CA B 13 1 573 5
 CA B 14 1 494 1
 CA B 17 1 757 4
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2201,7 +3237,11 @@ V 35 16
 EV 47 FUSIONAR | Lis mete el botín en el inventario
 RL 1
 RA 1
+<<<<<<< HEAD
 TL H 1 101 11 1 0
+=======
+TL H 1 101 11 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 13 23
 NL H 23 215 5 0
 CL H 15 27
@@ -2224,7 +3264,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 11 2 2 2 0 0
+=======
+TA H 2 20 11 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2242,12 +3286,21 @@ CA H 16 1 215 5
 CA H 17 1 757 4
 CA H 18 1 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2260,6 +3313,7 @@ V 33 16
 V 34 16
 V 35 16
 EV 48 AGOTAR 6 | El Cofre Glotón muerde todo lo que tenga menos de 6
+<<<<<<< HEAD
 F 23 TablaDispersaLista.c 215
 F 27 TablaDispersaLista.c 215
 F 35 TablaDispersaLista.c 215
@@ -2269,6 +3323,17 @@ F 31 TablaDispersaLista.c 215
 RL 6
 RA 6
 TL H 1 101 5 1 0
+=======
+F 23 TablaDispersaLista.c 196
+F 27 TablaDispersaLista.c 196
+F 35 TablaDispersaLista.c 196
+F 33 TablaDispersaLista.c 196
+F 32 TablaDispersaLista.c 196
+F 31 TablaDispersaLista.c 196
+RL 6
+RA 6
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
@@ -2279,7 +3344,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2297,22 +3366,38 @@ CA H 16 2 215 5
 CA H 17 2 757 4
 CA H 18 2 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
 V 30 16
 V 34 16
 EV 49 ACTUALIZAR B 875 6 | El Cofre Glotón suelta el objeto 875 en el botín
+<<<<<<< HEAD
 M 36 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 5 1 0
+=======
+M 36 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
@@ -2323,7 +3408,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2341,6 +3430,7 @@ CA H 16 2 215 5
 CA H 17 2 757 4
 CA H 18 2 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 1 3 0
 CL B 67 36
 NL B 36 875 6 0
@@ -2350,6 +3440,17 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 1 3
+CL B 67 36
+NL B 36 875 6 0
+TA B 4 20 1 4 4 4
+CA B 15 1 875 6
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2357,10 +3458,17 @@ V 30 16
 V 34 16
 V 36 16
 EV 50 ACTUALIZAR B -47 4 | El Cofre Glotón suelta el objeto -47 en el botín
+<<<<<<< HEAD
 M 37 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 5 1 0
+=======
+M 37 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
@@ -2371,7 +3479,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2389,11 +3501,16 @@ CA H 16 2 215 5
 CA H 17 2 757 4
 CA H 18 2 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 2 3 0
+=======
+TL B 3 101 2 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 54 37
 NL B 37 -47 4 0
 CL B 67 36
 NL B 36 875 6 0
+<<<<<<< HEAD
 TA B 4 20 2 4 4 4 0 0
 CA B 13 1 -47 4
 CA B 15 1 875 6
@@ -2401,6 +3518,15 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TA B 4 20 2 4 4 4
+CA B 13 1 -47 4
+CA B 15 1 875 6
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2409,10 +3535,17 @@ V 34 16
 V 36 16
 V 37 16
 EV 51 ACTUALIZAR B 47 3 | El Cofre Glotón suelta el objeto 47 en el botín
+<<<<<<< HEAD
 M 38 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 5 1 0
+=======
+M 38 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 54 8
@@ -2423,7 +3556,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2441,21 +3578,35 @@ CA H 16 2 215 5
 CA H 17 2 757 4
 CA H 18 2 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 3 3 0
+=======
+TL B 3 101 3 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 47 38
 NL B 38 47 3 0
 CL B 54 37
 NL B 37 -47 4 0
 CL B 67 36
 NL B 36 875 6 0
+<<<<<<< HEAD
 TA B 4 20 3 4 4 4 0 0
+=======
+TA B 4 20 3 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 7 1 47 3
 CA B 13 1 -47 4
 CA B 15 1 875 6
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2467,7 +3618,11 @@ V 38 16
 EV 52 FUSIONAR | Lis mete el botín en el inventario
 RL 1
 RA 0
+<<<<<<< HEAD
 TL H 1 101 8 1 0
+=======
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 47 38
@@ -2483,7 +3638,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 7 2 2 2 0 0
+=======
+TA H 2 20 7 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2501,12 +3660,21 @@ CA H 16 2 215 5
 CA H 17 2 757 4
 CA H 18 2 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2518,7 +3686,11 @@ V 38 16
 EV 53 BUSCAR -47 | Lis busca el objeto -47
 RL 1 4
 RA 1 6
+<<<<<<< HEAD
 TL H 1 101 8 1 0
+=======
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 47 38
@@ -2534,7 +3706,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 7 2 2 2 0 0
+=======
+TA H 2 20 7 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2552,12 +3728,21 @@ CA H 16 2 215 5
 CA H 17 2 757 4
 CA H 18 2 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2567,10 +3752,17 @@ V 36 16
 V 37 16
 V 38 16
 EV 54 ACTUALIZAR B -268 2 | El Cofre Glotón suelta el objeto -268 en el botín
+<<<<<<< HEAD
 M 39 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 8 1 0
+=======
+M 39 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 47 38
@@ -2586,7 +3778,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 7 2 2 2 0 0
+=======
+TA H 2 20 7 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2604,6 +3800,7 @@ CA H 16 2 215 5
 CA H 17 2 757 4
 CA H 18 2 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 1 3 0
 CL B 35 39
 NL B 39 -268 2 0
@@ -2613,6 +3810,17 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 1 3
+CL B 35 39
+NL B 39 -268 2 0
+TA B 4 20 1 4 4 4
+CA B 12 1 -268 2
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2623,10 +3831,17 @@ V 37 16
 V 38 16
 V 39 16
 EV 55 ACTUALIZAR B 18 6 | El Cofre Glotón suelta el objeto 18 en el botín
+<<<<<<< HEAD
 M 40 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 8 1 0
+=======
+M 40 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 47 38
@@ -2642,7 +3857,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 7 2 2 2 0 0
+=======
+TA H 2 20 7 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2660,11 +3879,16 @@ CA H 16 2 215 5
 CA H 17 2 757 4
 CA H 18 2 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 2 3 0
+=======
+TL B 3 101 2 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 18 40
 NL B 40 18 6 0
 CL B 35 39
 NL B 39 -268 2 0
+<<<<<<< HEAD
 TA B 4 20 2 4 4 4 0 0
 CA B 12 1 -268 2
 CA B 18 1 18 6
@@ -2672,6 +3896,15 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TA B 4 20 2 4 4 4
+CA B 12 1 -268 2
+CA B 18 1 18 6
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2683,10 +3916,17 @@ V 38 16
 V 39 16
 V 40 16
 EV 56 ACTUALIZAR B 573 1 | El Cofre Glotón suelta el objeto 573 en el botín
+<<<<<<< HEAD
 M 41 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 8 1 0
+=======
+M 41 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 47 38
@@ -2702,7 +3942,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 7 2 2 2 0 0
+=======
+TA H 2 20 7 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2720,21 +3964,35 @@ CA H 16 2 215 5
 CA H 17 2 757 4
 CA H 18 2 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 3 3 0
+=======
+TL B 3 101 3 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 18 40
 NL B 40 18 6 0
 CL B 35 39
 NL B 39 -268 2 0
 CL B 68 41
 NL B 41 573 1 0
+<<<<<<< HEAD
 TA B 4 20 3 4 4 4 0 0
+=======
+TA B 4 20 3 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 12 1 -268 2
 CA B 13 1 573 1
 CA B 18 1 18 6
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2747,10 +4005,17 @@ V 39 16
 V 40 16
 V 41 16
 EV 57 ACTUALIZAR B -35 3 | El Cofre Glotón suelta el objeto -35 en el botín
+<<<<<<< HEAD
 M 42 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 8 1 0
+=======
+M 42 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 47 38
@@ -2766,7 +4031,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 7 2 2 2 0 0
+=======
+TA H 2 20 7 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2784,7 +4053,11 @@ CA H 16 2 215 5
 CA H 17 2 757 4
 CA H 18 2 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 4 3 0
+=======
+TL B 3 101 4 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 18 40
 NL B 40 18 6 0
 CL B 35 39
@@ -2793,15 +4066,25 @@ CL B 66 42
 NL B 42 -35 3 0
 CL B 68 41
 NL B 41 573 1 0
+<<<<<<< HEAD
 TA B 4 20 4 4 4 4 0 0
+=======
+TA B 4 20 4 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 5 1 -35 3
 CA B 12 1 -268 2
 CA B 13 1 573 1
 CA B 18 1 18 6
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2815,10 +4098,17 @@ V 40 16
 V 41 16
 V 42 16
 EV 58 ACTUALIZAR B 875 1 | El Cofre Glotón suelta el objeto 875 en el botín
+<<<<<<< HEAD
 M 43 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 8 1 0
+=======
+M 43 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 47 38
@@ -2834,7 +4124,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 7 2 2 2 0 0
+=======
+TA H 2 20 7 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2852,7 +4146,11 @@ CA H 16 2 215 5
 CA H 17 2 757 4
 CA H 18 2 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 5 3 0
+=======
+TL B 3 101 5 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 18 40
 NL B 40 18 6 0
 CL B 35 39
@@ -2863,16 +4161,26 @@ CL B 67 43
 NL B 43 875 1 0
 CL B 68 41
 NL B 41 573 1 0
+<<<<<<< HEAD
 TA B 4 20 5 4 4 4 0 0
+=======
+TA B 4 20 5 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 5 1 -35 3
 CA B 12 1 -268 2
 CA B 13 1 573 1
 CA B 15 1 875 1
 CA B 18 1 18 6
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2887,10 +4195,17 @@ V 41 16
 V 42 16
 V 43 16
 EV 59 ACTUALIZAR B -23 6 | El Cofre Glotón suelta el objeto -23 en el botín
+<<<<<<< HEAD
 M 44 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 8 1 0
+=======
+M 44 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 47 38
@@ -2906,7 +4221,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 7 2 2 2 0 0
+=======
+TA H 2 20 7 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 239 1
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -2924,7 +4243,11 @@ CA H 16 2 215 5
 CA H 17 2 757 4
 CA H 18 2 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 6 3 0
+=======
+TL B 3 101 6 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 18 40
 NL B 40 18 6 0
 CL B 35 39
@@ -2937,7 +4260,11 @@ CL B 68 41
 NL B 41 573 1 0
 CL B 78 44
 NL B 44 -23 6 0
+<<<<<<< HEAD
 TA B 4 20 6 4 4 4 0 0
+=======
+TA B 4 20 6 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 5 1 -35 3
 CA B 12 1 -268 2
 CA B 13 1 573 1
@@ -2945,9 +4272,15 @@ CA B 15 1 875 1
 CA B 17 1 -23 6
 CA B 18 1 18 6
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -2963,10 +4296,17 @@ V 42 16
 V 43 16
 V 44 16
 EV 60 ACTUALIZAR 360 4 | Lis recoge el objeto 360
+<<<<<<< HEAD
 M 45 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 9 1 0
+=======
+M 45 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 9 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 42 9
 NL H 9 42 6 0
 CL H 47 38
@@ -2984,7 +4324,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 8 2 2 2 0 0
+=======
+TA H 2 20 8 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 1 360 4
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -3002,7 +4346,11 @@ CA H 16 2 215 5
 CA H 17 2 757 4
 CA H 18 2 15 5
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 6 3 0
+=======
+TL B 3 101 6 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 18 40
 NL B 40 18 6 0
 CL B 35 39
@@ -3015,7 +4363,11 @@ CL B 68 41
 NL B 41 573 1 0
 CL B 78 44
 NL B 44 -23 6 0
+<<<<<<< HEAD
 TA B 4 20 6 4 4 4 0 0
+=======
+TA B 4 20 6 4 4 4
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA B 5 1 -35 3
 CA B 12 1 -268 2
 CA B 13 1 573 1
@@ -3023,9 +4375,15 @@ CA B 15 1 875 1
 CA B 17 1 -23 6
 CA B 18 1 18 6
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 3 816
 V 4 252
+=======
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -3044,7 +4402,11 @@ V 45 16
 EV 61 FUSIONAR | Lis mete el botín en el inventario
 RL 1
 RA 0
+<<<<<<< HEAD
 TL H 1 101 15 1 0
+=======
+TL H 1 101 15 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 40
 NL H 40 18 6 0
 CL H 35 39
@@ -3073,7 +4435,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 13 2 2 2 0 0
+=======
+TA H 2 20 13 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 1 360 4
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -3091,12 +4457,21 @@ CA H 16 1 573 1
 CA H 17 1 -23 6
 CA H 18 1 18 6
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -3113,6 +4488,7 @@ V 43 16
 V 44 16
 V 45 16
 EV 62 AGOTAR 6 | El Cofre Glotón muerde todo lo que tenga menos de 6
+<<<<<<< HEAD
 F 39 TablaDispersaLista.c 215
 F 38 TablaDispersaLista.c 215
 F 37 TablaDispersaLista.c 215
@@ -3123,6 +4499,18 @@ F 41 TablaDispersaLista.c 215
 RL 7
 RA 5
 TL H 1 101 8 1 0
+=======
+F 39 TablaDispersaLista.c 196
+F 38 TablaDispersaLista.c 196
+F 37 TablaDispersaLista.c 196
+F 45 TablaDispersaLista.c 196
+F 42 TablaDispersaLista.c 196
+F 43 TablaDispersaLista.c 196
+F 41 TablaDispersaLista.c 196
+RL 7
+RA 5
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 40
 NL H 40 18 6 0
 CL H 42 9
@@ -3139,7 +4527,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 8 2 2 2 0 0
+=======
+TA H 2 20 8 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 360 4
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -3157,12 +4549,21 @@ CA H 16 2 573 1
 CA H 17 1 -23 6
 CA H 18 1 18 6
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -3172,10 +4573,17 @@ V 36 16
 V 40 16
 V 44 16
 EV 63 ACTUALIZAR B 14 5 | El Cofre Glotón suelta el objeto 14 en el botín
+<<<<<<< HEAD
 M 46 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 8 1 0
+=======
+M 46 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 40
 NL H 40 18 6 0
 CL H 42 9
@@ -3192,7 +4600,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 8 2 2 2 0 0
+=======
+TA H 2 20 8 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 360 4
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -3210,6 +4622,7 @@ CA H 16 2 573 1
 CA H 17 1 -23 6
 CA H 18 1 18 6
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 1 3 0
 CL B 14 46
 NL B 46 14 5 0
@@ -3219,6 +4632,17 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 1 3
+CL B 14 46
+NL B 46 14 5 0
+TA B 4 20 1 4 4 4
+CA B 14 1 14 5
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -3229,10 +4653,17 @@ V 40 16
 V 44 16
 V 46 16
 EV 64 ACTUALIZAR B 875 1 | El Cofre Glotón suelta el objeto 875 en el botín
+<<<<<<< HEAD
 M 47 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 8 1 0
+=======
+M 47 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 40
 NL H 40 18 6 0
 CL H 42 9
@@ -3249,7 +4680,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 8 2 2 2 0 0
+=======
+TA H 2 20 8 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 360 4
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -3267,11 +4702,16 @@ CA H 16 2 573 1
 CA H 17 1 -23 6
 CA H 18 1 18 6
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 2 3 0
+=======
+TL B 3 101 2 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 14 46
 NL B 46 14 5 0
 CL B 67 47
 NL B 47 875 1 0
+<<<<<<< HEAD
 TA B 4 20 2 4 4 4 0 0
 CA B 14 1 14 5
 CA B 15 1 875 1
@@ -3279,6 +4719,15 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TA B 4 20 2 4 4 4
+CA B 14 1 14 5
+CA B 15 1 875 1
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -3292,7 +4741,11 @@ V 47 16
 EV 65 ACTUALIZAR B 875 3 | El Cofre Glotón suelta el objeto 875 en el botín
 RL 1
 RA 1
+<<<<<<< HEAD
 TL H 1 101 8 1 0
+=======
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 40
 NL H 40 18 6 0
 CL H 42 9
@@ -3309,7 +4762,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 8 2 2 2 0 0
+=======
+TA H 2 20 8 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 360 4
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -3327,11 +4784,16 @@ CA H 16 2 573 1
 CA H 17 1 -23 6
 CA H 18 1 18 6
 CA H 19 2 -81 1
+<<<<<<< HEAD
 TL B 3 101 2 3 0
+=======
+TL B 3 101 2 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 14 46
 NL B 46 14 5 0
 CL B 67 47
 NL B 47 875 3 0
+<<<<<<< HEAD
 TA B 4 20 2 4 4 4 0 0
 CA B 14 1 14 5
 CA B 15 1 875 3
@@ -3339,6 +4801,15 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TA B 4 20 2 4 4 4
+CA B 14 1 14 5
+CA B 15 1 875 3
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -3350,10 +4821,17 @@ V 44 16
 V 46 16
 V 47 16
 EV 66 ACTUALIZAR 397 4 | Lis recoge el objeto 397
+<<<<<<< HEAD
 M 48 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 9 1 0
+=======
+M 48 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 9 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 40
 NL H 40 18 6 0
 CL H 42 9
@@ -3372,7 +4850,11 @@ CL H 94 48
 NL H 48 397 4 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 9 2 2 2 0 0
+=======
+TA H 2 20 9 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 360 4
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -3390,11 +4872,16 @@ CA H 16 2 573 1
 CA H 17 1 -23 6
 CA H 18 1 18 6
 CA H 19 1 397 4
+<<<<<<< HEAD
 TL B 3 101 2 3 0
+=======
+TL B 3 101 2 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 14 46
 NL B 46 14 5 0
 CL B 67 47
 NL B 47 875 3 0
+<<<<<<< HEAD
 TA B 4 20 2 4 4 4 0 0
 CA B 14 1 14 5
 CA B 15 1 875 3
@@ -3402,6 +4889,15 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TA B 4 20 2 4 4 4
+CA B 14 1 14 5
+CA B 15 1 875 3
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -3414,10 +4910,17 @@ V 46 16
 V 47 16
 V 48 16
 EV 67 ACTUALIZAR 473 5 | Lis recoge el objeto 473
+<<<<<<< HEAD
 M 49 16 TablaDispersaLista.c 54
 RL 1
 RA 1
 TL H 1 101 10 1 0
+=======
+M 49 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 10 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 40
 NL H 40 18 6 0
 CL H 42 9
@@ -3438,7 +4941,11 @@ CL H 94 48
 NL H 48 397 4 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 10 2 2 2 0 0
+=======
+TA H 2 20 10 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 360 4
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -3456,11 +4963,16 @@ CA H 16 2 573 1
 CA H 17 1 -23 6
 CA H 18 1 18 6
 CA H 19 1 397 4
+<<<<<<< HEAD
 TL B 3 101 2 3 0
+=======
+TL B 3 101 2 3
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL B 14 46
 NL B 46 14 5 0
 CL B 67 47
 NL B 47 875 3 0
+<<<<<<< HEAD
 TA B 4 20 2 4 4 4 0 0
 CA B 14 1 14 5
 CA B 15 1 875 3
@@ -3468,6 +4980,15 @@ V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TA B 4 20 2 4 4 4
+CA B 14 1 14 5
+CA B 15 1 875 3
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -3483,7 +5004,11 @@ V 49 16
 EV 68 FUSIONAR | Lis mete el botín en el inventario
 RL 1
 RA 0
+<<<<<<< HEAD
 TL H 1 101 12 1 0
+=======
+TL H 1 101 12 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 14 46
 NL H 46 14 5 0
 CL H 18 40
@@ -3507,7 +5032,11 @@ CL H 94 48
 NL H 48 397 4 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 11 2 2 2 0 0
+=======
+TA H 2 20 11 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 360 4
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -3525,12 +5054,21 @@ CA H 16 1 14 5
 CA H 17 1 -23 6
 CA H 18 1 18 6
 CA H 19 1 397 4
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -3544,6 +5082,7 @@ V 47 16
 V 48 16
 V 49 16
 EV 69 AGOTAR 6 | El Cofre Glotón muerde todo lo que tenga menos de 6
+<<<<<<< HEAD
 F 46 TablaDispersaLista.c 215
 F 47 TablaDispersaLista.c 215
 F 49 TablaDispersaLista.c 215
@@ -3551,6 +5090,15 @@ F 48 TablaDispersaLista.c 215
 RL 4
 RA 3
 TL H 1 101 8 1 0
+=======
+F 46 TablaDispersaLista.c 196
+F 47 TablaDispersaLista.c 196
+F 49 TablaDispersaLista.c 196
+F 48 TablaDispersaLista.c 196
+RL 4
+RA 3
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 40
 NL H 40 18 6 0
 CL H 42 9
@@ -3567,7 +5115,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 8 2 2 2 0 0
+=======
+TA H 2 20 8 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 360 4
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -3585,12 +5137,21 @@ CA H 16 2 14 5
 CA H 17 1 -23 6
 CA H 18 1 18 6
 CA H 19 2 397 4
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -3602,7 +5163,11 @@ V 44 16
 EV 70 FUSIONAR | Lis vuelve a fusionar con el botín vacío: no tiene que cambiar nada
 RL 1
 RA 1
+<<<<<<< HEAD
 TL H 1 101 8 1 0
+=======
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 40
 NL H 40 18 6 0
 CL H 42 9
@@ -3619,7 +5184,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 8 2 2 2 0 0
+=======
+TA H 2 20 8 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 360 4
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -3637,12 +5206,21 @@ CA H 16 2 14 5
 CA H 17 1 -23 6
 CA H 18 1 18 6
 CA H 19 2 397 4
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -3654,7 +5232,11 @@ V 44 16
 EV 71 BUSCAR 0 | Merla hace recuento: ¿quedó algo con el número 0?
 RL 0 0
 RA 0 0
+<<<<<<< HEAD
 TL H 1 101 8 1 0
+=======
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 18 40
 NL H 40 18 6 0
 CL H 42 9
@@ -3671,7 +5253,11 @@ CL H 91 21
 NL H 21 192 6 0
 CL H 98 34
 NL H 34 502 6 0
+<<<<<<< HEAD
 TA H 2 20 8 2 2 2 0 0
+=======
+TA H 2 20 8 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 360 4
 CA H 2 1 42 6
 CA H 3 1 502 6
@@ -3689,12 +5275,21 @@ CA H 16 2 14 5
 CA H 17 1 -23 6
 CA H 18 1 18 6
 CA H 19 2 397 4
+<<<<<<< HEAD
 TL B 3 101 0 3 0
 TA B 4 20 0 4 4 4 0 0
 V 1 816
 V 2 252
 V 3 816
 V 4 252
+=======
+TL B 3 101 0 3
+TA B 4 20 0 4 4 4
+V 1 816
+V 2 244
+V 3 816
+V 4 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 8 16
 V 9 16
 V 21 16
@@ -3704,6 +5299,7 @@ V 36 16
 V 40 16
 V 44 16
 EV 72 LIBERAR | Lis y tú vaciáis todas las tablas
+<<<<<<< HEAD
 F 40 TablaDispersaLista.c 101
 F 9 TablaDispersaLista.c 101
 F 8 TablaDispersaLista.c 101
@@ -3716,4 +5312,18 @@ F 1 TablaDispersaLista.c 105
 F 2 TablaDispersaArray.c 96
 F 3 TablaDispersaLista.c 105
 F 4 TablaDispersaArray.c 96
+=======
+F 40 TablaDispersaLista.c 88
+F 9 TablaDispersaLista.c 88
+F 8 TablaDispersaLista.c 88
+F 30 TablaDispersaLista.c 88
+F 36 TablaDispersaLista.c 88
+F 44 TablaDispersaLista.c 88
+F 21 TablaDispersaLista.c 88
+F 34 TablaDispersaLista.c 88
+F 1 TablaDispersaLista.c 92
+F 2 TablaDispersaArray.c 79
+F 3 TablaDispersaLista.c 92
+F 4 TablaDispersaArray.c 79
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 FIN

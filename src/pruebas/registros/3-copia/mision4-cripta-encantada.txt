@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 COFRES 5
 ALUMNO Escribe aqui tu nombre y apellidos
 MISION mision4-cripta-encantada
@@ -40,69 +41,158 @@ M 5 16 TablaDispersaLista.c 53
 RL 1
 RA 1
 TL H 1 101 3 1 0
+=======
+COFRES 4
+ALUMNO Escribe aqui tu nombre y apellidos
+MISION mision4-cripta-encantada
+EV 0 CREAR | Se crea el inventario
+M 1 816 TablaDispersaLista.c 29
+M 2 244 TablaDispersaArray.c 38
+TL H 1 101 0 1
+TA H 2 20 0 2 2 2
+V 1 816
+V 2 244
+EV 1 ACTUALIZAR 5 1 | Ulf guarda 1 antorcha (objeto 5)
+M 3 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 1 1
+CL H 5 3
+NL H 3 5 1 0
+TA H 2 20 1 2 2 2
+CA H 5 1 5 1
+V 1 816
+V 2 244
+V 3 16
+EV 2 ACTUALIZAR 106 4 | 4 monedas (objeto 106): en las listas, al cubo 5
+M 4 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 2 1
+CL H 5 4
+NL H 4 106 4 3
+NL H 3 5 1 0
+TA H 2 20 2 2 2 2
+CA H 5 1 5 1
+CA H 6 1 106 4
+V 1 816
+V 2 244
+V 3 16
+V 4 16
+EV 3 ACTUALIZAR 207 2 | 2 hachas (objeto 207): también al cubo 5
+M 5 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 3 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 5
 NL H 5 207 2 4
 NL H 4 106 4 3
 NL H 3 5 1 0
+<<<<<<< HEAD
 TA H 2 20 3 2 2 2 0 0
+=======
+TA H 2 20 3 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 5 1 5 1
 CA H 6 1 106 4
 CA H 7 1 207 2
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
 EV 4 ACTUALIZAR 308 1 | 1 llave (objeto 308): también al cubo 5
+<<<<<<< HEAD
 M 6 16 TablaDispersaLista.c 53
 RL 1
 RA 1
 TL H 1 101 4 1 0
+=======
+M 6 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 6
 NL H 6 308 1 5
 NL H 5 207 2 4
 NL H 4 106 4 3
 NL H 3 5 1 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 5 1 5 1
 CA H 6 1 106 4
 CA H 7 1 207 2
 CA H 8 1 308 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
 V 6 16
 EV 5 ACTUALIZAR 409 7 | 7 gemas (objeto 409): también al cubo 5, el primero de la lista
+<<<<<<< HEAD
 M 7 16 TablaDispersaLista.c 53
 RL 1
 RA 1
 TL H 1 101 5 1 0
+=======
+M 7 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 7
 NL H 7 409 7 6
 NL H 6 308 1 5
 NL H 5 207 2 4
 NL H 4 106 4 3
 NL H 3 5 1 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 5 1 5 1
 CA H 6 1 106 4
 CA H 7 1 207 2
 CA H 8 1 308 1
 CA H 9 1 409 7
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
 V 6 16
 V 7 16
 EV 6 ACTUALIZAR 23 2 | 2 pociones (objeto 23)
+<<<<<<< HEAD
 M 8 16 TablaDispersaLista.c 53
 RL 1
 RA 1
 TL H 1 101 6 1 0
+=======
+M 8 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 6 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 7
 NL H 7 409 7 6
 NL H 6 308 1 5
@@ -111,7 +201,11 @@ NL H 4 106 4 3
 NL H 3 5 1 0
 CL H 23 8
 NL H 8 23 2 0
+<<<<<<< HEAD
 TA H 2 20 6 2 2 2 0 0
+=======
+TA H 2 20 6 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 1 23 2
 CA H 5 1 5 1
 CA H 6 1 106 4
@@ -119,7 +213,11 @@ CA H 7 1 207 2
 CA H 8 1 308 1
 CA H 9 1 409 7
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
@@ -127,10 +225,17 @@ V 6 16
 V 7 16
 V 8 16
 EV 7 ACTUALIZAR 124 2 | 2 mapas (objeto 124): en las listas, al cubo de las pociones
+<<<<<<< HEAD
 M 9 16 TablaDispersaLista.c 53
 RL 1
 RA 1
 TL H 1 101 7 1 0
+=======
+M 9 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 7 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 7
 NL H 7 409 7 6
 NL H 6 308 1 5
@@ -140,7 +245,11 @@ NL H 3 5 1 0
 CL H 23 9
 NL H 9 124 2 8
 NL H 8 23 2 0
+<<<<<<< HEAD
 TA H 2 20 7 2 2 2 0 0
+=======
+TA H 2 20 7 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 1 23 2
 CA H 4 1 124 2
 CA H 5 1 5 1
@@ -149,7 +258,11 @@ CA H 7 1 207 2
 CA H 8 1 308 1
 CA H 9 1 409 7
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
@@ -158,10 +271,17 @@ V 7 16
 V 8 16
 V 9 16
 EV 8 ACTUALIZAR 225 9 | 9 flechas (objeto 225)
+<<<<<<< HEAD
 M 10 16 TablaDispersaLista.c 53
 RL 1
 RA 1
 TL H 1 101 8 1 0
+=======
+M 10 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 8 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 7
 NL H 7 409 7 6
 NL H 6 308 1 5
@@ -172,7 +292,11 @@ CL H 23 10
 NL H 10 225 9 9
 NL H 9 124 2 8
 NL H 8 23 2 0
+<<<<<<< HEAD
 TA H 2 20 8 2 2 2 0 0
+=======
+TA H 2 20 8 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 1 23 2
 CA H 4 1 124 2
 CA H 5 1 5 1
@@ -182,7 +306,11 @@ CA H 8 1 308 1
 CA H 9 1 409 7
 CA H 10 1 225 9
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
@@ -192,10 +320,17 @@ V 8 16
 V 9 16
 V 10 16
 EV 9 ACTUALIZAR 7 1 | 1 vela (objeto 7), sola en su cubo
+<<<<<<< HEAD
 M 11 16 TablaDispersaLista.c 53
 RL 1
 RA 1
 TL H 1 101 9 1 0
+=======
+M 11 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 9 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 7
 NL H 7 409 7 6
 NL H 6 308 1 5
@@ -208,7 +343,11 @@ CL H 23 10
 NL H 10 225 9 9
 NL H 9 124 2 8
 NL H 8 23 2 0
+<<<<<<< HEAD
 TA H 2 20 9 2 2 2 0 0
+=======
+TA H 2 20 9 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 1 23 2
 CA H 4 1 124 2
 CA H 5 1 5 1
@@ -219,7 +358,11 @@ CA H 9 1 409 7
 CA H 10 1 225 9
 CA H 11 1 7 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
@@ -232,7 +375,11 @@ V 11 16
 EV 10 AGOTAR 1 | El conjuro del 1: no hay nada con menos de 1, no se va nada
 RL 0
 RA 0
+<<<<<<< HEAD
 TL H 1 101 9 1 0
+=======
+TL H 1 101 9 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 7
 NL H 7 409 7 6
 NL H 6 308 1 5
@@ -245,7 +392,11 @@ CL H 23 10
 NL H 10 225 9 9
 NL H 9 124 2 8
 NL H 8 23 2 0
+<<<<<<< HEAD
 TA H 2 20 9 2 2 2 0 0
+=======
+TA H 2 20 9 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 1 23 2
 CA H 4 1 124 2
 CA H 5 1 5 1
@@ -256,7 +407,11 @@ CA H 9 1 409 7
 CA H 10 1 225 9
 CA H 11 1 7 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
@@ -267,6 +422,7 @@ V 9 16
 V 10 16
 V 11 16
 EV 11 AGOTAR 3 | El conjuro del 3: se va todo lo que tenga menos de 3
+<<<<<<< HEAD
 F 6 TablaDispersaLista.c 213
 F 5 TablaDispersaLista.c 213
 F 3 TablaDispersaLista.c 213
@@ -276,12 +432,27 @@ F 8 TablaDispersaLista.c 213
 RL 6
 RA 6
 TL H 1 101 3 1 0
+=======
+F 6 TablaDispersaLista.c 195
+F 5 TablaDispersaLista.c 195
+F 3 TablaDispersaLista.c 195
+F 11 TablaDispersaLista.c 195
+F 9 TablaDispersaLista.c 195
+F 8 TablaDispersaLista.c 195
+RL 6
+RA 6
+TL H 1 101 3 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 7
 NL H 7 409 7 4
 NL H 4 106 4 0
 CL H 23 10
 NL H 10 225 9 0
+<<<<<<< HEAD
 TA H 2 20 3 2 2 2 0 0
+=======
+TA H 2 20 3 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 2 23 2
 CA H 4 2 124 2
 CA H 5 2 5 1
@@ -292,20 +463,32 @@ CA H 9 1 409 7
 CA H 10 1 225 9
 CA H 11 2 7 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 4 16
 V 7 16
 V 10 16
 EV 12 BUSCAR 225 | ¿Siguen las flechas? En el array hay que saltar casillas borradas
 RL 1 9
 RA 1 9
+<<<<<<< HEAD
 TL H 1 101 3 1 0
+=======
+TL H 1 101 3 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 7
 NL H 7 409 7 4
 NL H 4 106 4 0
 CL H 23 10
 NL H 10 225 9 0
+<<<<<<< HEAD
 TA H 2 20 3 2 2 2 0 0
+=======
+TA H 2 20 3 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 2 23 2
 CA H 4 2 124 2
 CA H 5 2 5 1
@@ -316,20 +499,32 @@ CA H 9 1 409 7
 CA H 10 1 225 9
 CA H 11 2 7 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 4 16
 V 7 16
 V 10 16
 EV 13 BUSCAR 308 | ¿Y la llave? Se la llevó el conjuro
 RL 0 0
 RA 0 0
+<<<<<<< HEAD
 TL H 1 101 3 1 0
+=======
+TL H 1 101 3 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 7
 NL H 7 409 7 4
 NL H 4 106 4 0
 CL H 23 10
 NL H 10 225 9 0
+<<<<<<< HEAD
 TA H 2 20 3 2 2 2 0 0
+=======
+TA H 2 20 3 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 2 23 2
 CA H 4 2 124 2
 CA H 5 2 5 1
@@ -340,22 +535,37 @@ CA H 9 1 409 7
 CA H 10 1 225 9
 CA H 11 2 7 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 4 16
 V 7 16
 V 10 16
 EV 14 ACTUALIZAR 326 3 | 3 escudos (objeto 326): en el array aprovecha una casilla borrada
+<<<<<<< HEAD
 M 12 16 TablaDispersaLista.c 53
 RL 1
 RA 1
 TL H 1 101 4 1 0
+=======
+M 12 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 7
 NL H 7 409 7 4
 NL H 4 106 4 0
 CL H 23 12
 NL H 12 326 3 10
 NL H 10 225 9 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 2 23 2
 CA H 4 2 124 2
 CA H 5 2 5 1
@@ -366,7 +576,11 @@ CA H 9 1 409 7
 CA H 10 1 225 9
 CA H 11 2 7 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 4 16
 V 7 16
 V 10 16
@@ -374,14 +588,22 @@ V 12 16
 EV 15 ACTUALIZAR 106 2 | Se gastan monedas: quedan 2
 RL 1
 RA 1
+<<<<<<< HEAD
 TL H 1 101 4 1 0
+=======
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 7
 NL H 7 409 7 4
 NL H 4 106 2 0
 CL H 23 12
 NL H 12 326 3 10
 NL H 10 225 9 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 2 23 2
 CA H 4 2 124 2
 CA H 5 2 5 1
@@ -392,22 +614,37 @@ CA H 9 1 409 7
 CA H 10 1 225 9
 CA H 11 2 7 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 4 16
 V 7 16
 V 10 16
 V 12 16
 EV 16 AGOTAR 3 | Otra vez el conjuro del 3
+<<<<<<< HEAD
 F 4 TablaDispersaLista.c 213
 RL 1
 RA 1
 TL H 1 101 3 1 0
+=======
+F 4 TablaDispersaLista.c 195
+RL 1
+RA 1
+TL H 1 101 3 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 7
 NL H 7 409 7 0
 CL H 23 12
 NL H 12 326 3 10
 NL H 10 225 9 0
+<<<<<<< HEAD
 TA H 2 20 3 2 2 2 0 0
+=======
+TA H 2 20 3 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 2 23 2
 CA H 4 2 124 2
 CA H 5 2 5 1
@@ -418,11 +655,16 @@ CA H 9 1 409 7
 CA H 10 1 225 9
 CA H 11 2 7 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 7 16
 V 10 16
 V 12 16
 EV 17 AGOTAR 10 | El conjuro del 10: no queda nada
+<<<<<<< HEAD
 F 7 TablaDispersaLista.c 213
 F 12 TablaDispersaLista.c 213
 F 10 TablaDispersaLista.c 213
@@ -430,6 +672,15 @@ RL 3
 RA 3
 TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
+=======
+F 7 TablaDispersaLista.c 195
+F 12 TablaDispersaLista.c 195
+F 10 TablaDispersaLista.c 195
+RL 3
+RA 3
+TL H 1 101 0 1
+TA H 2 20 0 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 2 23 2
 CA H 4 2 124 2
 CA H 5 2 5 1
@@ -440,12 +691,21 @@ CA H 9 2 409 7
 CA H 10 2 225 9
 CA H 11 2 7 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
 EV 18 BUSCAR 409 | Ulf busca las gemas en la cripta vacía
 RL 0 0
 RA 0 0
 TL H 1 101 0 1 0
 TA H 2 20 0 2 2 2 0 0
+=======
+V 2 244
+EV 18 BUSCAR 409 | Ulf busca las gemas en la cripta vacía
+RL 0 0
+RA 0 0
+TL H 1 101 0 1
+TA H 2 20 0 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 2 23 2
 CA H 4 2 124 2
 CA H 5 2 5 1
@@ -456,6 +716,7 @@ CA H 9 2 409 7
 CA H 10 2 225 9
 CA H 11 2 7 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
 EV 19 ACTUALIZAR 409 1 | Encuentra una gema
 M 13 16 TablaDispersaLista.c 53
@@ -465,6 +726,17 @@ TL H 1 101 1 1 0
 CL H 5 13
 NL H 13 409 1 0
 TA H 2 20 1 2 2 2 0 0
+=======
+V 2 244
+EV 19 ACTUALIZAR 409 1 | Encuentra una gema
+M 13 16 TablaDispersaLista.c 41
+RL 1
+RA 1
+TL H 1 101 1 1
+CL H 5 13
+NL H 13 409 1 0
+TA H 2 20 1 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 2 23 2
 CA H 4 2 124 2
 CA H 5 2 5 1
@@ -475,15 +747,26 @@ CA H 9 1 409 1
 CA H 10 2 225 9
 CA H 11 2 7 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 13 16
 EV 20 BUSCAR 409 | Ahí está
 RL 1 1
 RA 1 1
+<<<<<<< HEAD
 TL H 1 101 1 1 0
 CL H 5 13
 NL H 13 409 1 0
 TA H 2 20 1 2 2 2 0 0
+=======
+TL H 1 101 1 1
+CL H 5 13
+NL H 13 409 1 0
+TA H 2 20 1 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 2 23 2
 CA H 4 2 124 2
 CA H 5 2 5 1
@@ -494,10 +777,19 @@ CA H 9 1 409 1
 CA H 10 2 225 9
 CA H 11 2 7 1
 V 1 816
+<<<<<<< HEAD
 V 2 252
 V 13 16
 EV 21 LIBERAR | Ulf vuelve a su barca y se vacían las tablas
 F 13 TablaDispersaLista.c 100
 F 1 TablaDispersaLista.c 104
 F 2 TablaDispersaArray.c 96
+=======
+V 2 244
+V 13 16
+EV 21 LIBERAR | Ulf vuelve a su barca y se vacían las tablas
+F 13 TablaDispersaLista.c 88
+F 1 TablaDispersaLista.c 92
+F 2 TablaDispersaArray.c 79
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 FIN

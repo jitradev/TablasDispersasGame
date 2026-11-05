@@ -7,6 +7,7 @@
 
 #define TAM 20
 
+<<<<<<< HEAD
 /* Las funciones hash que puede usar la tabla (acto 3). Por defecto, HASH_CLASE:
  * clave mod TAM, la de clase. */
 #define HASH_CLASE 0
@@ -19,6 +20,8 @@
 #define SONDEO_CUADRATICO 1
 #define SONDEO_DOBLE 2
 
+=======
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 typedef struct HashArray HashArray;
 
 
@@ -34,6 +37,7 @@ void mostrarHashArray(HashArray * hashArray);
  * asi que reaprovecha las BORRADA). Devuelve 1, o 0 si no cabe. */
 int actualizarHashArray(HashArray * hashArray, int clave, int elemento);
 
+<<<<<<< HEAD
 /* Ya hechas: eligen la funcion hash (HASH_CLASE, HASH_PLEGAMIENTO...) y la
  * forma de buscar sitio (SONDEO_LINEAL, SONDEO_CUADRATICO, SONDEO_DOBLE).
  * Solo con la tabla vacia: devuelven 0 si ya tiene algo y no cambian nada. */
@@ -41,6 +45,9 @@ int usarHashArray(HashArray * hashArray, int funcion);
 int usarSondeoArray(HashArray * hashArray, int sondeo);
 
 /* ===================== ACTO 1: EL GREMIO ===================== */
+=======
+/* ===================== LO QUE TIENES QUE PROGRAMAR ===================== */
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 
 /* ---- EJERCICIO 1: el objeto con mas unidades ---- */
 
@@ -78,6 +85,7 @@ int eliminarSiMenorHashArray(HashArray * hashArray, int minimo);
  * Devuelve 1, o 0 si alguna no ha cabido en destino. */
 int fusionarHashArray(HashArray * destino, HashArray * origen);
 
+<<<<<<< HEAD
 /* ===================== ACTO 2: LAS CARAVANAS ===================== */
 
 /* ---- EJERCICIO 6: copiar un inventario ---- */
@@ -152,6 +160,8 @@ int costeTotalHashArray(HashArray * hashArray);
  * insertarHashArray. Devuelve cuantas BORRADA habia. */
 int limpiarBorradasHashArray(HashArray * hashArray);
 
+=======
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 /* Lo usa el registro. NO LA TOQUES. */
 void volcarHashArray(HashArray * hashArray, const char * nombre);
 

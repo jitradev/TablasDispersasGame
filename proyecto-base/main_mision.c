@@ -15,6 +15,7 @@
  *     CAMBIAR 106 300 | ...     cambiarClave(principal, 106, 300)  (ejercicio 3)
  *     AGOTAR 3 | ...            eliminarSiMenor(principal, 3)      (ejercicio 4)
  *     FUSIONAR | ...            fusionar(principal, botin)         (ejercicio 5)
+<<<<<<< HEAD
  *     COPIAR | ...              copiar(botin, principal)           (ejercicio 6)
  *     IGUALES | ...             iguales(principal, botin)          (ejercicio 7)
  *     INTERSECCION | ...        interseccion(principal, botin)     (ejercicio 8)
@@ -27,6 +28,8 @@
  *     COSTETOTAL [B] | ...      costeTotal                         (ejercicio 14)
  *     LIMPIAR [B] | ...         limpiarBorradas (solo el array)    (ejercicio 15)
  *     FRENTE [B] 106 | ...      alFrente (solo las listas)         (ejercicio 15)
+=======
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
  *     LIBERAR | ...             eliminar todas las tablas (la ultima orden)
  * Las lineas vacias y las que empiezan por # no cuentan.
  *
@@ -55,6 +58,7 @@ static char *recortar(char *s) {
     return s;
 }
 
+<<<<<<< HEAD
 /* Los nombres de las funciones hash y de los sondeos en los eventos. */
 static const char *FUNCIONES[] = {"CLASE", "PLEGAMIENTO", "MITAD", "POLINOMICO", NULL};
 static const char *SONDEOS[] = {"LINEAL", "CUADRATICO", "DOBLE", NULL};
@@ -65,6 +69,8 @@ static int codigo(const char **nombres, const char *nombre) {
     return -1;
 }
 
+=======
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 typedef struct {
     const char *nombre;   /* "H" o "B" */
     HashLista *lista;
@@ -113,13 +119,18 @@ int main(void) {
         else texto = "";
         texto = recortar(texto);
 
+<<<<<<< HEAD
         char orden[16] = "", quien[4] = "", nombre[16] = "";
+=======
+        char orden[16] = "", quien[4] = "";
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
         int a = 0, b = 0, leidos;
         Inventario *inv = &principal;
         char limpia[64];
         if (sscanf(l, "%15s %3s", orden, quien) == 2 && strcmp(quien, "B") == 0) {
             inv = &botin;
             leidos = sscanf(l, "%15s %*s %d %d", orden, &a, &b);
+<<<<<<< HEAD
             sscanf(l, "%*s %*s %15s", nombre);
         } else {
             leidos = sscanf(l, "%15s %d %d", orden, &a, &b);
@@ -127,6 +138,11 @@ int main(void) {
         }
         int esFuncion = strcmp(orden, "FUNCION") == 0, esSondeo = strcmp(orden, "SONDEO") == 0;
         a = esFuncion ? codigo(FUNCIONES, nombre) : esSondeo ? codigo(SONDEOS, nombre) : a;
+=======
+        } else {
+            leidos = sscanf(l, "%15s %d %d", orden, &a, &b);
+        }
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
         const char *pre = inv == &botin ? "B " : "";
         if (strcmp(orden, "ACTUALIZAR") == 0 && leidos == 3)
             snprintf(limpia, sizeof limpia, "ACTUALIZAR %s%d %d", pre, a, b);
@@ -134,18 +150,25 @@ int main(void) {
             snprintf(limpia, sizeof limpia, "%s %s%d", orden, pre, a);
         else if (strcmp(orden, "ABUNDANTE") == 0 || strcmp(orden, "COLISIONES") == 0)
             snprintf(limpia, sizeof limpia, "%s%s%s", orden, inv == &botin ? " " : "", inv == &botin ? "B" : "");
+<<<<<<< HEAD
         else if ((esFuncion || esSondeo) && a >= 0)
             snprintf(limpia, sizeof limpia, "%s %s%s", orden, pre, nombre);
         else if ((strcmp(orden, "COSTE") == 0 || strcmp(orden, "FRENTE") == 0) && leidos == 2)
             snprintf(limpia, sizeof limpia, "%s %s%d", orden, pre, a);
         else if (strcmp(orden, "COSTETOTAL") == 0 || strcmp(orden, "LIMPIAR") == 0)
             snprintf(limpia, sizeof limpia, "%s%s%s", orden, inv == &botin ? " " : "", inv == &botin ? "B" : "");
+=======
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
         else if (strcmp(orden, "CAMBIAR") == 0 && leidos == 3 && inv == &principal)
             snprintf(limpia, sizeof limpia, "CAMBIAR %d %d", a, b);
         else if (strcmp(orden, "AGOTAR") == 0 && leidos == 2 && inv == &principal)
             snprintf(limpia, sizeof limpia, "AGOTAR %d", a);
+<<<<<<< HEAD
         else if ((strcmp(orden, "LIBERAR") == 0 || strcmp(orden, "FUSIONAR") == 0 || strcmp(orden, "COPIAR") == 0 ||
                   strcmp(orden, "IGUALES") == 0 || strcmp(orden, "INTERSECCION") == 0 || strcmp(orden, "DIFERENCIA") == 0) && inv == &principal)
+=======
+        else if ((strcmp(orden, "LIBERAR") == 0 || strcmp(orden, "FUSIONAR") == 0) && inv == &principal)
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
             snprintf(limpia, sizeof limpia, "%s", orden);
         else {
             printf("Linea que no entiendo (se salta): %s\n", l);
@@ -155,9 +178,13 @@ int main(void) {
         n++;
         printf("Evento %d: %s\n", n, limpia);
         reg_printf("EV %d %s | %s\n", n, limpia, texto);
+<<<<<<< HEAD
         int dos = strcmp(orden, "FUSIONAR") == 0 || strcmp(orden, "COPIAR") == 0 || strcmp(orden, "IGUALES") == 0 ||
                   strcmp(orden, "INTERSECCION") == 0 || strcmp(orden, "DIFERENCIA") == 0;
         if ((inv == &botin || dos) && botin.lista == NULL) {
+=======
+        if ((inv == &botin || strcmp(orden, "FUSIONAR") == 0) && botin.lista == NULL) {
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
             reg_printf("CREAR B\n");
             botin.lista = crearHashLista();
             botin.array = crearHashArray();
@@ -199,6 +226,7 @@ int main(void) {
         } else if (strcmp(orden, "FUSIONAR") == 0) {
             reg_printf("RL %d\n", fusionarHashLista(principal.lista, botin.lista));
             reg_printf("RA %d\n", fusionarHashArray(principal.array, botin.array));
+<<<<<<< HEAD
         } else if (esFuncion) {
             reg_printf("RL %d\n", usarHashLista(inv->lista, a));
             reg_printf("RA %d\n", usarHashArray(inv->array, a));
@@ -238,6 +266,8 @@ int main(void) {
         } else if (strcmp(orden, "DIFERENCIA") == 0) {
             reg_printf("RL %d\n", diferenciaHashLista(principal.lista, botin.lista));
             reg_printf("RA %d\n", diferenciaHashArray(principal.array, botin.array));
+=======
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
         } else { /* LIBERAR */
             eliminarHashLista(principal.lista);
             eliminarHashArray(principal.array);

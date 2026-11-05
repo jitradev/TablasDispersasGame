@@ -13,11 +13,17 @@ typedef struct Nodo {
 struct HashLista {
     Nodo *cubos[TAM_LISTA];
     int n;
+<<<<<<< HEAD
     int funcion;    /* la funcion hash: HASH_CLASE salvo que se cambie */
 };
 
 // La funcion hash de clase: clave mod el tamano, sin negativos.
 static int hashClase(int clave) {
+=======
+};
+
+static int hash(int clave) {
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     int index = clave % TAM_LISTA;
     if (index < 0) {
         index += TAM_LISTA;
@@ -25,6 +31,7 @@ static int hashClase(int clave) {
     return index;
 }
 
+<<<<<<< HEAD
 // El cubo de la clave, con la funcion hash de la tabla.
 static int indice(HashLista * hashLista, int clave) {
     switch (hashLista->funcion) {
@@ -35,6 +42,8 @@ static int indice(HashLista * hashLista, int clave) {
     }
 }
 
+=======
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 HashLista*  crearHashLista() {
     HashLista* hashLista = (HashLista*) malloc(sizeof(HashLista));
     if (hashLista == NULL) { return NULL;}
@@ -42,13 +51,20 @@ HashLista*  crearHashLista() {
         hashLista->cubos[i] = NULL;
     }
     hashLista->n = 0;
+<<<<<<< HEAD
     hashLista->funcion = HASH_CLASE;
+=======
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     return hashLista;
 }
 
 // Pushes at the head of the bucket without checking for an existing key.
 int insertarHashLista(HashLista * hashLista, int clave, int elemento) {
+<<<<<<< HEAD
     int index = indice(hashLista, clave);
+=======
+    int index = hash(clave);
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     Nodo* nodo = (Nodo*) malloc(sizeof(Nodo));
     if (nodo == NULL) { return 0;}
     nodo->clave = clave;
@@ -60,7 +76,11 @@ int insertarHashLista(HashLista * hashLista, int clave, int elemento) {
 }
 
 int buscarHashLista(HashLista * hashLista, int clave, int *elemento) {
+<<<<<<< HEAD
     Nodo* nodo = hashLista->cubos[indice(hashLista, clave)];
+=======
+    Nodo* nodo = hashLista->cubos[hash(clave)];
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     while (nodo != NULL) {
         if (nodo->clave == clave) {
             *elemento = nodo->valor;
@@ -72,7 +92,11 @@ int buscarHashLista(HashLista * hashLista, int clave, int *elemento) {
 }
 
 int eliminarElementoHashLista(HashLista * hashLista, int clave, int *elemento) {
+<<<<<<< HEAD
     int index = indice(hashLista, clave);
+=======
+    int index = hash(clave);
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     Nodo* ant = NULL;
     Nodo* act = hashLista->cubos[index];
     while (act != NULL && act->clave != clave) {
@@ -116,7 +140,11 @@ void mostrarHashLista(HashLista * hashLista) {
 }
 
 int actualizarHashLista(HashLista * hashLista, int clave, int elemento) {
+<<<<<<< HEAD
     for (Nodo* nodo = hashLista->cubos[indice(hashLista, clave)]; nodo != NULL; nodo = nodo->sig) {
+=======
+    for (Nodo* nodo = hashLista->cubos[hash(clave)]; nodo != NULL; nodo = nodo->sig) {
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
         if (nodo->clave == clave) {
             nodo->valor = elemento;     /* el mismo nodo: sin malloc */
             return 1;
@@ -125,6 +153,7 @@ int actualizarHashLista(HashLista * hashLista, int clave, int elemento) {
     return insertarHashLista(hashLista, clave, elemento);
 }
 
+<<<<<<< HEAD
 int usarHashLista(HashLista * hashLista, int funcion) {
     if (hashLista->n > 0) { return 0;}
     hashLista->funcion = funcion;
@@ -132,6 +161,9 @@ int usarHashLista(HashLista * hashLista, int funcion) {
 }
 
 /* ===================== ACTO 1: EL GREMIO ===================== */
+=======
+/* ===================== LO QUE TIENES QUE PROGRAMAR ===================== */
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 
 /* ---- EJERCICIO 1: el objeto con mas unidades ---- */
 
@@ -187,6 +219,7 @@ int fusionarHashLista(HashLista * destino, HashLista * origen) {
     return 0;
 }
 
+<<<<<<< HEAD
 /* ===================== ACTO 2: LAS CARAVANAS ===================== */
 
 /* ---- EJERCICIO 6: copiar un inventario ---- */
@@ -283,6 +316,8 @@ int alFrenteHashLista(HashLista * hashLista, int clave) {
     return 0;
 }
 
+=======
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 /* ============ NO TOQUES NADA A PARTIR DE AQUI: lo usa el registro ============ */
 
 void volcarHashLista(HashLista * h, const char * nombre) {
@@ -291,7 +326,11 @@ void volcarHashLista(HashLista * h, const char * nombre) {
     if (!reg_vivo(h, sizeof(HashLista))) { reg_printf("\n"); return; }
     reg_printf(" %d %d ", TAM_LISTA, h->n);
     reg_ref(h);
+<<<<<<< HEAD
     reg_printf(" %d\n", h->funcion);
+=======
+    reg_printf("\n");
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
     for (int i = 0; i < TAM_LISTA; i++) {
         if (h->cubos[i] == NULL) { continue; }
         reg_printf("CL %s %d ", nombre, i);

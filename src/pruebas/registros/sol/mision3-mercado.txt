@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 COFRES 5
 ALUMNO Escribe aqui tu nombre y apellidos
 MISION mision3-mercado
@@ -40,46 +41,120 @@ M 5 16 TablaDispersaLista.c 53
 RL 1
 RA 1
 TL H 1 101 3 1 0
+=======
+COFRES 4
+ALUMNO Escribe aqui tu nombre y apellidos
+MISION mision3-mercado
+EV 0 CREAR | Se crea el inventario
+M 1 816 TablaDispersaLista.c 28
+M 2 244 TablaDispersaArray.c 37
+TL H 1 101 0 1
+TA H 2 20 0 2 2 2
+V 1 816
+V 2 244
+EV 1 ACTUALIZAR 5 3 | Rina llega al mercado con 3 antorchas (objeto 5)
+M 3 16 TablaDispersaLista.c 40
+RL 1
+RA 1
+TL H 1 101 1 1
+CL H 5 3
+NL H 3 5 3 0
+TA H 2 20 1 2 2 2
+CA H 5 1 5 3
+V 1 816
+V 2 244
+V 3 16
+EV 2 ACTUALIZAR 106 2 | 2 monedas (objeto 106): en las listas, al cubo 5
+M 4 16 TablaDispersaLista.c 40
+RL 1
+RA 1
+TL H 1 101 2 1
+CL H 5 4
+NL H 4 106 2 3
+NL H 3 5 3 0
+TA H 2 20 2 2 2 2
+CA H 5 1 5 3
+CA H 6 1 106 2
+V 1 816
+V 2 244
+V 3 16
+V 4 16
+EV 3 ACTUALIZAR 207 4 | 4 clavos (objeto 207): también al cubo 5, el primero de la lista
+M 5 16 TablaDispersaLista.c 40
+RL 1
+RA 1
+TL H 1 101 3 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 5
 NL H 5 207 4 4
 NL H 4 106 2 3
 NL H 3 5 3 0
+<<<<<<< HEAD
 TA H 2 20 3 2 2 2 0 0
+=======
+TA H 2 20 3 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 5 1 5 3
 CA H 6 1 106 2
 CA H 7 1 207 4
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
 EV 4 ACTUALIZAR 23 1 | Una poción (objeto 23)
+<<<<<<< HEAD
 M 6 16 TablaDispersaLista.c 53
 RL 1
 RA 1
 TL H 1 101 4 1 0
+=======
+M 6 16 TablaDispersaLista.c 40
+RL 1
+RA 1
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 5
 NL H 5 207 4 4
 NL H 4 106 2 3
 NL H 3 5 3 0
 CL H 23 6
 NL H 6 23 1 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 1 23 1
 CA H 5 1 5 3
 CA H 6 1 106 2
 CA H 7 1 207 4
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
 V 6 16
 EV 5 ACTUALIZAR 25 6 | 6 cuerdas (objeto 25): en el array su casilla es la 5, pero está llena y salta hasta la 8
+<<<<<<< HEAD
 M 7 16 TablaDispersaLista.c 53
 RL 1
 RA 1
 TL H 1 101 5 1 0
+=======
+M 7 16 TablaDispersaLista.c 40
+RL 1
+RA 1
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 5
 NL H 5 207 4 4
 NL H 4 106 2 3
@@ -88,14 +163,22 @@ CL H 23 6
 NL H 6 23 1 0
 CL H 25 7
 NL H 7 25 6 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 3 1 23 1
 CA H 5 1 5 3
 CA H 6 1 106 2
 CA H 7 1 207 4
 CA H 8 1 25 6
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
@@ -104,7 +187,11 @@ V 7 16
 EV 6 CAMBIAR 106 300 | Las monedas se funden en lingotes (objeto 300): el nodo del medio del cubo 5 se va al 98
 RL 1
 RA 1
+<<<<<<< HEAD
 TL H 1 101 5 1 0
+=======
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 5
 NL H 5 207 4 3
 NL H 3 5 3 0
@@ -114,7 +201,11 @@ CL H 25 7
 NL H 7 25 6 0
 CL H 98 4
 NL H 4 300 2 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 1 300 2
 CA H 3 1 23 1
 CA H 5 1 5 3
@@ -122,7 +213,11 @@ CA H 6 2 106 2
 CA H 7 1 207 4
 CA H 8 1 25 6
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
@@ -131,7 +226,11 @@ V 7 16
 EV 7 BUSCAR 300 | ¿Están los lingotes donde deben?
 RL 1 2
 RA 1 2
+<<<<<<< HEAD
 TL H 1 101 5 1 0
+=======
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 5
 NL H 5 207 4 3
 NL H 3 5 3 0
@@ -141,7 +240,11 @@ CL H 25 7
 NL H 7 25 6 0
 CL H 98 4
 NL H 4 300 2 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 1 300 2
 CA H 3 1 23 1
 CA H 5 1 5 3
@@ -149,7 +252,11 @@ CA H 6 2 106 2
 CA H 7 1 207 4
 CA H 8 1 25 6
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
@@ -158,7 +265,11 @@ V 7 16
 EV 8 BUSCAR 106 | ¿Y las monedas? Ya no existen
 RL 0 0
 RA 0 0
+<<<<<<< HEAD
 TL H 1 101 5 1 0
+=======
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 5
 NL H 5 207 4 3
 NL H 3 5 3 0
@@ -168,7 +279,11 @@ CL H 25 7
 NL H 7 25 6 0
 CL H 98 4
 NL H 4 300 2 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 1 300 2
 CA H 3 1 23 1
 CA H 5 1 5 3
@@ -176,7 +291,11 @@ CA H 6 2 106 2
 CA H 7 1 207 4
 CA H 8 1 25 6
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
@@ -185,7 +304,11 @@ V 7 16
 EV 9 BUSCAR 25 | ¿Y las cuerdas? En el array hay que pasar por donde estaban las monedas
 RL 1 6
 RA 1 6
+<<<<<<< HEAD
 TL H 1 101 5 1 0
+=======
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 5
 NL H 5 207 4 3
 NL H 3 5 3 0
@@ -195,7 +318,11 @@ CL H 25 7
 NL H 7 25 6 0
 CL H 98 4
 NL H 4 300 2 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 1 300 2
 CA H 3 1 23 1
 CA H 5 1 5 3
@@ -203,17 +330,28 @@ CA H 6 2 106 2
 CA H 7 1 207 4
 CA H 8 1 25 6
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 5 16
 V 6 16
 V 7 16
 EV 10 CAMBIAR 207 23 | Los clavos resultan ser pociones disfrazadas: se suman a las pociones
+<<<<<<< HEAD
 F 5 TablaDispersaLista.c 193
 RL 1
 RA 1
 TL H 1 101 4 1 0
+=======
+F 5 TablaDispersaLista.c 174
+RL 1
+RA 1
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 3
 NL H 3 5 3 0
 CL H 23 6
@@ -222,7 +360,11 @@ CL H 25 7
 NL H 7 25 6 0
 CL H 98 4
 NL H 4 300 2 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 1 300 2
 CA H 3 1 23 5
 CA H 5 1 5 3
@@ -230,7 +372,11 @@ CA H 6 2 106 2
 CA H 7 2 207 4
 CA H 8 1 25 6
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 6 16
@@ -238,7 +384,11 @@ V 7 16
 EV 11 BUSCAR 23 | Ahora hay 5 pociones
 RL 1 5
 RA 1 5
+<<<<<<< HEAD
 TL H 1 101 4 1 0
+=======
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 3
 NL H 3 5 3 0
 CL H 23 6
@@ -247,7 +397,11 @@ CL H 25 7
 NL H 7 25 6 0
 CL H 98 4
 NL H 4 300 2 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 1 300 2
 CA H 3 1 23 5
 CA H 5 1 5 3
@@ -255,7 +409,11 @@ CA H 6 2 106 2
 CA H 7 2 207 4
 CA H 8 1 25 6
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 6 16
@@ -263,7 +421,11 @@ V 7 16
 EV 12 CAMBIAR 5 409 | Las antorchas pasan a ser el objeto 409: mismo cubo en las listas, otra casilla en el array
 RL 1
 RA 1
+<<<<<<< HEAD
 TL H 1 101 4 1 0
+=======
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 3
 NL H 3 409 3 0
 CL H 23 6
@@ -272,7 +434,11 @@ CL H 25 7
 NL H 7 25 6 0
 CL H 98 4
 NL H 4 300 2 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 1 300 2
 CA H 3 1 23 5
 CA H 5 2 5 3
@@ -281,7 +447,11 @@ CA H 7 2 207 4
 CA H 8 1 25 6
 CA H 9 1 409 3
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 6 16
@@ -289,7 +459,11 @@ V 7 16
 EV 13 BUSCAR 409 | ¿Siguen ahí?
 RL 1 3
 RA 1 3
+<<<<<<< HEAD
 TL H 1 101 4 1 0
+=======
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 3
 NL H 3 409 3 0
 CL H 23 6
@@ -298,7 +472,11 @@ CL H 25 7
 NL H 7 25 6 0
 CL H 98 4
 NL H 4 300 2 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 1 300 2
 CA H 3 1 23 5
 CA H 5 2 5 3
@@ -307,7 +485,11 @@ CA H 7 2 207 4
 CA H 8 1 25 6
 CA H 9 1 409 3
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 6 16
@@ -315,7 +497,11 @@ V 7 16
 EV 14 CAMBIAR 999 1 | Rina intenta cambiar un objeto que no tiene
 RL 0
 RA 0
+<<<<<<< HEAD
 TL H 1 101 4 1 0
+=======
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 3
 NL H 3 409 3 0
 CL H 23 6
@@ -324,7 +510,11 @@ CL H 25 7
 NL H 7 25 6 0
 CL H 98 4
 NL H 4 300 2 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 1 300 2
 CA H 3 1 23 5
 CA H 5 2 5 3
@@ -333,7 +523,11 @@ CA H 7 2 207 4
 CA H 8 1 25 6
 CA H 9 1 409 3
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 6 16
@@ -341,7 +535,11 @@ V 7 16
 EV 15 CAMBIAR 23 23 | Y cambiar las pociones por pociones: no pasa nada
 RL 1
 RA 1
+<<<<<<< HEAD
 TL H 1 101 4 1 0
+=======
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 3
 NL H 3 409 3 0
 CL H 23 6
@@ -350,7 +548,11 @@ CL H 25 7
 NL H 7 25 6 0
 CL H 98 4
 NL H 4 300 2 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 1 300 2
 CA H 3 1 23 5
 CA H 5 2 5 3
@@ -359,7 +561,11 @@ CA H 7 2 207 4
 CA H 8 1 25 6
 CA H 9 1 409 3
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 6 16
@@ -367,7 +573,11 @@ V 7 16
 EV 16 CAMBIAR 300 -7 | Los lingotes se convierten en un objeto maldito con número negativo
 RL 1
 RA 1
+<<<<<<< HEAD
 TL H 1 101 4 1 0
+=======
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 3
 NL H 3 409 3 0
 CL H 23 6
@@ -376,7 +586,11 @@ CL H 25 7
 NL H 7 25 6 0
 CL H 94 4
 NL H 4 -7 2 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 300 2
 CA H 3 1 23 5
 CA H 5 2 5 3
@@ -386,7 +600,11 @@ CA H 8 1 25 6
 CA H 9 1 409 3
 CA H 13 1 -7 2
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 6 16
@@ -394,7 +612,11 @@ V 7 16
 EV 17 BUSCAR -7 | El objeto maldito
 RL 1 2
 RA 1 2
+<<<<<<< HEAD
 TL H 1 101 4 1 0
+=======
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 3
 NL H 3 409 3 0
 CL H 23 6
@@ -403,7 +625,11 @@ CL H 25 7
 NL H 7 25 6 0
 CL H 94 4
 NL H 4 -7 2 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 300 2
 CA H 3 1 23 5
 CA H 5 2 5 3
@@ -413,16 +639,27 @@ CA H 8 1 25 6
 CA H 9 1 409 3
 CA H 13 1 -7 2
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 6 16
 V 7 16
 EV 18 ACTUALIZAR 43 1 | Una flecha (objeto 43): en el array, junto a la casilla que dejaron las pociones
+<<<<<<< HEAD
 M 8 16 TablaDispersaLista.c 53
 RL 1
 RA 1
 TL H 1 101 5 1 0
+=======
+M 8 16 TablaDispersaLista.c 40
+RL 1
+RA 1
+TL H 1 101 5 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 5 3
 NL H 3 409 3 0
 CL H 23 6
@@ -433,7 +670,11 @@ CL H 43 8
 NL H 8 43 1 0
 CL H 94 4
 NL H 4 -7 2 0
+<<<<<<< HEAD
 TA H 2 20 5 2 2 2 0 0
+=======
+TA H 2 20 5 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 300 2
 CA H 3 1 23 5
 CA H 4 1 43 1
@@ -444,17 +685,28 @@ CA H 8 1 25 6
 CA H 9 1 409 3
 CA H 13 1 -7 2
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 3 16
 V 4 16
 V 6 16
 V 7 16
 V 8 16
 EV 19 CAMBIAR 409 43 | Las antorchas se cambian por flechas: se suman a la flecha
+<<<<<<< HEAD
 F 3 TablaDispersaLista.c 193
 RL 1
 RA 1
 TL H 1 101 4 1 0
+=======
+F 3 TablaDispersaLista.c 174
+RL 1
+RA 1
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 23 6
 NL H 6 23 5 0
 CL H 25 7
@@ -463,7 +715,11 @@ CL H 43 8
 NL H 8 43 4 0
 CL H 94 4
 NL H 4 -7 2 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 300 2
 CA H 3 1 23 5
 CA H 4 1 43 4
@@ -474,7 +730,11 @@ CA H 8 1 25 6
 CA H 9 2 409 3
 CA H 13 1 -7 2
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 4 16
 V 6 16
 V 7 16
@@ -482,7 +742,11 @@ V 8 16
 EV 20 BUSCAR 43 | Ahora hay 4 flechas
 RL 1 4
 RA 1 4
+<<<<<<< HEAD
 TL H 1 101 4 1 0
+=======
+TL H 1 101 4 1
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CL H 23 6
 NL H 6 23 5 0
 CL H 25 7
@@ -491,7 +755,11 @@ CL H 43 8
 NL H 8 43 4 0
 CL H 94 4
 NL H 4 -7 2 0
+<<<<<<< HEAD
 TA H 2 20 4 2 2 2 0 0
+=======
+TA H 2 20 4 2 2 2
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 CA H 0 2 300 2
 CA H 3 1 23 5
 CA H 4 1 43 4
@@ -502,16 +770,29 @@ CA H 8 1 25 6
 CA H 9 2 409 3
 CA H 13 1 -7 2
 V 1 816
+<<<<<<< HEAD
 V 2 252
+=======
+V 2 244
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 V 4 16
 V 6 16
 V 7 16
 V 8 16
 EV 21 LIBERAR | Rina cierra el puesto y se vacían las tablas
+<<<<<<< HEAD
 F 6 TablaDispersaLista.c 100
 F 7 TablaDispersaLista.c 100
 F 8 TablaDispersaLista.c 100
 F 4 TablaDispersaLista.c 100
 F 1 TablaDispersaLista.c 104
 F 2 TablaDispersaArray.c 95
+=======
+F 6 TablaDispersaLista.c 87
+F 7 TablaDispersaLista.c 87
+F 8 TablaDispersaLista.c 87
+F 4 TablaDispersaLista.c 87
+F 1 TablaDispersaLista.c 91
+F 2 TablaDispersaArray.c 78
+>>>>>>> 3f25f6927880ffb8643cd3cd9fc5c81501cb72cd
 FIN
