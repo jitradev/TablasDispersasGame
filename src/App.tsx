@@ -163,17 +163,11 @@ function Inicio({
         <li>
           <span className="num">2</span>
           <div>
-            <b>Escribe tu nombre</b> en <code>alumno.h</code> y haz los ejercicios del acto, en orden, donde pone TODO.
-          </div>
-        </li>
-        <li>
-          <span className="num">3</span>
-          <div>
             <b>Ejecuta la misión</b> de cada ejercicio: el target <code>mision1</code>, <code>mision2</code>... (desplegable de arriba a la derecha). Cada una escribe su registro en <code>registros/</code>.
           </div>
         </li>
         <li>
-          <span className="num">4</span>
+          <span className="num">3</span>
           <div>
             <b>Sube el registro</b> en la tarjeta de su misión, mira la animación y corrige lo que falle. Al acabar la sesión, comprime el proyecto y entrégalo en la PDU.
           </div>
