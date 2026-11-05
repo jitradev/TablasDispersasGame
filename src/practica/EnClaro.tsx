@@ -6,7 +6,7 @@ import { sonar } from '../juego/sonido';
 import { ENCARGOS, EJERCICIOS_DE, EN_CLARO, Encargo } from './encargos';
 import { MISIONES } from './misiones';
 
-const BLOQUE: Record<number, string> = { 1: 'ACTO 1: EL GREMIO', 2: 'ACTO 2: LAS CARAVANAS', 3: 'ACTO 3: CREAR DISTINTOS HASH', 4: 'ACTO 4: JUEGO CON COLISIONES' };
+const BLOQUE: Record<number, string> = { 1: 'ACTO 1: EL GREMIO', 2: 'ACTO 2: LAS CARAVANAS', 3: 'ACTO 3: LA SOMBRA DE LA TORRE', 4: 'ACTO 4: EL TESORO DEL DRAGON' };
 
 function Funciones({ e }: { e: Encargo }) {
   const una = (donde: string, f: { firma: string; hace: string }) => (

@@ -222,7 +222,7 @@ int diferenciaHashArray(HashArray * destino, HashArray * otro) {
     return 0;
 }
 
-/* ===================== ACTO 3: CREAR DISTINTOS HASH ===================== */
+/* ===================== ACTO 3: LA SOMBRA DE LA TORRE (funciones hash) ===================== */
 
 /* ---- EJERCICIO 10: plegamiento ---- */
 
@@ -248,7 +248,7 @@ int hashPolinomicoHashArray(int clave) {
     return 0;
 }
 
-/* ===================== ACTO 4: JUEGO CON COLISIONES ===================== */
+/* ===================== ACTO 4: EL TESORO DEL DRAGON (colisiones) ===================== */
 
 /* ---- EJERCICIO 13: otras formas de buscar sitio ---- */
 

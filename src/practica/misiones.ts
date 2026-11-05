@@ -43,8 +43,8 @@ export interface Acto {
 export const ACTOS: Acto[] = [
   { n: 1, titulo: 'El Gremio', lugar: 'La aldea y su cripta', ficheros: ['TablaDispersaLista.c', 'TablaDispersaArray.c'], resumen: 'La fiesta de la cosecha parece un día como otro cualquiera, hasta que en la cripta del Gremio algo empieza a moverse. Aquí se forma la compañía.' },
   { n: 2, titulo: 'Las caravanas', lugar: 'El camino de comercio', ficheros: ['TablaDispersaLista.c', 'TablaDispersaArray.c'], resumen: 'Con la cripta en calma, el Gremio envía una caravana por el camino de comercio. Ahora hay que llevar las cuentas de dos inventarios a la vez: copiarlos, compararlos, pactar y pagar peajes.' },
-  { n: 3, titulo: 'Crear distintos hash', lugar: 'La torre del nigromante', ficheros: ['TablaDispersaLista.c', 'TablaDispersaArray.c'], resumen: 'Los números del reino caen siempre en los mismos cubos, y la culpa es de Vorhal, que lo maneja todo desde su torre. Para vencerle hay que aprender a repartir de otras formas.' },
-  { n: 4, titulo: 'Juego con colisiones', lugar: 'La montaña del dragón', ficheros: ['TablaDispersaLista.c', 'TablaDispersaArray.c'], resumen: 'Más allá de la torre se alza la montaña del dragón. Allí dentro las colisiones lo llenan todo: hay que buscar sitio de otras maneras, medir lo que cuesta encontrar y poner orden.' },
+  { n: 3, titulo: 'La sombra de la torre', lugar: 'La torre del nigromante', ficheros: ['TablaDispersaLista.c', 'TablaDispersaArray.c'], resumen: 'Los números del reino caen siempre en los mismos cubos, y la culpa es de Vorhal, que lo maneja todo desde su torre. Para vencerle hay que aprender a repartir de otras formas.' },
+  { n: 4, titulo: 'El tesoro del dragón', lugar: 'La montaña del dragón', ficheros: ['TablaDispersaLista.c', 'TablaDispersaArray.c'], resumen: 'Más allá de la torre se alza la montaña del dragón. Allí dentro las colisiones lo llenan todo: hay que buscar sitio de otras maneras, medir lo que cuesta encontrar y poner orden.' },
 ];
 
 /** Las órdenes de un fichero de eventos, normalizadas como las escribe el registro. */

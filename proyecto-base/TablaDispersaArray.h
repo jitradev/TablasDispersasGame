@@ -107,7 +107,7 @@ int interseccionHashArray(HashArray * destino, HashArray * otro);
  * Otro no cambia. Devuelve cuantas casillas se han quitado de destino. */
 int diferenciaHashArray(HashArray * destino, HashArray * otro);
 
-/* ===================== ACTO 3: CREAR DISTINTOS HASH ===================== */
+/* ===================== ACTO 3: LA SOMBRA DE LA TORRE (funciones hash) ===================== */
 /* Las mismas tres funciones que en TablaDispersaLista, pero mod TAM. */
 
 /* ---- EJERCICIO 10: plegamiento ---- */
@@ -119,7 +119,7 @@ int hashMitadCuadradoHashArray(int clave);
 /* ---- EJERCICIO 12: polinomico sobre las cifras ---- */
 int hashPolinomicoHashArray(int clave);
 
-/* ===================== ACTO 4: JUEGO CON COLISIONES ===================== */
+/* ===================== ACTO 4: EL TESORO DEL DRAGON (colisiones) ===================== */
 /* Las claves de este acto son positivas. */
 
 /* ---- EJERCICIO 13: otras formas de buscar sitio ---- */

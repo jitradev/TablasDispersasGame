@@ -98,7 +98,7 @@ int interseccionHashLista(HashLista * destino, HashLista * otro);
  * Devuelve cuantos nodos se han quitado de destino. */
 int diferenciaHashLista(HashLista * destino, HashLista * otro);
 
-/* ===================== ACTO 3: CREAR DISTINTOS HASH ===================== */
+/* ===================== ACTO 3: LA SOMBRA DE LA TORRE (funciones hash) ===================== */
 /* Las claves de este acto son positivas. Cada funcion devuelve un cubo entre
  * 0 y TAM_LISTA - 1: el resultado, mod TAM_LISTA. */
 
@@ -121,7 +121,7 @@ int hashMitadCuadradoHashLista(int clave);
  * h = h * 31 + cifra, con h unsigned int. Devuelve h mod TAM_LISTA. */
 int hashPolinomicoHashLista(int clave);
 
-/* ===================== ACTO 4: JUEGO CON COLISIONES ===================== */
+/* ===================== ACTO 4: EL TESORO DEL DRAGON (colisiones) ===================== */
 
 /* ---- EJERCICIO 14: lo que cuesta buscar ---- */
 

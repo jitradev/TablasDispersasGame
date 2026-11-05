@@ -368,6 +368,11 @@ export function Visor({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [terminado]);
   const subirInput = useRef<HTMLInputElement>(null);
+  // la trompa: empieza la misión (solo la primera vez que se ve este registro)
+  useEffect(() => {
+    if (estreno) sonar('inicio');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // el estado de las tablas tal y como las dejó el alumno al final de cada evento
   type Est = { l?: ML; a?: MA; existe: boolean };

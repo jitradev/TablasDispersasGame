@@ -2335,3 +2335,151 @@ button.cerrar .ico {
 .tablas > .panel:has(> .aviso) {
   height: auto;
 }
+
+/* ------------------------------------------------------------------ resumen de la campaña */
+.resumen .res-cab {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.res-alumno {
+  font-family: var(--titulo);
+  font-size: 19px;
+  color: var(--cc);
+}
+.res-acto {
+  padding: 12px 0 14px;
+  border-top: 2px solid #2e251b;
+  text-align: left;
+}
+.res-acto-cab {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.res-acto-tit {
+  font-family: var(--titulo);
+  font-size: 21px;
+  color: var(--cc);
+}
+.res-acto-tit small {
+  font-family: var(--pixel);
+  font-size: 9px;
+  color: var(--c3);
+  margin-right: 8px;
+  letter-spacing: 1px;
+}
+.res-acto-cab b {
+  font-family: var(--pixel);
+  font-size: 14px;
+  color: var(--c4);
+}
+.res-barra {
+  height: 8px;
+  background: #2e251b;
+  margin: 8px 0 10px;
+}
+.res-barra span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--c3), var(--c4));
+  transition: width 0.6s ease-out;
+}
+.res-misiones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.res-mision {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  column-gap: 8px;
+  padding: 6px 10px;
+  border: 2px solid #4a3e30;
+  background: #17120d;
+  min-width: 118px;
+}
+.res-mision .rm-num {
+  font-family: var(--pixel);
+  font-size: 9px;
+  color: var(--cd);
+}
+.res-mision .rm-est {
+  font-size: 15px;
+  color: #5a4d3c;
+  letter-spacing: 1px;
+  justify-self: end;
+}
+.res-mision .rm-ev {
+  grid-column: 1 / -1;
+  font-size: 14px;
+  color: var(--cg);
+}
+.res-mision.hecha {
+  border-color: var(--c5);
+  background: #1c2614;
+}
+.res-mision.parcial {
+  border-color: var(--c3);
+  background: #2a1e12;
+}
+.res-mision.pendiente {
+  border-style: dashed;
+  border-color: var(--c4);
+}
+.res-mision.hecha .rm-est,
+.res-mision.parcial .rm-est {
+  color: var(--c4);
+}
+.res-mision.hecha .rm-ev,
+.res-mision.parcial .rm-ev {
+  color: var(--cc);
+}
+.res-mision.jefe .rm-num {
+  color: #ef6b4a;
+}
+.res-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 16px;
+  margin-top: 4px;
+  background: #2a1e12;
+  border: 2px solid var(--c3);
+}
+.res-total span {
+  font-family: var(--titulo);
+  font-size: 22px;
+  color: var(--cc);
+}
+.res-total b {
+  font-family: var(--pixel);
+  font-size: 18px;
+  color: var(--c4);
+}
+
+/* «pulsa para empezar» */
+.intro-cine.puerta {
+  flex-direction: column;
+  gap: 14px;
+}
+.puerta-texto {
+  font-family: var(--pixel);
+  font-size: clamp(14px, 2vw, 20px);
+  color: var(--c4);
+  letter-spacing: 4px;
+  animation: late-suave 2.4s ease-in-out infinite;
+}
+.puerta-sub {
+  font-family: var(--titulo);
+  font-size: 18px;
+  color: var(--cg);
+}
+@keyframes late-suave {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
+}

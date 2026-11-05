@@ -22,12 +22,12 @@
 #   mision8   -> eventos/mision8-pacto.txt              (ejercicio 8)
 #   mision9   -> eventos/mision9-recaudador.txt         (ejercicio 9, jefe)
 #
-#   ACTO 3, CREAR DISTINTOS HASH (las mismas dos tablas)
+#   ACTO 3, LA SOMBRA DE LA TORRE (funciones hash) (las mismas dos tablas)
 #   mision10  -> eventos/mision10-pergamino.txt         (ejercicio 10)
 #   mision11  -> eventos/mision11-cuadrado.txt          (ejercicio 11)
 #   mision12  -> eventos/mision12-hechicero.txt         (ejercicio 12, jefe)
 #
-#   ACTO 4, JUEGO CON COLISIONES (las mismas dos tablas)
+#   ACTO 4, EL TESORO DEL DRAGON (colisiones) (las mismas dos tablas)
 #   mision13  -> eventos/mision13-escalera.txt          (ejercicio 13)
 #   mision14  -> eventos/mision14-espejos.txt           (ejercicio 14)
 #   mision15  -> eventos/mision15-golem.txt             (ejercicio 15)

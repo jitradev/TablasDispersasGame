@@ -228,7 +228,7 @@ int diferenciaHashLista(HashLista * destino, HashLista * otro) {
     return 0;
 }
 
-/* ===================== ACTO 3: CREAR DISTINTOS HASH ===================== */
+/* ===================== ACTO 3: LA SOMBRA DE LA TORRE (funciones hash) ===================== */
 
 /* ---- EJERCICIO 10: plegamiento ---- */
 
@@ -256,7 +256,7 @@ int hashPolinomicoHashLista(int clave) {
     return 0;
 }
 
-/* ===================== ACTO 4: JUEGO CON COLISIONES ===================== */
+/* ===================== ACTO 4: EL TESORO DEL DRAGON (colisiones) ===================== */
 
 /* ---- EJERCICIO 14: lo que cuesta buscar ---- */
 

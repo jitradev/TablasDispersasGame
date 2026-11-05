@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Ico } from './juego/Icono';
 import { urlSprite } from './juego/sprites';
-import { sonar } from './juego/sonido';
+import { musicaPrologo, pararMusica, sonar } from './juego/sonido';
 import { BotonSonido } from './juego/BotonSonido';
 import { leerRegistro, ErrorRegistro } from './practica/registro';
 import { corregir, Correccion } from './practica/corregir';
@@ -83,6 +83,26 @@ function prologoVisto(): boolean {
 /** El prólogo a pantalla completa: cada frase aparece despacio, se queda y se
  * funde con la siguiente. Se puede saltar. */
 function Intro({ alAcabar }: { alAcabar: () => void }) {
+  // antes del prólogo, un «pulsa para empezar»: ese clic deja sonar la música
+  // (sin un gesto, los navegadores, Safari el primero, no dejan reproducir nada)
+  const [empezado, setEmpezado] = useState(false);
+  if (!empezado)
+    return (
+      <div
+        className="intro-cine puerta"
+        onClick={() => {
+          musicaPrologo();
+          setEmpezado(true);
+        }}
+      >
+        <div className="puerta-texto">PULSA PARA EMPEZAR</div>
+        <div className="puerta-sub">mejor con sonido</div>
+      </div>
+    );
+  return <Prologo alAcabar={alAcabar} />;
+}
+
+function Prologo({ alAcabar }: { alAcabar: () => void }) {
   const [k, setK] = useState(0);
   const [saliendo, setSaliendo] = useState(false);
   const fin = useRef(false);
@@ -95,6 +115,7 @@ function Intro({ alAcabar }: { alAcabar: () => void }) {
       /* sin almacenamiento */
     }
     setSaliendo(true);
+    pararMusica(2.5);
     setTimeout(alAcabar, 1400);
   };
   const siguiente = () => (k < PROLOGO.length - 1 ? setK(k + 1) : acabar());
@@ -266,31 +287,44 @@ function Inicio({
 
         {hechas.some(Boolean) && (
           <section className="resumen">
-            <div className="ram-tit">RESUMEN DE LA CAMPAÑA</div>
-            {nombres.length > 0 && (
-              <div className="res-fila">
-                <span>Alumno</span>
-                <b>{nombres.join(' / ')}</b>
-              </div>
-            )}
+            <div className="res-cab">
+              <div className="ram-tit">RESUMEN DE LA CAMPAÑA</div>
+              {nombres.length > 0 && <div className="res-alumno">{nombres.join(' / ')}</div>}
+            </div>
             {nombres.length > 1 && <div className="aviso mal">Los registros llevan nombres distintos: vuelve a ejecutar las misiones con tu código.</div>}
-            {ACTOS.map((a) => (
-              <div key={a.n} className="res-fila">
-                <span>
-                  Acto {a.n} · {a.titulo}{' '}
-                  <small>
-                    ({MISIONES.filter((m) => m.acto === a.n)
-                      .map((m) => (correcciones[m.id] ? `${correcciones[m.id].bien}/${correcciones[m.id].total}` : '–'))
-                      .join(' · ')}
-                    )
-                  </small>
-                </span>
-                <b>{(notaDe(a.n) * 10).toFixed(1)} / 10</b>
-              </div>
-            ))}
-            <div className="res-fila gorda">
+            {ACTOS.map((a) => {
+              const nota = notaDe(a.n) * 10;
+              return (
+                <div key={a.n} className="res-acto">
+                  <div className="res-acto-cab">
+                    <span className="res-acto-tit">
+                      <small>ACTO {a.n}</small> {a.titulo}
+                    </span>
+                    <b>{nota.toFixed(1).replace('.', ',')}</b>
+                  </div>
+                  <div className="res-barra" aria-hidden="true">
+                    <span style={{ width: `${nota * 10}%` }} />
+                  </div>
+                  <div className="res-misiones">
+                    {MISIONES.filter((m) => m.acto === a.n).map((m) => {
+                      const c = correcciones[m.id];
+                      const num = MISIONES.indexOf(m) + 1;
+                      const estado = !c ? (pendientes[m.id] ? 'pendiente' : 'nada') : c.conocida && c.bien === c.total ? 'hecha' : 'parcial';
+                      return (
+                        <div key={m.id} className={`res-mision ${estado} ${m.jefe ? 'jefe' : ''}`} title={m.titulo}>
+                          <span className="rm-num">M{num}</span>
+                          <span className="rm-est">{[0, 1, 2].map((k) => (c && c.conocida && k < c.estrellas ? '★' : '☆')).join('')}</span>
+                          <span className="rm-ev">{c ? `${c.bien}/${c.total}` : pendientes[m.id] ? 'sin ver' : 'sin subir'}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+            <div className="res-total">
               <span>Nota orientativa de la campaña</span>
-              <b>{((ACTOS.reduce((s, a) => s + notaDe(a.n), 0) / ACTOS.length) * 10).toFixed(1)} / 10</b>
+              <b>{((ACTOS.reduce((s, a) => s + notaDe(a.n), 0) / ACTOS.length) * 10).toFixed(1).replace('.', ',')} / 10</b>
             </div>
             <p className="pie">
               La nota final la pone el profesor leyendo el código; esta es solo la de los registros.{' '}
