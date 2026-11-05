@@ -269,8 +269,8 @@ function Inicio({
             <a className="boton grande" href="/proyecto-base.zip" download="listas-dispersas-campana.zip" onClick={() => sonar('click')}>
               RECOGER EL LIBRO (PROYECTO BASE)
             </a>
-            <a className="boton grande secundario" href="/enunciado-lord-of-eda.pdf" target="_blank" rel="noreferrer" onClick={() => sonar('click')}>
-              LEER EL PERGAMINO (ENUNCIADO)
+            <a className="boton grande secundario" href="/practica-3.pdf" target="_blank" rel="noreferrer" onClick={() => sonar('click')}>
+              LEER EL PERGAMINO (PRÁCTICA 3)
             </a>
           </div>
         </details>
