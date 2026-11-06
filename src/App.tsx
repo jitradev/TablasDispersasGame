@@ -258,7 +258,7 @@ function Inicio({
             </li>
             <li>Entra en la misión y entrégale ese registro. La misión se juega sola, evento a evento; cómo te ha ido lo sabrás al final.</li>
             <li>
-              Antes de que acabe el <b>viernes 11 de diciembre a las 23:59</b>, comprime el proyecto entero y llévalo a la PDU. Puedes llevarlo al caer la noche de cada sesión y volver a llevarlo después: vale el último.
+              Antes de que acabe el <b>domingo 13 de diciembre a las 23:59</b>, comprime el proyecto entero y llévalo a la PDU. Puedes llevarlo al caer la noche de cada sesión y volver a llevarlo después: vale el último.
             </li>
           </ol>
           <div className="ordenes-botones">

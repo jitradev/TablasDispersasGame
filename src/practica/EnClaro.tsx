@@ -92,7 +92,7 @@ export function EnClaroActo({ acto }: { acto: number }) {
           ). Cada una escribe su fichero en <code>registros/</code>.
         </li>
         <li>En la web, entra en la misión y sube ese fichero. Se anima evento a evento y la nota sale al final.</li>
-        <li>Comprime la carpeta del proyecto entera y súbela a la PDU antes del viernes 11 de diciembre a las 23:59. Puedes subirla al acabar cada sesión; cuenta la última.</li>
+        <li>Comprime la carpeta del proyecto entera y súbela a la PDU antes del domingo 13 de diciembre a las 23:59. Puedes subirla al acabar cada sesión; cuenta la última.</li>
       </ol>
       {EJERCICIOS_DE[acto].map((n) => {
         const e = ENCARGOS[n];
